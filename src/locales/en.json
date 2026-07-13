@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "map": "Coverage Area",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "getQuote": "Get Quote"
+  },
+  "hero": {
+    "badge": "Vera Gold Enerji - B2B Solutions Partner",
+    "title": "Powerful Infrastructure with Zero Tolerance on the Hardest Soils.",
+    "subtitle": "Compressor and compressorless rock drilling, solar piling solutions, and high-performance drilling equipment.",
+    "ctaProjects": "Explore Our Projects",
+    "ctaQuote": "Get Technical Offer"
+  },
+  "services": {
+    "title": "Our Areas of Expertise",
+    "subtitle": "Professional B2B services powered by modern technology and engineering expertise.",
+    "drill": {
+      "title": "Drilling Services",
+      "short": "High-precision solutions in rock drilling, anchoring, geotechnical surveys, and tunneling engineering.",
+      "long": "Vera Gold Enerji carries out rock drilling, ground reinforcement, slope stabilization, anchoring, and tunneling projects in challenging terrain conditions using state-of-the-art drilling machinery and an expert engineering team. We are a trusted B2B partner and supplier for large-scale infrastructure projects.",
+      "features": ["Micropiles & Anchoring", "Ground Improvement", "Tunnel & Gallery Drilling", "Blastholes Drilling"]
+    },
+    "rental": {
+      "title": "Rock Machinery Rental",
+      "short": "A comprehensive, well-maintained, and high-performance rental fleet of heavy-duty drilling and excavation equipment.",
+      "long": "Instead of making high capital investments for your projects, you can lease our world-class rock drilling and machinery with flexible rental options. Every machine in our fleet is fully serviced, features modern safety standards, and is optimized for maximum efficiency.",
+      "features": ["Flexible Rental Plans", "24/7 Technical Support & Maintenance", "Operator Included Option", "Wide Range of Equipment"]
+    },
+    "energy": {
+      "title": "Power Plant Installation",
+      "short": "Turnkey installation and engineering services for industrial wind, solar, and renewable energy plants.",
+      "long": "We manage the entire lifecycle of clean energy projects for factories, industrial facilities, and investors, from feasibility studies to turnkey installations. Our team designs and builds sustainable solar (PV), wind, and battery storage plants.",
+      "features": ["Turnkey Setup", "Renewable Energy Engineering", "Solar & Wind Integration", "Long-term Maintenance Support"]
+    },
+    "learnMore": "Learn More",
+    "close": "Close",
+    "machineryConsulting": "Machinery Technical Consulting",
+    "equipmentConsulting": "Drilling Equipment Consulting",
+    "investmentConsulting": "Investment Consulting",
+    "projectConsulting": "Project Consulting",
+    "spareParts": "Spare Parts & Service"
+  },
+  "map": {
+    "title": "Our Geographical Reach",
+    "subtitle": "We actively serve all European and Balkan countries, excluding the United Kingdom, Sweden, Norway, and Finland.",
+    "description": "At Vera Gold Enerji, we bring our logistics capability and technical execution teams to every corner of Europe and the Balkans. We are ready to launch your projects in all regions outside Scandinavia and the UK.",
+    "activeRegions": "Active Service Regions",
+    "inactiveRegions": "Excluded Regions (UK, Scandinavia)"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Request a corporate quote for your projects or learn more about our machinery rental fleet.",
+    "formName": "Full Name / Representative",
+    "formCompany": "Company Name",
+    "formEmail": "Email Address",
+    "formService": "Service of Interest",
+    "formServicePlaceholder": "Please select a service",
+    "formMessage": "Message / Project Details",
+    "formSubmit": "Send Request",
+    "sending": "Sending...",
+    "success": "Your message was sent successfully! Our engineering team will contact you shortly.",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Headquarters"
+  },
+  "footer": {
+    "desc": "Europe's B2B solution partner in rock drilling projects, machinery rental, and sustainable power plant installations.",
+    "rights": "All Rights Reserved. Vera Gold Enerji."
+  }
+}

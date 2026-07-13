@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetlerimiz",
+    "map": "Hizmet Bölgemiz",
+    "gallery": "Galeri",
+    "contact": "İletişim",
+    "getQuote": "Teklif Al"
+  },
+  "hero": {
+    "badge": "Vera Gold Enerji - B2B Çözüm Ortağı",
+    "title": "En Sert Zeminlerde, Sıfır Tolerans ile Güçlü Altyapı.",
+    "subtitle": "Kompresörlü ve kompresörsüz kaya delimi, GES çakım çözümleri ve yüksek performanslı sondaj ekipmanları.",
+    "ctaProjects": "Projelerimizi İnceleyin",
+    "ctaQuote": "Teknik Teklif Alın"
+  },
+  "services": {
+    "title": "Uzmanlık Alanlarımız",
+    "subtitle": "Modern teknoloji ve mühendislik birikimimizle sunduğumuz kurumsal hizmetler.",
+    "drill": {
+      "title": "Delgi İşleri",
+      "short": "Kaya delme, ankraj, zemin etüdü ve tünel açma mühendisliğinde yüksek hassasiyetli çözümler.",
+      "long": "Vera Gold Enerji, zorlu arazi koşullarında kaya delme, zemin güçlendirme, şev stabilizasyonu, ankraj ve tünel açma projelerini en son teknoloji delgi makineleri ve uzman mühendis kadrosuyla gerçekleştirmektedir. B2B iş ortaklarımızın büyük ölçekli altyapı projelerinde güvenilir tedarikçisi ve uygulayıcısı konumundayız.",
+      "features": ["Mikrokazık ve Ankraj", "Zemin İyileştirme", "Tünel ve Galeri Delgisi", "Patlatma Deliği Delimi"]
+    },
+    "rental": {
+      "title": "Rock Makineleri Kiralama",
+      "short": "Ağır hizmet sondaj ve kaya delgi ekipmanlarından oluşan geniş, bakımlı ve yüksek performanslı kiralama filosu.",
+      "long": "Projeleriniz için yüksek sermaye yatırımı yapmak yerine, dünya standartlarındaki kaya delgi ve sondaj makinelerimizi esnek kiralama modelleriyle edinebilirsiniz. Filomuzdaki tüm makineler düzenli bakımdan geçirilen, en son güvenlik donanımlarına sahip, yüksek verimli ekipmanlardan oluşmaktadır.",
+      "features": ["Esnek Kiralama Planları", "7/24 Teknik Destek & Bakım", "Operatörlü Kiralama Seçeneği", "Geniş Ekipman Yelpazesi"]
+    },
+    "energy": {
+      "title": "Enerji Santrali Kurulumu",
+      "short": "Endüstriyel rüzgar, güneş ve yenilenebilir enerji santrallerinin anahtar teslim kurulumu ve mühendislik hizmetleri.",
+      "long": "Fabrikalar, endüstriyel tesisler ve yatırımcılar için temiz enerji santrallerinin fizibilite çalışmasından başlayarak anahtar teslim kurulumuna kadar tüm aşamaları üstleniyoruz. Güneş enerjisi (GES), rüzgar enerjisi (RES) ve depolamalı sistemler konusunda tecrübeli ekibimizle sürdürülebilir bir gelecek kuruyoruz.",
+      "features": ["Anahtar Teslim Kurulum", "Yenilenebilir Enerji Mühendisliği", "GES & RES Entegrasyonu", "Uzun Vadeli Bakım Desteği"]
+    },
+    "learnMore": "Detayları Gör",
+    "close": "Kapat",
+    "machineryConsulting": "Makine Teknik Danışmanlığı",
+    "equipmentConsulting": "Delme Ekipmanları Danışmanlığı",
+    "investmentConsulting": "Yatırım Danışmanlığı",
+    "projectConsulting": "Proje Danışmanlığı",
+    "spareParts": "Yedek Parça & Servis"
+  },
+  "map": {
+    "title": "Operasyon Coğrafyamız",
+    "subtitle": "İngiltere, İsveç, Norveç ve Finlandiya hariç tüm Avrupa ve Balkan ülkelerinde aktif olarak hizmet veriyoruz.",
+    "description": "Vera Gold Enerji olarak lojistik gücümüzü ve teknik ekiplerimizi Avrupa ve Balkanlar'ın her noktasına ulaştırıyoruz. İskandinavya ve Birleşik Krallık dışındaki tüm bölgelerde projelerinizi hayata geçirmeye hazırız.",
+    "activeRegions": "Aktif Hizmet Bölgelerimiz",
+    "inactiveRegions": "Hizmet Dışı Bölgeler (İngiltere, İskandinavya)"
+  },
+  "contact": {
+    "title": "Bizimle İletişime Geçin",
+    "subtitle": "Projeleriniz için kurumsal teklif isteyin veya kiralama filomuz hakkında bilgi alın.",
+    "formName": "Adınız Soyadınız / Firma Yetkilisi",
+    "formCompany": "Firma Adı",
+    "formEmail": "E-posta Adresi",
+    "formService": "İlgilendiğiniz Hizmet",
+    "formServicePlaceholder": "Lütfen bir hizmet seçin",
+    "formMessage": "Mesajınız / Proje Detayları",
+    "formSubmit": "Teklifi / Bilgiyi Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Mesajınız başarıyla iletildi! En kısa sürede uzman ekibimiz sizinle iletişime geçecektir.",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "address": "Merkez Adres"
+  },
+  "footer": {
+    "desc": "Kaya delgi projeleri, makine kiralama ve sürdürülebilir enerji santralleri kurulumunda Avrupa'nın B2B çözüm ortağı.",
+    "rights": "Tüm Hakları Saklıdır. Vera Gold Enerji."
+  }
+}

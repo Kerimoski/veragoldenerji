@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "map": "Einsatzgebiete",
+    "gallery": "Galerie",
+    "contact": "Kontakt",
+    "getQuote": "Angebot Anfordern"
+  },
+  "hero": {
+    "badge": "Vera Gold Enerji - B2B-Lösungspartner",
+    "title": "Starke Infrastruktur mit Null Toleranz auf den härtesten Böden.",
+    "subtitle": "Felsbohrungen mit und ohne Kompressor, Solar-Rammlösungen und Hochleistungs-Bohrausrüstung.",
+    "ctaProjects": "Unsere Projekte ansehen",
+    "ctaQuote": "Technisches Angebot einholen"
+  },
+  "services": {
+    "title": "Unsere Fachbereiche",
+    "subtitle": "Professionelle B2B-Dienstleistungen auf Basis moderner Technologie und Engineering-Kompetenz.",
+    "drill": {
+      "title": "Bohrarbeiten",
+      "short": "Hochpräzise Lösungen für Felsbohrungen, Verankerungen, Baugrunduntersuchungen und Tunnelbau.",
+      "long": "Vera Gold Enerji führt Felsbohrungen, Baugrundverstärkungen, Hangsicherungen, Verankerungen und Tunnelbauprojekte unter schwierigsten Geländebedingungen durch. Mit modernsten Bohranlagen und einem erfahrenen Ingenieurteam sind wir ein starker Partner für Großprojekte.",
+      "features": ["Mikropfähle & Verankerung", "Baugrundverbesserung", "Tunnel- und Stollenbohrungen", "Sprenglochbohrungen"]
+    },
+    "rental": {
+      "title": "Vermietung von Bohrgeräten",
+      "short": "Umfangreiche und bestens gewartete Mietflotte an schweren Felsbohr- und Spezialtiefbaugeräten.",
+      "long": "Vermeiden Sie hohe Investitionskosten. Nutzen Sie unsere erstklassigen Bohrgeräte zu flexiblen Mietkonditionen. Jedes Gerät unserer Flotte ist perfekt gewartet, entspricht modernsten Sicherheitsstandards und ist auf höchste Effizienz optimiert.",
+      "features": ["Flexible Mietlaufzeiten", "Technischer Support & Wartung rund um die Uhr", "Option mit geschultem Bediener", "Breites Gerätespektrum"]
+    },
+    "energy": {
+      "title": "Kraftwerksbau",
+      "short": "Schlüsselfertiger Bau und Ingenieurdienstleistungen für industrielle Wind-, Solar- und Biomassekraftwerke.",
+      "long": "Wir übernehmen die gesamte Projektabwicklung von der Machbarkeitsstudie bis hin zur schlüsselfertigen Montage Ihrer Industrie-Energieanlage. Unser Schwerpunkt liegt auf Photovoltaik-Großanlagen, Windkraft und integrierten Energiespeichern.",
+      "features": ["Schlüsselfertige Montage", "Engineering für erneuerbare Energien", "Solar- und Windenergieintegration", "Langfristige Wartung & Service"]
+    },
+    "learnMore": "Details anzeigen",
+    "close": "Schließen",
+    "machineryConsulting": "Technische Beratung für Maschinen",
+    "equipmentConsulting": "Bohrausrüstung Beratung",
+    "investmentConsulting": "Investitionsberatung",
+    "projectConsulting": "Projektberatung",
+    "spareParts": "Ersatzteile & Service"
+  },
+  "map": {
+    "title": "Unser geografischer Aktionsradius",
+    "subtitle": "Wir sind in allen europäischen und Balkanländern aktiv, mit Ausnahme des Vereinigten Königreichs, Schwedens, Norwegens und Finnlands.",
+    "description": "Als Vera Gold Enerji bringen wir unsere logistische Stärke und unsere Technikteams in jeden Winkel Europas und des Balkans. Wir sind bereit, Ihre Projekte außerhalb Skandinaviens und Großbritanniens zu realisieren.",
+    "activeRegions": "Aktive Dienstleistungsregionen",
+    "inactiveRegions": "Ausgeschlossene Regionen (UK, Skandinavien)"
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Fordern Sie ein Angebot für Ihr Projekt an oder informieren Sie sich über unsere Mietgeräte.",
+    "formName": "Name / Ansprechpartner",
+    "formCompany": "Firmenname",
+    "formEmail": "E-Mail-Adresse",
+    "formService": "Gewünschte Dienstleistung",
+    "formServicePlaceholder": "Bitte wählen Sie eine Dienstleistung",
+    "formMessage": "Ihre Nachricht / Projektdetails",
+    "formSubmit": "Anfrage Senden",
+    "sending": "Wird gesendet...",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet! Unser Ingenieurteam wird sich in Kürze mit Ihnen in Verbindung setzen.",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Hauptsitz"
+  },
+  "footer": {
+    "desc": "Ihr B2B-Lösungspartner für Felsbohrprojekte, Gerätevermietung und den Bau nachhaltiger Industrieanlagen in Europa.",
+    "rights": "Alle Rechte vorbehalten. Vera Gold Enerji."
+  }
+}

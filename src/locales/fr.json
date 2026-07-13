@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Nos Services",
+    "map": "Zone de Couverture",
+    "gallery": "Galerie",
+    "contact": "Contact",
+    "getQuote": "Obtenir un Devis"
+  },
+  "hero": {
+    "badge": "Vera Gold Enerji - Partenaire Solutions B2B",
+    "title": "Des infrastructures solides avec zéro tolérance sur les sols les plus durs.",
+    "subtitle": "Forage de roche avec et sans compresseur, solutions de fonçage solaire et équipements de forage haute performance.",
+    "ctaProjects": "Découvrir nos projets",
+    "ctaQuote": "Obtenir une offre technique"
+  },
+  "services": {
+    "title": "Nos Domaines d'Expertise",
+    "subtitle": "Services professionnels B2B appuyés par une technologie moderne et une solide expertise en ingénierie.",
+    "drill": {
+      "title": "Travaux de Forage",
+      "short": "Solutions de haute précision en forage rocheux, ancrage, études géotechniques et ingénierie des tunnels.",
+      "long": "Vera Gold Enerji réalise des forages de roche, des renforcements de sol, de la stabilisation de talus et des creusements de tunnels dans les conditions de terrain les plus difficiles, grâce à un parc de machines modernes et une équipe d'ingénieurs spécialisés.",
+      "features": ["Micro-pieux & Ancrage", "Amélioration des Sols", "Forage de Tunnels & Galeries", "Forage de Trous de Mine"]
+    },
+    "rental": {
+      "title": "Location de Foreuses",
+      "short": "Un parc complet de foreuses de roche et d'équipements de terrassement lourds performants et parfaitement entretenus.",
+      "long": "Évitez les investissements en capital lourds pour vos chantiers. Louez nos équipements de forage de classe mondiale avec des options de location flexibles. Chaque machine de notre flotte est révisée et répond aux normes de sécurité les plus strictes.",
+      "features": ["Plans de Location Flexibles", "Assistance Technique & Entretien 24/7", "Option de Location avec Opérateur", "Large Gamme d'Équipements"]
+    },
+    "energy": {
+      "title": "Installation de Centrales",
+      "short": "Services d'ingénierie et d'installation clés en main de centrales solaires, éoliennes et énergies renouvelables industrielles.",
+      "long": "Nous gérons l'ensemble du cycle de vie des projets d'énergie propre pour les usines, les sites industriels et les investisseurs. Notre équipe conçoit et déploie des systèmes solaires (photovoltaïques), éoliens et de stockage par batterie.",
+      "features": ["Installation Clés en Main", "Ingénierie des Énergies Renouvelables", "Intégration Solaire & Éolienne", "Support de Maintenance à Long Terme"]
+    },
+    "learnMore": "En savoir plus",
+    "close": "Fermer",
+    "machineryConsulting": "Conseil Technique sur les Machines",
+    "equipmentConsulting": "Conseil en Équipements de Forage",
+    "investmentConsulting": "Conseil en Investissement",
+    "projectConsulting": "Conseil en Gestion de Projet",
+    "spareParts": "Pièces de Rechange & Service"
+  },
+  "map": {
+    "title": "Notre Portée Géographique",
+    "subtitle": "Nous desservons activement tous les pays d'Europe et des Balkans, à l'exclusion du Royaume-Uni, de la Suède, de la Norvège et de la Finlande.",
+    "description": "Chez Vera Gold Enerji, nous déployons nos capacités logistiques et nos équipes techniques dans tous les coins d'Europe et des Balkans. Nous sommes prêts à lancer vos chantiers en dehors de la Scandinavie et du Royaume-Uni.",
+    "activeRegions": "Zones Actives",
+    "inactiveRegions": "Régions Exclues (Royaume-Uni, Scandinavie)"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Demandez un devis d'entreprise ou apprenez-en plus sur notre flotte de machines de location.",
+    "formName": "Nom Complet / Représentant",
+    "formCompany": "Nom de l'Entreprise",
+    "formEmail": "Adresse E-mail",
+    "formService": "Service d'Intérêt",
+    "formServicePlaceholder": "Veuillez sélectionner un service",
+    "formMessage": "Votre Message / Détails du Projet",
+    "formSubmit": "Envoyer la Demande",
+    "sending": "Envoi en cours...",
+    "success": "Votre message a été envoyé avec succès! Notre équipe d'ingénieurs vous contactera très rapidement.",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "address": "Siège Social"
+  },
+  "footer": {
+    "desc": "Votre partenaire de solutions B2B en Europe pour les projets de forage de roche, la location d'équipements et l'installation de centrales électriques durables.",
+    "rights": "Tous Droits Réservés. Vera Gold Enerji."
+  }
+}

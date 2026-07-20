@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useTranslation } from "@/context/LanguageContext";
@@ -101,9 +102,29 @@ export default function KiralamaPage() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-zinc-650 text-base md:text-lg leading-relaxed mb-12 max-w-4xl font-medium">
+          <p className="text-zinc-650 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-medium">
             {t("services.rental.long")}
           </p>
+
+          {/* Featured Machine Photo */}
+          <div className="relative h-72 md:h-96 w-full rounded-3xl overflow-hidden mb-12 border border-zinc-200 shadow-md">
+            <Image
+              src="/satismakineleri/kazıkçakma.jpeg"
+              alt="Rock Makineleri Kiralama Filosu"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white z-10">
+              <div>
+                <span className="text-xs font-mono font-bold text-[#10B981] uppercase tracking-wider bg-black/70 px-3 py-1 rounded-md backdrop-blur-xs">
+                  // KİRALIK MAKİNE FİLOSU & SAHA OPERASYONU
+                </span>
+                <h3 className="text-lg md:text-2xl font-extrabold mt-2">MZ460Y Hidrolik GES Kazık Çakma & Delgi Parkı</h3>
+              </div>
+            </div>
+          </div>
 
           {/* Stats Grid */}
           <div className="grid grid-cols-3 gap-6 py-8 px-6 rounded-3xl bg-zinc-50 border border-zinc-200 shadow-xs mb-16">

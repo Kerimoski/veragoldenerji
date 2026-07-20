@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { B2BServices } from "@/components/B2BServices";
@@ -45,40 +46,53 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {[
-              { key: "machineryConsulting", svc: "machinery", path: "/hizmetler/makine-danismanligi", descTr: "Makine seçimi, tork analizleri ve mekanik performans danışmanlığı.", descEn: "Machinery selection, torque analysis, and mechanical performance consulting." },
-              { key: "equipmentConsulting", svc: "equipment", path: "/hizmetler/ekipman-danismanligi", descTr: "Delici matkap uçları, sarf malzemeleri ve operasyonel verimlilik takipleri.", descEn: "Drill bits, consumables, and operational efficiency analysis." },
-              { key: "investmentConsulting", svc: "investment", path: "/hizmetler/yatirim-danismanligi", descTr: "B2B makine ve ekipman alımlarında bütçe ve fizibilite raporlamaları.", descEn: "Budget and feasibility reporting for B2B machinery acquisitions." },
-              { key: "projectConsulting", svc: "project", path: "/hizmetler/proje-danismanligi", descTr: "Büyük sondaj ve enerji santrali projelerinde mühendislik planlamaları.", descEn: "Engineering planning for large drilling and power plant projects." },
-              { key: "spareParts", svc: "spareparts", path: "/hizmetler/yedek-parca-servis", descTr: "Makineleriniz için orijinal yedek parça temini ve periyodik teknik servis.", descEn: "Original spare parts supply and periodic technical maintenance service." }
+              { key: "machineryConsulting", svc: "machinery", path: "/hizmetler/makine-danismanligi", image: "/veragaleri/Makine-6632-scaled.jpg", descTr: "Makine seçimi, tork analizleri ve mekanik performans danışmanlığı.", descEn: "Machinery selection, torque analysis, and mechanical performance consulting." },
+              { key: "equipmentConsulting", svc: "equipment", path: "/hizmetler/ekipman-danismanligi", image: "/veragaleri/Filtre-6579-scaled.jpg", descTr: "Delici matkap uçları, sarf malzemeleri ve operasyonel verimlilik takipleri.", descEn: "Drill bits, consumables, and operational efficiency analysis." },
+              { key: "investmentConsulting", svc: "investment", path: "/hizmetler/yatirim-danismanligi", image: "/veragaleri/Makine-6621-scaled.jpg", descTr: "B2B makine ve ekipman alımlarında bütçe ve fizibilite raporlamaları.", descEn: "Budget and feasibility reporting for B2B machinery acquisitions." },
+              { key: "projectConsulting", svc: "project", path: "/hizmetler/proje-danismanligi", image: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.27.56.jpeg", descTr: "Büyük sondaj ve enerji santrali projelerinde mühendislik planlamaları.", descEn: "Engineering planning for large drilling and power plant projects." },
+              { key: "spareParts", svc: "spareparts", path: "/hizmetler/yedek-parca-servis", image: "/veragaleri/Filtre-6645-scaled.jpg", descTr: "Makineleriniz için orijinal yedek parça temini ve periyodik teknik servis.", descEn: "Original spare parts supply and periodic technical maintenance service." }
             ].map((item) => (
               <div 
                 key={item.key} 
-                className="p-5 rounded-2xl border border-zinc-200 bg-white hover:border-zinc-300 transition-all flex flex-col justify-between shadow-2xs group"
+                className="rounded-2xl border border-zinc-200 bg-white hover:border-zinc-300 transition-all flex flex-col justify-between shadow-2xs group overflow-hidden"
               >
-                <div>
-                  <h4 className="text-sm font-extrabold text-zinc-950 group-hover:text-[#C59B27] transition-colors mb-2">
-                    {t(`services.${item.key}`)}
-                  </h4>
-                  <p className="text-zinc-400 text-[11px] font-medium leading-relaxed mb-4">
-                    {isTr ? item.descTr : item.descEn}
-                  </p>
+                {/* Photo Thumbnail */}
+                <div className="relative h-36 w-full bg-zinc-100 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={t(`services.${item.key}`)}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
-                <div className="flex flex-col gap-2 pt-3 border-t border-zinc-100 mt-2">
-                  <Link
-                    href={item.path}
-                    className="inline-flex items-center justify-between text-[11px] font-bold text-[#C59B27] hover:text-zinc-950 transition-colors"
-                  >
-                    <span>{isTr ? "Detayları İncele" : "View Details"}</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                  <Link
-                    href={`/iletisim?service=${item.svc}`}
-                    className="inline-flex items-center justify-between text-[10px] font-semibold text-zinc-400 hover:text-zinc-900 transition-colors"
-                  >
-                    <span>{isTr ? "Teknik Teklif Al" : "Get Technical Offer"}</span>
-                  </Link>
+
+                <div className="p-5 flex-grow flex flex-col justify-between">
+                  <div>
+                    <h4 className="text-sm font-extrabold text-zinc-950 group-hover:text-[#C59B27] transition-colors mb-2">
+                      {t(`services.${item.key}`)}
+                    </h4>
+                    <p className="text-zinc-500 text-[11px] font-medium leading-relaxed mb-4">
+                      {isTr ? item.descTr : item.descEn}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2 pt-3 border-t border-zinc-100 mt-2">
+                    <Link
+                      href={item.path}
+                      className="inline-flex items-center justify-between text-[11px] font-bold text-[#C59B27] hover:text-zinc-950 transition-colors"
+                    >
+                      <span>{isTr ? "Detayları İncele" : "View Details"}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                    <Link
+                      href={`/iletisim?service=${item.svc}`}
+                      className="inline-flex items-center justify-between text-[10px] font-semibold text-zinc-400 hover:text-zinc-900 transition-colors"
+                    >
+                      <span>{isTr ? "Teknik Teklif Al" : "Get Technical Offer"}</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

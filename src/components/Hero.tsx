@@ -137,11 +137,11 @@ export const Hero: React.FC = () => {
           <motion.div
             key={activeSlide.watermark}
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 0.04, scale: 1, y: 0 }}
+            animate={{ opacity: 0.07, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 1.1, y: -20 }}
             transition={{ duration: 0.6 }}
-            className="text-[12vw] font-black uppercase tracking-tighter text-zinc-950 whitespace-nowrap text-center select-none font-mono"
-            style={{ textShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+            className="text-4xl sm:text-7xl md:text-[11vw] font-black uppercase tracking-tighter text-zinc-950 whitespace-nowrap text-center select-none font-mono px-2 leading-none"
+            style={{ textShadow: "0 10px 30px rgba(0,0,0,0.15)" }}
           >
             {activeSlide.watermark}
           </motion.div>

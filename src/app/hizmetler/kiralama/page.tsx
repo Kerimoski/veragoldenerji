@@ -109,7 +109,7 @@ export default function KiralamaPage() {
           {/* Featured Machine Photo */}
           <div className="relative h-72 md:h-96 w-full rounded-3xl overflow-hidden mb-12 border border-zinc-200 shadow-md">
             <Image
-              src="/satismakineleri/kazıkçakma.jpeg"
+              src="/satismakineleri/mz460y.jpg"
               alt="Rock Makineleri Kiralama Filosu"
               fill
               className="object-cover"

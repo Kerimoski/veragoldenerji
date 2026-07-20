@@ -26,7 +26,7 @@ export const B2BServices: React.FC = () => {
       title: t("b2bServices.kiralama.title"),
       desc: t("b2bServices.kiralama.desc"),
       href: "/hizmetler/kiralama",
-      image: "/satismakineleri/kazıkçakma.jpeg",
+      image: "/satismakineleri/mz460y.jpg",
       tag: t("b2bServices.kiralama.tag"),
     },
     {

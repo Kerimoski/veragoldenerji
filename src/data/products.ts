@@ -84,7 +84,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     descDe: "Präzisions-Hydraulikrammen für den Bau von Solarparks und Fundamentpfählen.",
     descFr: "Sonneuses hydrauliques de haute précision conçues pour les centrales solaires et fondations.",
     iconName: "Hammer",
-    coverImage: "/satismakineleri/kazik-cakma.jpeg",
+    coverImage: "/satismakineleri/mz460y.jpg",
   },
   {
     slug: "fore-kazik-makinalari",
@@ -267,7 +267,7 @@ export const PRODUCTS: Product[] = [
     fullDescEn: "Drives steel posts with millimetric accuracy on solar farm terrains. Delivers over 400 piles/day.",
     fullDescDe: "Rammt Stahlprofile millimetergenau auf Solarpark-Flächen. Über 400 Pfähle/Tag.",
     fullDescFr: "Enfonce les pieux en acier avec une précision millimétrique. Plus de 400 pieux/jour.",
-    image: "/satismakineleri/kazik-cakma.jpeg",
+    image: "/satismakineleri/mz460y.jpg",
     specs: [
       { labelTr: "Çakım Uzunluğu", labelEn: "Max Pile Length", labelDe: "Ramm-Länge", labelFr: "Longueur Max", value: "4,600 mm" },
       { labelTr: "Darbe Gücü", labelEn: "Impact Energy", labelDe: "Schlagenergie", labelFr: "Énergie d'Impact", value: "1,200 J" },

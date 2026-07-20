@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
       subtitle: isTr
         ? "GES arazilerinde C ve U profilli çelik çakım kazıklarını milimetrik açı doğruluğu ile çakan yüksek hızlı hidrolik sistem."
         : "High-frequency hydraulic piler driving C & U steel posts with millimetric precision on solar terrains.",
-      image: "/satismakineleri/kazıkçakma.jpeg",
+      image: "/satismakineleri/mz460y.jpg",
       specs: [
         { label: "Çakım", val: "4,600 mm" },
         { label: "Darbe", val: "1,200 J" },
@@ -205,7 +205,7 @@ export const Hero: React.FC = () => {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
                       { title: t("hero.rock"), image: "/satismakineleri/Paletli-Rock-Makina.jpg", slideIndex: 1 },
-                      { title: t("hero.solar"), image: "/satismakineleri/kazıkçakma.jpeg", slideIndex: 2 },
+                      { title: t("hero.solar"), image: "/satismakineleri/mz460y.jpg", slideIndex: 2 },
                       { title: t("hero.water"), image: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg", slideIndex: 3 },
                       { title: t("hero.compressor"), image: "/satismakineleri/csh1120a-hava-kompresoru.png", slideIndex: 4 },
                     ].map((m, idx) => (

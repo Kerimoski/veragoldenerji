@@ -84,7 +84,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     descDe: "Präzisions-Hydraulikrammen für den Bau von Solarparks und Fundamentpfählen.",
     descFr: "Sonneuses hydrauliques de haute précision conçues pour les centrales solaires et fondations.",
     iconName: "Hammer",
-    coverImage: "/satismakineleri/kazıkçakma.jpeg",
+    coverImage: "/satismakineleri/kazik-cakma.jpeg",
   },
   {
     slug: "fore-kazik-makinalari",
@@ -97,7 +97,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     descDe: "Drehbohrgeräte mit hohem Drehmoment für Spezialtiefbau und Großbohrpfähle.",
     descFr: "Foreuses rotatives à grand couple pour les travaux de fondations profondes et pieux forés.",
     iconName: "Layers",
-    coverImage: "/satismakineleri/forekazıkçakmamakinesi.jpeg",
+    coverImage: "/satismakineleri/fore-kazik-cakma-makinesi.jpeg",
   },
   {
     slug: "jet-grout-ankraj-makinalari",
@@ -267,7 +267,7 @@ export const PRODUCTS: Product[] = [
     fullDescEn: "Drives steel posts with millimetric accuracy on solar farm terrains. Delivers over 400 piles/day.",
     fullDescDe: "Rammt Stahlprofile millimetergenau auf Solarpark-Flächen. Über 400 Pfähle/Tag.",
     fullDescFr: "Enfonce les pieux en acier avec une précision millimétrique. Plus de 400 pieux/jour.",
-    image: "/satismakineleri/kazıkçakma.jpeg",
+    image: "/satismakineleri/kazik-cakma.jpeg",
     specs: [
       { labelTr: "Çakım Uzunluğu", labelEn: "Max Pile Length", labelDe: "Ramm-Länge", labelFr: "Longueur Max", value: "4,600 mm" },
       { labelTr: "Darbe Gücü", labelEn: "Impact Energy", labelDe: "Schlagenergie", labelFr: "Énergie d'Impact", value: "1,200 J" },
@@ -299,7 +299,7 @@ export const PRODUCTS: Product[] = [
     fullDescEn: "Features high torque output rotary drive and telescopic Kelly bar system.",
     fullDescDe: "Ausgestattet mit hohem Drehmoment und teleskopierbarer Kellystange.",
     fullDescFr: "Dotée d'un réducteur rotatif puissant et d'une barre Kelly télescopique.",
-    image: "/satismakineleri/forekazıkçakmamakinesi.jpeg",
+    image: "/satismakineleri/fore-kazik-cakma-makinesi.jpeg",
     specs: [
       { labelTr: "Maks. Çap", labelEn: "Max Diameter", labelDe: "Max. Durchmesser", labelFr: "Diamètre Max", value: "1,800 mm" },
       { labelTr: "Maks. Derinlik", labelEn: "Max Depth", labelDe: "Max. Tiefe", labelFr: "Profondeur Max", value: "60 m" },

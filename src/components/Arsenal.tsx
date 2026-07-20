@@ -7,41 +7,31 @@ import { Shield, Settings, Cpu } from "lucide-react";
 
 export const Arsenal: React.FC = () => {
   const { t } = useTranslation();
-  const isTr = t("nav.home") === "Ana Sayfa";
 
   const items = [
     {
       icon: <Settings className="w-5 h-5 text-[#C59B27]" />,
-      titleTr: "DTH Çekiçler (Aşağı Delgi Çekiçleri)",
-      titleEn: "DTH Hammers (Down-the-Hole)",
-      descTr: "Yüksek darbe gücü, minimum aşınma. Derin ve sert kaya formasyonlarında yüksek penetrasyon oranı sunan özel alaşım çelik yapısı.",
-      descEn: "High impact power, minimum wear. Special alloy steel structure providing high penetration rate in deep and hard rock formations.",
-      specTr: "Çaplar: 3\" - 12\" | Mission, QL, DHD Uyumluluğu",
-      specEn: "Diameters: 3\" - 12\" | Mission, QL, DHD Compatibility",
+      title: t("arsenal.dth.title"),
+      desc: t("arsenal.dth.desc"),
+      spec: t("arsenal.dth.spec"),
+      tag: t("arsenal.dth.tag"),
       image: "/veragaleri/Parca-6705-scaled.jpg",
-      tag: "HIGH IMPACT DTH",
     },
     {
       icon: <Cpu className="w-5 h-5 text-[#C59B27]" />,
-      titleTr: "Kaya Matkapları & Bit Çeşitleri",
-      titleEn: "Rock Drill Bits & Accessories",
-      descTr: "En sert granit ve bazalt zeminlere meydan okuyan, tungsten karbür uçlu profesyonel matkaplar. Yüksek aşınma direnci.",
-      descEn: "Professional tungsten carbide bits defying the hardest granite and basalt terrains. Maximum abrasion resistance.",
-      specTr: "Uç Tipi: Balistik, Küresel | Karbür Kalitesi: A++",
-      specEn: "Bit Type: Ballistic, Spherical | Carbide Grade: A++",
+      title: t("arsenal.bits.title"),
+      desc: t("arsenal.bits.desc"),
+      spec: t("arsenal.bits.spec"),
+      tag: t("arsenal.bits.tag"),
       image: "/satismakineleri/Paletli-Rock-Makina.jpg",
-      tag: "TUNGSTEN CARBIDE",
     },
     {
       icon: <Shield className="w-5 h-5 text-[#C59B27]" />,
-      titleTr: "Auger (Burgu) ve Delgi Ekipmanları",
-      titleEn: "Auger & Boring Tools",
-      descTr: "Farklı çap ve boylarda, her türlü zemin yapısına uygun ağır hizmet burguları. Aşınma plakalı ve sert dolgulu helezon yapısı.",
-      descEn: "Heavy-duty augers suited for all soil formations in various diameters and sizes. Hard-faced flighting with wear plates.",
-      specTr: "Çaplar: 300mm - 2000mm | Bağlantı: Altıgen, Kare",
-      specEn: "Diameters: 300mm - 2000mm | Joint: Hexagonal, Square",
+      title: t("arsenal.auger.title"),
+      desc: t("arsenal.auger.desc"),
+      spec: t("arsenal.auger.spec"),
+      tag: t("arsenal.auger.tag"),
       image: "/satismakineleri/sondajmakinesi.jpeg",
-      tag: "HEAVY DUTY AUGER",
     }
   ];
 
@@ -55,15 +45,13 @@ export const Arsenal: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/30 bg-[#C59B27]/5 text-xs text-[#C59B27] font-semibold mb-4 tracking-widest uppercase">
-            {isTr ? "Ekipman Vitrini" : "Equipment Showcase"}
+            {t("arsenal.badge")}
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-950 mb-4">
-            {isTr ? "Zırhlı Cephanelik" : "The Armored Arsenal"}
+            {t("arsenal.title")}
           </h2>
           <p className="text-zinc-500 text-sm md:text-base max-w-xl mx-auto font-semibold leading-relaxed">
-            {isTr 
-              ? "Operasyonlarımızda kullandığımız ve B2B tedarik ettiğimiz stüdyo kalitesindeki ağır hizmet ekipman parkurumuz."
-              : "Our premium heavy-duty operational equipment park and B2B supplied consumables."}
+            {t("arsenal.subtitle")}
           </p>
         </div>
 
@@ -78,7 +66,7 @@ export const Arsenal: React.FC = () => {
               <div className="relative h-48 w-full bg-zinc-100 overflow-hidden">
                 <Image
                   src={item.image}
-                  alt={isTr ? item.titleTr : item.titleEn}
+                  alt={item.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -97,16 +85,16 @@ export const Arsenal: React.FC = () => {
                 <div>
                   {/* Info */}
                   <h3 className="text-lg font-bold text-zinc-950 mb-3 group-hover:text-[#C59B27] transition-colors">
-                    {isTr ? item.titleTr : item.titleEn}
+                    {item.title}
                   </h3>
                   <p className="text-zinc-500 text-xs leading-relaxed font-semibold mb-6">
-                    {isTr ? item.descTr : item.descEn}
+                    {item.desc}
                   </p>
                 </div>
 
                 {/* Technical Spec Tag */}
                 <div className="pt-4 border-t border-zinc-150 text-[10px] text-[#C59B27] font-extrabold tracking-wider uppercase">
-                  {isTr ? item.specTr : item.specEn}
+                  {item.spec}
                 </div>
               </div>
             </div>

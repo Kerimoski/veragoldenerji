@@ -12,8 +12,6 @@ import { Building2, Briefcase, Cpu, ArrowUpRight } from "lucide-react";
 export default function ServicesPage() {
   const { t } = useTranslation();
 
-  const isTr = t("nav.home") === "Ana Sayfa";
-
   return (
     <>
       <Header />
@@ -24,9 +22,7 @@ export default function ServicesPage() {
             {t("nav.services")}
           </h1>
           <p className="text-zinc-500 text-base md:text-lg max-w-3xl mx-auto font-medium">
-            {isTr
-              ? "Vera Gold Enerji olarak, ağır sanayi kuruluşları ve altyapı yüklenicileri için anahtar teslim, yüksek mühendislik içeren hizmetler sunuyoruz."
-              : "As Vera Gold Enerji, we offer turnkey, high-engineering services for heavy industrial enterprises and infrastructure contractors."}
+            {t("services.subtitle")}
           </p>
         </section>
 
@@ -37,22 +33,20 @@ export default function ServicesPage() {
         <section className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-3xl font-extrabold text-zinc-950 mb-3">
-              {isTr ? "Danışmanlık & Destek Hizmetleri" : "Consultancy & Support Services"}
+              {t("consulting.title")}
             </h3>
             <p className="text-zinc-500 text-sm font-semibold max-w-xl mx-auto">
-              {isTr 
-                ? "Sondaj makineleri, delme ekipmanları ve kurumsal yatırımlarınız için sunduğumuz profesyonel mühendislik destekleri."
-                : "Professional engineering supports we provide for drilling machinery, excavation gear, and corporate investments."}
+              {t("consulting.subtitle")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {[
-              { key: "machineryConsulting", svc: "machinery", path: "/hizmetler/makine-danismanligi", image: "/veragaleri/Makine-6632-scaled.jpg", descTr: "Makine seçimi, tork analizleri ve mekanik performans danışmanlığı.", descEn: "Machinery selection, torque analysis, and mechanical performance consulting." },
-              { key: "equipmentConsulting", svc: "equipment", path: "/hizmetler/ekipman-danismanligi", image: "/veragaleri/Filtre-6579-scaled.jpg", descTr: "Delici matkap uçları, sarf malzemeleri ve operasyonel verimlilik takipleri.", descEn: "Drill bits, consumables, and operational efficiency analysis." },
-              { key: "investmentConsulting", svc: "investment", path: "/hizmetler/yatirim-danismanligi", image: "/veragaleri/Makine-6621-scaled.jpg", descTr: "B2B makine ve ekipman alımlarında bütçe ve fizibilite raporlamaları.", descEn: "Budget and feasibility reporting for B2B machinery acquisitions." },
-              { key: "projectConsulting", svc: "project", path: "/hizmetler/proje-danismanligi", image: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.27.56.jpeg", descTr: "Büyük sondaj ve enerji santrali projelerinde mühendislik planlamaları.", descEn: "Engineering planning for large drilling and power plant projects." },
-              { key: "spareParts", svc: "spareparts", path: "/hizmetler/yedek-parca-servis", image: "/veragaleri/Filtre-6645-scaled.jpg", descTr: "Makineleriniz için orijinal yedek parça temini ve periyodik teknik servis.", descEn: "Original spare parts supply and periodic technical maintenance service." }
+              { key: "machineryConsulting", svc: "machinery", path: "/hizmetler/makine-danismanligi", image: "/veragaleri/Makine-6632-scaled.jpg", descKey: "consulting.machineryDesc" },
+              { key: "equipmentConsulting", svc: "equipment", path: "/hizmetler/ekipman-danismanligi", image: "/veragaleri/Filtre-6579-scaled.jpg", descKey: "consulting.equipmentDesc" },
+              { key: "investmentConsulting", svc: "investment", path: "/hizmetler/yatirim-danismanligi", image: "/veragaleri/Makine-6621-scaled.jpg", descKey: "consulting.investmentDesc" },
+              { key: "projectConsulting", svc: "project", path: "/hizmetler/proje-danismanligi", image: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.27.56.jpeg", descKey: "consulting.projectDesc" },
+              { key: "spareParts", svc: "spareparts", path: "/hizmetler/yedek-parca-servis", image: "/veragaleri/Filtre-6645-scaled.jpg", descKey: "consulting.sparePartsDesc" }
             ].map((item) => (
               <div 
                 key={item.key} 
@@ -75,7 +69,7 @@ export default function ServicesPage() {
                       {t(`services.${item.key}`)}
                     </h4>
                     <p className="text-zinc-500 text-[11px] font-medium leading-relaxed mb-4">
-                      {isTr ? item.descTr : item.descEn}
+                      {t(item.descKey)}
                     </p>
                   </div>
                   <div className="flex flex-col gap-2 pt-3 border-t border-zinc-100 mt-2">
@@ -83,14 +77,14 @@ export default function ServicesPage() {
                       href={item.path}
                       className="inline-flex items-center justify-between text-[11px] font-bold text-[#C59B27] hover:text-zinc-950 transition-colors"
                     >
-                      <span>{isTr ? "Detayları İncele" : "View Details"}</span>
+                      <span>{t("consulting.viewDetails")}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                     <Link
                       href={`/iletisim?service=${item.svc}`}
                       className="inline-flex items-center justify-between text-[10px] font-semibold text-zinc-400 hover:text-zinc-900 transition-colors"
                     >
-                      <span>{isTr ? "Teknik Teklif Al" : "Get Technical Offer"}</span>
+                      <span>{t("consulting.getOffer")}</span>
                     </Link>
                   </div>
                 </div>
@@ -99,11 +93,11 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* B2B Partnership details in Shadcn style */}
+        {/* B2B Partnership details */}
         <section className="max-w-5xl mx-auto px-6 mt-12">
           <div className="border border-zinc-200 bg-zinc-50/50 rounded-3xl p-8 md:p-12">
             <h3 className="text-2xl font-bold text-zinc-950 mb-8 text-center">
-              {isTr ? "Neden Vera Gold Enerji?" : "Why Choose Vera Gold Enerji?"}
+              {t("nav.home") === "Ana Sayfa" ? "Neden Vera Gold Enerji?" : t("nav.home") === "Startseite" ? "Warum Vera Gold Enerji?" : t("nav.home") === "Accueil" ? "Pourquoi Vera Gold Enerji ?" : "Why Choose Vera Gold Enerji?"}
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -113,12 +107,10 @@ export default function ServicesPage() {
                   <Building2 className="w-5 h-5" />
                 </div>
                 <h4 className="text-base font-bold text-zinc-950">
-                  {isTr ? "B2B Endüstriyel Odak" : "B2B Industrial Focus"}
+                  {t("nav.home") === "Ana Sayfa" ? "B2B Endüstriyel Odak" : t("nav.home") === "Startseite" ? "B2B Industrie-Fokus" : t("nav.home") === "Accueil" ? "Focus B2B Industriel" : "B2B Industrial Focus"}
                 </h4>
                 <p className="text-zinc-500 text-xs font-semibold leading-relaxed">
-                  {isTr
-                    ? "Sondaj yapan bireysel kesime değil, fabrikalara, madenlere ve büyük ölçekli tesis üreticilerine doğrudan tedarikçi olarak hizmet veriyoruz."
-                    : "We serve factories, mines, and large-scale plant builders directly as a premium supplier, not individual drillers."}
+                  {t("footer.desc")}
                 </p>
               </div>
 
@@ -128,12 +120,10 @@ export default function ServicesPage() {
                   <Cpu className="w-5 h-5" />
                 </div>
                 <h4 className="text-base font-bold text-zinc-950">
-                  {isTr ? "En Son Teknoloji" : "Cutting-edge Technology"}
+                  {t("nav.home") === "Ana Sayfa" ? "En Son Teknoloji" : t("nav.home") === "Startseite" ? "Neueste Technologie" : t("nav.home") === "Accueil" ? "Dernière Technologie" : "Cutting-edge Technology"}
                 </h4>
                 <p className="text-zinc-500 text-xs font-semibold leading-relaxed">
-                  {isTr
-                    ? "Geniş makine parkımızdaki tüm ekipmanlar, iş güvenliği ve operasyonel verimlilik standartlarını en üst düzeyde karşılar."
-                    : "All equipment in our extensive machinery fleet meets the highest standards for safety and operational efficiency."}
+                  {t("hero.subtitle")}
                 </p>
               </div>
 
@@ -143,12 +133,10 @@ export default function ServicesPage() {
                   <Briefcase className="w-5 h-5" />
                 </div>
                 <h4 className="text-base font-bold text-zinc-950">
-                  {isTr ? "Esnek Çözümler" : "Flexible Solutions"}
+                  {t("nav.home") === "Ana Sayfa" ? "Esnek Çözümler" : t("nav.home") === "Startseite" ? "Flexible Lösungen" : t("nav.home") === "Accueil" ? "Solutions Flexibles" : "Flexible Solutions"}
                 </h4>
                 <p className="text-zinc-500 text-xs font-semibold leading-relaxed">
-                  {isTr
-                    ? "Uzun vadeli iş ortaklıkları, esnek kiralama modelleri ve anahtar teslim kurulum çözümleriyle her projeye özel yaklaşıyoruz."
-                    : "We approach each project individually with long-term B2B relationships, flexible leasing options, and turnkey engineering."}
+                  {t("contact.subtitle")}
                 </p>
               </div>
             </div>

@@ -9,41 +9,34 @@ import { ArrowRight, Drill, Hammer, Layers } from "lucide-react";
 
 export const B2BServices: React.FC = () => {
   const { t } = useTranslation();
-  const isTr = t("nav.home") === "Ana Sayfa";
 
   const cards = [
     {
       id: "delgi",
       icon: <Hammer className="w-5 h-5 text-[#C59B27]" />,
-      titleTr: "Ağır Hizmet Kaya Delgi & Çakım İşleri (Kompresörlü)",
-      titleEn: "Heavy-Duty Rock Drilling & Piling (Compressor)",
-      descTr: "Zorlu kaya formasyonlarında, yüksek hava basınçlı DTH çekiç sistemlerimizle hızlı ve milimetrik GES sahası delgi ve kazık çakım işleri.",
-      descEn: "Fast and millimetric solar site drilling and pile driving works in tough rock formations using high-pressure DTH hammer systems.",
+      title: t("b2bServices.delgi.title"),
+      desc: t("b2bServices.delgi.desc"),
       href: "/hizmetler/delgi",
       image: "/satismakineleri/Paletli-Rock-Makina.jpg",
-      tag: "DTH & ROCK DRILLING",
+      tag: t("b2bServices.delgi.tag"),
     },
     {
       id: "kiralama",
       icon: <Drill className="w-5 h-5 text-[#C59B27]" />,
-      titleTr: "Havasız (Kompresörsüz) Rotari & Burgu Delgileri",
-      titleEn: "Rotary & Auger Drilling (Compressorless)",
-      descTr: "Kompresör kullanımının uygun olmadığı zeminlerde, yüksek torklu rotari sistemler ve özel burgularımız (Auger) ile çevre dostu, sessiz ve efektif delgi çözümleri.",
-      descEn: "Eco-friendly, quiet, and effective drilling solutions using high-torque rotary systems and custom augers on sites where compressor usage is restricted.",
+      title: t("b2bServices.kiralama.title"),
+      desc: t("b2bServices.kiralama.desc"),
       href: "/hizmetler/kiralama",
       image: "/satismakineleri/kazıkçakma.jpeg",
-      tag: "SOLAR PILING & AUGER",
+      tag: t("b2bServices.kiralama.tag"),
     },
     {
       id: "enerji",
       icon: <Layers className="w-5 h-5 text-[#C59B27]" />,
-      titleTr: "Endüstriyel Sondaj & Su Sondajı",
-      titleEn: "Industrial Drilling & Water Wells",
-      descTr: "Derin zemin etütleri, ankraj, mikro kazık ve yüksek verimli endüstriyel su sondajı operasyonları.",
-      descEn: "Deep soil geotechnical diagnostics, anchoring, micro-piling, and high-capacity industrial water well drilling operations.",
+      title: t("b2bServices.enerji.title"),
+      desc: t("b2bServices.enerji.desc"),
       href: "/hizmetler/enerji",
       image: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg",
-      tag: "DEEP WELL & FOUNDATION",
+      tag: t("b2bServices.enerji.tag"),
     }
   ];
 
@@ -56,15 +49,13 @@ export const B2BServices: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/30 bg-[#C59B27]/5 text-xs text-[#C59B27] font-semibold mb-4 tracking-widest uppercase">
-            {isTr ? "Operasyonel Güç" : "Operational Strength"}
+            {t("b2bServices.badge")}
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-950 mb-4">
-            {isTr ? "Biz Ne Yapıyoruz?" : "What We Excel At"}
+            {t("b2bServices.title")}
           </h2>
           <p className="text-zinc-500 text-sm md:text-base max-w-xl mx-auto font-semibold">
-            {isTr 
-              ? "Saha mühendisliğinde sınırları zorlayan yüksek torklu ağır zemin ve delgi operasyonlarımız."
-              : "High-torque heavy excavation and drilling operations pushing boundaries in site engineering."}
+            {t("b2bServices.subtitle")}
           </p>
         </div>
 
@@ -77,7 +68,7 @@ export const B2BServices: React.FC = () => {
                 <div className="relative h-48 w-full bg-zinc-100 overflow-hidden">
                   <Image
                     src={card.image}
-                    alt={isTr ? card.titleTr : card.titleEn}
+                    alt={card.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -96,10 +87,10 @@ export const B2BServices: React.FC = () => {
                   <div>
                     {/* Title & Desc */}
                     <h3 className="text-lg font-bold text-zinc-950 mb-3 group-hover:text-[#C59B27] transition-colors leading-snug">
-                      {isTr ? card.titleTr : card.titleEn}
+                      {card.title}
                     </h3>
                     <p className="text-zinc-500 text-xs leading-relaxed font-semibold mb-6">
-                      {isTr ? card.descTr : card.descEn}
+                      {card.desc}
                     </p>
                   </div>
 
@@ -109,7 +100,7 @@ export const B2BServices: React.FC = () => {
                       href={card.href}
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#C59B27] hover:text-zinc-950 transition-colors group/link"
                     >
-                      <span>{isTr ? "Hizmet Detaylarını Gör" : "View Service Details"}</span>
+                      <span>{t("b2bServices.viewDetails")}</span>
                       <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>

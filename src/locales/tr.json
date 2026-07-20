@@ -13,7 +13,68 @@
     "title": "En Sert Zeminlerde, Sıfır Tolerans ile Güçlü Altyapı.",
     "subtitle": "Kompresörlü ve kompresörsüz kaya delimi, GES çakım çözümleri ve yüksek performanslı sondaj ekipmanları.",
     "ctaProjects": "Projelerimizi İnceleyin",
-    "ctaQuote": "Teknik Teklif Alın"
+    "ctaQuote": "Teknik Teklif Alın",
+    "exploreFleet": "Makine Parkımızı İnceleyin",
+    "fleetTag": "Saha Makinelerimiz & Tedarik Filomuz",
+    "rock": "Paletli Rock Makinesi",
+    "water": "Derin Su Sondaj Kulesi",
+    "solar": "MZ460Y GES Kazık Çakma",
+    "compressor": "Mobil Dizel Kompresör"
+  },
+  "b2bServices": {
+    "badge": "Operasyonel Güç",
+    "title": "Biz Ne Yapıyoruz?",
+    "subtitle": "Saha mühendisliğinde sınırları zorlayan yüksek torklu ağır zemin ve delgi operasyonlarımız.",
+    "viewDetails": "Hizmet Detaylarını Gör",
+    "delgi": {
+      "title": "Ağır Hizmet Kaya Delgi & Çakım İşleri (Kompresörlü)",
+      "desc": "Zorlu kaya formasyonlarında, yüksek hava basınçlı DTH çekiç sistemlerimizle hızlı ve milimetrik GES sahası delgi ve kazık çakım işleri.",
+      "tag": "DTH & KAYA DELGİ"
+    },
+    "kiralama": {
+      "title": "Havasız (Kompresörsüz) Rotari & Burgu Delgileri",
+      "desc": "Kompresör kullanımının uygun olmadığı zeminlerde, yüksek torklu rotari sistemler ve özel burgularımız (Auger) ile çevre dostu, sessiz ve efektif delgi çözümleri.",
+      "tag": "GES ÇAKIM & BURGU"
+    },
+    "enerji": {
+      "title": "Endüstriyel Sondaj & Su Sondajı",
+      "desc": "Derin zemin etütleri, ankraj, mikro kazık ve yüksek verimli endüstriyel su sondajı operasyonları.",
+      "tag": "DERİN KUYU & TEMEL"
+    }
+  },
+  "arsenal": {
+    "badge": "Ekipman Vitrini",
+    "title": "Zırhlı Cephanelik",
+    "subtitle": "Operasyonlarımızda kullandığımız ve B2B tedarik ettiğimiz stüdyo kalitesindeki ağır hizmet ekipman parkurumuz.",
+    "dth": {
+      "title": "DTH Çekiçler (Aşağı Delgi Çekiçleri)",
+      "desc": "Yüksek darbe gücü, minimum aşınma. Derin ve sert kaya formasyonlarında yüksek penetrasyon oranı sunan özel alaşım çelik yapısı.",
+      "spec": "Çaplar: 3\" - 12\" | Mission, QL, DHD Uyumluluğu",
+      "tag": "YÜKSEK DARBELİ DTH"
+    },
+    "bits": {
+      "title": "Kaya Matkapları & Bit Çeşitleri",
+      "desc": "En sert granit ve bazalt zeminlere meydan okuyan, tungsten karbür uçlu profesyonel matkaplar. Yüksek aşınma direnci.",
+      "spec": "Uç Tipi: Balistik, Küresel | Karbür Kalitesi: A++",
+      "tag": "TUNGSTEN KARBÜR"
+    },
+    "auger": {
+      "title": "Auger (Burgu) ve Delgi Ekipmanları",
+      "desc": "Farklı çap ve boylarda, her türlü zemin yapısına uygun ağır hizmet burguları. Aşınma plakalı ve sert dolgulu helezon yapısı.",
+      "spec": "Çaplar: 300mm - 2000mm | Bağlantı: Altıgen, Kare",
+      "tag": "AĞIR HİZMET BURGU"
+    }
+  },
+  "consulting": {
+    "title": "Danışmanlık & Destek Hizmetleri",
+    "subtitle": "Sondaj makineleri, delme ekipmanları ve kurumsal yatırımlarınız için sunduğumuz profesyonel mühendislik destekleri.",
+    "viewDetails": "Detayları İncele",
+    "getOffer": "Teknik Teklif Al",
+    "machineryDesc": "Makine seçimi, tork analizleri ve mekanik performans danışmanlığı.",
+    "equipmentDesc": "Delici matkap uçları, sarf malzemeleri ve operasyonel verimlilik takipleri.",
+    "investmentDesc": "B2B makine ve ekipman alımlarında bütçe ve fizibilite raporlamaları.",
+    "projectDesc": "Büyük sondaj ve enerji santrali projelerinde mühendislik planlamaları.",
+    "sparePartsDesc": "Makineleriniz için orijinal yedek parça temini ve periyodik teknik servis."
   },
   "services": {
     "title": "Uzmanlık Alanlarımız",
@@ -21,19 +82,19 @@
     "drill": {
       "title": "Delgi İşleri",
       "short": "Kaya delme, ankraj, zemin etüdü ve tünel açma mühendisliğinde yüksek hassasiyetli çözümler.",
-      "long": "Vera Gold Enerji, zorlu arazi koşullarında kaya delme, zemin güçlendirme, şev stabilizasyonu, ankraj ve tünel açma projelerini en son teknoloji delgi makineleri ve uzman mühendis kadrosuyla gerçekleştirmektedir. B2B iş ortaklarımızın büyük ölçekli altyapı projelerinde güvenilir tedarikçisi ve uygulayıcısı konumundayız.",
+      "long": "Vera Gold Enerji, zorlu arazi koşullarında kaya delme, zemin güçlendirme, şev stabilizasyonu, ankraj ve tünel açma projelerini en son teknoloji delgi makineleri ve uzman mühendis kadrosuyla gerçekleştirmektedir.",
       "features": ["Mikrokazık ve Ankraj", "Zemin İyileştirme", "Tünel ve Galeri Delgisi", "Patlatma Deliği Delimi"]
     },
     "rental": {
       "title": "Rock Makineleri Kiralama",
       "short": "Ağır hizmet sondaj ve kaya delgi ekipmanlarından oluşan geniş, bakımlı ve yüksek performanslı kiralama filosu.",
-      "long": "Projeleriniz için yüksek sermaye yatırımı yapmak yerine, dünya standartlarındaki kaya delgi ve sondaj makinelerimizi esnek kiralama modelleriyle edinebilirsiniz. Filomuzdaki tüm makineler düzenli bakımdan geçirilen, en son güvenlik donanımlarına sahip, yüksek verimli ekipmanlardan oluşmaktadır.",
+      "long": "Projeleriniz için yüksek sermaye yatırımı yapmak yerine, dünya standartlarındaki kaya delgi ve sondaj makinelerimizi esnek kiralama modelleriyle edinebilirsiniz.",
       "features": ["Esnek Kiralama Planları", "7/24 Teknik Destek & Bakım", "Operatörlü Kiralama Seçeneği", "Geniş Ekipman Yelpazesi"]
     },
     "energy": {
       "title": "Enerji Santrali Kurulumu",
       "short": "Endüstriyel rüzgar, güneş ve yenilenebilir enerji santrallerinin anahtar teslim kurulumu ve mühendislik hizmetleri.",
-      "long": "Fabrikalar, endüstriyel tesisler ve yatırımcılar için temiz enerji santrallerinin fizibilite çalışmasından başlayarak anahtar teslim kurulumuna kadar tüm aşamaları üstleniyoruz. Güneş enerjisi (GES), rüzgar enerjisi (RES) ve depolamalı sistemler konusunda tecrübeli ekibimizle sürdürülebilir bir gelecek kuruyoruz.",
+      "long": "Fabrikalar, endüstriyel tesisler ve yatırımcılar için temiz enerji santrallerinin fizibilite çalışmasından başlayarak anahtar teslim kurulumuna kadar tüm aşamaları üstleniyoruz.",
       "features": ["Anahtar Teslim Kurulum", "Yenilenebilir Enerji Mühendisliği", "GES & RES Entegrasyonu", "Uzun Vadeli Bakım Desteği"]
     },
     "learnMore": "Detayları Gör",
@@ -43,6 +104,28 @@
     "investmentConsulting": "Yatırım Danışmanlığı",
     "projectConsulting": "Proje Danışmanlığı",
     "spareParts": "Yedek Parça & Servis"
+  },
+  "productsPage": {
+    "badge": "Vera Gold Enerji - Ağır Makine Filosu",
+    "subtitle": "Sondaj, rock delgi, kazık çakma, fore kazık, jet grout ve yüksek basınçlı hava kompresörlerinde B2B endüstriyel makine tedarik ve satış parkuru.",
+    "all": "Tüm Makinalar",
+    "allProducts": "Tüm Ürünler",
+    "inStock": "Stokta / Satışta",
+    "quickView": "İncele",
+    "details": "Detaylar",
+    "getQuote": "Teklif Al",
+    "models": "Model",
+    "items": "Ürün",
+    "categoryFleet": "Makine Kategorileri",
+    "categoryShowcase": "Kategori Vitrini",
+    "allCategories": "Tüm Kategorileri Gör",
+    "categoryQuote": "Fiyat Teklifi Al",
+    "warrantyTitle": "B2B Teknik Servis & Garanti Desteği",
+    "warrantySub": "Özel Makine İthalatı & Şantiye Teslimi",
+    "warrantyDesc": "Aradığınız spesifik tonaj veya tork değerlerindeki makinaları doğrudan fabrikasından ithal ediyor, şantiyenizde çalışır vaziyette teslim ediyoruz.",
+    "contactEngineers": "Mühendislerimizle İletişime Geçin",
+    "techSpecs": "Teknik Özellikler",
+    "requestOffer": "Teknik Teklif İste"
   },
   "map": {
     "title": "Operasyon Coğrafyamız",

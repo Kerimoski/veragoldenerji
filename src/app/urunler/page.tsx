@@ -6,16 +6,50 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useTranslation } from "@/context/LanguageContext";
-import { PRODUCT_CATEGORIES, PRODUCTS, Product } from "@/data/products";
-import { ArrowUpRight, Check, Drill, Sparkles, Filter, ShieldCheck, ChevronRight, Eye } from "lucide-react";
+import { PRODUCT_CATEGORIES, PRODUCTS, Product, ProductCategory } from "@/data/products";
+import { ArrowUpRight, Check, Sparkles, ShieldCheck, Eye } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProductsPage() {
-  const { t } = useTranslation();
-  const isTr = t("nav.home") === "Ana Sayfa";
+  const { t, language } = useTranslation();
 
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedProductModal, setSelectedProductModal] = useState<Product | null>(null);
+
+  const getCategoryName = (c: ProductCategory) => {
+    if (language === "en") return c.nameEn;
+    if (language === "de") return c.nameDe;
+    if (language === "fr") return c.nameFr;
+    return c.nameTr;
+  };
+
+  const getProductName = (p: Product) => {
+    if (language === "en") return p.nameEn;
+    if (language === "de") return p.nameDe;
+    if (language === "fr") return p.nameFr;
+    return p.nameTr;
+  };
+
+  const getProductShortDesc = (p: Product) => {
+    if (language === "en") return p.shortDescEn;
+    if (language === "de") return p.shortDescDe;
+    if (language === "fr") return p.shortDescFr;
+    return p.shortDescTr;
+  };
+
+  const getProductFullDesc = (p: Product) => {
+    if (language === "en") return p.fullDescEn;
+    if (language === "de") return p.fullDescDe;
+    if (language === "fr") return p.fullDescFr;
+    return p.fullDescTr;
+  };
+
+  const getSpecLabel = (spec: any) => {
+    if (language === "en") return spec.labelEn;
+    if (language === "de") return spec.labelDe;
+    if (language === "fr") return spec.labelFr;
+    return spec.labelTr;
+  };
 
   const filteredProducts = selectedCategory === "all"
     ? PRODUCTS
@@ -34,15 +68,13 @@ export default function ProductsPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-250 bg-white/80 backdrop-blur-md text-xs text-[#C59B27] font-semibold mb-6 shadow-xs">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>{isTr ? "Vera Gold Enerji - Ağır Makine Filosu" : "Heavy Machinery & Equipment Sales"}</span>
+              <span>{t("productsPage.badge")}</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-950 tracking-tight mb-4">
               {t("nav.products")}
             </h1>
             <p className="text-zinc-500 text-base md:text-lg max-w-3xl mx-auto font-medium leading-relaxed">
-              {isTr
-                ? "Sondaj, rock delgi, kazık çakma, fore kazık, jet grout ve yüksek basınçlı hava kompresörlerinde B2B endüstriyel makine tedarik ve satış parkuru."
-                : "Industrial B2B sales fleet for drilling rigs, rock drills, solar piling rigs, bored piling, jet grouting, and heavy diesel compressors."}
+              {t("productsPage.subtitle")}
             </p>
           </div>
 
@@ -57,8 +89,8 @@ export default function ProductsPage() {
               }`}
             >
               <div className="text-xs font-mono font-bold text-[#C59B27] mb-2">// 00</div>
-              <div className="text-sm font-bold leading-snug">{isTr ? "Tüm Makinalar" : "All Machinery"}</div>
-              <div className="text-[11px] opacity-70 mt-2 font-semibold">{PRODUCTS.length} {isTr ? "Model" : "Models"}</div>
+              <div className="text-sm font-bold leading-snug">{t("productsPage.all")}</div>
+              <div className="text-[11px] opacity-70 mt-2 font-semibold">{PRODUCTS.length} {t("productsPage.models")}</div>
             </button>
 
             {PRODUCT_CATEGORIES.map((cat, idx) => {
@@ -75,8 +107,8 @@ export default function ProductsPage() {
                   }`}
                 >
                   <div className="text-xs font-mono font-bold text-[#C59B27] mb-2">// 0{idx + 1}</div>
-                  <div className="text-xs font-bold leading-snug">{isTr ? cat.nameTr : cat.nameEn}</div>
-                  <div className="text-[10px] opacity-70 mt-2 font-semibold">{count} {isTr ? "Ürün" : "Items"}</div>
+                  <div className="text-xs font-bold leading-snug">{getCategoryName(cat)}</div>
+                  <div className="text-[10px] opacity-70 mt-2 font-semibold">{count} {t("productsPage.items")}</div>
                 </button>
               );
             })}
@@ -84,93 +116,96 @@ export default function ProductsPage() {
 
           {/* Product Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProducts.map((product) => (
-              <motion.div
-                layout
-                key={product.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white border border-zinc-200 rounded-3xl overflow-hidden flex flex-col justify-between shadow-2xs hover:border-zinc-300 hover:shadow-md transition-all group"
-              >
-                {/* Image Container */}
-                <div className="relative h-64 w-full bg-zinc-100 overflow-hidden cursor-pointer" onClick={() => setSelectedProductModal(product)}>
-                  <Image
-                    src={product.image}
-                    alt={isTr ? product.nameTr : product.nameEn}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/90 backdrop-blur-md text-zinc-900 shadow-xs border border-zinc-200">
-                      {isTr ? product.categoryNameTr : product.categoryNameEn}
-                    </span>
-                  </div>
-                  {product.inStock && (
-                    <div className="absolute top-4 right-4 z-10">
-                      <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/90 text-white backdrop-blur-xs shadow-xs flex items-center gap-1">
-                        <Check className="w-3 h-3" />
-                        {isTr ? "Stokta / Satışta" : "In Stock"}
+            {filteredProducts.map((product) => {
+              const cat = PRODUCT_CATEGORIES.find(c => c.slug === product.categorySlug);
+              return (
+                <motion.div
+                  layout
+                  key={product.id}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-white border border-zinc-200 rounded-3xl overflow-hidden flex flex-col justify-between shadow-2xs hover:border-zinc-300 hover:shadow-md transition-all group"
+                >
+                  {/* Image Container */}
+                  <div className="relative h-64 w-full bg-zinc-100 overflow-hidden cursor-pointer" onClick={() => setSelectedProductModal(product)}>
+                    <Image
+                      src={product.image}
+                      alt={getProductName(product)}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/90 backdrop-blur-md text-zinc-900 shadow-xs border border-zinc-200">
+                        {cat ? getCategoryName(cat) : product.categorySlug}
                       </span>
                     </div>
-                  )}
-                  {/* Quick View Hover overlay */}
-                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="px-4 py-2 rounded-xl bg-white text-zinc-950 font-bold text-xs shadow-lg flex items-center gap-2">
-                      <Eye className="w-4 h-4 text-[#C59B27]" />
-                      {isTr ? "İncele" : "Quick View"}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <div>
-                    <div className="text-[11px] font-mono font-bold text-[#C59B27] uppercase tracking-wider mb-1">
-                      {product.model}
-                    </div>
-                    <h3 className="text-lg font-extrabold text-zinc-950 mb-2 leading-tight group-hover:text-[#C59B27] transition-colors">
-                      {isTr ? product.nameTr : product.nameEn}
-                    </h3>
-                    <p className="text-zinc-500 text-xs leading-relaxed font-semibold mb-6">
-                      {isTr ? product.shortDescTr : product.shortDescEn}
-                    </p>
-
-                    {/* Specs Badges */}
-                    <div className="grid grid-cols-2 gap-2 mb-6 pt-4 border-t border-zinc-100">
-                      {product.specs.slice(0, 4).map((spec, idx) => (
-                        <div key={idx} className="bg-zinc-50 border border-zinc-150 p-2.5 rounded-xl">
-                          <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-tight">
-                            {isTr ? spec.labelTr : spec.labelEn}
-                          </div>
-                          <div className="text-xs font-bold text-zinc-900 mt-0.5">
-                            {spec.value}
-                          </div>
-                        </div>
-                      ))}
+                    {product.inStock && (
+                      <div className="absolute top-4 right-4 z-10">
+                        <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/90 text-white backdrop-blur-xs shadow-xs flex items-center gap-1">
+                          <Check className="w-3 h-3" />
+                          {t("productsPage.inStock")}
+                        </span>
+                      </div>
+                    )}
+                    {/* Quick View Hover overlay */}
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="px-4 py-2 rounded-xl bg-white text-zinc-950 font-bold text-xs shadow-lg flex items-center gap-2">
+                        <Eye className="w-4 h-4 text-[#C59B27]" />
+                        {t("productsPage.quickView")}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Actions */}
-                  <div className="flex items-center gap-3 pt-4 border-t border-zinc-100">
-                    <button
-                      onClick={() => setSelectedProductModal(product)}
-                      className="flex-1 py-3 px-4 rounded-xl border border-zinc-250 bg-white hover:bg-zinc-50 text-zinc-900 font-bold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-                    >
-                      <span>{isTr ? "Detaylar" : "Details"}</span>
-                    </button>
-                    <Link
-                      href={`/iletisim?product=${encodeURIComponent(product.nameTr)}`}
-                      className="flex-1 py-3 px-4 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm text-center"
-                    >
-                      <span>{isTr ? "Teklif Al" : "Get Quote"}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </Link>
+                  {/* Content */}
+                  <div className="p-6 flex-grow flex flex-col justify-between">
+                    <div>
+                      <div className="text-[11px] font-mono font-bold text-[#C59B27] uppercase tracking-wider mb-1">
+                        {product.model}
+                      </div>
+                      <h3 className="text-lg font-extrabold text-zinc-950 mb-2 leading-tight group-hover:text-[#C59B27] transition-colors">
+                        {getProductName(product)}
+                      </h3>
+                      <p className="text-zinc-500 text-xs leading-relaxed font-semibold mb-6">
+                        {getProductShortDesc(product)}
+                      </p>
+
+                      {/* Specs Badges */}
+                      <div className="grid grid-cols-2 gap-2 mb-6 pt-4 border-t border-zinc-100">
+                        {product.specs.slice(0, 4).map((spec, idx) => (
+                          <div key={idx} className="bg-zinc-50 border border-zinc-150 p-2.5 rounded-xl">
+                            <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-tight">
+                              {getSpecLabel(spec)}
+                            </div>
+                            <div className="text-xs font-bold text-zinc-900 mt-0.5">
+                              {spec.value}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex items-center gap-3 pt-4 border-t border-zinc-100">
+                      <button
+                        onClick={() => setSelectedProductModal(product)}
+                        className="flex-1 py-3 px-4 rounded-xl border border-zinc-250 bg-white hover:bg-zinc-50 text-zinc-900 font-bold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                      >
+                        <span>{t("productsPage.details")}</span>
+                      </button>
+                      <Link
+                        href={`/iletisim?product=${encodeURIComponent(getProductName(product))}`}
+                        className="flex-1 py-3 px-4 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm text-center"
+                      >
+                        <span>{t("productsPage.getQuote")}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* B2B Assurance Banner */}
@@ -178,22 +213,20 @@ export default function ProductsPage() {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 text-xs font-bold text-[#C59B27] uppercase tracking-wider mb-2">
                 <ShieldCheck className="w-4 h-4" />
-                <span>{isTr ? "B2B Teknik Servis & Garanti Desteği" : "B2B Service & Warranty Guarantee"}</span>
+                <span>{t("productsPage.warrantyTitle")}</span>
               </div>
               <h3 className="text-2xl font-extrabold text-zinc-950 mb-3">
-                {isTr ? "Özel Makine İthalatı & Şantiye Teslimi" : "Custom Machine Import & On-Site Delivery"}
+                {t("productsPage.warrantySub")}
               </h3>
               <p className="text-zinc-500 text-sm font-semibold leading-relaxed">
-                {isTr
-                  ? "Aradığınız spesifik tonaj veya tork değerlerindeki makinaları doğrudan fabrikasından ithal ediyor, şantiyenizde çalışır vaziyette teslim ediyoruz."
-                  : "We import custom machinery matching your exact tonnage and torque specifications directly from manufacturers, delivering them operational to your job site."}
+                {t("productsPage.warrantyDesc")}
               </p>
             </div>
             <Link
               href="/iletisim"
               className="py-4 px-8 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-sm shadow-md transition-colors whitespace-nowrap"
             >
-              {isTr ? "Mühendislerimizle İletişime Geçin" : "Contact Our Engineering Team"}
+              {t("productsPage.contactEngineers")}
             </Link>
           </div>
         </div>
@@ -229,7 +262,7 @@ export default function ProductsPage() {
                 <div className="relative h-72 md:h-full min-h-[260px] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200">
                   <Image
                     src={selectedProductModal.image}
-                    alt={isTr ? selectedProductModal.nameTr : selectedProductModal.nameEn}
+                    alt={getProductName(selectedProductModal)}
                     fill
                     className="object-cover"
                   />
@@ -239,27 +272,27 @@ export default function ProductsPage() {
                 <div className="flex flex-col justify-between">
                   <div>
                     <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#C59B27]/10 text-[#C59B27] inline-block mb-3">
-                      {isTr ? selectedProductModal.categoryNameTr : selectedProductModal.categoryNameEn}
+                      {getProductName(selectedProductModal)}
                     </span>
                     <h3 className="text-xl md:text-2xl font-extrabold text-zinc-950 mb-2">
-                      {isTr ? selectedProductModal.nameTr : selectedProductModal.nameEn}
+                      {getProductName(selectedProductModal)}
                     </h3>
                     <div className="text-xs font-mono font-bold text-zinc-400 mb-4">
                       MODEL: {selectedProductModal.model}
                     </div>
                     <p className="text-zinc-600 text-xs leading-relaxed font-semibold mb-6">
-                      {isTr ? selectedProductModal.fullDescTr : selectedProductModal.fullDescEn}
+                      {getProductFullDesc(selectedProductModal)}
                     </p>
 
                     {/* Specs List */}
                     <div className="space-y-2 mb-6">
                       <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider border-b border-zinc-100 pb-1">
-                        {isTr ? "Teknik Özellikler" : "Technical Specifications"}
+                        {t("productsPage.techSpecs")}
                       </h4>
                       <div className="grid grid-cols-1 gap-2">
                         {selectedProductModal.specs.map((spec, idx) => (
                           <div key={idx} className="flex justify-between items-center text-xs py-1 border-b border-zinc-50">
-                            <span className="font-semibold text-zinc-500">{isTr ? spec.labelTr : spec.labelEn}</span>
+                            <span className="font-semibold text-zinc-500">{getSpecLabel(spec)}</span>
                             <span className="font-bold text-zinc-950">{spec.value}</span>
                           </div>
                         ))}
@@ -269,10 +302,10 @@ export default function ProductsPage() {
 
                   <div className="pt-4 border-t border-zinc-100 flex gap-3">
                     <Link
-                      href={`/iletisim?product=${encodeURIComponent(selectedProductModal.nameTr)}`}
+                      href={`/iletisim?product=${encodeURIComponent(getProductName(selectedProductModal))}`}
                       className="w-full py-3 px-6 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-xs transition-colors shadow-sm text-center flex items-center justify-center gap-2"
                     >
-                      <span>{isTr ? "Teknik Teklif İste" : "Request Technical Offer"}</span>
+                      <span>{t("productsPage.requestOffer")}</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </Link>
                   </div>

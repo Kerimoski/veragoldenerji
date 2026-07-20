@@ -9,32 +9,93 @@
     "getQuote": "Get Quote"
   },
   "hero": {
-    "badge": "Vera Gold Enerji - B2B Solutions Partner",
-    "title": "Powerful Infrastructure with Zero Tolerance on the Hardest Soils.",
-    "subtitle": "Compressor and compressorless rock drilling, solar piling solutions, and high-performance drilling equipment.",
-    "ctaProjects": "Explore Our Projects",
-    "ctaQuote": "Get Technical Offer"
+    "badge": "Vera Gold Enerji - B2B Solution Partner",
+    "title": "Strong Infrastructure in Tough Rocks with Zero Tolerance.",
+    "subtitle": "Compressor and non-compressor rock drilling, solar piling solutions, and high-performance drilling equipment.",
+    "ctaProjects": "Review Our Projects",
+    "ctaQuote": "Get Technical Quote",
+    "exploreFleet": "Explore Machinery Fleet",
+    "fleetTag": "Operational Fleet & Machinery",
+    "rock": "Crawler Rock Drill",
+    "water": "Deep Water Drilling Rig",
+    "solar": "MZ460Y Solar Piling Rig",
+    "compressor": "Portable Diesel Compressor"
+  },
+  "b2bServices": {
+    "badge": "Operational Strength",
+    "title": "What We Excel At",
+    "subtitle": "High-torque heavy excavation and drilling operations pushing boundaries in site engineering.",
+    "viewDetails": "View Service Details",
+    "delgi": {
+      "title": "Heavy-Duty Rock Drilling & Piling (Compressor)",
+      "desc": "Fast and millimetric solar site drilling and pile driving works in tough rock formations using high-pressure DTH hammer systems.",
+      "tag": "DTH & ROCK DRILLING"
+    },
+    "kiralama": {
+      "title": "Rotary & Auger Drilling (Compressorless)",
+      "desc": "Eco-friendly, quiet, and effective drilling solutions using high-torque rotary systems and custom augers on sites where compressor usage is restricted.",
+      "tag": "SOLAR PILING & AUGER"
+    },
+    "enerji": {
+      "title": "Industrial Drilling & Water Wells",
+      "desc": "Deep soil geotechnical diagnostics, anchoring, micro-piling, and high-capacity industrial water well drilling operations.",
+      "tag": "DEEP WELL & FOUNDATION"
+    }
+  },
+  "arsenal": {
+    "badge": "Equipment Showcase",
+    "title": "The Armored Arsenal",
+    "subtitle": "Our premium heavy-duty operational equipment park and B2B supplied consumables.",
+    "dth": {
+      "title": "DTH Hammers (Down-the-Hole)",
+      "desc": "High impact power, minimum wear. Special alloy steel structure providing high penetration rate in deep and hard rock formations.",
+      "spec": "Diameters: 3\" - 12\" | Mission, QL, DHD Compatibility",
+      "tag": "HIGH IMPACT DTH"
+    },
+    "bits": {
+      "title": "Rock Drill Bits & Accessories",
+      "desc": "Professional tungsten carbide bits defying the hardest granite and basalt terrains. Maximum abrasion resistance.",
+      "spec": "Bit Type: Ballistic, Spherical | Carbide Grade: A++",
+      "tag": "TUNGSTEN CARBIDE"
+    },
+    "auger": {
+      "title": "Auger & Boring Tools",
+      "desc": "Heavy-duty augers suited for all soil formations in various diameters and sizes. Hard-faced flighting with wear plates.",
+      "spec": "Diameters: 300mm - 2000mm | Joint: Hexagonal, Square",
+      "tag": "HEAVY DUTY AUGER"
+    }
+  },
+  "consulting": {
+    "title": "Consultancy & Support Services",
+    "subtitle": "Professional engineering supports we provide for drilling machinery, excavation gear, and corporate investments.",
+    "viewDetails": "View Details",
+    "getOffer": "Get Technical Offer",
+    "machineryDesc": "Machinery selection, torque analysis, and mechanical performance consulting.",
+    "equipmentDesc": "Drill bits, consumables, and operational efficiency analysis.",
+    "investmentDesc": "Budget and feasibility reporting for B2B machinery acquisitions.",
+    "projectDesc": "Engineering planning for large drilling and power plant projects.",
+    "sparePartsDesc": "Original spare parts supply and periodic technical maintenance service."
   },
   "services": {
     "title": "Our Areas of Expertise",
-    "subtitle": "Professional B2B services powered by modern technology and engineering expertise.",
+    "subtitle": "Corporate services offered with modern technology and engineering expertise.",
     "drill": {
-      "title": "Drilling Services",
-      "short": "High-precision solutions in rock drilling, anchoring, geotechnical surveys, and tunneling engineering.",
-      "long": "Vera Gold Enerji carries out rock drilling, ground reinforcement, slope stabilization, anchoring, and tunneling projects in challenging terrain conditions using state-of-the-art drilling machinery and an expert engineering team. We are a trusted B2B partner and supplier for large-scale infrastructure projects.",
-      "features": ["Micropiles & Anchoring", "Ground Improvement", "Tunnel & Gallery Drilling", "Blastholes Drilling"]
+      "title": "Drilling Operations",
+      "short": "High-precision solutions in rock drilling, soil anchoring, geotechnical surveys, and tunneling.",
+      "long": "Vera Gold Enerji carries out rock drilling, ground stabilization, slope anchoring, and tunneling in tough terrain conditions.",
+      "features": ["Micropiles & Anchors", "Ground Improvement", "Tunnel & Gallery Drilling", "Blast Hole Drilling"]
     },
     "rental": {
-      "title": "Rock Machinery Rental",
-      "short": "A comprehensive, well-maintained, and high-performance rental fleet of heavy-duty drilling and excavation equipment.",
-      "long": "Instead of making high capital investments for your projects, you can lease our world-class rock drilling and machinery with flexible rental options. Every machine in our fleet is fully serviced, features modern safety standards, and is optimized for maximum efficiency.",
-      "features": ["Flexible Rental Plans", "24/7 Technical Support & Maintenance", "Operator Included Option", "Wide Range of Equipment"]
+      "title": "Rock Drill Fleet Rental",
+      "short": "A wide, well-maintained, high-performance rental fleet of heavy-duty drilling and rock excavation equipment.",
+      "long": "Instead of heavy capital investment for your projects, acquire world-class rock drills via flexible rental models.",
+      "features": ["Flexible Rental Plans", "24/7 Technical Maintenance", "Operator Included Option", "Wide Equipment Range"]
     },
     "energy": {
-      "title": "Power Plant Installation",
-      "short": "Turnkey installation and engineering services for industrial wind, solar, and renewable energy plants.",
-      "long": "We manage the entire lifecycle of clean energy projects for factories, industrial facilities, and investors, from feasibility studies to turnkey installations. Our team designs and builds sustainable solar (PV), wind, and battery storage plants.",
-      "features": ["Turnkey Setup", "Renewable Energy Engineering", "Solar & Wind Integration", "Long-term Maintenance Support"]
+      "title": "Power Plant Construction",
+      "short": "Turnkey construction and engineering services for industrial wind, solar, and renewable power plants.",
+      "long": "For factories, industrial sites, and investors, we handle all stages from feasibility study to turnkey commissioning.",
+      "features": ["Turnkey Installation", "Renewable Engineering", "PV & Wind Integration", "Long-term Maintenance"]
     },
     "learnMore": "Learn More",
     "close": "Close",
@@ -44,31 +105,53 @@
     "projectConsulting": "Project Consulting",
     "spareParts": "Spare Parts & Service"
   },
+  "productsPage": {
+    "badge": "Vera Gold Enerji - Heavy Machinery Fleet",
+    "subtitle": "Industrial B2B sales fleet for drilling rigs, rock drills, solar piling rigs, bored piling, jet grouting, and heavy diesel compressors.",
+    "all": "All Machinery",
+    "allProducts": "All Products",
+    "inStock": "In Stock / Available",
+    "quickView": "Quick View",
+    "details": "Details",
+    "getQuote": "Get Quote",
+    "models": "Models",
+    "items": "Items",
+    "categoryFleet": "Machinery Fleet",
+    "categoryShowcase": "Category Showcase",
+    "allCategories": "All Categories",
+    "categoryQuote": "Request Category Quote",
+    "warrantyTitle": "B2B Service & Warranty Guarantee",
+    "warrantySub": "Custom Machine Import & On-Site Delivery",
+    "warrantyDesc": "We import custom machinery matching your exact tonnage and torque specifications directly from manufacturers, delivering them operational to your job site.",
+    "contactEngineers": "Contact Our Engineering Team",
+    "techSpecs": "Technical Specifications",
+    "requestOffer": "Request Technical Offer"
+  },
   "map": {
-    "title": "Our Geographical Reach",
-    "subtitle": "We actively serve all European and Balkan countries, excluding the United Kingdom, Sweden, Norway, and Finland.",
-    "description": "At Vera Gold Enerji, we bring our logistics capability and technical execution teams to every corner of Europe and the Balkans. We are ready to launch your projects in all regions outside Scandinavia and the UK.",
-    "activeRegions": "Active Service Regions",
-    "inactiveRegions": "Excluded Regions (UK, Scandinavia)"
+    "title": "Our Operational Scope",
+    "subtitle": "Actively serving across Europe and Balkan nations except UK, Sweden, Norway, and Finland.",
+    "description": "We deliver logistics and technical engineering power across Europe and the Balkans.",
+    "activeRegions": "Active Operating Regions",
+    "inactiveRegions": "Out of Service Regions (UK, Scandinavia)"
   },
   "contact": {
-    "title": "Get in Touch",
-    "subtitle": "Request a corporate quote for your projects or learn more about our machinery rental fleet.",
+    "title": "Contact Us",
+    "subtitle": "Request a corporate offer or inquire about our fleet.",
     "formName": "Full Name / Representative",
     "formCompany": "Company Name",
     "formEmail": "Email Address",
     "formService": "Service of Interest",
     "formServicePlaceholder": "Please select a service",
-    "formMessage": "Message / Project Details",
-    "formSubmit": "Send Request",
+    "formMessage": "Your Message / Project Details",
+    "formSubmit": "Submit Offer Request",
     "sending": "Sending...",
-    "success": "Your message was sent successfully! Our engineering team will contact you shortly.",
+    "success": "Your message was sent successfully!",
     "phone": "Phone",
     "email": "Email",
-    "address": "Headquarters"
+    "address": "Headquarters Address"
   },
   "footer": {
-    "desc": "Europe's B2B solution partner in rock drilling projects, machinery rental, and sustainable power plant installations.",
+    "desc": "Europe's B2B solution partner for rock drilling, machinery rental, and renewable energy plant construction.",
     "rights": "All Rights Reserved. Vera Gold Enerji."
   }
 }

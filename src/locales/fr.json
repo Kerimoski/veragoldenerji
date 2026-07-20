@@ -9,66 +9,149 @@
     "getQuote": "Obtenir un Devis"
   },
   "hero": {
-    "badge": "Vera Gold Enerji - Partenaire Solutions B2B",
-    "title": "Des infrastructures solides avec zéro tolérance sur les sols les plus durs.",
-    "subtitle": "Forage de roche avec et sans compresseur, solutions de fonçage solaire et équipements de forage haute performance.",
-    "ctaProjects": "Découvrir nos projets",
-    "ctaQuote": "Obtenir une offre technique"
+    "badge": "Vera Gold Enerji - Partenaire B2B",
+    "title": "Une Infrastructure Solide sur Roches Dures sans Tolérance.",
+    "subtitle": "Forage rocheux avec ou sans compresseur, solutions de battage solaire et équipements de forage haute performance.",
+    "ctaProjects": "Consulter nos Projets",
+    "ctaQuote": "Devis Technique",
+    "exploreFleet": "Explorer notre Parc",
+    "fleetTag": "Flotte & Équipements Opérationnels",
+    "rock": "Foreuse de Roche Chenillée",
+    "water": "Foreuse Puits d'Eau Profonds",
+    "solar": "Sonneuse Solaire MZ460Y",
+    "compressor": "Compresseur Diesel Portable"
+  },
+  "b2bServices": {
+    "badge": "Force Opérationnelle",
+    "title": "Ce Que Nous Faisons",
+    "subtitle": "Opérations de forage et d'excavation à fort couple repoussant les limites de l'ingénierie.",
+    "viewDetails": "Détails du Service",
+    "delgi": {
+      "title": "Forage & Battage de Roche Lourd (avec Compresseur)",
+      "desc": "Forages rapides et millimétriques pour centrales solaires dans les roches dures avec marteaux fond de trou DTH.",
+      "tag": "FORAGE DTH & ROCHE"
+    },
+    "kiralama": {
+      "title": "Forage Rotatif & Tarière (sans Compresseur)",
+      "desc": "Solutions écologiques, silencieuses et efficaces avec systèmes rotatifs puissants et tarières spécialisées.",
+      "tag": "BATTAGE SOLAIRE & TARIÈRE"
+    },
+    "enerji": {
+      "title": "Forage Industriel & Puits d'Eau",
+      "desc": "Diagnostics géotechniques, ancrages, micro-pieux et puits d'eau industriels à fort débit.",
+      "tag": "PUITS PROFONDS & FONDATIONS"
+    }
+  },
+  "arsenal": {
+    "badge": "Vitrined'Équipement",
+    "title": "L'Arsenal Blindé",
+    "subtitle": "Notre parc d'équipements lourds opérationnels et nos consommables B2B.",
+    "dth": {
+      "title": "Marteaux DTH (Fond de Trou)",
+      "desc": "Grande puissance d'impact, usure minimale. Acier allié spécial offrant un taux de pénétration élevé dans la roche dure.",
+      "spec": "Diamètres: 3\" - 12\" | Compatibilité Mission, QL, DHD",
+      "tag": "MARTEAU DTH IMPACT"
+    },
+    "bits": {
+      "title": "Taillants & Forets de Roche",
+      "desc": "Taillants professionnels au carbure de tungstène défiant le granit et le basalte. Résistance maximale à l'abrasion.",
+      "spec": "Type de taillant: Ballistique, Sphérique | Qualité Carbure: A++",
+      "tag": "CARBURE DE TUNGSTÈNE"
+    },
+    "auger": {
+      "title": "Tarières & Équipements de Forage",
+      "desc": "Tarières haute résistance adaptées à tous types de sols. Hélices renforcées contre l'usure.",
+      "spec": "Diamètres: 300mm - 2000mm | Raccordement: Hexagonal, Carré",
+      "tag": "TARIÈRE HAUTE RÉSISTANCE"
+    }
+  },
+  "consulting": {
+    "title": "Services de Conseil & Support",
+    "subtitle": "Assistance ingénierie professionnelle pour machines de forage, équipements et investissements.",
+    "viewDetails": "Voir Détails",
+    "getOffer": "Obtenir un Devis Technique",
+    "machineryDesc": "Sélection de machines, analyse de couple et conseil en performance mécanique.",
+    "equipmentDesc": "Taillants de forage, consommables et suivi de l'efficacité opérationnelle.",
+    "investmentDesc": "Rapports de budget et de faisabilité pour les acquisitions de machines B2B.",
+    "projectDesc": "Planification d'ingénierie pour grands projets de forage et centrales énergétiques.",
+    "sparePartsDesc": "Fourniture de pièces d'origine et service de maintenance technique périodique."
   },
   "services": {
     "title": "Nos Domaines d'Expertise",
-    "subtitle": "Services professionnels B2B appuyés par une technologie moderne et une solide expertise en ingénierie.",
+    "subtitle": "Services d'entreprise proposés avec des technologies modernes et une expertise ingénierie.",
     "drill": {
-      "title": "Travaux de Forage",
-      "short": "Solutions de haute précision en forage rocheux, ancrage, études géotechniques et ingénierie des tunnels.",
-      "long": "Vera Gold Enerji réalise des forages de roche, des renforcements de sol, de la stabilisation de talus et des creusements de tunnels dans les conditions de terrain les plus difficiles, grâce à un parc de machines modernes et une équipe d'ingénieurs spécialisés.",
-      "features": ["Micro-pieux & Ancrage", "Amélioration des Sols", "Forage de Tunnels & Galeries", "Forage de Trous de Mine"]
+      "title": "Opérations de Forage",
+      "short": "Solutions haute précision en forage rocheux, ancrage de sol, géotechnique et tunnels.",
+      "long": "Vera Gold Enerji réalise des travaux de forage rocheux, stabilisation de sol et tunnels dans des conditions difficiles.",
+      "features": ["Micro-pieux & Ancrages", "Amélioration des Sols", "Forage de Tunnels", "Minage & Trous de Mine"]
     },
     "rental": {
-      "title": "Location de Foreuses",
-      "short": "Un parc complet de foreuses de roche et d'équipements de terrassement lourds performants et parfaitement entretenus.",
-      "long": "Évitez les investissements en capital lourds pour vos chantiers. Louez nos équipements de forage de classe mondiale avec des options de location flexibles. Chaque machine de notre flotte est révisée et répond aux normes de sécurité les plus strictes.",
-      "features": ["Plans de Location Flexibles", "Assistance Technique & Entretien 24/7", "Option de Location avec Opérateur", "Large Gamme d'Équipements"]
+      "title": "Location de Flotte de Forage",
+      "short": "Flotte de location étendue, bien entretenue et performante de matériel de forage lourd.",
+      "long": "Louez nos foreuses de classe mondiale via des modèles flexibles au lieu d'investir de lourds capitaux.",
+      "features": ["Plans de Location Flexibles", "Support Technique 24/7", "Option avec Opérateur", "Large Gamme d'Équipements"]
     },
     "energy": {
-      "title": "Installation de Centrales",
-      "short": "Services d'ingénierie et d'installation clés en main de centrales solaires, éoliennes et énergies renouvelables industrielles.",
-      "long": "Nous gérons l'ensemble du cycle de vie des projets d'énergie propre pour les usines, les sites industriels et les investisseurs. Notre équipe conçoit et déploie des systèmes solaires (photovoltaïques), éoliens et de stockage par batterie.",
-      "features": ["Installation Clés en Main", "Ingénierie des Énergies Renouvelables", "Intégration Solaire & Éolienne", "Support de Maintenance à Long Terme"]
+      "title": "Construction de Centrales Énergétiques",
+      "short": "Services clés en main de construction et d'ingénierie pour centrales éoliennes et solaires.",
+      "long": "De l'étude de faisabilité à la mise en service clés en main pour usines et investisseurs.",
+      "features": ["Installation Clés en Main", "Ingénierie Renouvelable", "Intégration PV & Éolien", "Maintenance Long Terme"]
     },
-    "learnMore": "En savoir plus",
+    "learnMore": "En Savoir Plus",
     "close": "Fermer",
-    "machineryConsulting": "Conseil Technique sur les Machines",
-    "equipmentConsulting": "Conseil en Équipements de Forage",
+    "machineryConsulting": "Conseil Technique Machines",
+    "equipmentConsulting": "Conseil Équipements de Forage",
     "investmentConsulting": "Conseil en Investissement",
-    "projectConsulting": "Conseil en Gestion de Projet",
-    "spareParts": "Pièces de Rechange & Service"
+    "projectConsulting": "Conseil en Projets",
+    "spareParts": "Pièces Détachées & Service"
+  },
+  "productsPage": {
+    "badge": "Vera Gold Enerji - Flotte de Machines Lourdes",
+    "subtitle": "Parc industriel de vente B2B pour foreuses, sonneuses solaires, foreuses de pieux forés et compresseurs.",
+    "all": "Toutes les Machines",
+    "allProducts": "Tous les Produits",
+    "inStock": "En Stock / Disponible",
+    "quickView": "Aperçu",
+    "details": "Détails",
+    "getQuote": "Obtenir un Devis",
+    "models": "Modèles",
+    "items": "Produits",
+    "categoryFleet": "Catégories de Machines",
+    "categoryShowcase": "Vitrinede Catégorie",
+    "allCategories": "Voir Toutes les Catégories",
+    "categoryQuote": "Demander un Devis par Catégorie",
+    "warrantyTitle": "Garantie & Service Technique B2B",
+    "warrantySub": "Importation de Machines & Livraison sur Chantier",
+    "warrantyDesc": "Nous importons des machines personnalisées selon vos spécifications exactes directement des fabricants, livrées opérationnelles sur votre chantier.",
+    "contactEngineers": "Contacter nos Ingénieurs",
+    "techSpecs": "Spécifications Techniques",
+    "requestOffer": "Demander une Offre Technique"
   },
   "map": {
-    "title": "Notre Portée Géographique",
-    "subtitle": "Nous desservons activement tous les pays d'Europe et des Balkans, à l'exclusion du Royaume-Uni, de la Suède, de la Norvège et de la Finlande.",
-    "description": "Chez Vera Gold Enerji, nous déployons nos capacités logistiques et nos équipes techniques dans tous les coins d'Europe et des Balkans. Nous sommes prêts à lancer vos chantiers en dehors de la Scandinavie et du Royaume-Uni.",
-    "activeRegions": "Zones Actives",
-    "inactiveRegions": "Régions Exclues (Royaume-Uni, Scandinavie)"
+    "title": "Notre Zone de Couverture",
+    "subtitle": "Actif dans toute l'Europe et les Balkans (sauf Royaume-Uni, Suède, Norvège et Finlande).",
+    "description": "Nous déployons notre puissance logistique et ingénierie à travers l'Europe et les Balkans.",
+    "activeRegions": "Régions Actives",
+    "inactiveRegions": "Régions Non Desservies (UK, Scandinavie)"
   },
   "contact": {
-    "title": "Contactez-nous",
-    "subtitle": "Demandez un devis d'entreprise ou apprenez-en plus sur notre flotte de machines de location.",
+    "title": "Contactez-Nous",
+    "subtitle": "Demandez un devis d'entreprise ou renseignez-vous sur notre flotte.",
     "formName": "Nom Complet / Représentant",
     "formCompany": "Nom de l'Entreprise",
-    "formEmail": "Adresse E-mail",
-    "formService": "Service d'Intérêt",
+    "formEmail": "Adresse Email",
+    "formService": "Service Souhaité",
     "formServicePlaceholder": "Veuillez sélectionner un service",
     "formMessage": "Votre Message / Détails du Projet",
     "formSubmit": "Envoyer la Demande",
     "sending": "Envoi en cours...",
-    "success": "Votre message a été envoyé avec succès! Notre équipe d'ingénieurs vous contactera très rapidement.",
+    "success": "Votre message a été envoyé avec succès!",
     "phone": "Téléphone",
-    "email": "E-mail",
-    "address": "Siège Social"
+    "email": "Email",
+    "address": "Adresse du Siège"
   },
   "footer": {
-    "desc": "Votre partenaire de solutions B2B en Europe pour les projets de forage de roche, la location d'équipements et l'installation de centrales électriques durables.",
+    "desc": "Partenaire de solutions B2B en Europe pour le forage rocheux, la location et les centrales renouvelables.",
     "rights": "Tous Droits Réservés. Vera Gold Enerji."
   }
 }

@@ -10,65 +10,148 @@
   },
   "hero": {
     "badge": "Vera Gold Enerji - B2B-Lösungspartner",
-    "title": "Starke Infrastruktur mit Null Toleranz auf den härtesten Böden.",
-    "subtitle": "Felsbohrungen mit und ohne Kompressor, Solar-Rammlösungen und Hochleistungs-Bohrausrüstung.",
-    "ctaProjects": "Unsere Projekte ansehen",
-    "ctaQuote": "Technisches Angebot einholen"
+    "title": "Starke Infrastruktur in Hartgestein mit Null Toleranz.",
+    "subtitle": "Kompressor- und kompressorlose Gesteinsbohrungen, Solarpark-Rammlösungen und Hochleistungs-Bohrausrüstung.",
+    "ctaProjects": "Unsere Projekte",
+    "ctaQuote": "Technisches Angebot",
+    "exploreFleet": "Maschinenpark Erkunden",
+    "fleetTag": "Einsatzflotte & Maschinen",
+    "rock": "Raupen-Gesteinsbohrer",
+    "water": "Tiefwasser-Bohranlage",
+    "solar": "MZ460Y Solarpark-Ramme",
+    "compressor": "Fahrbarer Dieselkompressor"
+  },
+  "b2bServices": {
+    "badge": "Operative Stärke",
+    "title": "Unsere Kernkompetenzen",
+    "subtitle": "Leistungsstarke Spezialtiefbau- und Bohrarbeiten für anspruchsvollste Baustellen.",
+    "viewDetails": "Leistungsdetails Anzeigen",
+    "delgi": {
+      "title": "Schwerlast-Gesteinsbohrungen & Rammung (Kompressor)",
+      "desc": "Schnelle und millmetergenaue Bohr- und Rammbohrungen für Solarparks in hartem Gestein mit Hochdruck-DTH-Hämmern.",
+      "tag": "DTH & GESTEINSBOHRUNG"
+    },
+    "kiralama": {
+      "title": "Kompressorlose Dreh- & Schneckenbohrungen",
+      "desc": "Umweltfreundliche, leise Bohrverfahren mit leistungsstarken Drehbohrköpfen und Schnecken.",
+      "tag": "SOLARAMMUNG & SCHNECKE"
+    },
+    "enerji": {
+      "title": "Industriebohrungen & Wasserbrunnen",
+      "desc": "Tiefengutachten, Ankerbohrungen, Mikropfähle und ertragreiche Industriebohrungen.",
+      "tag": "TIEFBRUNNEN & FUNDAMENT"
+    }
+  },
+  "arsenal": {
+    "badge": "Ausrüstungsschauplatz",
+    "title": "Das Gepanzerte Arsenal",
+    "subtitle": "Unser hochmoderner Schwerlast-Gerätepark und B2B-Verbrauchsmaterialien.",
+    "dth": {
+      "title": "DTH-Hämmer (Im-Loch-Hämmer)",
+      "desc": "Hohe Schlagkraft, minimaler Verschleiß. Speziallegierte Stahlstruktur für hohe Penetrationsraten in hartem Gestein.",
+      "spec": "Durchmesser: 3\" - 12\" | Mission, QL, DHD Kompatibilität",
+      "tag": "HOCHSCHLAG DTH"
+    },
+    "bits": {
+      "title": "Gesteinsbohrer & Taumelmeißel",
+      "desc": "Professionelle Wolframkarbid-Meißel für härteste Granit- und Basaltböden. Maximale Abriebfestigkeit.",
+      "spec": "Meißeltyp: Ballistisch, Sphärisch | Karbidqualität: A++",
+      "tag": "WOLFRAMKARBID"
+    },
+    "auger": {
+      "title": "Bohrschnecken & Bohrwerkzeuge",
+      "desc": "Schwerlast-Bohrschnecken für alle Bodenformationen in verschiedenen Durchmessern. Verschleißfeste Wendeln.",
+      "spec": "Durchmesser: 300mm - 2000mm | Verbindung: Sechskant, Vierkant",
+      "tag": "SCHWERLAST-SCHNECKE"
+    }
+  },
+  "consulting": {
+    "title": "Beratungs- & Support-Services",
+    "subtitle": "Professionelle Ingenieurunterstützung für Bohrmaschinen, Ausrüstung und Investitionen.",
+    "viewDetails": "Details Anzeigen",
+    "getOffer": "Angebot Anfordern",
+    "machineryDesc": "Maschinenauswahl, Drehmomentanalysen und mechanische Leistungsberatung.",
+    "equipmentDesc": "Bohrmeißel, Verbrauchsmaterialien und betriebliche Effrequenzanalysen.",
+    "investmentDesc": "Budget- und Machbarkeitsberichte für B2B-Maschinenbeschaffungen.",
+    "projectDesc": "Ingenieurplanung für große Bohr- und Kraftwerksprojekte.",
+    "sparePartsDesc": "Original-Ersatzteilversorgung und regelmäßige technische Wartung."
   },
   "services": {
-    "title": "Unsere Fachbereiche",
-    "subtitle": "Professionelle B2B-Dienstleistungen auf Basis moderner Technologie und Engineering-Kompetenz.",
+    "title": "Unsere Fachgebiete",
+    "subtitle": "Erstklassige Dienstleistungen mit modernster Technologie und Engineering.",
     "drill": {
       "title": "Bohrarbeiten",
-      "short": "Hochpräzise Lösungen für Felsbohrungen, Verankerungen, Baugrunduntersuchungen und Tunnelbau.",
-      "long": "Vera Gold Enerji führt Felsbohrungen, Baugrundverstärkungen, Hangsicherungen, Verankerungen und Tunnelbauprojekte unter schwierigsten Geländebedingungen durch. Mit modernsten Bohranlagen und einem erfahrenen Ingenieurteam sind wir ein starker Partner für Großprojekte.",
-      "features": ["Mikropfähle & Verankerung", "Baugrundverbesserung", "Tunnel- und Stollenbohrungen", "Sprenglochbohrungen"]
+      "short": "Hochpräzise Lösungen für Felsbohrungen, Ankerung, Baugrund und Tunnelbau.",
+      "long": "Vera Gold Enerji führt Felsbohrungen, Hangsicherungen und Tunnelbau unter schwierigen Bedingungen durch.",
+      "features": ["Mikropfähle & Anker", "Bodenverbesserung", "Tunnel- & Stollenbau", "Sprenglochbohrungen"]
     },
     "rental": {
-      "title": "Vermietung von Bohrgeräten",
-      "short": "Umfangreiche und bestens gewartete Mietflotte an schweren Felsbohr- und Spezialtiefbaugeräten.",
-      "long": "Vermeiden Sie hohe Investitionskosten. Nutzen Sie unsere erstklassigen Bohrgeräte zu flexiblen Mietkonditionen. Jedes Gerät unserer Flotte ist perfekt gewartet, entspricht modernsten Sicherheitsstandards und ist auf höchste Effizienz optimiert.",
-      "features": ["Flexible Mietlaufzeiten", "Technischer Support & Wartung rund um die Uhr", "Option mit geschultem Bediener", "Breites Gerätespektrum"]
+      "title": "Bohrgerätevermietung",
+      "short": "Umfangreiche, gut gewartete Mietflotte an Spezial- und Gesteinsbohrgeräten.",
+      "long": "Mieten Sie erstklassige Bohrgeräte flexibel für Ihre Projekte statt hoher Kapitalbindung.",
+      "features": ["Flexible Mietpläne", "24/7 Technischer Service", "Option mit Bediener", "Breites Gerätespektrum"]
     },
     "energy": {
       "title": "Kraftwerksbau",
-      "short": "Schlüsselfertiger Bau und Ingenieurdienstleistungen für industrielle Wind-, Solar- und Biomassekraftwerke.",
-      "long": "Wir übernehmen die gesamte Projektabwicklung von der Machbarkeitsstudie bis hin zur schlüsselfertigen Montage Ihrer Industrie-Energieanlage. Unser Schwerpunkt liegt auf Photovoltaik-Großanlagen, Windkraft und integrierten Energiespeichern.",
-      "features": ["Schlüsselfertige Montage", "Engineering für erneuerbare Energien", "Solar- und Windenergieintegration", "Langfristige Wartung & Service"]
+      "short": "Schlüsselfertiger Bau und Engineering von Wind-, Solar- und Erneuerbaren Kraftwerken.",
+      "long": "Wir übernehmen alle Phasen von Machbarkeitsstudien bis zur schlüsselfertigen Übergabe.",
+      "features": ["Schlüsselfertiger Bau", "Renewable Engineering", "PV- & Windintegration", "Langzeitwartung"]
     },
-    "learnMore": "Details anzeigen",
+    "learnMore": "Mehr Erfahren",
     "close": "Schließen",
-    "machineryConsulting": "Technische Beratung für Maschinen",
-    "equipmentConsulting": "Bohrausrüstung Beratung",
+    "machineryConsulting": "Maschinentechnische Beratung",
+    "equipmentConsulting": "Bohrausrüstungsberatung",
     "investmentConsulting": "Investitionsberatung",
     "projectConsulting": "Projektberatung",
     "spareParts": "Ersatzteile & Service"
   },
+  "productsPage": {
+    "badge": "Vera Gold Enerji - Schwerlast-Maschinenpark",
+    "subtitle": "B2B-Industrieflotte für Bohranlagen, Gesteinsbohrer, Solarpark-Rammen, Drehbohrgeräte und Kompressoren.",
+    "all": "Alle Maschinen",
+    "allProducts": "Alle Produkte",
+    "inStock": "Auf Lager / Verfügbar",
+    "quickView": "Vorschau",
+    "details": "Details",
+    "getQuote": "Angebot anfordern",
+    "models": "Modelle",
+    "items": "Produkte",
+    "categoryFleet": "Maschinenkategorien",
+    "categoryShowcase": "Kategorie-Vorschau",
+    "allCategories": "Alle Kategorien Anzeigen",
+    "categoryQuote": "Kategorie-Angebot Anfordern",
+    "warrantyTitle": "B2B Service & Garantieunterstützung",
+    "warrantySub": "Spezialmaschinen-Import & Baustellenlieferung",
+    "warrantyDesc": "Wir importieren Spezialmaschinen exakt nach Ihren Vorgaben direkt vom Hersteller und liefern sie betriebsbereit an Ihre Baustelle.",
+    "contactEngineers": "Ingenieure Kontaktieren",
+    "techSpecs": "Technische Daten",
+    "requestOffer": "Technisches Angebot Anfordern"
+  },
   "map": {
-    "title": "Unser geografischer Aktionsradius",
-    "subtitle": "Wir sind in allen europäischen und Balkanländern aktiv, mit Ausnahme des Vereinigten Königreichs, Schwedens, Norwegens und Finnlands.",
-    "description": "Als Vera Gold Enerji bringen wir unsere logistische Stärke und unsere Technikteams in jeden Winkel Europas und des Balkans. Wir sind bereit, Ihre Projekte außerhalb Skandinaviens und Großbritanniens zu realisieren.",
-    "activeRegions": "Aktive Dienstleistungsregionen",
-    "inactiveRegions": "Ausgeschlossene Regionen (UK, Skandinavien)"
+    "title": "Einsatzgebiete",
+    "subtitle": "Aktiv in ganz Europa und auf dem Balkan (außer UK, Schweden, Norwegen und Finnland).",
+    "description": "Wir liefern Logistik- und Technikkompetenz nach ganz Europa und auf den Balkan.",
+    "activeRegions": "Aktive Einsatzgebiete",
+    "inactiveRegions": "Nicht bediente Regionen (UK, Skandinavien)"
   },
   "contact": {
-    "title": "Kontaktieren Sie uns",
-    "subtitle": "Fordern Sie ein Angebot für Ihr Projekt an oder informieren Sie sich über unsere Mietgeräte.",
-    "formName": "Name / Ansprechpartner",
+    "title": "Kontaktieren Sie Uns",
+    "subtitle": "Fordern Sie ein Angebot an oder informieren Sie sich über unsere Mietflotte.",
+    "formName": "Vollständiger Name / Ansprechpartner",
     "formCompany": "Firmenname",
     "formEmail": "E-Mail-Adresse",
     "formService": "Gewünschte Dienstleistung",
-    "formServicePlaceholder": "Bitte wählen Sie eine Dienstleistung",
+    "formServicePlaceholder": "Bitte Dienstleistung auswählen",
     "formMessage": "Ihre Nachricht / Projektdetails",
-    "formSubmit": "Anfrage Senden",
+    "formSubmit": "Angebot Anfordern",
     "sending": "Wird gesendet...",
-    "success": "Ihre Nachricht wurde erfolgreich gesendet! Unser Ingenieurteam wird sich in Kürze mit Ihnen in Verbindung setzen.",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet!",
     "phone": "Telefon",
     "email": "E-Mail",
-    "address": "Hauptsitz"
+    "address": "Hauptsitz Adresse"
   },
   "footer": {
-    "desc": "Ihr B2B-Lösungspartner für Felsbohrprojekte, Gerätevermietung und den Bau nachhaltiger Industrieanlagen in Europa.",
+    "desc": "Europas B2B-Lösungspartner für Felsbohrungen, Gerätevermietung und Erneuerbare Energien.",
     "rights": "Alle Rechte vorbehalten. Vera Gold Enerji."
   }
 }

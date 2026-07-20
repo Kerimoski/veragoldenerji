@@ -8,13 +8,12 @@ import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
 
 export const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const isTr = t("nav.home") === "Ana Sayfa";
 
   const heroMachines = [
-    { title: "Paletli Rock Makinesi", image: "/satismakineleri/Paletli-Rock-Makina.jpg", path: "/urunler/rock-makinalari" },
-    { title: "Derin Su Sondaj Kulesi", image: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg", path: "/urunler/sondaj-makinalari" },
-    { title: "MZ460Y GES Kazık Çakma", image: "/satismakineleri/kazıkçakma.jpeg", path: "/urunler/kazik-cakma-makinalari" },
-    { title: "Mobil Dizel Kompresör", image: "/satismakineleri/csh1120a-hava-kompresoru.png", path: "/urunler/kompresorler" },
+    { title: t("hero.rock"), image: "/satismakineleri/Paletli-Rock-Makina.jpg", path: "/urunler/rock-makinalari" },
+    { title: t("hero.water"), image: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg", path: "/urunler/sondaj-makinalari" },
+    { title: t("hero.solar"), image: "/satismakineleri/kazıkçakma.jpeg", path: "/urunler/kazik-cakma-makinalari" },
+    { title: t("hero.compressor"), image: "/satismakineleri/csh1120a-hava-kompresoru.png", path: "/urunler/kompresorler" },
   ];
 
   return (
@@ -51,7 +50,7 @@ export const Hero: React.FC = () => {
             href="/urunler"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-4 px-8 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-sm tracking-wide shadow-md transition-colors"
           >
-            <span>{isTr ? "Makine Parkımızı İnceleyin" : "Explore Machinery Fleet"}</span>
+            <span>{t("hero.exploreFleet")}</span>
             <ArrowRight className="w-4 h-4 text-[#C59B27]" />
           </Link>
           <Link
@@ -66,7 +65,7 @@ export const Hero: React.FC = () => {
         <div className="max-w-5xl mx-auto mt-4">
           <div className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
             <ShieldCheck className="w-4 h-4 text-[#C59B27]" />
-            <span>{isTr ? "Saha Makinelerimiz & Tedarik Filomuz" : "Operational Fleet & Machinery"}</span>
+            <span>{t("hero.fleetTag")}</span>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {heroMachines.map((m, idx) => (
@@ -95,4 +94,3 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
-

@@ -132,15 +132,15 @@ export const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 right-10 w-[400px] h-[400px] bg-[#10B981]/5 rounded-full filter blur-[120px] pointer-events-none" />
 
       {/* Giant 3D Watermark Typography Backdrop */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0">
+      <div className="absolute top-28 sm:top-36 md:inset-0 flex items-start md:items-center justify-center pointer-events-none overflow-hidden z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeSlide.watermark}
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 0.07, scale: 1, y: 0 }}
+            animate={{ opacity: 0.09, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 1.1, y: -20 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-7xl md:text-[11vw] font-black uppercase tracking-tighter text-zinc-950 whitespace-nowrap text-center select-none font-mono px-2 leading-none"
+            className="text-5xl sm:text-7xl md:text-[11vw] font-black uppercase tracking-tighter text-zinc-950 whitespace-nowrap text-center select-none font-mono px-2 leading-none"
             style={{ textShadow: "0 10px 30px rgba(0,0,0,0.15)" }}
           >
             {activeSlide.watermark}

@@ -197,26 +197,6 @@ export const InteractiveMap: React.FC = () => {
                 title="Vera Gold Enerji Europe Service Map"
               />
 
-              {/* Europe Outline SVG Overlay */}
-              <svg
-                viewBox="0 0 1000 600"
-                className="absolute inset-0 w-full h-full pointer-events-none z-10"
-                preserveAspectRatio="none"
-              >
-                {/* Approximate Europe outline - dashed golden border */}
-                <path
-                  d="M 130,280 C 130,260 150,200 180,170 C 200,150 230,130 260,110 C 290,95 330,85 370,75 C 410,68 440,60 470,55 C 500,50 540,45 570,50 C 600,55 640,70 680,90 C 720,110 750,140 770,170 C 790,200 810,240 820,280 C 830,310 840,350 840,380 C 840,410 830,440 810,465 C 790,490 760,510 730,525 C 700,540 660,550 620,555 C 580,558 540,555 500,550 C 460,545 420,535 380,525 C 340,515 300,505 260,495 C 230,488 200,475 175,460 C 155,448 140,430 130,410 C 120,390 115,360 115,340 C 115,320 120,300 130,280 Z"
-                  fill="rgba(16, 185, 129, 0.06)"
-                  stroke="#C59B27"
-                  strokeWidth="2.5"
-                  strokeDasharray="8 5"
-                  strokeLinecap="round"
-                />
-                {/* Service Zone Label */}
-                <text x="460" y="310" fill="rgba(197, 155, 39, 0.25)" fontSize="28" fontWeight="900" textAnchor="middle" letterSpacing="6" fontFamily="monospace">
-                  VERA GOLD SERVICE ZONE
-                </text>
-              </svg>
 
               {/* Overlay Badges */}
               <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 z-20">

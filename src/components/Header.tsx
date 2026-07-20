@@ -43,10 +43,10 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
         scrolled
-          ? "bg-white/85 backdrop-blur-md border-b border-zinc-200 py-4 shadow-sm"
-          : "bg-white/50 backdrop-blur-sm border-b border-zinc-150 py-5"
+          ? "border-b border-zinc-200 py-4 shadow-sm"
+          : "border-b border-zinc-150 py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -245,7 +245,7 @@ export const Header: React.FC = () => {
           <LanguageSelector />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-1.5 rounded-lg border border-zinc-200 text-zinc-600 hover:text-zinc-950 bg-white/80"
+            className="p-1.5 rounded-lg border border-zinc-200 text-zinc-600 hover:text-zinc-950 bg-white"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

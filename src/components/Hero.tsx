@@ -132,16 +132,16 @@ export const Hero: React.FC = () => {
       <div className="absolute bottom-1/4 right-10 w-[400px] h-[400px] bg-[#10B981]/5 rounded-full filter blur-[120px] pointer-events-none" />
 
       {/* Giant 3D Watermark Typography Backdrop */}
-      <div className="absolute top-28 sm:top-36 md:inset-0 flex items-start md:items-center justify-center pointer-events-none overflow-hidden z-0">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeSlide.watermark}
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 0.09, scale: 1, y: 0 }}
+            animate={{ opacity: 0.04, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 1.1, y: -20 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl sm:text-7xl md:text-[11vw] font-black uppercase tracking-tighter text-zinc-950 whitespace-nowrap text-center select-none font-mono px-2 leading-none"
-            style={{ textShadow: "0 10px 30px rgba(0,0,0,0.15)" }}
+            className="text-[12vw] font-black uppercase tracking-tighter text-zinc-950 whitespace-nowrap text-center select-none font-mono"
+            style={{ textShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
           >
             {activeSlide.watermark}
           </motion.div>
@@ -293,7 +293,7 @@ export const Hero: React.FC = () => {
                       priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    
+
                     {/* Floating 3D Badge Overlay */}
                     <div className="absolute bottom-5 left-5 right-5 z-10 flex items-center justify-between">
                       <span className="text-[10px] font-mono font-extrabold text-[#C59B27] uppercase tracking-wider bg-black/80 px-3 py-1.5 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
@@ -319,11 +319,10 @@ export const Hero: React.FC = () => {
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
-                className={`h-2.5 rounded-full transition-all cursor-pointer ${
-                  currentSlide === idx
+                className={`h-2.5 rounded-full transition-all cursor-pointer ${currentSlide === idx
                     ? "w-8 bg-[#C59B27]"
                     : "w-2.5 bg-zinc-250 hover:bg-zinc-400"
-                }`}
+                  }`}
                 title={`Slide ${idx + 1}`}
               />
             ))}

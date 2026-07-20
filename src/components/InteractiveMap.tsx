@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "@/context/LanguageContext";
-import { Globe, MapPin, CheckCircle2, XCircle, Search } from "lucide-react";
+import { Globe, MapPin, CheckCircle2, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const InteractiveMap: React.FC = () => {
@@ -12,7 +12,6 @@ export const InteractiveMap: React.FC = () => {
   const [searchResult, setSearchResult] = useState<{
     found: boolean;
     name: string;
-    status: "active" | "excluded";
     region?: string;
   } | null>(null);
 
@@ -53,34 +52,43 @@ export const InteractiveMap: React.FC = () => {
       nameEn: "Balkans & Eastern Europe",
       nameDe: "Balkan & Osteuropa",
       nameFr: "Balkans & Europe de l'Est",
-      countries: ["Yunanistan", "Bulgaristan", "Romanya", "Sırbistan", "Hırvatistan", "Arnavutluk", "Kuzey Makedonya", "Macaristan", "Slovenya", "Bosna Hersek", "Karadağ", "Kosova"],
-      countriesEn: ["Greece", "Bulgaria", "Romania", "Serbia", "Croatia", "Albania", "North Macedonia", "Hungary", "Slovenia", "Bosnia & Herzegovina", "Montenegro", "Kosovo"],
+      countries: ["Yunanistan", "Bulgaristan", "Romanya", "Sırbistan", "Hırvatistan", "Arnavutluk", "Kuzey Makedonya", "Macaristan", "Slovenya", "Bosna Hersek", "Karadağ", "Kosova", "Türkiye"],
+      countriesEn: ["Greece", "Bulgaria", "Romania", "Serbia", "Croatia", "Albania", "North Macedonia", "Hungary", "Slovenia", "Bosnia & Herzegovina", "Montenegro", "Kosovo", "Türkiye"],
       descriptionTr: "Tüm Balkan ülkelerini kapsayan hızlı lojistik, mobil delgi filoları ve enerji santrali altyapı hizmetlerimiz.",
       descriptionEn: "Our fast logistics, mobile drilling fleets, and power plant infrastructure services covering all Balkan countries.",
       descriptionDe: "Unsere schnellen Logistik-, mobilen Bohrflotten- und Kraftwerksinfrastrukturdienste für alle Balkanländer.",
       descriptionFr: "Nos services logistiques rapides, nos flottes de forage mobiles et nos infrastructures de centrales pour tous les pays des Balkans.",
     },
     {
+      id: "north",
+      nameTr: "Kuzey Avrupa & İskandinavya",
+      nameEn: "Northern Europe & Scandinavia",
+      nameDe: "Nordeuropa & Skandinavien",
+      nameFr: "Europe du Nord & Scandinavie",
+      countries: ["Birleşik Krallık", "İsveç", "Norveç", "Finlandiya", "Danimarka", "İzlanda"],
+      countriesEn: ["United Kingdom", "Sweden", "Norway", "Finland", "Denmark", "Iceland"],
+      descriptionTr: "Kuzey Avrupa ve İskandinavya'daki enerji altyapısı, rüzgar santrali ve sondaj mühendisliği projelerimiz.",
+      descriptionEn: "Our energy infrastructure, wind farm construction, and drilling engineering projects in Northern Europe and Scandinavia.",
+      descriptionDe: "Unsere Energieinfrastruktur-, Windpark- und Bohrprojekte in Nordeuropa und Skandinavien.",
+      descriptionFr: "Nos projets d'infrastructure énergétique, de construction éolienne et d'ingénierie de forage en Europe du Nord et en Scandinavie.",
+    },
+    {
       id: "central",
-      nameTr: "Orta & Kuzey Avrupa",
-      nameEn: "Central & Northern Europe",
-      nameDe: "Mittel- & Nordeuropa",
-      nameFr: "Europe Centrale & du Nord",
-      countries: ["Polonya", "Çekya", "Slovakya", "Danimarka", "Litvanya", "Letonya", "Estonya"],
-      countriesEn: ["Poland", "Czechia", "Slovakia", "Denmark", "Lithuania", "Latvia", "Estonia"],
-      descriptionTr: "Enerji yatırımları ve delgi mühendisliği projelerimizle B2B üretim tesislerini desteklediğimiz kuzey operasyonlarımız.",
-      descriptionEn: "Our northern operations supporting B2B production facilities with energy investments and drilling engineering projects.",
-      descriptionDe: "Unsere Nordaktivitäten unterstützen B2B-Produktionsanlagen mit Energieinvestitionen und Bohrprojekten.",
-      descriptionFr: "Nos opérations nordiques soutiennent les installations B2B avec des investissements énergétiques et des projets de forage.",
+      nameTr: "Orta Avrupa",
+      nameEn: "Central Europe",
+      nameDe: "Mitteleuropa",
+      nameFr: "Europe Centrale",
+      countries: ["Polonya", "Çekya", "Slovakya", "Litvanya", "Letonya", "Estonya"],
+      countriesEn: ["Poland", "Czechia", "Slovakia", "Lithuania", "Latvia", "Estonia"],
+      descriptionTr: "Enerji yatırımları ve delgi mühendisliği projelerimizle B2B üretim tesislerini desteklediğimiz orta Avrupa operasyonlarımız.",
+      descriptionEn: "Our Central European operations supporting B2B production facilities with energy investments and drilling engineering projects.",
+      descriptionDe: "Unsere mitteleuropäischen Aktivitäten unterstützen B2B-Produktionsanlagen mit Energieinvestitionen und Bohrprojekten.",
+      descriptionFr: "Nos opérations en Europe centrale soutiennent les installations B2B avec des investissements énergétiques et des projets de forage.",
     }
   ];
 
-  const excludedCountries = [
-    { nameTr: "Birleşik Krallık (İngiltere)", nameEn: "United Kingdom (UK)", nameDe: "Vereinigtes Königreich (UK)", nameFr: "Royaume-Uni (UK)" },
-    { nameTr: "İsveç", nameEn: "Sweden", nameDe: "Schweden", nameFr: "Suède" },
-    { nameTr: "Norveç", nameEn: "Norway", nameDe: "Norwegen", nameFr: "Norvège" },
-    { nameTr: "Finlandiya", nameEn: "Finland", nameDe: "Finnland", nameFr: "Finlande" }
-  ];
+  // All countries flat list for search
+  const allCountries = hubs.flatMap(h => h.countries.map((c, i) => ({ tr: c, en: h.countriesEn[i], hubId: h.id })));
 
   useEffect(() => {
     if (!searchQuery.trim()) {
@@ -88,32 +96,15 @@ export const InteractiveMap: React.FC = () => {
       return;
     }
     const query = searchQuery.toLowerCase().trim();
-    const isExcluded = excludedCountries.find(
-      (c) =>
-        c.nameTr.toLowerCase().includes(query) ||
-        c.nameEn.toLowerCase().includes(query) ||
-        c.nameDe.toLowerCase().includes(query) ||
-        c.nameFr.toLowerCase().includes(query)
+    const match = allCountries.find(
+      (c) => c.tr.toLowerCase().includes(query) || c.en.toLowerCase().includes(query)
     );
-    if (isExcluded) {
-      setSearchResult({
-        found: true,
-        name: isTr ? isExcluded.nameTr : isDe ? isExcluded.nameDe : isFr ? isExcluded.nameFr : isExcluded.nameEn,
-        status: "excluded"
-      });
-      return;
+    if (match) {
+      setSearchResult({ found: true, name: isTr ? match.tr : match.en, region: match.hubId });
+      setSelectedHub(match.hubId);
+    } else {
+      setSearchResult({ found: false, name: searchQuery });
     }
-    for (const hub of hubs) {
-      const isTrMatch = hub.countries.find((c) => c.toLowerCase().includes(query));
-      const isEnMatch = hub.countriesEn.find((c) => c.toLowerCase().includes(query));
-      if (isTrMatch || isEnMatch) {
-        const matchedName = isTrMatch || isEnMatch || "";
-        setSearchResult({ found: true, name: matchedName, status: "active", region: hub.id });
-        setSelectedHub(hub.id);
-        return;
-      }
-    }
-    setSearchResult({ found: false, name: searchQuery, status: "excluded" });
   }, [searchQuery]);
 
   const activeHub = hubs.find((h) => h.id === selectedHub) || hubs[0];
@@ -132,6 +123,9 @@ export const InteractiveMap: React.FC = () => {
     return hub.descriptionEn;
   };
 
+  // Total active countries
+  const totalCountries = new Set(hubs.flatMap(h => h.countriesEn)).size;
+
   return (
     <section id="map" className="py-20 relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -145,16 +139,19 @@ export const InteractiveMap: React.FC = () => {
             {t("map.title")}
           </h2>
           <p className="text-zinc-500 max-w-2xl mx-auto text-sm md:text-base font-semibold leading-relaxed">
-            {t("map.subtitle")}
+            {isTr ? "Vera Gold Enerji olarak, İskandinavya ve Birleşik Krallık dahil tüm Avrupa kıtasında aktif operasyonel hizmet sağlıyoruz."
+            : isDe ? "Als Vera Gold Enerji bieten wir aktive operative Dienstleistungen auf dem gesamten europäischen Kontinent einschließlich Skandinavien und dem Vereinigten Königreich."
+            : isFr ? "En tant que Vera Gold Enerji, nous fournissons des services opérationnels actifs sur l'ensemble du continent européen, y compris la Scandinavie et le Royaume-Uni."
+            : "As Vera Gold Enerji, we provide active operational services across the entire European continent including Scandinavia and the United Kingdom."}
           </p>
         </div>
 
-        {/* Search & Interaction Bar */}
+        {/* Search Bar */}
         <div className="max-w-md mx-auto mb-10 relative">
           <div className="relative">
             <input
               type="text"
-              placeholder={isTr ? "Ülke ara (örn: Almanya, İspanya, İsveç)..." : isDe ? "Land suchen (z.B. Deutschland, Spanien)..." : isFr ? "Chercher un pays (ex: Allemagne, Espagne)..." : "Search country (e.g. Germany, Spain, Sweden)..."}
+              placeholder={isTr ? "Ülke ara (örn: Almanya, İsveç, Norveç)..." : isDe ? "Land suchen (z.B. Deutschland, Schweden)..." : isFr ? "Chercher un pays (ex: Allemagne, Suède)..." : "Search country (e.g. Germany, Sweden, Norway)..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 rounded-xl border border-zinc-250 bg-white text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] text-sm transition-all"
@@ -166,20 +163,13 @@ export const InteractiveMap: React.FC = () => {
             <div className="absolute top-full left-0 right-0 mt-2 p-3 bg-white border border-zinc-200 rounded-xl shadow-lg z-30 text-xs flex items-center justify-between font-semibold">
               <span className="text-zinc-700">{searchResult.name}:</span>
               {searchResult.found ? (
-                searchResult.status === "active" ? (
-                  <span className="text-emerald-600 flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    {isTr ? "Aktif Hizmet Bölgesi" : isDe ? "Aktiver Servicebereich" : isFr ? "Zone de service active" : "Active Service Region"}
-                  </span>
-                ) : (
-                  <span className="text-red-500 flex items-center gap-1">
-                    <XCircle className="w-3.5 h-3.5" />
-                    {isTr ? "Kapsam Dışı" : isDe ? "Außerhalb des Bereichs" : isFr ? "Hors du périmètre" : "Service Excluded"}
-                  </span>
-                )
+                <span className="text-emerald-600 flex items-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  {isTr ? "Aktif Hizmet Bölgesi ✓" : isDe ? "Aktiver Servicebereich ✓" : isFr ? "Zone de service active ✓" : "Active Service Region ✓"}
+                </span>
               ) : (
                 <span className="text-zinc-400">
-                  {isTr ? "Bulunamadı (Kapsam Dışı)" : isDe ? "Nicht gefunden" : isFr ? "Non trouvé" : "Not found (Excluded)"}
+                  {isTr ? "Bulunamadı" : isDe ? "Nicht gefunden" : isFr ? "Non trouvé" : "Not found"}
                 </span>
               )}
             </div>
@@ -187,18 +177,18 @@ export const InteractiveMap: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-          {/* Real World Map via OpenStreetMap Embed */}
+          {/* Real World Map */}
           <div className="lg:col-span-7 bg-zinc-50/50 border border-zinc-200 rounded-3xl p-4 relative min-h-[460px] flex flex-col overflow-hidden shadow-xs">
             {/* Visual Header */}
             <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest border-b border-zinc-200/50 pb-2 mb-3 flex items-center justify-between">
               <span>{isTr ? "Avrupa Hizmet Haritamız" : isDe ? "Unsere Europa-Servicekarte" : isFr ? "Notre Carte de Service Europe" : "Our Europe Service Map"}</span>
-              <span className="flex gap-3">
-                <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-500" />{isTr ? "Aktif" : isDe ? "Aktiv" : isFr ? "Actif" : "Active"}</span>
-                <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-400" />{isTr ? "Hariç" : isDe ? "Ausschl." : isFr ? "Exclu" : "Excluded"}</span>
+              <span className="flex items-center gap-1 text-emerald-500">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                {isTr ? "Tüm Avrupa Aktif" : isDe ? "Ganz Europa Aktiv" : isFr ? "Toute l'Europe Active" : "All Europe Active"}
               </span>
             </div>
 
-            {/* Embedded Real Map */}
+            {/* Embedded Map with SVG Overlay */}
             <div className="flex-grow rounded-2xl overflow-hidden border border-zinc-200 relative">
               <iframe
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-12.0,34.0,42.0,62.0&layer=mapnik&marker=38.4192,27.1287"
@@ -206,15 +196,37 @@ export const InteractiveMap: React.FC = () => {
                 loading="lazy"
                 title="Vera Gold Enerji Europe Service Map"
               />
-              {/* Overlay Badge */}
-              <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 z-10">
+
+              {/* Europe Outline SVG Overlay */}
+              <svg
+                viewBox="0 0 1000 600"
+                className="absolute inset-0 w-full h-full pointer-events-none z-10"
+                preserveAspectRatio="none"
+              >
+                {/* Approximate Europe outline - dashed golden border */}
+                <path
+                  d="M 130,280 C 130,260 150,200 180,170 C 200,150 230,130 260,110 C 290,95 330,85 370,75 C 410,68 440,60 470,55 C 500,50 540,45 570,50 C 600,55 640,70 680,90 C 720,110 750,140 770,170 C 790,200 810,240 820,280 C 830,310 840,350 840,380 C 840,410 830,440 810,465 C 790,490 760,510 730,525 C 700,540 660,550 620,555 C 580,558 540,555 500,550 C 460,545 420,535 380,525 C 340,515 300,505 260,495 C 230,488 200,475 175,460 C 155,448 140,430 130,410 C 120,390 115,360 115,340 C 115,320 120,300 130,280 Z"
+                  fill="rgba(16, 185, 129, 0.06)"
+                  stroke="#C59B27"
+                  strokeWidth="2.5"
+                  strokeDasharray="8 5"
+                  strokeLinecap="round"
+                />
+                {/* Service Zone Label */}
+                <text x="460" y="310" fill="rgba(197, 155, 39, 0.25)" fontSize="28" fontWeight="900" textAnchor="middle" letterSpacing="6" fontFamily="monospace">
+                  VERA GOLD SERVICE ZONE
+                </text>
+              </svg>
+
+              {/* Overlay Badges */}
+              <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 z-20">
                 <div className="bg-white/95 backdrop-blur-md border border-zinc-200 rounded-xl px-4 py-2.5 shadow-lg flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-[#C59B27] animate-pulse" />
                   <span className="text-[11px] font-bold text-zinc-900">HQ: İzmir, Türkiye</span>
                 </div>
                 <div className="bg-white/95 backdrop-blur-md border border-zinc-200 rounded-xl px-4 py-2.5 shadow-lg">
                   <span className="text-[11px] font-bold text-emerald-600">
-                    {isTr ? "30+ Ülkede Aktif Operasyon" : isDe ? "30+ Länder Aktive Operationen" : isFr ? "30+ Pays Opérations Actives" : "30+ Countries Active Operations"}
+                    {totalCountries}+ {isTr ? "Ülkede Aktif Operasyon" : isDe ? "Länder Aktive Operationen" : isFr ? "Pays Opérations Actives" : "Countries Active Operations"}
                   </span>
                 </div>
               </div>
@@ -299,32 +311,25 @@ export const InteractiveMap: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            {/* Excluded regions overview */}
-            <div className="bg-zinc-50/50 border border-zinc-200 rounded-3xl p-6 shadow-xs">
-              <h4 className="text-[10px] font-extrabold text-red-500/80 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                <XCircle className="w-4 h-4 text-red-500" />
-                {t("map.inactiveRegions")}
+            {/* Total Coverage Stats */}
+            <div className="bg-gradient-to-br from-zinc-950 to-zinc-900 border border-zinc-800 rounded-3xl p-6 shadow-lg text-white">
+              <h4 className="text-[10px] font-extrabold text-[#C59B27] uppercase tracking-wider mb-4 flex items-center gap-1.5">
+                <Globe className="w-4 h-4" />
+                {isTr ? "Toplam Kapsam Alanı" : isDe ? "Gesamtabdeckung" : isFr ? "Couverture Totale" : "Total Coverage Area"}
               </h4>
-              <p className="text-zinc-500 text-xs leading-relaxed mb-4 font-semibold">
-                {isTr
-                  ? "Aşağıda listelenen ülkeler yeni B2B organizasyonumuzun hizmet kapsamı dışındadır:"
-                  : isDe ? "Die folgenden Länder liegen außerhalb unseres B2B-Servicebereichs:"
-                  : isFr ? "Les pays suivants sont en dehors de notre périmètre de services B2B :"
-                  : "The following nations are outside the scope of our new B2B regional organization:"}
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {excludedCountries.map((c) => {
-                  const name = isTr ? c.nameTr : isDe ? c.nameDe : isFr ? c.nameFr : c.nameEn;
-                  return (
-                    <div
-                      key={c.nameEn}
-                      className="flex items-center gap-2 text-zinc-400 text-xs font-semibold px-3 py-2 rounded-lg bg-white border border-zinc-200 shadow-2xs"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500/40 shrink-0" />
-                      <span>{name}</span>
-                    </div>
-                  );
-                })}
+              <div className="grid grid-cols-3 gap-4">
+                <div className="text-center">
+                  <div className="text-2xl font-extrabold text-white">{totalCountries}+</div>
+                  <div className="text-[10px] font-semibold text-zinc-400 mt-1">{isTr ? "Aktif Ülke" : isDe ? "Aktive Länder" : isFr ? "Pays Actifs" : "Active Countries"}</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-extrabold text-[#C59B27]">{hubs.length}</div>
+                  <div className="text-[10px] font-semibold text-zinc-400 mt-1">{isTr ? "Operasyon Bölgesi" : isDe ? "Einsatzgebiete" : isFr ? "Zones Opérations" : "Operation Zones"}</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-extrabold text-emerald-400">7/24</div>
+                  <div className="text-[10px] font-semibold text-zinc-400 mt-1">{isTr ? "Lojistik Destek" : isDe ? "Logistik-Support" : isFr ? "Support Logistique" : "Logistics Support"}</div>
+                </div>
               </div>
             </div>
           </div>

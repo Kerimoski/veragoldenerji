@@ -13,7 +13,9 @@ export const Header: React.FC = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
   useEffect(() => {
@@ -29,6 +31,15 @@ export const Header: React.FC = () => {
   }, []);
 
   const isTr = t("nav.home") === "Ana Sayfa";
+
+  const productCategories = [
+    { key: "sondaj", nameTr: "Sondaj Makinaları", nameEn: "Drilling Rigs", path: "/urunler/sondaj-makinalari" },
+    { key: "rock", nameTr: "Rock Makinaları", nameEn: "Rock Machines", path: "/urunler/rock-makinalari" },
+    { key: "kazik", nameTr: "Kazık Çakma Makinaları", nameEn: "Pile Driving Rigs", path: "/urunler/kazik-cakma-makinalari" },
+    { key: "fore", nameTr: "Fore Kazık Makinaları", nameEn: "Bored Piling Rigs", path: "/urunler/fore-kazik-makinalari" },
+    { key: "jet", nameTr: "Jet Grout ve Ankraj Makinaları", nameEn: "Jet Grout & Anchoring Rigs", path: "/urunler/jet-grout-ankraj-makinalari" },
+    { key: "kompresor", nameTr: "Kompresörler", nameEn: "Compressors", path: "/urunler/kompresorler" },
+  ];
 
   return (
     <header
@@ -62,6 +73,47 @@ export const Header: React.FC = () => {
           >
             {t("nav.home")}
           </Link>
+
+          {/* Products Dropdown Parent */}
+          <div
+            className="relative py-2"
+            onMouseEnter={() => setIsProductsDropdownOpen(true)}
+            onMouseLeave={() => setIsProductsDropdownOpen(false)}
+          >
+            <Link
+              href="/urunler"
+              className={`text-sm font-semibold transition-colors flex items-center gap-1.5 focus:outline-none cursor-pointer ${
+                pathname.startsWith("/urunler") ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-950"
+              }`}
+            >
+              <span>{t("nav.products")}</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isProductsDropdownOpen ? "rotate-180" : ""}`} />
+            </Link>
+
+            {/* Products Dropdown Card */}
+            {isProductsDropdownOpen && (
+              <div className="absolute left-0 mt-2 w-[280px] bg-white border border-zinc-200 rounded-2xl shadow-xl p-3 z-[100] animate-fadeIn backdrop-blur-md">
+                <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest px-3 py-1.5 border-b border-zinc-100 mb-1 flex items-center justify-between">
+                  <span>{isTr ? "Makine Kategorileri" : "Machinery Fleet"}</span>
+                  <Link href="/urunler" className="text-[#C59B27] hover:underline normal-case font-semibold">
+                    {isTr ? "Tüm Ürünler" : "All Products"}
+                  </Link>
+                </div>
+                <ul className="space-y-0.5">
+                  {productCategories.map((cat) => (
+                    <li key={cat.key}>
+                      <Link
+                        href={cat.path}
+                        className="block px-3 py-2 rounded-xl hover:bg-zinc-50 transition-colors text-xs font-semibold text-zinc-800 hover:text-[#C59B27]"
+                      >
+                        {isTr ? cat.nameTr : cat.nameEn}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
 
           {/* Services Dropdown Parent */}
           <div
@@ -214,6 +266,34 @@ export const Header: React.FC = () => {
             >
               {t("nav.home")}
             </Link>
+
+            {/* Ürünlerimiz Accordion */}
+            <div className="flex flex-col gap-2">
+              <button
+                onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                className="text-sm font-bold text-zinc-600 hover:text-zinc-900 transition-colors flex items-center justify-between focus:outline-none cursor-pointer"
+              >
+                <span>{t("nav.products")}</span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileProductsOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {isMobileProductsOpen && (
+                <div className="pl-3 flex flex-col gap-2 border-l border-zinc-200 mt-2">
+                  <Link href="/urunler" onClick={() => setIsOpen(false)} className="text-xs font-extrabold text-[#C59B27]">{isTr ? "Tüm Ürünlerimiz" : "All Products"}</Link>
+                  <hr className="border-zinc-100 my-1" />
+                  {productCategories.map((cat) => (
+                    <Link
+                      key={cat.key}
+                      href={cat.path}
+                      onClick={() => setIsOpen(false)}
+                      className="text-xs font-semibold text-zinc-700 hover:text-[#C59B27]"
+                    >
+                      {isTr ? cat.nameTr : cat.nameEn}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* Hizmetlerimiz Accordion */}
             <div className="flex flex-col gap-2">

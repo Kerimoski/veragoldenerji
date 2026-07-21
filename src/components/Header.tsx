@@ -9,14 +9,12 @@ import { LanguageSelector } from "./LanguageSelector";
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 
 export const Header: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +28,7 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isTr = t("nav.home") === "Ana Sayfa";
+  const isTr = language === "tr";
 
   const productCategories = [
     { key: "sondaj", nameTr: "Sondaj Makinaları", nameEn: "Drilling Rigs", path: "/urunler/sondaj-makinalari" },
@@ -41,40 +39,51 @@ export const Header: React.FC = () => {
     { key: "kompresor", nameTr: "Kompresörler", nameEn: "Compressors", path: "/urunler/kompresorler" },
   ];
 
+  const servicePages = [
+    { nameTr: "Delgi Mühendisliği & Kaya Çakım", nameEn: "Drilling Engineering & Rock Piling", path: "/hizmetler/delgi" },
+    { nameTr: "GES & Ağır İş Makinesi Kiralama", nameEn: "Solar & Heavy Rig Rental Fleet", path: "/hizmetler/kiralama" },
+    { nameTr: "Enerji Santralleri & Derin Sondaj", nameEn: "Energy Plants & Deep Well Drilling", path: "/hizmetler/enerji" },
+    { nameTr: "Makine Danışmanlığı & Filo", nameEn: "Machinery Consulting & Fleet", path: "/hizmetler/makine-danismanligi" },
+    { nameTr: "Yedek Parça & Mobil Saha Servisi", nameEn: "Spare Parts & Mobile Field Service", path: "/hizmetler/yedek-parca-servis" },
+  ];
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-zinc-200 py-4 shadow-sm"
-          : "border-b border-zinc-150 py-5"
+          ? "bg-zinc-950/95 backdrop-blur-xl border-b border-zinc-800 py-3 shadow-2xl text-white"
+          : "bg-zinc-950/85 backdrop-blur-md border-b border-zinc-800/80 py-4 text-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <Image
-            src="/ver.png"
-            alt="Vera Gold Enerji Logo"
-            width={160}
-            height={40}
-            className="h-9 w-auto object-contain group-hover:opacity-90 transition-opacity"
-            priority
-          />
+        
+        {/* Left: Logo Container */}
+        <Link href="/" className="flex items-center group">
+          <div className="py-1 group-hover:scale-102 transition-transform">
+            <Image
+              src="/Veragold-Logo-400.png"
+              alt="Vera Gold Enerji Logo"
+              width={180}
+              height={45}
+              className="h-9 md:h-10 w-auto object-contain"
+              priority
+            />
+          </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {/* Home Link */}
+        {/* Center: Desktop Clean Nav Links */}
+        <nav className="hidden lg:flex items-center gap-7">
+          {/* 1. Ana Sayfa */}
           <Link
             href="/"
-            className={`text-sm font-semibold transition-colors relative py-1 ${
-              pathname === "/" ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-950"
+            className={`text-xs font-mono uppercase tracking-widest transition-colors py-1 ${
+              pathname === "/" ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
             }`}
           >
             {t("nav.home")}
           </Link>
 
-          {/* Products Dropdown Parent */}
+          {/* 2. Ürünlerimiz Dropdown */}
           <div
             className="relative py-2"
             onMouseEnter={() => setIsProductsDropdownOpen(true)}
@@ -82,289 +91,186 @@ export const Header: React.FC = () => {
           >
             <Link
               href="/urunler"
-              className={`text-sm font-semibold transition-colors flex items-center gap-1.5 focus:outline-none cursor-pointer ${
-                pathname.startsWith("/urunler") ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-950"
+              className={`text-xs font-mono uppercase tracking-widest transition-colors flex items-center gap-1.5 cursor-pointer ${
+                pathname.startsWith("/urunler") ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
               }`}
             >
               <span>{t("nav.products")}</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isProductsDropdownOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isProductsDropdownOpen ? "rotate-180 text-[#C59B27]" : ""}`} />
             </Link>
 
-            {/* Products Dropdown Card */}
             {isProductsDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-[280px] bg-white border border-zinc-200 rounded-2xl shadow-xl p-3 z-[100] animate-fadeIn backdrop-blur-md">
-                <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest px-3 py-1.5 border-b border-zinc-100 mb-1 flex items-center justify-between">
-                  <span>{isTr ? "Makine Kategorileri" : "Machinery Fleet"}</span>
-                  <Link href="/urunler" className="text-[#C59B27] hover:underline normal-case font-semibold">
-                    {isTr ? "Tüm Ürünler" : "All Products"}
+              <div className="absolute left-0 mt-2 w-[290px] bg-zinc-900/95 border border-zinc-800 rounded-2xl shadow-2xl p-3 z-[100] backdrop-blur-xl text-white animate-fadeIn">
+                <div className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest px-3 py-2 border-b border-zinc-800 mb-2 flex items-center justify-between">
+                  <span>// {isTr ? "Ürün Kategorileri" : "Product Categories"}</span>
+                  <Link href="/urunler" className="text-zinc-400 hover:text-white text-[9px] uppercase">
+                    {isTr ? "Tümü >" : "All >"}
                   </Link>
                 </div>
-                <ul className="space-y-0.5">
+                <div className="space-y-1">
                   {productCategories.map((cat) => (
-                    <li key={cat.key}>
-                      <Link
-                        href={cat.path}
-                        className="block px-3 py-2 rounded-xl hover:bg-zinc-50 transition-colors text-xs font-semibold text-zinc-800 hover:text-[#C59B27]"
-                      >
-                        {isTr ? cat.nameTr : cat.nameEn}
-                      </Link>
-                    </li>
+                    <Link
+                      key={cat.key}
+                      href={cat.path}
+                      className="block px-3 py-2 rounded-xl text-xs font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors"
+                    >
+                      {isTr ? cat.nameTr : cat.nameEn}
+                    </Link>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
           </div>
 
-          {/* Services Dropdown Parent */}
+          {/* 3. Hizmetlerimiz Dropdown */}
           <div
             className="relative py-2"
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
+            onMouseEnter={() => setIsServicesDropdownOpen(true)}
+            onMouseLeave={() => setIsServicesDropdownOpen(false)}
           >
-            <button
-              className={`text-sm font-semibold transition-colors flex items-center gap-1.5 focus:outline-none cursor-pointer ${
-                pathname.startsWith("/hizmetler") ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-950"
+            <Link
+              href="/hizmetler"
+              className={`text-xs font-mono uppercase tracking-widest transition-colors flex items-center gap-1.5 cursor-pointer ${
+                pathname.startsWith("/hizmetler") ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
               }`}
             >
               <span>{t("nav.services")}</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`} />
-            </button>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isServicesDropdownOpen ? "rotate-180 text-[#C59B27]" : ""}`} />
+            </Link>
 
-            {/* Dropdown Card */}
-            {isDropdownOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white border border-zinc-200 rounded-2xl shadow-xl p-5 z-[100] animate-fadeIn grid grid-cols-2 gap-6 backdrop-blur-md">
-                {/* Core Services Column */}
-                <div>
-                  <h4 className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3 border-b border-zinc-100 pb-1">
-                    {isTr ? "Uygulama & Kiralama" : "Execution & Rental"}
-                  </h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <Link
-                        href="/hizmetler/delgi"
-                        className="block px-2.5 py-1.5 rounded-lg hover:bg-zinc-50 transition-colors"
-                      >
-                        <div className="text-xs font-bold text-zinc-950">{t("services.drill.title")}</div>
-                        <div className="text-[10px] text-zinc-400 mt-0.5 line-clamp-1">{t("services.drill.short")}</div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hizmetler/kiralama"
-                        className="block px-2.5 py-1.5 rounded-lg hover:bg-zinc-50 transition-colors"
-                      >
-                        <div className="text-xs font-bold text-zinc-950">{t("services.rental.title")}</div>
-                        <div className="text-[10px] text-zinc-400 mt-0.5 line-clamp-1">{t("services.rental.short")}</div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/hizmetler/enerji"
-                        className="block px-2.5 py-1.5 rounded-lg hover:bg-zinc-50 transition-colors"
-                      >
-                        <div className="text-xs font-bold text-zinc-950">{t("services.energy.title")}</div>
-                        <div className="text-[10px] text-zinc-400 mt-0.5 line-clamp-1">{t("services.energy.short")}</div>
-                      </Link>
-                    </li>
-                  </ul>
+            {isServicesDropdownOpen && (
+              <div className="absolute left-0 mt-2 w-[310px] bg-zinc-900/95 border border-zinc-800 rounded-2xl shadow-2xl p-3 z-[100] backdrop-blur-xl text-white animate-fadeIn">
+                <div className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest px-3 py-2 border-b border-zinc-800 mb-2">
+                  // {isTr ? "Hizmetlerimiz" : "Our Services"}
                 </div>
-
-                {/* Consultancy Column */}
-                <div>
-                  <h4 className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-3 border-b border-zinc-100 pb-1">
-                    {isTr ? "Danışmanlık & Servis" : "Consultancy & Service"}
-                  </h4>
-                  <ul className="space-y-1">
-                    {[
-                      { key: "machineryConsulting", path: "/hizmetler/makine-danismanligi" },
-                      { key: "equipmentConsulting", path: "/hizmetler/ekipman-danismanligi" },
-                      { key: "investmentConsulting", path: "/hizmetler/yatirim-danismanligi" },
-                      { key: "projectConsulting", path: "/hizmetler/proje-danismanligi" },
-                      { key: "spareParts", path: "/hizmetler/yedek-parca-servis" }
-                    ].map((item) => (
-                      <li key={item.key}>
-                        <Link
-                          href={item.path}
-                          className="block px-2.5 py-1 rounded-lg hover:bg-zinc-50 transition-colors text-xs font-semibold text-zinc-700 hover:text-zinc-950"
-                        >
-                          {t(`services.${item.key}`)}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="space-y-1">
+                  {servicePages.map((srv, idx) => (
+                    <Link
+                      key={idx}
+                      href={srv.path}
+                      className="block px-3 py-2.5 rounded-xl text-xs font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors"
+                    >
+                      {isTr ? srv.nameTr : srv.nameEn}
+                    </Link>
+                  ))}
                 </div>
               </div>
             )}
           </div>
 
-          {/* Map Link */}
+          {/* 4. Hizmet Bölgemiz */}
           <Link
             href="/hizmet-bolgemiz"
-            className={`text-sm font-semibold transition-colors relative py-1 ${
-              pathname === "/hizmet-bolgemiz" ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-950"
+            className={`text-xs font-mono uppercase tracking-widest transition-colors py-1 ${
+              pathname === "/hizmet-bolgemiz" ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
             }`}
           >
             {t("nav.map")}
           </Link>
 
-          {/* Gallery Link */}
+          {/* 5. Galeri */}
           <Link
             href="/galeri"
-            className={`text-sm font-semibold transition-colors relative py-1 ${
-              pathname === "/galeri" ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-950"
+            className={`text-xs font-mono uppercase tracking-widest transition-colors py-1 ${
+              pathname === "/galeri" ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
             }`}
           >
-            {t("nav.gallery")}
+            {isTr ? "Galeri" : "Gallery"}
           </Link>
 
-          {/* Contact Link */}
+          {/* 6. İletişim */}
           <Link
             href="/iletisim"
-            className={`text-sm font-semibold transition-colors relative py-1 ${
-              pathname === "/iletisim" ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-950"
+            className={`text-xs font-mono uppercase tracking-widest transition-colors py-1 ${
+              pathname === "/iletisim" ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
             }`}
           >
             {t("nav.contact")}
           </Link>
         </nav>
 
-        {/* Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Right: Language Selector + İletişime Geç Button */}
+        <div className="hidden lg:flex items-center gap-4">
+          {/* Dil Seçeneği */}
           <LanguageSelector />
+
+          {/* İletişime Geç Sharp CTA */}
           <Link
             href="/iletisim"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-950 hover:bg-zinc-900 text-white font-semibold text-xs transition-colors shadow-sm"
+            className="px-5 py-2.5 rounded-none border border-[#C59B27] bg-[#C59B27]/10 text-[#C59B27] font-mono text-xs uppercase tracking-widest font-bold hover:bg-[#C59B27] hover:text-white transition-all shadow-md cursor-pointer flex items-center gap-2"
           >
-            <span>{t("nav.getQuote")}</span>
+            <span>{isTr ? "İletişime Geç" : "Get In Touch"}</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="flex md:hidden items-center gap-3">
+        {/* Mobile Toggle */}
+        <div className="flex lg:hidden items-center gap-3">
           <LanguageSelector />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-1.5 rounded-lg border border-zinc-200 text-zinc-600 hover:text-zinc-950 bg-white"
+            className="p-2 text-zinc-300 hover:text-white focus:outline-none"
+            aria-label="Toggle Navigation"
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav Drawer */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-zinc-200 px-6 py-6 flex flex-col gap-6 animate-slideDown shadow-lg max-h-[85vh] overflow-y-auto">
-          <nav className="flex flex-col gap-4">
-            {/* Home */}
-            <Link
-              href="/"
-              onClick={() => setIsOpen(false)}
-              className={`text-sm font-bold transition-colors ${
-                pathname === "/" ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-900"
-              }`}
-            >
-              {t("nav.home")}
-            </Link>
-
-            {/* Ürünlerimiz Accordion */}
-            <div className="flex flex-col gap-2">
-              <button
-                onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
-                className="text-sm font-bold text-zinc-600 hover:text-zinc-900 transition-colors flex items-center justify-between focus:outline-none cursor-pointer"
-              >
-                <span>{t("nav.products")}</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileProductsOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {isMobileProductsOpen && (
-                <div className="pl-3 flex flex-col gap-2 border-l border-zinc-200 mt-2">
-                  <Link href="/urunler" onClick={() => setIsOpen(false)} className="text-xs font-extrabold text-[#C59B27]">{isTr ? "Tüm Ürünlerimiz" : "All Products"}</Link>
-                  <hr className="border-zinc-100 my-1" />
-                  {productCategories.map((cat) => (
-                    <Link
-                      key={cat.key}
-                      href={cat.path}
-                      onClick={() => setIsOpen(false)}
-                      className="text-xs font-semibold text-zinc-700 hover:text-[#C59B27]"
-                    >
-                      {isTr ? cat.nameTr : cat.nameEn}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Hizmetlerimiz Accordion */}
-            <div className="flex flex-col gap-2">
-              <button
-                onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                className="text-sm font-bold text-zinc-600 hover:text-zinc-900 transition-colors flex items-center justify-between focus:outline-none cursor-pointer"
-              >
-                <span>{t("nav.services")}</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {isMobileServicesOpen && (
-                <div className="pl-3 flex flex-col gap-3 border-l border-zinc-200 mt-2">
-                  <Link href="/hizmetler/delgi" onClick={() => setIsOpen(false)} className="text-xs font-bold text-zinc-700 hover:text-[#C59B27]">{t("services.drill.title")}</Link>
-                  <Link href="/hizmetler/kiralama" onClick={() => setIsOpen(false)} className="text-xs font-bold text-zinc-700 hover:text-[#C59B27]">{t("services.rental.title")}</Link>
-                  <Link href="/hizmetler/enerji" onClick={() => setIsOpen(false)} className="text-xs font-bold text-zinc-700 hover:text-[#C59B27]">{t("services.energy.title")}</Link>
-                  <hr className="border-zinc-100 my-1" />
-                  <Link href="/hizmetler/makine-danismanligi" onClick={() => setIsOpen(false)} className="text-xs font-semibold text-zinc-500 hover:text-[#C59B27]">{t("services.machineryConsulting")}</Link>
-                  <Link href="/hizmetler/ekipman-danismanligi" onClick={() => setIsOpen(false)} className="text-xs font-semibold text-zinc-500 hover:text-[#C59B27]">{t("services.equipmentConsulting")}</Link>
-                  <Link href="/hizmetler/yatirim-danismanligi" onClick={() => setIsOpen(false)} className="text-xs font-semibold text-zinc-500 hover:text-[#C59B27]">{t("services.investmentConsulting")}</Link>
-                  <Link href="/hizmetler/proje-danismanligi" onClick={() => setIsOpen(false)} className="text-xs font-semibold text-zinc-500 hover:text-[#C59B27]">{t("services.projectConsulting")}</Link>
-                  <Link href="/hizmetler/yedek-parca-servis" onClick={() => setIsOpen(false)} className="text-xs font-semibold text-zinc-500 hover:text-[#C59B27]">{t("services.spareParts")}</Link>
-                </div>
-              )}
-            </div>
-
-            {/* Map */}
-            <Link
-              href="/hizmet-bolgemiz"
-              onClick={() => setIsOpen(false)}
-              className={`text-sm font-bold transition-colors ${
-                pathname === "/hizmet-bolgemiz" ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-900"
-              }`}
-            >
-              {t("nav.map")}
-            </Link>
-
-            {/* Gallery */}
-            <Link
-              href="/galeri"
-              onClick={() => setIsOpen(false)}
-              className={`text-sm font-bold transition-colors ${
-                pathname === "/galeri" ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-900"
-              }`}
-            >
-              {t("nav.gallery")}
-            </Link>
-
-            {/* Contact */}
-            <Link
-              href="/iletisim"
-              onClick={() => setIsOpen(false)}
-              className={`text-sm font-bold transition-colors ${
-                pathname === "/iletisim" ? "text-[#C59B27]" : "text-zinc-600 hover:text-zinc-900"
-              }`}
-            >
-              {t("nav.contact")}
-            </Link>
-          </nav>
-          <hr className="border-zinc-200" />
+        <div className="lg:hidden bg-zinc-950 border-b border-zinc-800 text-white px-6 py-6 space-y-4 animate-fadeIn">
+          <Link
+            href="/"
+            onClick={() => setIsOpen(false)}
+            className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
+          >
+            {t("nav.home")}
+          </Link>
+          <Link
+            href="/urunler"
+            onClick={() => setIsOpen(false)}
+            className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
+          >
+            {t("nav.products")}
+          </Link>
+          <Link
+            href="/hizmetler"
+            onClick={() => setIsOpen(false)}
+            className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
+          >
+            {t("nav.services")}
+          </Link>
+          <Link
+            href="/hizmet-bolgemiz"
+            onClick={() => setIsOpen(false)}
+            className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
+          >
+            {t("nav.map")}
+          </Link>
+          <Link
+            href="/galeri"
+            onClick={() => setIsOpen(false)}
+            className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
+          >
+            {isTr ? "Galeri" : "Gallery"}
+          </Link>
           <Link
             href="/iletisim"
             onClick={() => setIsOpen(false)}
-            className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-lg bg-zinc-950 text-white font-bold text-sm shadow-sm"
+            className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
           >
-            <span>{t("nav.getQuote")}</span>
-            <ArrowUpRight className="w-4 h-4" />
+            {t("nav.contact")}
+          </Link>
+          <Link
+            href="/iletisim"
+            onClick={() => setIsOpen(false)}
+            className="block text-xs font-mono uppercase tracking-widest py-2 text-[#C59B27] font-bold"
+          >
+            {isTr ? "İletişime Geç" : "Get In Touch"}
           </Link>
         </div>
       )}
     </header>
   );
 };
-

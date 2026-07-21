@@ -16,8 +16,8 @@ interface GalleryItem {
 }
 
 export default function GalleryPage() {
-  const { t } = useTranslation();
-  const isTr = t("nav.home") === "Ana Sayfa";
+  const { t, language } = useTranslation();
+  const isTr = language === "tr";
 
   const galleryItems: GalleryItem[] = [
     // Machinery
@@ -85,20 +85,20 @@ export default function GalleryPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow pt-32 pb-24 relative overflow-hidden bg-white text-zinc-900">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#C59B27]/3 rounded-full filter blur-[120px] pointer-events-none" />
+      <main className="flex-grow pt-32 pb-24 relative overflow-hidden bg-zinc-950 text-white">
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#C59B27]/10 rounded-full filter blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/30 bg-[#C59B27]/5 text-xs text-[#C59B27] font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/40 bg-[#C59B27]/10 text-xs text-[#C59B27] font-mono tracking-widest uppercase mb-4">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>{isTr ? "Vera Gold Makine Parkuru" : "Vera Gold Fleet Gallery"}</span>
+              <span>// {isTr ? "Vera Gold Makine Parkuru" : "Vera Gold Fleet Gallery"}</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-950 tracking-tight mb-4">
-              {t("nav.gallery")}
+            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4 font-sans">
+              {isTr ? "Galeri" : "Gallery"}
             </h1>
-            <p className="text-zinc-500 text-sm md:text-base max-w-xl mx-auto font-semibold leading-relaxed">
+            <p className="text-zinc-400 text-sm md:text-base max-w-xl mx-auto font-medium leading-relaxed">
               {isTr 
                 ? "Saha operasyonlarımız, ağır hizmet makinelerimiz ve tedarik ettiğimiz orijinal yedek parçaların gerçek fotoğrafları."
                 : "Real photos of our on-site B2B operations, heavy machinery fleet, and supplied replacement parts."}
@@ -106,7 +106,7 @@ export default function GalleryPage() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12 border-b border-zinc-200 pb-6 max-w-2xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-12 border-b border-zinc-800 pb-6 max-w-2xl mx-auto">
             {[
               { id: "all", labelTr: "Tümü", labelEn: "All" },
               { id: "machinery", labelTr: "Makineler", labelEn: "Machinery" },
@@ -119,10 +119,10 @@ export default function GalleryPage() {
                   setActiveTab(tab.id as any);
                   setLightboxIndex(null);
                 }}
-                className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all border cursor-pointer ${
+                className={`px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all border cursor-pointer ${
                   activeTab === tab.id
-                    ? "bg-zinc-950 text-white border-zinc-950 shadow-sm"
-                    : "bg-zinc-50 border-zinc-200 text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950"
+                    ? "bg-[#C59B27] text-white border-[#C59B27] shadow-md"
+                    : "bg-zinc-900 border-zinc-800 text-zinc-400 hover:bg-zinc-800 hover:text-white"
                 }`}
               >
                 {isTr ? tab.labelTr : tab.labelEn}
@@ -144,7 +144,7 @@ export default function GalleryPage() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
                   key={item.src}
-                  className="group relative h-72 rounded-3xl border border-zinc-200 bg-zinc-50 overflow-hidden shadow-2xs cursor-pointer"
+                  className="group relative h-72 rounded-3xl border border-zinc-800 bg-zinc-900 overflow-hidden shadow-xl cursor-pointer"
                   onClick={() => setLightboxIndex(idx)}
                 >
                   <Image
@@ -152,16 +152,16 @@ export default function GalleryPage() {
                     alt={isTr ? item.titleTr : item.titleEn}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                   />
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
                     <div className="self-end w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
                       <Eye className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-[10px] text-[#C59B27] font-extrabold uppercase tracking-widest mb-1 block">
-                        {item.category === "machinery" ? (isTr ? "Makine" : "Machinery") : item.category === "equipment" ? (isTr ? "Ekipman" : "Equipment") : (isTr ? "Operasyon" : "Operation")}
+                      <span className="text-[10px] text-[#C59B27] font-mono font-extrabold uppercase tracking-widest mb-1 block">
+                        // {item.category === "machinery" ? (isTr ? "Makine" : "Machinery") : item.category === "equipment" ? (isTr ? "Ekipman" : "Equipment") : (isTr ? "Operasyon" : "Operation")}
                       </span>
                       <h3 className="text-sm font-bold text-white leading-snug">
                         {isTr ? item.titleTr : item.titleEn}
@@ -182,61 +182,47 @@ export default function GalleryPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
             onClick={() => setLightboxIndex(null)}
-            className="fixed inset-0 bg-black/95 z-[9999] flex flex-col justify-between py-6 px-6 backdrop-blur-sm"
           >
-            {/* Close & Header */}
-            <div className="flex items-center justify-between text-white max-w-7xl mx-auto w-full">
-              <div className="text-xs font-semibold text-zinc-400">
-                {isTr ? "Vera Gold Enerji - B2B Fotoğraf Arşivi" : "Vera Gold Enerji - B2B Photo Archive"}
-              </div>
-              <button 
-                onClick={() => setLightboxIndex(null)}
-                className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white cursor-pointer focus:outline-none"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+            <button
+              onClick={() => setLightboxIndex(null)}
+              className="absolute top-6 right-6 p-3 rounded-full bg-zinc-800 text-zinc-300 hover:text-white z-50 cursor-pointer"
+            >
+              <X className="w-6 h-6" />
+            </button>
 
-            {/* Slider Content */}
-            <div className="relative flex items-center justify-center max-w-5xl mx-auto w-full h-[70vh]">
-              {/* Prev Button */}
-              <button
-                onClick={handlePrev}
-                className="absolute left-0 p-3 rounded-full bg-white/5 hover:bg-white/15 text-white cursor-pointer z-50 focus:outline-none"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
+            <button
+              onClick={handlePrev}
+              className="absolute left-4 md:left-10 p-3 rounded-full bg-zinc-800/80 border border-zinc-700 text-white hover:bg-zinc-800 z-50 cursor-pointer"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
 
-              {/* Active Image container */}
-              <div className="relative w-full h-full max-h-[600px] flex items-center justify-center">
+            <button
+              onClick={handleNext}
+              className="absolute right-4 md:right-10 p-3 rounded-full bg-zinc-800/80 border border-zinc-700 text-white hover:bg-zinc-800 z-50 cursor-pointer"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            <div 
+              className="relative max-w-5xl w-full max-h-[85vh] h-full flex flex-col items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative w-full h-full rounded-2xl overflow-hidden border border-zinc-800">
                 <Image
                   src={filteredItems[lightboxIndex].src}
                   alt={isTr ? filteredItems[lightboxIndex].titleTr : filteredItems[lightboxIndex].titleEn}
                   fill
                   className="object-contain"
-                  priority
                 />
               </div>
-
-              {/* Next Button */}
-              <button
-                onClick={handleNext}
-                className="absolute right-0 p-3 rounded-full bg-white/5 hover:bg-white/15 text-white cursor-pointer z-50 focus:outline-none"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-
-            {/* Image Details Footer */}
-            <div className="text-center text-white max-w-xl mx-auto w-full">
-              <h3 className="text-base font-bold mb-1">
-                {isTr ? filteredItems[lightboxIndex].titleTr : filteredItems[lightboxIndex].titleEn}
-              </h3>
-              <p className="text-zinc-500 text-xs font-bold uppercase tracking-wider">
-                {filteredItems[lightboxIndex].category === "machinery" ? (isTr ? "Makineler" : "Machinery") : filteredItems[lightboxIndex].category === "equipment" ? (isTr ? "Ekipman & Yedek Parça" : "Equipment & Spares") : (isTr ? "Saha Çalışmaları" : "On-Site Works")} 
-                {" | "} {lightboxIndex + 1} / {filteredItems.length}
-              </p>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-bold text-white">
+                  {isTr ? filteredItems[lightboxIndex].titleTr : filteredItems[lightboxIndex].titleEn}
+                </h3>
+              </div>
             </div>
           </motion.div>
         )}

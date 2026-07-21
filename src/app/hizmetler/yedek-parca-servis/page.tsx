@@ -6,155 +6,65 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useTranslation } from "@/context/LanguageContext";
-import { ArrowLeft, Check, Sparkles, Target, Zap, Shield, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, Check, Sparkles, Target, Zap, Shield, Wrench } from "lucide-react";
 
 export default function YedekParcaServisPage() {
-  const { t: translate } = useTranslation();
-
-  const isTr = translate("nav.home") === "Ana Sayfa";
-
-  const contentTr = {
-    title: "Yedek Parça & Servis",
-    badge: "B2B Teknik Servis & Orijinal Parça",
-    desc: "Ağır hizmet kaya delgi ve kompresör grupları için orijinal yedek parça temini ve 7/24 saha servis mühendisliği sunuyoruz.",
-    longDesc: "Şantiyenizdeki duraklamaların maliyetini en aza indirmek için geniş yedek parça stoğumuz ve mobil servis ekiplerimizle yanınızdayız. Vera Gold Enerji olarak, iş ortaklarımızın kompresör, delici kafa (rotary head), hidrolik pompalar, sızdırmazlık elemanları ve valf blokları gibi hayati önem taşıyan yedek parçalarını en kısa sürede temin ediyor, yerinde montaj ve bakım servisimizle makinelerinizin kesintisiz çalışmasını garanti ediyoruz.",
-    features: [
-      { title: "Orijinal Yedek Parça Stoğu", desc: "Zega, Liugong, FYD ve diğer dünya markalarına ait kompresör ve delici yedek parçaları." },
-      { title: "7/24 Mobil Saha Servisi", desc: "Arıza durumunda şantiyenize en hızlı şekilde ulaşan uzman servis mühendisleri." },
-      { title: "Kompresör & Hidrolik Revizyon", desc: "Yıpranmış hava kompresörlerinin ve hidrolik motorların fabrika ayarlarına sıfırlanması." },
-      { title: "Periyodik Bakım Anlaşmaları", desc: "Makine parkurunuzun ömrünü uzatan planlı bakım anlaşmaları ve düzenli Check-Up desteği." }
-    ],
-    stats: [
-      { val: "2 Saat", label: "Ortalama Müdahale Süresi" },
-      { val: "10,000+", label: "Aktif Parça Stoğu" },
-      { val: "%99.4", label: "Müşteri Memnuniyet Oranı" }
-    ],
-    cta: "Yedek Parça & Servis İste"
-  };
-
-  const contentEn = {
-    title: "Spare Parts & Service",
-    badge: "B2B Technical Service & OEM Parts",
-    desc: "We deliver rapid original spare parts logistics and 24/7 technical field maintenance for heavy-duty drilling units and compressor fleets.",
-    longDesc: "To minimize costly operational downtime on your jobsite, we provide an extensive OEM parts inventory and mobile mechanic service units. At Vera Gold Enerji, we source, ship, and install critical components like rotary heads, hydraulic pumps, seals, and control valves. Our skilled mechanics travel directly to your site to restore equipment to factory specifications.",
-    features: [
-      { title: "OEM Parts Inventory", desc: "Stocking original components for Zega, Liugong, FYD, and other global brands." },
-      { title: "24/7 Mobile Field Dispatch", desc: "On-site dispatch of experienced diagnostic mechanics directly to your operating site." },
-      { title: "Compressor & Pump Overhaul", desc: "Complete reconstruction and bench testing of air ends, piston pumps, and motors." },
-      { title: "Scheduled Maintenance Contracts", desc: "Preventative maintenance programs and checkups designed to prolong machine health." }
-    ],
-    stats: [
-      { val: "2 Hours", label: "Average Site Dispatch" },
-      { val: "10,000+", label: "In-Stock Components" },
-      { val: "99.4%", label: "Satisfaction Rating" }
-    ],
-    cta: "Request Parts or Service"
-  };
-
-  const current = isTr ? contentTr : contentEn;
+  const { t: translate, language } = useTranslation();
+  const isTr = language === "tr";
 
   return (
     <>
       <Header />
-      <main className="flex-grow pt-32 pb-24 relative overflow-hidden bg-white text-zinc-900">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#C59B27]/3 rounded-full filter blur-[120px] pointer-events-none" />
+      <main className="flex-grow pt-32 pb-24 bg-zinc-950 text-white relative overflow-hidden">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#C59B27]/10 rounded-full filter blur-[140px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
-          {/* Back button */}
           <Link
             href="/hizmetler"
-            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-950 transition-colors mb-10 group font-bold"
+            className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white mb-8 transition-colors uppercase tracking-widest"
           >
-            <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="w-4 h-4 text-[#C59B27]" />
             <span>{isTr ? "Hizmetlere Dön" : "Back to Services"}</span>
           </Link>
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/30 bg-[#C59B27]/5 text-xs text-[#C59B27] font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/40 bg-[#C59B27]/10 text-xs text-[#C59B27] font-mono tracking-widest uppercase mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>{current.badge}</span>
+            <span>// {isTr ? "7/24 Saha Destek & Sarf Tedariki" : "24/7 Field Support & Parts"}</span>
           </div>
 
-          {/* Heading */}
-          <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-950 tracking-tight mb-8">
-            {current.title}
+          <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6 font-sans">
+            {isTr ? "Yedek Parça & Mobil Saha Servisi" : "Spare Parts & Field Service"}
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-zinc-650 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-medium">
-            {current.longDesc}
+          <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-4xl font-medium">
+            {isTr
+              ? "Ağır hizmet kaya delgi ve kompresör grupları için orijinal yedek parça temini ve 7/24 mobil saha mühendisliği desteği sunuyoruz."
+              : "We provide OEM spare parts supply and 24/7 mobile field engineering support for heavy drilling rigs and air compressors."}
           </p>
 
-          {/* Featured Machine Photo */}
-          <div className="relative h-72 md:h-96 w-full rounded-3xl overflow-hidden mb-12 border border-zinc-200 shadow-md">
+          <div className="relative h-72 md:h-96 w-full rounded-3xl overflow-hidden mb-12 border border-zinc-800 shadow-2xl">
             <Image
               src="/veragaleri/Filtre-6645-scaled.jpg"
-              alt="Yedek Parça ve Servis Operasyonu"
+              alt="Yedek Parça Servisi"
               fill
-              className="object-cover"
+              className="object-cover opacity-90"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white z-10">
-              <div>
-                <span className="text-xs font-mono font-bold text-[#C59B27] uppercase tracking-wider bg-black/70 px-3 py-1 rounded-md backdrop-blur-xs">
-                  // YEDEK PARÇA & TEKNİK SERVİS STOĞU
-                </span>
-                <h3 className="text-lg md:text-2xl font-extrabold mt-2">Orijinal Delici Filtre & Mekanik Parça Deposu</h3>
-              </div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left side details */}
-            <div className="lg:col-span-8">
-              <p className="text-lg text-zinc-700 font-semibold mb-6 leading-relaxed">
-                {current.desc}
-              </p>
-              <div className="prose prose-zinc max-w-none text-zinc-500 font-medium text-sm leading-relaxed mb-10">
-                <p>{current.longDesc}</p>
-              </div>
-
-              {/* Features List */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                {current.features.map((feat) => (
-                  <div key={feat.title} className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50/20 shadow-2xs">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 mb-3">
-                      <Check className="w-4 h-4" />
-                    </div>
-                    <h3 className="text-sm font-bold text-zinc-950 mb-1">{feat.title}</h3>
-                    <p className="text-zinc-400 text-[11px] font-semibold leading-relaxed">{feat.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right side card */}
-            <div className="lg:col-span-4 flex flex-col gap-6">
-              {/* Stats Card */}
-              <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-6 shadow-2xs">
-                <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-6">
-                  {isTr ? "Saha Verilerimiz" : "Field Metrics"}
-                </h3>
-                <div className="space-y-6">
-                  {current.stats.map((s) => (
-                    <div key={s.label}>
-                      <div className="text-2xl font-extrabold text-zinc-950">{s.val}</div>
-                      <div className="text-xs text-zinc-500 font-bold">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Call to action */}
-              <Link
-                href="/iletisim?service=spareparts"
-                className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-zinc-950 text-white font-extrabold text-sm hover:bg-zinc-900 transition-all shadow-md group"
-              >
-                <span>{current.cta}</span>
-                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
-            </div>
+          <div className="p-8 md:p-12 rounded-3xl bg-zinc-900/90 border border-zinc-800 text-center relative overflow-hidden shadow-2xl">
+            <Shield className="w-12 h-12 text-[#C59B27] mx-auto mb-6" />
+            <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
+              {isTr ? "Saha Servisi & Parça İste" : "Request Parts & Service"}
+            </h3>
+            <Link
+              href="/iletisim?service=spareparts"
+              className="inline-flex items-center gap-3 py-4 px-8 rounded-none bg-[#C59B27] hover:bg-[#b08920] text-white font-mono font-bold text-xs uppercase tracking-widest shadow-lg transition-colors cursor-pointer"
+            >
+              <span>{isTr ? "İletişime Geç" : "Get In Touch"}</span>
+              <Zap className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </main>

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslation } from "@/context/LanguageContext";
-import { ArrowRight, Sparkles, ChevronLeft, ChevronRight, ShieldCheck, CheckCircle2, Drill, Hammer, Layers, Wind } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Activity } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const Hero: React.FC = () => {
@@ -15,89 +15,87 @@ export const Hero: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   const slides = [
-    // Slide 0: Main Brand Slogan & Overview
+    // Slide 0: Main Brand Overview
     {
-      type: "main",
-      badge: t("hero.badge"),
+      id: "main",
+      tag: "VERA GOLD ENERJİ // B2B HEAVY DRILLING & PILING",
+      watermark: "VERA GOLD",
+      badge: isTr ? "AĞIR HİZMET DELGİ & SONDAJ FİLOSU" : "HEAVY DUTY DRILLING & PILING FLEET",
       title: t("hero.title"),
       subtitle: t("hero.subtitle"),
-      watermark: "VERA GOLD ENERJİ",
-      ctaPrimaryText: t("hero.exploreFleet"),
-      ctaPrimaryLink: "/urunler",
-      ctaSecondaryText: t("hero.ctaQuote"),
-      ctaSecondaryLink: "/iletisim",
+      image: "/satismakineleri/Paletli-Rock-Makina.jpg",
+      specs: [
+        { label: isTr ? "BÖLGE" : "ZONE", val: "Tüm Avrupa & Balkanlar" },
+        { label: isTr ? "FİLO" : "FLEET", val: "100+ Ağır İş Makinesi" },
+        { label: isTr ? "DESTEK" : "SUPPORT", val: "7/24 Saha Servisi" },
+      ],
+      primaryCtaText: t("hero.exploreFleet"),
+      primaryCtaLink: "/urunler",
+      secondaryCtaText: t("hero.ctaQuote"),
+      secondaryCtaLink: "/iletisim",
     },
     // Slide 1: Paletli Rock Makinesi
     {
-      type: "machine",
-      categoryPath: "/urunler/rock-makinalari",
-      watermark: "ROCK DRILLING",
-      badge: isTr ? "Ağır Hizmet Delici Parkuru" : "Heavy Duty Rock Fleet",
+      id: "rock",
+      tag: "FD580 HEAVY ROCK DRILL // DTH RIG",
+      watermark: "ROCK DRILL",
+      badge: isTr ? "GÜÇLÜ KAYA DELGİ TEKNOLOJİSİ" : "HIGH-PRESSURE DTH ROCK DRILLING",
       title: t("hero.rock"),
       subtitle: isTr
-        ? "Maden ocakları, şev stabilizasyonları ve zorlu granit zeminlerde 24 Bar yüksek basınçlı DTH delgi gücü."
-        : "24 Bar high-pressure DTH drilling performance in tough granite terrains and quarries.",
+        ? "Maden ocakları, şev stabilizasyonu ve granit zeminlerde 24 Bar yüksek basınçlı DTH delgi performansı."
+        : "24 Bar high-pressure DTH drilling performance engineered for tough granite terrains and quarry operations.",
       image: "/satismakineleri/Paletli-Rock-Makina.jpg",
       specs: [
-        { label: "Basınç", val: "24 Bar DTH" },
-        { label: "Çap", val: "90 - 165 mm" },
-        { label: "Motor", val: "Cummins 194 kW" },
+        { label: isTr ? "BASINÇ" : "PRESSURE", val: "24 Bar DTH" },
+        { label: isTr ? "ÇAP" : "DIAMETER", val: "90 - 165 mm" },
+        { label: isTr ? "MOTOR" : "ENGINE", val: "Cummins 194 kW" },
       ],
-      tag: "FD580 HEAVY ROCK DRILL",
+      primaryCtaText: isTr ? "Makine Detaylarını İncele" : "Explore Machine Specs",
+      primaryCtaLink: "/urunler/paletli-rock-delgi-makinesi",
+      secondaryCtaText: t("hero.ctaQuote"),
+      secondaryCtaLink: "/iletisim",
     },
     // Slide 2: MZ460Y GES Kazık Çakma
     {
-      type: "machine",
-      categoryPath: "/urunler/kazik-cakma-makinalari",
-      watermark: "SOLAR PILING",
-      badge: isTr ? "Güneş Enerjisi (GES) Çözümleri" : "PV Solar Farm Substructures",
+      id: "solar",
+      tag: "MZ460Y HYDRAULIC PILER // GES PILING",
+      watermark: "SOLAR PILER",
+      badge: isTr ? "GÜNEŞ ENERJİ SANTRALİ (GES) SİSTEMLERİ" : "PV SOLAR FARM SUBSTRUCTURE RIG",
       title: t("hero.solar"),
       subtitle: isTr
-        ? "GES arazilerinde C ve U profilli çelik çakım kazıklarını milimetrik açı doğruluğu ile çakan yüksek hızlı hidrolik sistem."
-        : "High-frequency hydraulic piler driving C & U steel posts with millimetric precision on solar terrains.",
+        ? "GES sahalarında C ve U çelik profilleri milimetrik hassasiyetle çakan yüksek hızlı hidrolik çakım gücü."
+        : "High-frequency hydraulic piler driving C & U steel posts with millimetric precision on solar farm terrains.",
       image: "/satismakineleri/mz460y.jpg",
       specs: [
-        { label: "Çakım", val: "4,600 mm" },
-        { label: "Darbe", val: "1,200 J" },
-        { label: "Kapasite", val: "400+ Kazık/Gün" },
+        { label: isTr ? "ÇAKIM Uzunluk" : "MAX LENGTH", val: "4,600 mm" },
+        { label: isTr ? "DARBE Gücü" : "IMPACT", val: "1,200 J" },
+        { label: isTr ? "KAPASİTE" : "CAPACITY", val: "400+ Kazık/Gün" },
       ],
-      tag: "MZ460Y HYDRAULIC PILER",
+      primaryCtaText: isTr ? "Makine Detaylarını İncele" : "Explore Machine Specs",
+      primaryCtaLink: "/urunler/mz460y-gunes-enerjisi-ges-kazik-cakma-makinesi",
+      secondaryCtaText: t("hero.ctaQuote"),
+      secondaryCtaLink: "/iletisim",
     },
     // Slide 3: Derin Su & Zemin Sondaj Kulesi
     {
-      type: "machine",
-      categoryPath: "/urunler/sondaj-makinalari",
-      watermark: "DEEP WELL RIG",
-      badge: isTr ? "Endüstriyel Sondaj Filosu" : "Industrial Water & Coring Rigs",
+      id: "water",
+      tag: "VD-S300 DEEP WELL RIG // DRILLING MAST",
+      watermark: "DEEP WELL",
+      badge: isTr ? "ENDÜSTRİYEL SONDAJ & JEOTEKNİK" : "INDUSTRIAL WATER & GEOTECHNICAL DRILLING",
       title: t("hero.water"),
       subtitle: isTr
-        ? "300+ metre derin su sondajı, jeoteknik zemin etütleri ve karot numune alım operasyonlarında yüksek torklu hidrolik kule."
-        : "High-torque hydraulic mast for 300+ meter deep water wells and geotechnical core drilling.",
+        ? "300+ metre derin su sondajı, jeoteknik etütler ve karot alım operasyonlarında yüksek torklu hidrolik kule."
+        : "High-torque hydraulic mast for 300+ meter deep water wells and geotechnical core sampling.",
       image: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg",
       specs: [
-        { label: "Derinlik", val: "300 - 450 m" },
-        { label: "Tork", val: "8,500 Nm" },
-        { label: "Pompa", val: "Çamur Pompası" },
+        { label: isTr ? "DERİNLİK" : "DEPTH", val: "300 - 450 m" },
+        { label: isTr ? "TORK" : "TORQUE", val: "8,500 Nm" },
+        { label: isTr ? "POMPA" : "PUMP", val: "Entegre Çamur Pompası" },
       ],
-      tag: "VD-S300 DEEP DRILLING",
-    },
-    // Slide 4: Mobil Dizel Kompresör
-    {
-      type: "machine",
-      categoryPath: "/urunler/kompresorler",
-      watermark: "AIR COMPRESSOR",
-      badge: isTr ? "Yüksek Basınçlı Hava Ünitesi" : "High Pressure Diesel Air End",
-      title: t("hero.compressor"),
-      subtitle: isTr
-        ? "Şantiye koşullarında DTH çekiç ve kaya delgilerini kesintisiz besleyen 24 Bar, 33 m³/dk hava debili mobil dizel kompresör."
-        : "Heavy-duty diesel air compressor delivering 24 Bar and 33 m³/min airflow for continuous DTH rock drilling.",
-      image: "/satismakineleri/csh1120a-hava-kompresoru.png",
-      specs: [
-        { label: "Basınç", val: "24 Bar (348 PSI)" },
-        { label: "Debi", val: "33 m³/dk" },
-        { label: "Motor", val: "Cummins QSL9" },
-      ],
-      tag: "CSH1120A DIESEL AIR END",
+      primaryCtaText: isTr ? "Makine Detaylarını İncele" : "Explore Machine Specs",
+      primaryCtaLink: "/urunler/derin-su-sondaj-makinesi",
+      secondaryCtaText: t("hero.ctaQuote"),
+      secondaryCtaLink: "/iletisim",
     },
   ];
 
@@ -110,246 +108,163 @@ export const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, [isPaused, slides.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
   const activeSlide = slides[currentSlide];
 
   return (
     <section
-      id="hero"
+      className="relative h-screen min-h-screen snap-start snap-always bg-zinc-950 text-white flex flex-col justify-between overflow-hidden pt-32 pb-12 select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className="min-h-screen flex flex-col justify-center pt-28 pb-16 relative overflow-hidden bg-white text-zinc-900 select-none"
     >
-      {/* Background radial gradients */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#C59B27]/5 rounded-full filter blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-10 w-[400px] h-[400px] bg-[#10B981]/5 rounded-full filter blur-[120px] pointer-events-none" />
+      {/* SpaceX Dark Background Grid & Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(197,155,39,0.12),transparent_65%)] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
 
-      {/* Giant 3D Watermark Typography Backdrop */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeSlide.watermark}
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 0.04, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 1.1, y: -20 }}
-            transition={{ duration: 0.6 }}
-            className="text-[12vw] font-black uppercase tracking-tighter text-zinc-950 whitespace-nowrap text-center select-none font-mono"
-            style={{ textShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
-          >
-            {activeSlide.watermark}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      {/* Dynamic Background Backdrop */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeSlide.id}
+          initial={{ opacity: 0, scale: 1.06 }}
+          animate={{ opacity: 0.65, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <Image
+            src={activeSlide.image}
+            alt={activeSlide.title}
+            fill
+            className="object-cover object-center brightness-90 contrast-110 opacity-95"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/75 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/60 z-10" />
+        </motion.div>
+      </AnimatePresence>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        {/* Slide Content Display */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            {activeSlide.type === "main" ? (
-              /* Main Overview Slide (Slide 0) */
-              <div className="text-center py-6">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-250 bg-white/90 backdrop-blur-md text-xs text-[#C59B27] font-semibold mb-6 shadow-xs">
-                  <Sparkles className="w-3.5 h-3.5 text-[#C59B27]" />
-                  <span>{activeSlide.badge}</span>
+
+
+      {/* Main Hero Container - Full Screen SpaceX Layout for ALL Slides */}
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 my-auto py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Full Width Left Column */}
+          <div className="lg:col-span-11 xl:col-span-10 flex flex-col justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeSlide.id}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                {/* SpaceX Telemetry Monospace Tag */}
+                <div className="inline-flex items-center gap-2 font-mono text-xs text-[#C59B27] tracking-widest uppercase mb-5 border-l-2 border-[#C59B27] pl-3 py-0.5">
+                  <Activity className="w-3.5 h-3.5 animate-pulse text-[#C59B27]" />
+                  <span>{activeSlide.tag}</span>
                 </div>
 
-                {/* Title */}
-                <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 max-w-5xl mx-auto text-zinc-950">
-                  <span className="shimmer-text">
-                    {activeSlide.title}
-                  </span>
+                {/* Main Headline (SpaceX Style Giant Sans-Serif) */}
+                <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white mb-6 leading-[1.02] font-sans">
+                  {activeSlide.title}
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-zinc-500 text-base md:text-xl leading-relaxed max-w-3xl mx-auto mb-10 font-medium">
+                <p className="text-zinc-300 text-base sm:text-xl max-w-2xl font-medium leading-relaxed mb-10">
                   {activeSlide.subtitle}
                 </p>
 
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                {/* Action Buttons (SpaceX Sharp Borders) */}
+                <div className="flex flex-wrap items-center gap-4 mb-12">
                   <Link
-                    href={activeSlide.ctaPrimaryLink || "/urunler"}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-4 px-8 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-sm tracking-wide shadow-md transition-colors"
+                    href={activeSlide.primaryCtaLink}
+                    className="px-8 py-4 rounded-none bg-white text-zinc-950 font-black text-xs uppercase tracking-widest hover:bg-[#C59B27] hover:text-white transition-all flex items-center gap-3 shadow-xl group cursor-pointer"
                   >
-                    <span>{activeSlide.ctaPrimaryText}</span>
-                    <ArrowRight className="w-4 h-4 text-[#C59B27]" />
+                    <span>{activeSlide.primaryCtaText}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
                   </Link>
+
                   <Link
-                    href={activeSlide.ctaSecondaryLink || "/iletisim"}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 py-4 px-8 rounded-xl bg-white hover:bg-zinc-50 border border-zinc-250 text-zinc-800 font-bold text-sm transition-colors shadow-xs"
+                    href={activeSlide.secondaryCtaLink}
+                    className="px-8 py-4 rounded-none border border-zinc-700 bg-zinc-900/70 backdrop-blur-md text-white font-bold text-xs uppercase tracking-widest hover:border-white hover:bg-zinc-800 transition-all cursor-pointer"
                   >
-                    <span>{activeSlide.ctaSecondaryText}</span>
+                    {activeSlide.secondaryCtaText}
                   </Link>
                 </div>
 
-                {/* 4 Machine Quick Badges Strip */}
-                <div className="max-w-5xl mx-auto">
-                  <div className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-[#C59B27]" />
-                    <span>{t("hero.fleetTag")}</span>
-                  </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {[
-                      { title: t("hero.rock"), image: "/satismakineleri/Paletli-Rock-Makina.jpg", slideIndex: 1 },
-                      { title: t("hero.solar"), image: "/satismakineleri/mz460y.jpg", slideIndex: 2 },
-                      { title: t("hero.water"), image: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg", slideIndex: 3 },
-                      { title: t("hero.compressor"), image: "/satismakineleri/csh1120a-hava-kompresoru.png", slideIndex: 4 },
-                    ].map((m, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentSlide(m.slideIndex)}
-                        className="group relative h-28 rounded-2xl overflow-hidden border border-zinc-200 bg-zinc-100 shadow-xs hover:shadow-md hover:border-[#C59B27] transition-all text-left cursor-pointer"
-                      >
-                        <Image
-                          src={m.image}
-                          alt={m.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                        <div className="absolute bottom-2.5 left-3 right-3 z-10">
-                          <div className="text-[11px] font-bold text-white leading-tight group-hover:text-[#C59B27] transition-colors">
-                            {m.title}
-                          </div>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              /* 3D Machine Feature Slide (Slides 1-4) */
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-4">
-                {/* Left Side: Info & CTAs */}
-                <div className="lg:col-span-6 text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-250 bg-white text-xs text-[#C59B27] font-semibold mb-4 shadow-xs">
-                    <Sparkles className="w-3.5 h-3.5 text-[#C59B27]" />
-                    <span>{activeSlide.badge}</span>
-                  </div>
-
-                  <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-950 tracking-tight leading-tight mb-4">
-                    {activeSlide.title}
-                  </h2>
-
-                  <p className="text-zinc-600 text-sm md:text-base font-semibold leading-relaxed mb-6">
-                    {activeSlide.subtitle}
-                  </p>
-
-                  {/* Tech Specs Grid */}
-                  <div className="grid grid-cols-3 gap-3 mb-8">
-                    {activeSlide.specs?.map((sp, idx) => (
-                      <div key={idx} className="p-3 rounded-2xl bg-zinc-50 border border-zinc-200">
-                        <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-tight">{sp.label}</div>
-                        <div className="text-xs md:text-sm font-extrabold text-zinc-900 mt-0.5">{sp.val}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTAs */}
-                  <div className="flex flex-wrap items-center gap-4">
-                    <Link
-                      href={activeSlide.categoryPath || "/urunler"}
-                      className="py-3.5 px-6 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-xs tracking-wide shadow-md transition-colors inline-flex items-center gap-2"
-                    >
-                      <span>{isTr ? "Makine Detaylarını İncele" : "View Machine Specs"}</span>
-                      <ArrowRight className="w-4 h-4 text-[#C59B27]" />
-                    </Link>
-                    <Link
-                      href={`/iletisim?product=${encodeURIComponent(activeSlide.title || "")}`}
-                      className="py-3.5 px-6 rounded-xl bg-white border border-zinc-250 text-zinc-900 font-bold text-xs hover:bg-zinc-50 transition-colors shadow-xs"
-                    >
-                      <span>{t("productsPage.getQuote")}</span>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Right Side: 3D Floating Machine Showcase */}
-                <div className="lg:col-span-6 relative flex justify-center">
-                  <motion.div
-                    whileHover={{ scale: 1.02, rotateY: -5, rotateX: 5 }}
-                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="relative w-full max-w-lg h-72 md:h-96 rounded-3xl overflow-hidden border border-zinc-200 shadow-2xl bg-zinc-100 group"
-                    style={{ perspective: 1000 }}
-                  >
-                    <Image
-                      src={activeSlide.image || ""}
-                      alt={activeSlide.title || ""}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                    {/* Floating 3D Badge Overlay */}
-                    <div className="absolute bottom-5 left-5 right-5 z-10 flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-extrabold text-[#C59B27] uppercase tracking-wider bg-black/80 px-3 py-1.5 rounded-lg backdrop-blur-md border border-white/10 shadow-lg">
-                        // {activeSlide.tag}
+                {/* Live Telemetry Specs Row */}
+                <div className="grid grid-cols-3 gap-6 pt-6 border-t border-zinc-800/80 max-w-xl">
+                  {activeSlide.specs.map((spec, idx) => (
+                    <div key={idx} className="flex flex-col">
+                      <span className="font-mono text-[10px] uppercase text-zinc-400 tracking-wider">
+                        {spec.label}
                       </span>
-                      <span className="px-3 py-1.5 rounded-lg bg-emerald-500/90 text-white font-bold text-[10px] backdrop-blur-md shadow-lg flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3" />
-                        {t("productsPage.inStock")}
+                      <span className="text-sm md:text-base font-extrabold text-white mt-1">
+                        {spec.val}
                       </span>
                     </div>
-                  </motion.div>
+                  ))}
                 </div>
-              </div>
-            )}
-          </motion.div>
-        </AnimatePresence>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-        {/* Carousel Navigation & Indicators */}
-        <div className="mt-10 flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-zinc-150">
-          {/* Slide Indicator Dots */}
-          <div className="flex items-center gap-2">
+        </div>
+      </div>
+
+      {/* SpaceX Bottom Slide Switcher Bar */}
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-6 border-t border-zinc-800/80">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          
+          {/* Progress Indicators */}
+          <div className="flex items-center gap-3">
             {slides.map((s, idx) => (
               <button
-                key={idx}
+                key={s.id}
                 onClick={() => setCurrentSlide(idx)}
-                className={`h-2.5 rounded-full transition-all cursor-pointer ${currentSlide === idx
-                    ? "w-8 bg-[#C59B27]"
-                    : "w-2.5 bg-zinc-250 hover:bg-zinc-400"
-                  }`}
-                title={`Slide ${idx + 1}`}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  currentSlide === idx
+                    ? "w-12 bg-[#C59B27]"
+                    : "w-6 bg-zinc-800 hover:bg-zinc-700"
+                }`}
+                title={s.title}
               />
             ))}
           </div>
 
-          {/* Current Slide Numbering */}
-          <div className="text-xs font-mono font-bold text-zinc-400">
-            <span className="text-[#C59B27]">0{currentSlide + 1}</span> / 0{slides.length}
+          {/* Machine Selection Pills */}
+          <div className="flex items-center gap-2 overflow-x-auto max-w-full py-1">
+            {slides.map((s, idx) => (
+              <button
+                key={s.id}
+                onClick={() => setCurrentSlide(idx)}
+                className={`px-4 py-2 text-[10px] font-mono uppercase tracking-widest rounded-none border transition-all cursor-pointer whitespace-nowrap ${
+                  currentSlide === idx
+                    ? "border-[#C59B27] bg-[#C59B27]/10 text-[#C59B27]"
+                    : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-white"
+                }`}
+              >
+                0{idx + 1} // {s.id}
+              </button>
+            ))}
           </div>
 
-          {/* Arrow Controls */}
-          <div className="flex items-center gap-3">
+          {/* Arrow Nav */}
+          <div className="flex items-center gap-2">
             <button
-              onClick={prevSlide}
-              className="p-2.5 rounded-xl border border-zinc-250 bg-white hover:bg-zinc-100 text-zinc-700 hover:text-zinc-950 transition-colors shadow-2xs cursor-pointer"
-              title="Previous Slide"
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+              className="w-9 h-9 rounded-none border border-zinc-800 bg-zinc-900 flex items-center justify-center text-zinc-400 hover:border-white hover:text-white transition-colors cursor-pointer"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
             <button
-              onClick={nextSlide}
-              className="p-2.5 rounded-xl border border-zinc-250 bg-white hover:bg-zinc-100 text-zinc-700 hover:text-zinc-950 transition-colors shadow-2xs cursor-pointer"
-              title="Next Slide"
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+              className="w-9 h-9 rounded-none border border-zinc-800 bg-zinc-900 flex items-center justify-center text-zinc-400 hover:border-white hover:text-white transition-colors cursor-pointer"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
+
         </div>
       </div>
     </section>

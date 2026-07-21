@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "@/context/LanguageContext";
 import { Globe, MapPin, CheckCircle2, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { AnimatedCounter } from "./AnimatedCounter";
 
 export const InteractiveMap: React.FC = () => {
   const { t, language } = useTranslation();
@@ -127,24 +128,30 @@ export const InteractiveMap: React.FC = () => {
   const totalCountries = new Set(hubs.flatMap(h => h.countriesEn)).size;
 
   return (
-    <section id="map" className="py-20 relative overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="map" className="py-24 relative overflow-hidden bg-zinc-950 text-white border-t border-zinc-800/80">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Title */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/30 bg-[#C59B27]/5 text-xs text-[#C59B27] mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/40 bg-[#C59B27]/10 text-xs text-[#C59B27] font-mono tracking-widest uppercase mb-4">
             <Globe className="w-3.5 h-3.5" />
-            <span>{t("map.activeRegions")}</span>
+            <span>// {t("map.activeRegions")}</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-950 mb-4">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight uppercase text-white mb-4 font-sans">
             {t("map.title")}
           </h2>
-          <p className="text-zinc-500 max-w-2xl mx-auto text-sm md:text-base font-semibold leading-relaxed">
+          <p className="text-zinc-400 max-w-2xl mx-auto text-sm md:text-base font-medium leading-relaxed">
             {isTr ? "Vera Gold Enerji olarak, İskandinavya ve Birleşik Krallık dahil tüm Avrupa kıtasında aktif operasyonel hizmet sağlıyoruz."
             : isDe ? "Als Vera Gold Enerji bieten wir aktive operative Dienstleistungen auf dem gesamten europäischen Kontinent einschließlich Skandinavien und dem Vereinigten Königreich."
             : isFr ? "En tant que Vera Gold Enerji, nous fournissons des services opérationnels actifs sur l'ensemble du continent européen, y compris la Scandinavie et le Royaume-Uni."
             : "As Vera Gold Enerji, we provide active operational services across the entire European continent including Scandinavia and the United Kingdom."}
           </p>
-        </div>
+        </motion.div>
 
         {/* Search Bar */}
         <div className="max-w-md mx-auto mb-10 relative">
@@ -154,21 +161,21 @@ export const InteractiveMap: React.FC = () => {
               placeholder={isTr ? "Ülke ara (örn: Almanya, İsveç, Norveç)..." : isDe ? "Land suchen (z.B. Deutschland, Schweden)..." : isFr ? "Chercher un pays (ex: Allemagne, Suède)..." : "Search country (e.g. Germany, Sweden, Norway)..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-zinc-250 bg-white text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-[#C59B27] focus:ring-1 focus:ring-[#C59B27] text-sm transition-all"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-zinc-800 bg-zinc-900 text-white placeholder-zinc-500 focus:outline-none focus:border-[#C59B27] text-sm transition-all shadow-inner"
             />
-            <Search className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
           </div>
 
           {searchResult && (
-            <div className="absolute top-full left-0 right-0 mt-2 p-3 bg-white border border-zinc-200 rounded-xl shadow-lg z-30 text-xs flex items-center justify-between font-semibold">
-              <span className="text-zinc-700">{searchResult.name}:</span>
+            <div className="absolute top-full left-0 right-0 mt-2 p-3 bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl z-30 text-xs flex items-center justify-between font-mono">
+              <span className="text-zinc-300">{searchResult.name}:</span>
               {searchResult.found ? (
-                <span className="text-emerald-600 flex items-center gap-1">
+                <span className="text-emerald-400 flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   {isTr ? "Aktif Hizmet Bölgesi ✓" : isDe ? "Aktiver Servicebereich ✓" : isFr ? "Zone de service active ✓" : "Active Service Region ✓"}
                 </span>
               ) : (
-                <span className="text-zinc-400">
+                <span className="text-zinc-500">
                   {isTr ? "Bulunamadı" : isDe ? "Nicht gefunden" : isFr ? "Non trouvé" : "Not found"}
                 </span>
               )}
@@ -176,36 +183,41 @@ export const InteractiveMap: React.FC = () => {
           )}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-          {/* Real World Map */}
-          <div className="lg:col-span-7 bg-zinc-50/50 border border-zinc-200 rounded-3xl p-4 relative min-h-[460px] flex flex-col overflow-hidden shadow-xs">
-            {/* Visual Header */}
-            <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest border-b border-zinc-200/50 pb-2 mb-3 flex items-center justify-between">
-              <span>{isTr ? "Avrupa Hizmet Haritamız" : isDe ? "Unsere Europa-Servicekarte" : isFr ? "Notre Carte de Service Europe" : "Our Europe Service Map"}</span>
-              <span className="flex items-center gap-1 text-emerald-500">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch"
+        >
+          {/* Real World Map Embed Container */}
+          <div className="lg:col-span-7 bg-zinc-900/80 border border-zinc-800 rounded-3xl p-4 relative min-h-[460px] flex flex-col overflow-hidden shadow-xl">
+            {/* Header */}
+            <div className="text-[10px] font-mono font-extrabold text-zinc-400 uppercase tracking-widest border-b border-zinc-800 pb-2 mb-3 flex items-center justify-between">
+              <span>// {isTr ? "Avrupa Hizmet Haritamız" : isDe ? "Unsere Europa-Servicekarte" : isFr ? "Notre Carte de Service Europe" : "Our Europe Service Map"}</span>
+              <span className="flex items-center gap-1.5 text-emerald-400">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 {isTr ? "Tüm Avrupa Aktif" : isDe ? "Ganz Europa Aktiv" : isFr ? "Toute l'Europe Active" : "All Europe Active"}
               </span>
             </div>
 
-            {/* Embedded Map with SVG Overlay */}
-            <div className="flex-grow rounded-2xl overflow-hidden border border-zinc-200 relative">
+            {/* Embedded OpenStreetMap */}
+            <div className="flex-grow rounded-2xl overflow-hidden border border-zinc-800 relative">
               <iframe
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-12.0,34.0,42.0,62.0&layer=mapnik&marker=38.4192,27.1287"
-                className="w-full h-full min-h-[400px] border-0"
+                className="w-full h-full min-h-[400px] border-0 filter invert contrast-125 brightness-90 saturate-50 opacity-90"
                 loading="lazy"
                 title="Vera Gold Enerji Europe Service Map"
               />
 
-
               {/* Overlay Badges */}
               <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 z-20">
-                <div className="bg-white/95 backdrop-blur-md border border-zinc-200 rounded-xl px-4 py-2.5 shadow-lg flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#C59B27] animate-pulse" />
-                  <span className="text-[11px] font-bold text-zinc-900">HQ: İzmir, Türkiye</span>
+                <div className="bg-zinc-950/90 backdrop-blur-md border border-zinc-800 rounded-xl px-4 py-2.5 shadow-lg flex items-center gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#C59B27] animate-pulse" />
+                  <span className="text-[11px] font-mono font-bold text-white">HQ: İzmir, Türkiye</span>
                 </div>
-                <div className="bg-white/95 backdrop-blur-md border border-zinc-200 rounded-xl px-4 py-2.5 shadow-lg">
-                  <span className="text-[11px] font-bold text-emerald-600">
+                <div className="bg-zinc-950/90 backdrop-blur-md border border-zinc-800 rounded-xl px-4 py-2.5 shadow-lg">
+                  <span className="text-[11px] font-mono font-bold text-emerald-400">
                     {totalCountries}+ {isTr ? "Ülkede Aktif Operasyon" : isDe ? "Länder Aktive Operationen" : isFr ? "Pays Opérations Actives" : "Countries Active Operations"}
                   </span>
                 </div>
@@ -218,10 +230,10 @@ export const InteractiveMap: React.FC = () => {
                 <button
                   key={hub.id}
                   onClick={() => setSelectedHub(hub.id)}
-                  className={`px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-lg text-[10px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer ${
                     selectedHub === hub.id
-                      ? "bg-zinc-950 text-white shadow-sm"
-                      : "bg-white border border-zinc-200 text-zinc-600 hover:border-zinc-300 hover:bg-zinc-50"
+                      ? "bg-white text-zinc-950 shadow-sm"
+                      : "bg-zinc-950 border border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white"
                   }`}
                 >
                   {getHubName(hub)}
@@ -232,8 +244,8 @@ export const InteractiveMap: React.FC = () => {
 
           {/* Details & Country Grid Panel */}
           <div className="lg:col-span-5 flex flex-col gap-6 justify-between">
-            {/* Region Details */}
-            <div className="bg-white border border-zinc-200 rounded-3xl p-6 shadow-xs flex-grow transition-all duration-300 hover:border-zinc-300 min-h-[300px] flex flex-col justify-between">
+            {/* Region Details Card */}
+            <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 shadow-xl flex-grow transition-all duration-300 min-h-[300px] flex flex-col justify-between">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedHub}
@@ -246,19 +258,19 @@ export const InteractiveMap: React.FC = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-3">
                       <MapPin className="w-5 h-5 text-[#C59B27]" />
-                      <h3 className="text-xl font-bold text-zinc-950">
+                      <h3 className="text-xl font-bold text-white">
                         {getHubName(activeHub)}
                       </h3>
                     </div>
-                    <p className="text-zinc-500 text-sm leading-relaxed mb-6 font-medium">
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-medium">
                       {getHubDesc(activeHub)}
                     </p>
                   </div>
 
                   {/* Dynamic Country Checklist */}
                   <div>
-                    <h4 className="text-[10px] font-extrabold uppercase text-zinc-400 tracking-wider mb-3 border-b border-zinc-100 pb-1">
-                      {isTr ? "Bölgede Bulunan Aktif Ülkeler" : isDe ? "Aktive Länder in der Region" : isFr ? "Pays actifs dans la région" : "Active Countries in Region"} ({activeHub.countries.length})
+                    <h4 className="text-[10px] font-mono font-extrabold uppercase text-[#C59B27] tracking-wider mb-3 border-b border-zinc-800 pb-1">
+                      // {isTr ? "Aktif Ülkeler" : "Active Countries"} ({activeHub.countries.length})
                     </h4>
                     <motion.div
                       initial="hidden"
@@ -279,9 +291,9 @@ export const InteractiveMap: React.FC = () => {
                             hidden: { opacity: 0, y: 8 },
                             visible: { opacity: 1, y: 0 }
                           }}
-                          className="flex items-center gap-2 text-xs text-zinc-700 font-semibold bg-zinc-50 px-3 py-2.5 rounded-lg border border-zinc-150 shadow-2xs hover:border-zinc-200 transition-colors"
+                          className="flex items-center gap-2 text-xs text-zinc-300 font-medium bg-zinc-950 px-3 py-2.5 rounded-lg border border-zinc-800/80 shadow-inner"
                         >
-                          <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                           <span>{country}</span>
                         </motion.div>
                       ))}
@@ -291,29 +303,35 @@ export const InteractiveMap: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            {/* Total Coverage Stats */}
-            <div className="bg-gradient-to-br from-zinc-950 to-zinc-900 border border-zinc-800 rounded-3xl p-6 shadow-lg text-white">
-              <h4 className="text-[10px] font-extrabold text-[#C59B27] uppercase tracking-wider mb-4 flex items-center gap-1.5">
+            {/* Total Coverage Stats Card with AnimatedCounter */}
+            <div className="bg-zinc-900/90 border border-zinc-800 rounded-3xl p-6 shadow-xl text-white">
+              <h4 className="text-[10px] font-mono font-extrabold text-[#C59B27] uppercase tracking-wider mb-4 flex items-center gap-1.5">
                 <Globe className="w-4 h-4" />
-                {isTr ? "Toplam Kapsam Alanı" : isDe ? "Gesamtabdeckung" : isFr ? "Couverture Totale" : "Total Coverage Area"}
+                // {isTr ? "Toplam Kapsam Alanı" : isDe ? "Gesamtabdeckung" : isFr ? "Couverture Totale" : "Total Coverage Area"}
               </h4>
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-extrabold text-white">{totalCountries}+</div>
-                  <div className="text-[10px] font-semibold text-zinc-400 mt-1">{isTr ? "Aktif Ülke" : isDe ? "Aktive Länder" : isFr ? "Pays Actifs" : "Active Countries"}</div>
+                  <div className="text-2xl md:text-3xl font-black text-white font-mono">
+                    <AnimatedCounter value={totalCountries} suffix="+" />
+                  </div>
+                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Aktif Ülke" : isDe ? "Aktive Länder" : isFr ? "Pays Actifs" : "Active Countries"}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-extrabold text-[#C59B27]">{hubs.length}</div>
-                  <div className="text-[10px] font-semibold text-zinc-400 mt-1">{isTr ? "Operasyon Bölgesi" : isDe ? "Einsatzgebiete" : isFr ? "Zones Opérations" : "Operation Zones"}</div>
+                  <div className="text-2xl md:text-3xl font-black text-[#C59B27] font-mono">
+                    <AnimatedCounter value={hubs.length} />
+                  </div>
+                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Operasyon Bölgesi" : isDe ? "Einsatzgebiete" : isFr ? "Zones Opérations" : "Operation Zones"}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-extrabold text-emerald-400">7/24</div>
-                  <div className="text-[10px] font-semibold text-zinc-400 mt-1">{isTr ? "Lojistik Destek" : isDe ? "Logistik-Support" : isFr ? "Support Logistique" : "Logistics Support"}</div>
+                  <div className="text-2xl md:text-3xl font-black text-emerald-400 font-mono">
+                    <AnimatedCounter value={7} suffix="/24" prefix="" />
+                  </div>
+                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Lojistik Destek" : isDe ? "Logistik-Support" : isFr ? "Support Logistique" : "Logistics Support"}</div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

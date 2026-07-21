@@ -7,7 +7,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useTranslation } from "@/context/LanguageContext";
 import { PRODUCT_CATEGORIES, PRODUCTS, Product, ProductCategory } from "@/data/products";
-import { ArrowUpRight, Check, Sparkles, ShieldCheck, Eye } from "lucide-react";
+import { ArrowUpRight, Check, Sparkles, Eye, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProductsPage() {
@@ -58,39 +58,38 @@ export default function ProductsPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow pt-32 pb-24 bg-white text-zinc-900 relative overflow-hidden">
+      <main className="flex-grow pt-32 pb-24 bg-zinc-950 text-white relative overflow-hidden">
         {/* Background Visual Elements */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#C59B27]/5 rounded-full filter blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/3 right-10 w-[450px] h-[450px] bg-[#10B981]/5 rounded-full filter blur-[140px] pointer-events-none" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#C59B27]/10 rounded-full filter blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header Section */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-250 bg-white/80 backdrop-blur-md text-xs text-[#C59B27] font-semibold mb-6 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/40 bg-[#C59B27]/10 text-xs text-[#C59B27] font-mono tracking-widest uppercase mb-4">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>{t("productsPage.badge")}</span>
+              <span>// {t("productsPage.badge")}</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-950 tracking-tight mb-4">
+            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-4 font-sans">
               {t("nav.products")}
             </h1>
-            <p className="text-zinc-500 text-base md:text-lg max-w-3xl mx-auto font-medium leading-relaxed">
+            <p className="text-zinc-400 text-base md:text-lg max-w-3xl mx-auto font-medium leading-relaxed">
               {t("productsPage.subtitle")}
             </p>
           </div>
 
           {/* Category Cards Showcase */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-14">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-3 mb-14">
             <button
               onClick={() => setSelectedCategory("all")}
               className={`p-4 rounded-2xl border transition-all text-left flex flex-col justify-between cursor-pointer ${
                 selectedCategory === "all"
-                  ? "bg-zinc-950 text-white border-zinc-950 shadow-md ring-2 ring-zinc-950"
-                  : "bg-zinc-50/70 border-zinc-200 hover:border-zinc-300 text-zinc-800 hover:bg-zinc-100/80"
+                  ? "bg-[#C59B27] text-white border-[#C59B27] shadow-lg"
+                  : "bg-zinc-900/80 border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:bg-zinc-900"
               }`}
             >
-              <div className="text-xs font-mono font-bold text-[#C59B27] mb-2">// 00</div>
-              <div className="text-sm font-bold leading-snug">{t("productsPage.all")}</div>
-              <div className="text-[11px] opacity-70 mt-2 font-semibold">{PRODUCTS.length} {t("productsPage.models")}</div>
+              <div className="text-xs font-mono font-bold mb-2">// 00</div>
+              <div className="text-xs font-bold leading-snug">{t("productsPage.all")}</div>
+              <div className="text-[10px] opacity-75 mt-2 font-mono">{PRODUCTS.length} {t("productsPage.models")}</div>
             </button>
 
             {PRODUCT_CATEGORIES.map((cat, idx) => {
@@ -102,13 +101,13 @@ export default function ProductsPage() {
                   onClick={() => setSelectedCategory(cat.slug)}
                   className={`p-4 rounded-2xl border transition-all text-left flex flex-col justify-between cursor-pointer ${
                     isSelected
-                      ? "bg-zinc-950 text-white border-zinc-950 shadow-md ring-2 ring-zinc-950"
-                      : "bg-zinc-50/70 border-zinc-200 hover:border-zinc-300 text-zinc-800 hover:bg-zinc-100/80"
+                      ? "bg-[#C59B27] text-white border-[#C59B27] shadow-lg"
+                      : "bg-zinc-900/80 border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:bg-zinc-900"
                   }`}
                 >
-                  <div className="text-xs font-mono font-bold text-[#C59B27] mb-2">// 0{idx + 1}</div>
+                  <div className="text-xs font-mono font-bold mb-2">// 0{idx + 1}</div>
                   <div className="text-xs font-bold leading-snug">{getCategoryName(cat)}</div>
-                  <div className="text-[10px] opacity-70 mt-2 font-semibold">{count} {t("productsPage.items")}</div>
+                  <div className="text-[10px] opacity-75 mt-2 font-mono">{count} {t("productsPage.items")}</div>
                 </button>
               );
             })}
@@ -125,19 +124,20 @@ export default function ProductsPage() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white border border-zinc-200 rounded-3xl overflow-hidden flex flex-col justify-between shadow-2xs hover:border-zinc-300 hover:shadow-md transition-all group"
+                  className="bg-zinc-900/90 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl hover:border-[#C59B27]/50 hover:bg-zinc-900 transition-all group"
                 >
                   {/* Image Container */}
-                  <div className="relative h-64 w-full bg-zinc-100 overflow-hidden cursor-pointer" onClick={() => setSelectedProductModal(product)}>
+                  <div className="relative h-64 w-full bg-zinc-950 overflow-hidden cursor-pointer" onClick={() => setSelectedProductModal(product)}>
                     <Image
                       src={product.image}
                       alt={getProductName(product)}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/90 backdrop-blur-md text-zinc-900 shadow-xs border border-zinc-200">
+                      <span className="px-3 py-1 rounded-full text-[10px] font-mono font-extrabold uppercase tracking-wider bg-zinc-950/90 backdrop-blur-md text-[#C59B27] border border-zinc-800">
                         {cat ? getCategoryName(cat) : product.categorySlug}
                       </span>
                     </div>
@@ -149,57 +149,45 @@ export default function ProductsPage() {
                         </span>
                       </div>
                     )}
-                    {/* Quick View Hover overlay */}
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="px-4 py-2 rounded-xl bg-white text-zinc-950 font-bold text-xs shadow-lg flex items-center gap-2">
-                        <Eye className="w-4 h-4 text-[#C59B27]" />
-                        {t("productsPage.quickView")}
-                      </span>
-                    </div>
                   </div>
 
-                  {/* Content */}
+                  {/* Body Info */}
                   <div className="p-6 flex-grow flex flex-col justify-between">
                     <div>
-                      <div className="text-[11px] font-mono font-bold text-[#C59B27] uppercase tracking-wider mb-1">
-                        {product.model}
-                      </div>
-                      <h3 className="text-lg font-extrabold text-zinc-950 mb-2 leading-tight group-hover:text-[#C59B27] transition-colors">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#C59B27] transition-colors leading-snug">
                         {getProductName(product)}
                       </h3>
-                      <p className="text-zinc-500 text-xs leading-relaxed font-semibold mb-6">
+                      <p className="text-zinc-400 text-xs leading-relaxed font-normal mb-6">
                         {getProductShortDesc(product)}
                       </p>
 
-                      {/* Specs Badges */}
-                      <div className="grid grid-cols-2 gap-2 mb-6 pt-4 border-t border-zinc-100">
+                      {/* Key Specs Matrix */}
+                      <div className="grid grid-cols-2 gap-2 mb-6 bg-zinc-950 p-3 rounded-2xl border border-zinc-800">
                         {product.specs.slice(0, 4).map((spec, idx) => (
-                          <div key={idx} className="bg-zinc-50 border border-zinc-150 p-2.5 rounded-xl">
-                            <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-tight">
-                              {getSpecLabel(spec)}
-                            </div>
-                            <div className="text-xs font-bold text-zinc-900 mt-0.5">
-                              {spec.value}
-                            </div>
+                          <div key={idx} className="flex flex-col">
+                            <span className="text-[10px] font-mono text-zinc-500 uppercase">{getSpecLabel(spec)}</span>
+                            <span className="text-xs font-extrabold text-white font-mono">{spec.value}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-3 pt-4 border-t border-zinc-100">
+                    <div className="flex items-center gap-3 pt-4 border-t border-zinc-800">
                       <button
                         onClick={() => setSelectedProductModal(product)}
-                        className="flex-1 py-3 px-4 rounded-xl border border-zinc-250 bg-white hover:bg-zinc-50 text-zinc-900 font-bold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                        className="flex-1 py-3 px-4 rounded-xl border border-zinc-800 bg-zinc-950 hover:bg-zinc-800 text-white font-mono text-xs uppercase font-bold transition-all flex items-center justify-center gap-2 cursor-pointer"
                       >
-                        <span>{t("productsPage.details")}</span>
+                        <Eye className="w-4 h-4 text-[#C59B27]" />
+                        <span>{t("productsPage.viewDetails")}</span>
                       </button>
+
                       <Link
-                        href={`/iletisim?product=${encodeURIComponent(getProductName(product))}`}
-                        className="flex-1 py-3 px-4 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm text-center"
+                        href={`/iletisim?service=${product.categorySlug}`}
+                        className="py-3 px-4 rounded-xl bg-[#C59B27] hover:bg-[#b08920] text-white font-mono text-xs uppercase font-bold transition-all flex items-center justify-center cursor-pointer shadow-md"
+                        title={t("productsPage.getQuote")}
                       >
-                        <span>{t("productsPage.getQuote")}</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
+                        <ArrowUpRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </div>
@@ -207,115 +195,60 @@ export default function ProductsPage() {
               );
             })}
           </div>
-
-          {/* B2B Assurance Banner */}
-          <div className="mt-20 p-8 md:p-12 rounded-3xl border border-zinc-200 bg-zinc-50/60 flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#C59B27] uppercase tracking-wider mb-2">
-                <ShieldCheck className="w-4 h-4" />
-                <span>{t("productsPage.warrantyTitle")}</span>
-              </div>
-              <h3 className="text-2xl font-extrabold text-zinc-950 mb-3">
-                {t("productsPage.warrantySub")}
-              </h3>
-              <p className="text-zinc-500 text-sm font-semibold leading-relaxed">
-                {t("productsPage.warrantyDesc")}
-              </p>
-            </div>
-            <Link
-              href="/iletisim"
-              className="py-4 px-8 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-sm shadow-md transition-colors whitespace-nowrap"
-            >
-              {t("productsPage.contactEngineers")}
-            </Link>
-          </div>
         </div>
-      </main>
 
-      {/* Product Detail Lightbox Modal */}
-      <AnimatePresence>
+        {/* Modal for Product Details */}
         {selectedProductModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedProductModal(null)}
-            className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4 md:p-6 backdrop-blur-sm"
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white border border-zinc-200 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative shadow-2xl"
-            >
-              {/* Close Button */}
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl max-w-2xl w-full p-6 md:p-8 relative text-white shadow-2xl max-h-[90vh] overflow-y-auto">
               <button
                 onClick={() => setSelectedProductModal(null)}
-                className="absolute top-6 right-6 w-9 h-9 rounded-full bg-zinc-100 hover:bg-zinc-200 flex items-center justify-center text-zinc-600 transition-colors cursor-pointer"
+                className="absolute top-6 right-6 p-2 rounded-full bg-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer"
               >
-                ✕
+                <X className="w-5 h-5" />
               </button>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Image */}
-                <div className="relative h-72 md:h-full min-h-[260px] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200">
-                  <Image
-                    src={selectedProductModal.image}
-                    alt={getProductName(selectedProductModal)}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+              <div className="relative h-64 w-full rounded-2xl overflow-hidden mb-6 border border-zinc-800 bg-zinc-950">
+                <Image
+                  src={selectedProductModal.image}
+                  alt={getProductName(selectedProductModal)}
+                  fill
+                  className="object-cover"
+                />
+              </div>
 
-                {/* Info */}
-                <div className="flex flex-col justify-between">
-                  <div>
-                    <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#C59B27]/10 text-[#C59B27] inline-block mb-3">
-                      {getProductName(selectedProductModal)}
-                    </span>
-                    <h3 className="text-xl md:text-2xl font-extrabold text-zinc-950 mb-2">
-                      {getProductName(selectedProductModal)}
-                    </h3>
-                    <div className="text-xs font-mono font-bold text-zinc-400 mb-4">
-                      MODEL: {selectedProductModal.model}
+              <h2 className="text-2xl font-bold mb-2 text-white">
+                {getProductName(selectedProductModal)}
+              </h2>
+              <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
+                {getProductFullDesc(selectedProductModal)}
+              </p>
+
+              <div className="mb-6">
+                <h4 className="text-xs font-mono font-bold uppercase text-[#C59B27] tracking-wider mb-3 border-b border-zinc-800 pb-1">
+                  // {t("productsPage.technicalSpecs")}
+                </h4>
+                <div className="grid grid-cols-2 gap-3 bg-zinc-950 p-4 rounded-2xl border border-zinc-800">
+                  {selectedProductModal.specs.map((spec, idx) => (
+                    <div key={idx} className="flex flex-col">
+                      <span className="text-[10px] font-mono text-zinc-500 uppercase">{getSpecLabel(spec)}</span>
+                      <span className="text-sm font-extrabold text-white font-mono">{spec.value}</span>
                     </div>
-                    <p className="text-zinc-600 text-xs leading-relaxed font-semibold mb-6">
-                      {getProductFullDesc(selectedProductModal)}
-                    </p>
-
-                    {/* Specs List */}
-                    <div className="space-y-2 mb-6">
-                      <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider border-b border-zinc-100 pb-1">
-                        {t("productsPage.techSpecs")}
-                      </h4>
-                      <div className="grid grid-cols-1 gap-2">
-                        {selectedProductModal.specs.map((spec, idx) => (
-                          <div key={idx} className="flex justify-between items-center text-xs py-1 border-b border-zinc-50">
-                            <span className="font-semibold text-zinc-500">{getSpecLabel(spec)}</span>
-                            <span className="font-bold text-zinc-950">{spec.value}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-zinc-100 flex gap-3">
-                    <Link
-                      href={`/iletisim?product=${encodeURIComponent(getProductName(selectedProductModal))}`}
-                      className="w-full py-3 px-6 rounded-xl bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-xs transition-colors shadow-sm text-center flex items-center justify-center gap-2"
-                    >
-                      <span>{t("productsPage.requestOffer")}</span>
-                      <ArrowUpRight className="w-4 h-4" />
-                    </Link>
-                  </div>
+                  ))}
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
+              <Link
+                href={`/iletisim?service=${selectedProductModal.categorySlug}`}
+                onClick={() => setSelectedProductModal(null)}
+                className="block text-center w-full py-4 rounded-xl bg-[#C59B27] hover:bg-[#b08920] text-white font-mono text-xs uppercase font-bold transition-all shadow-lg cursor-pointer"
+              >
+                {t("productsPage.getQuote")}
+              </Link>
+            </div>
+          </div>
+        )}
+      </main>
       <Footer />
     </>
   );

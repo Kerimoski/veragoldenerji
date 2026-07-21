@@ -6,181 +6,175 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useTranslation } from "@/context/LanguageContext";
-import { ArrowLeft, Check, Sparkles, Zap, Sun, Shield } from "lucide-react";
+import { ArrowLeft, Check, Sparkles, Target, Zap, Shield } from "lucide-react";
 
-export default function EnerjiPage() {
-  const { t } = useTranslation();
+export default function EnerjiSantralleriPage() {
+  const { t, language } = useTranslation();
+  const isTr = language === "tr";
+  const isDe = language === "de";
+  const isFr = language === "fr";
 
   const detailsTr = {
     features: [
-      { title: "Endüstriyel Güneş Santralleri (GES)", desc: "Fabrika çatıları ve arazi tipi güneş enerjisi santrallerinin fizibilite ve anahtar teslim kurulumu." },
-      { title: "Rüzgar Enerjisi Santralleri (RES)", desc: "Rüzgar türbinlerinin montaj mühendisliği, kablolama ve altyapı işlerinin üstlenilmesi." },
-      { title: "Depolamalı Enerji Çözümleri", desc: "Tesisinizin enerji sürekliliğini sağlamak için endüstriyel akü ve depolama sistemleri kurulumu." },
-      { title: "Uzun Vadeli Bakım ve İşletme (O&M)", desc: "Santral verimliliğini maksimumda tutmak amacıyla periyodik teknik bakım ve analizler." }
+      { title: "Rüzgar Santralı (RES) Temel Kazıkları", desc: "Rüzgar türbinlerinin yüksek tork yüklerini karşılayan derin kazık mühendisliği." },
+      { title: "Güneş Santralı (GES) Saha Altyapısı", desc: "Binlerce çelik çakım kazığının arazide milimetrik doğrultu ile çakılması." },
+      { title: "Derin Su & Jeotermal Sondajı", desc: "300+ metre derin su ve jeotermal kaynak arama sondaj kuleleri." },
+      { title: "Karot Alım & Jeoteknik Etütler", desc: "Zemin mekaniği ve yapı emniyeti için karotlu sondaj numune alma operasyonları." }
     ],
     stats: [
-      { val: "250MW+", label: "Kurulu Güç Kapasitesi" },
-      { val: "+80", label: "Tesis Entegrasyonu" },
-      { val: "%35+", label: "Ortalama Karbon Tasarrufu" }
+      { val: "+120", label: "GES & RES Altyapısı" },
+      { val: "450m", label: "Max Sondaj Derinliği" },
+      { val: "7/24", label: "Saha Servis Desteği" }
     ]
   };
 
   const detailsEn = {
     features: [
-      { title: "Industrial Solar Power Plants (PV)", desc: "Feasibility studies and turnkey installation for rooftop and ground-mounted solar plants." },
-      { title: "Wind Energy Integration (WTG)", desc: "Assembly engineering, cabling, and foundation works for wind turbines." },
-      { title: "Battery Energy Storage Systems (BESS)", desc: "Installation of heavy-duty industrial storage systems to guarantee uninterruptible power." },
-      { title: "Long-term Operation & Maintenance (O&M)", desc: "Periodic technical servicing and diagnostics to keep power generation efficiency peaked." }
+      { title: "Wind Farm (WTG) Foundation Piling", desc: "Deep foundation piling engineering to sustain high torque loads of wind turbines." },
+      { title: "Solar Array (PV) Substructure", desc: "Precision pile driving for thousands of steel posts across solar terrains." },
+      { title: "Deep Water Well & Geothermal Rig", desc: "Water well and geothermal exploration drilling masts reaching up to 300+ meters." },
+      { title: "Core Sampling & Geotechnical Surveys", desc: "Core drilling operations for soil mechanics and structural safety assessment." }
     ],
     stats: [
-      { val: "250MW+", label: "Installed Capacity" },
-      { val: "+80", label: "Completed Plants" },
-      { val: "35%+", label: "Carbon Savings Rate" }
+      { val: "+120", label: "Solar & Wind Sites" },
+      { val: "450m", label: "Max Boring Depth" },
+      { val: "24/7", label: "Field Service Support" }
     ]
   };
 
   const detailsDe = {
     features: [
-      { title: "Industrielle Solarkraftwerke (PV)", desc: "Machbarkeitsstudien und schlüsselfertiger Bau von Dachanlagen und Freiflächen-Solarparks." },
-      { title: "Windkraftanlagen-Integration", desc: "Montageplanung, Verkabelung und Fundamentarbeiten für Windenergieanlagen." },
-      { title: "Batterie-Energiespeichersysteme (BESS)", desc: "Installation von industriellen Speichersystemen zur Gewährleistung einer unterbrechungsfreien Stromversorgung." },
-      { title: "Betrieb & Instandhaltung (O&M)", desc: "Regelmäßige technische Wartung und Diagnosen zur Maximierung der Kraftwerkseffizienz." }
+      { title: "Gründungspfähle für Windparks (WEA)", desc: "Spezialtiefbau für Windenergieanlagen zur Aufnahme hoher Drehmomente." },
+      { title: "Unterkonstruktion für Solarparks (PV)", desc: "Präzises Rammen von Tausenden von Stahlpfählen auf Solarparkflächen." },
+      { title: "Tiefbrunnen- & Geothermiebohrungen", desc: "Bohranlagen für Wasser- und Geothermiebohrungen bis zu 300+ Metern." },
+      { title: "Kernbohrungen & Geotechnische Untersuchungen", desc: "Kernbohrungen zur Beurteilung der Bodenmechanik und Baustatik." }
     ],
     stats: [
-      { val: "250MW+", label: "Installierte Leistung" },
-      { val: "+80", label: "Kraftwerksprojekte" },
-      { val: "35%+", label: "CO2-Einsparungsquote" }
+      { val: "+120", label: "Solar- & Windparks" },
+      { val: "450m", label: "Max. Bohrtiefe" },
+      { val: "24/7", label: "Kundendienst vor Ort" }
     ]
   };
 
   const detailsFr = {
     features: [
-      { title: "Centrales Solaires Industrielles (PV)", desc: "Études de faisabilité et installation clés en main de centrales solaires en toiture ou au sol." },
-      { title: "Intégration d'Énergie Éolienne", desc: "Ingénierie de montage, câblage et travaux d'infrastructure pour turbines éoliennes." },
-      { title: "Systèmes de Stockage par Batterie (BESS)", desc: "Installation de systèmes de stockage industriels pour garantir la continuité énergétique." },
-      { title: "Opération & Maintenance à Long Terme (O&M)", desc: "Entretien technique périodique et diagnostics pour maximiser l'efficacité de production." }
+      { title: "Pieux de Fondation pour Éoliennes", desc: "Ingénierie de fondation profonde pour supporter les charges des turbines éoliennes." },
+      { title: "Infrastructure de Centrales Solaires (PV)", desc: "Enfoncement de précision de milliers de pieux en acier sur les terrains solaires." },
+      { title: "Forage de Puits d'Eau Profonds & Géothermie", desc: "Mâts de forage d'eau et de géothermie atteignant plus de 300 mètres." },
+      { title: "Carottage & Études Géotechniques", desc: "Opérations de carottage pour l'évaluation de la mécanique des sols." }
     ],
     stats: [
-      { val: "250MW+", label: "Capacité Installée" },
-      { val: "+80", label: "Centrales Réalisées" },
-      { val: "35%+", label: "Réduction de Carbone" }
+      { val: "+120", label: "Sites Solaires & Éoliens" },
+      { val: "450m", label: "Profondeur Max" },
+      { val: "24/7", label: "Support Sur Terrain" }
     ]
   };
-
-  const isTr = t("nav.home") === "Ana Sayfa";
-  const isDe = t("nav.home") === "Startseite";
-  const isFr = t("nav.home") === "Accueil";
 
   const currentDetails = isTr ? detailsTr : isDe ? detailsDe : isFr ? detailsFr : detailsEn;
 
   return (
     <>
       <Header />
-      <main className="flex-grow pt-32 pb-24 relative overflow-hidden bg-white text-zinc-900">
-        {/* Glow */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-[#C59B27]/3 rounded-full filter blur-[120px] pointer-events-none" />
+      <main className="flex-grow pt-32 pb-24 bg-zinc-950 text-white relative overflow-hidden">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#C59B27]/10 rounded-full filter blur-[140px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           {/* Back button */}
           <Link
             href="/hizmetler"
-            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-950 transition-colors mb-10 group font-bold"
+            className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white mb-8 transition-colors uppercase tracking-widest"
           >
-            <ArrowLeft className="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="w-4 h-4 text-[#C59B27]" />
             <span>{isTr ? "Hizmetlere Dön" : isDe ? "Zurück zu Dienstleistungen" : isFr ? "Retour aux services" : "Back to Services"}</span>
           </Link>
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/30 bg-[#C59B27]/5 text-xs text-[#C59B27] font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/40 bg-[#C59B27]/10 text-xs text-[#C59B27] font-mono tracking-widest uppercase mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>{t("services.energy.title")}</span>
+            <span>// {t("services.energy.title")}</span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl md:text-6xl font-extrabold text-zinc-950 tracking-tight mb-8">
+          <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6 font-sans">
             {t("services.energy.title")}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-zinc-650 text-base md:text-lg leading-relaxed mb-8 max-w-4xl font-medium">
+          <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-4xl font-medium">
             {t("services.energy.long")}
           </p>
 
           {/* Featured Machine Photo */}
-          <div className="relative h-72 md:h-96 w-full rounded-3xl overflow-hidden mb-12 border border-zinc-200 shadow-md">
+          <div className="relative h-72 md:h-96 w-full rounded-3xl overflow-hidden mb-12 border border-zinc-800 shadow-2xl">
             <Image
               src="/satismakineleri/sondaj-14.07.2023-19-09-01.jpg"
               alt="Endüstriyel Sondaj ve Enerji Altyapısı"
               fill
-              className="object-cover"
+              className="object-cover opacity-90"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white z-10">
               <div>
-                <span className="text-xs font-mono font-bold text-[#C59B27] uppercase tracking-wider bg-black/70 px-3 py-1 rounded-md backdrop-blur-xs">
+                <span className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest bg-zinc-950/80 px-3 py-1 rounded-md border border-zinc-800">
                   // ENDÜSTRİYEL SONDAJ & ENERJİ ALTYAPISI
                 </span>
-                <h3 className="text-lg md:text-2xl font-extrabold mt-2">Derin Zemin Etüdü & Endüstriyel Sondaj Operasyonu</h3>
+                <h3 className="text-lg md:text-2xl font-black uppercase mt-2 font-sans">Derin Zemin Etüdü & Endüstriyel Sondaj Operasyonu</h3>
               </div>
             </div>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-3 gap-6 py-8 px-6 rounded-3xl bg-zinc-50 border border-zinc-200 shadow-xs mb-16">
+          <div className="grid grid-cols-3 gap-6 py-8 px-6 rounded-3xl bg-zinc-900/90 border border-zinc-800 shadow-xl mb-16">
             {currentDetails.stats.map((s, idx) => (
               <div key={idx} className="text-center">
-                <div className="text-2xl md:text-4xl font-extrabold text-[#C59B27] mb-2">{s.val}</div>
-                <div className="text-zinc-500 text-xs md:text-sm font-semibold">{s.label}</div>
+                <div className="text-2xl md:text-4xl font-black font-mono text-[#C59B27] mb-1">{s.val}</div>
+                <div className="text-zinc-400 text-xs font-mono font-bold uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </div>
 
           {/* Detailed Features Section */}
           <div className="space-y-8 mb-16">
-            <h3 className="text-xl md:text-2xl font-bold text-zinc-950 mb-6 flex items-center gap-2">
-              <Sun className="w-5 h-5 text-[#10B981]" />
-              {isTr ? "Santral Çözümlerimiz" : isDe ? "Unsere Kraftwerkslösungen" : isFr ? "Nos Solutions Énergétiques" : "Our Renewable Solutions"}
+            <h3 className="text-xl md:text-3xl font-black uppercase tracking-tight text-white mb-6 flex items-center gap-3">
+              <Target className="w-5 h-5 text-emerald-400" />
+              // {isTr ? "Hizmet Kapsamımız" : isDe ? "Unser Leistungsumfang" : isFr ? "Notre Champ d'Action" : "Scope of Services"}
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {currentDetails.features.map((f, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl border border-zinc-200 bg-white hover:border-zinc-300 transition-colors shadow-xs"
+                  className="p-6 rounded-3xl border border-zinc-800 bg-zinc-900/90 hover:border-[#C59B27]/50 transition-colors shadow-xl"
                 >
-                  <h4 className="text-lg font-bold text-zinc-950 mb-2 flex items-center gap-2.5">
+                  <h4 className="text-lg font-bold text-white mb-2 flex items-center gap-2.5">
                     <Check className="w-4 h-4 text-[#C59B27]" />
                     {f.title}
                   </h4>
-                  <p className="text-zinc-500 text-sm leading-relaxed font-semibold">{f.desc}</p>
+                  <p className="text-zinc-400 text-xs leading-relaxed font-normal">{f.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Call to action card */}
-          <div className="p-8 md:p-12 rounded-3xl bg-zinc-50 border border-zinc-200 text-center relative overflow-hidden shadow-xs">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#10B981]/5 rounded-full filter blur-[60px]" />
-            <Zap className="w-12 h-12 text-[#10B981] mx-auto mb-6" />
-            <h3 className="text-2xl md:text-3xl font-bold text-zinc-950 mb-4">
-              {isTr ? "Yenilenebilir Enerji Yatırımı Başlatın" : isDe ? "Projektanfrage Energiewende" : isFr ? "Lancer un Projet d'Énergie Propre" : "Launch Your Clean Energy Project"}
+          <div className="p-8 md:p-12 rounded-3xl bg-zinc-900/90 border border-zinc-800 text-center relative overflow-hidden shadow-2xl">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#C59B27]/10 rounded-full filter blur-[80px]" />
+            <Shield className="w-12 h-12 text-[#C59B27] mx-auto mb-6" />
+            <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
+              {isTr ? "Enerji Projeniz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot an" : isFr ? "Demandez un devis" : "Request a Quote for Energy Infrastructure"}
             </h3>
-            <p className="text-zinc-500 text-sm md:text-base leading-relaxed max-w-xl mx-auto mb-8 font-semibold">
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto mb-8 font-medium">
               {isTr
-                ? "Tesisinizin karbon ayak izini azaltmak ve enerji maliyetlerinizi optimize etmek için hemen bize ulaşın."
-                : isDe
-                ? "Kontaktieren Sie uns jetzt, um die Energiekosten Ihres Unternehmens zu senken."
-                : isFr
-                ? "Contactez-nous pour réduire l'empreinte carbone et optimiser les coûts énergétiques de votre site."
-                : "Contact us now to reduce your plant's carbon footprint and optimize your industrial energy costs."}
+                ? "GES, RES ve endüstriyel su sondaj altyapısı çözümlerimiz için mühendislik ekibimizle iletişime geçin."
+                : "Contact our engineering team for solar, wind farm, and industrial deep water well drilling infrastructure."}
             </p>
             <Link
               href="/iletisim"
-              className="inline-flex items-center gap-2 py-4 px-8 rounded-lg bg-zinc-950 hover:bg-zinc-900 text-white font-bold text-sm tracking-wide shadow-sm transition-colors"
+              className="inline-flex items-center gap-3 py-4 px-8 rounded-none bg-[#C59B27] hover:bg-[#b08920] text-white font-mono font-bold text-xs uppercase tracking-widest shadow-lg transition-colors cursor-pointer"
             >
               <span>{t("contact.title")}</span>
-              <Shield className="w-4 h-4" />
+              <Zap className="w-4 h-4" />
             </Link>
           </div>
         </div>

@@ -1,9 +1,10 @@
 {
   "nav": {
     "home": "Accueil",
-    "products": "Produits",
+    "products": "Nos Produits",
     "services": "Nos Services",
-    "map": "Zone de Couverture",
+    "operations": "Opérations de Terrain",
+    "map": "Zones d'Intervention",
     "gallery": "Galerie",
     "contact": "Contact",
     "getQuote": "Obtenir un Devis"

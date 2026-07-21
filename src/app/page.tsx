@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { B2BServices } from "@/components/B2BServices";
+import { VideoShowcase } from "@/components/VideoShowcase";
 import { Arsenal } from "@/components/Arsenal";
 import { InteractiveMap } from "@/components/InteractiveMap";
 import { StatsCounter } from "@/components/StatsCounter";
@@ -14,6 +15,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <B2BServices />
+        <VideoShowcase />
         <Arsenal />
         <InteractiveMap />
         <StatsCounter />
@@ -23,4 +25,3 @@ export default function Home() {
     </>
   );
 }
-

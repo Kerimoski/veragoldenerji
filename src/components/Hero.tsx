@@ -86,7 +86,7 @@ export const Hero: React.FC = () => {
       subtitle: isTr
         ? "300+ metre derin su sondajı, jeoteknik etütler ve karot alım operasyonlarında yüksek torklu hidrolik kule."
         : "High-torque hydraulic mast for 300+ meter deep water wells and geotechnical core sampling.",
-      image: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg",
+      image: "/stokfoto/aerial-shot-of-water-well-drilling-rig-boring-dowi-2024-10-18-10-11-35-utc.jpeg",
       specs: [
         { label: isTr ? "DERİNLİK" : "DEPTH", val: "300 - 450 m" },
         { label: isTr ? "TORK" : "TORQUE", val: "8,500 Nm" },
@@ -94,6 +94,48 @@ export const Hero: React.FC = () => {
       ],
       primaryCtaText: isTr ? "Makine Detaylarını İncele" : "Explore Machine Specs",
       primaryCtaLink: "/urunler/derin-su-sondaj-makinesi",
+      secondaryCtaText: t("hero.ctaQuote"),
+      secondaryCtaLink: "/iletisim",
+    },
+    // Slide 4: Havadan Çekim Su Sondaj Operasyonu
+    {
+      id: "aerial",
+      tag: "AERIAL OPERATIONS // SITE SURVEY & BORING",
+      watermark: "AERIAL RIG",
+      badge: isTr ? "HAVADAN ŞANTİYE & SONDAJ GÖRÜNTÜLEME" : "AERIAL SITE SURVEY & WELL BORING",
+      title: isTr ? "HAVADAN JEOTEKNİK & DERİN SONDAJ OPERASYONLARI" : "AERIAL GEOTECHNICAL & WELL DRILLING FLEET",
+      subtitle: isTr
+        ? "Zorlu coğrafyalarda dron destekli haritalama ve 400 metreye varan derin su sondaj kuleleri."
+        : "Drone-assisted mapping and deep water well drilling rigs operating in challenging terrains.",
+      image: "/stokfoto/aerial-shot-of-water-well-drilling-rig-boring-dowi-2024-10-18-10-11-35-utc.jpeg",
+      specs: [
+        { label: isTr ? "HARİTALAMA" : "MAPPING", val: "3D Dron Etüt" },
+        { label: isTr ? "DERİNLİK" : "MAX DEPTH", val: "400 Metre" },
+        { label: isTr ? "KAPASİTE" : "CAPACITY", val: "7/24 Kesintisiz" },
+      ],
+      primaryCtaText: isTr ? "Saha Operasyonlarını İncele" : "View Field Operations",
+      primaryCtaLink: "/operasyonlar",
+      secondaryCtaText: t("hero.ctaQuote"),
+      secondaryCtaLink: "/iletisim",
+    },
+    // Slide 5: Açık Ocak Maden Delgi Operasyonu
+    {
+      id: "quarry",
+      tag: "OPEN PIT MINING // PORPHYRY DRILLING",
+      watermark: "OPEN PIT",
+      badge: isTr ? "MADEN OCAĞI & KAYA PATLATMA DELGİLERİ" : "OPEN PIT QUARRY & BLAST HOLE DRILLING",
+      title: isTr ? "AÇIK OCAK KAYA DELİM & ŞEV STABİLİZASYONU" : "OPEN PIT BLAST HOLE & SLOPE STABILIZATION",
+      subtitle: isTr
+        ? "Maden sahaları ve taş ocaklarında granit ve porfir kayaçlar için yüksek darbe enerjili ağır kaya delici kuleler."
+        : "High-impact rock drilling masts engineered for porphyry and granite rock extraction in open pit quarries.",
+      image: "/stokfoto/driller-in-an-open-pit-mine-porphyry-rock-materia-2023-11-27-05-03-42-utc.jpg",
+      specs: [
+        { label: isTr ? "DARBE" : "IMPACT", val: "24 Bar Basınç" },
+        { label: isTr ? "FORMASYON" : "ROCK TYPE", val: "Granit & Porfir" },
+        { label: isTr ? "GÜVENLİK" : "SAFETY", val: "%100 Uyumlu" },
+      ],
+      primaryCtaText: isTr ? "Operasyon Detaylarını İncele" : "Explore Operation Specs",
+      primaryCtaLink: "/operasyonlar",
       secondaryCtaText: t("hero.ctaQuote"),
       secondaryCtaLink: "/iletisim",
     },
@@ -112,7 +154,7 @@ export const Hero: React.FC = () => {
 
   return (
     <section
-      className="relative h-screen min-h-screen snap-start snap-always bg-zinc-950 text-white flex flex-col justify-between overflow-hidden pt-32 pb-12 select-none"
+      className="relative min-h-screen bg-zinc-950 text-white flex flex-col justify-between overflow-hidden pt-32 pb-8 select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -213,19 +255,19 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* SpaceX Bottom Slide Switcher Bar */}
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-6 border-t border-zinc-800/80">
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-30 pt-4 pb-4 border-t border-zinc-800 bg-zinc-950/90 backdrop-blur-xl rounded-t-2xl shadow-2xl mt-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           
           {/* Progress Indicators */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {slides.map((s, idx) => (
               <button
                 key={s.id}
                 onClick={() => setCurrentSlide(idx)}
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                className={`h-2 rounded-full transition-all cursor-pointer ${
                   currentSlide === idx
-                    ? "w-12 bg-[#C59B27]"
-                    : "w-6 bg-zinc-800 hover:bg-zinc-700"
+                    ? "w-10 bg-[#C59B27]"
+                    : "w-4 bg-zinc-700 hover:bg-zinc-500"
                 }`}
                 title={s.title}
               />
@@ -238,10 +280,10 @@ export const Hero: React.FC = () => {
               <button
                 key={s.id}
                 onClick={() => setCurrentSlide(idx)}
-                className={`px-4 py-2 text-[10px] font-mono uppercase tracking-widest rounded-none border transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-3.5 py-2 text-[10px] font-mono uppercase tracking-widest rounded-lg border transition-all cursor-pointer whitespace-nowrap ${
                   currentSlide === idx
-                    ? "border-[#C59B27] bg-[#C59B27]/10 text-[#C59B27]"
-                    : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-white"
+                    ? "border-[#C59B27] bg-[#C59B27] text-white font-bold shadow-md"
+                    : "border-zinc-800 bg-zinc-900/80 text-zinc-300 hover:border-zinc-600 hover:text-white"
                 }`}
               >
                 0{idx + 1} // {s.id}
@@ -253,15 +295,17 @@ export const Hero: React.FC = () => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-              className="w-9 h-9 rounded-none border border-zinc-800 bg-zinc-900 flex items-center justify-center text-zinc-400 hover:border-white hover:text-white transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center text-white transition-colors cursor-pointer shadow-md"
+              title="Önceki Slayt"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5 text-[#C59B27]" />
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-              className="w-9 h-9 rounded-none border border-zinc-800 bg-zinc-900 flex items-center justify-center text-zinc-400 hover:border-white hover:text-white transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center text-white transition-colors cursor-pointer shadow-md"
+              title="Sonraki Slayt"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5 text-[#C59B27]" />
             </button>
           </div>
 

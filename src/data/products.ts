@@ -58,7 +58,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     descDe: "Hydraulische Schwerlast-Bohranlagen für Tiefwasserbrunnen, Baugrunduntersuchungen und Kernbohrungen.",
     descFr: "Foreuses hydrauliques robustes pour puits d'eau profonds, études géotechniques et carottage.",
     iconName: "Drill",
-    coverImage: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg",
+    coverImage: "/stokfoto/aerial-shot-of-water-well-drilling-rig-boring-dowi-2024-10-18-10-11-35-utc.jpeg",
   },
   {
     slug: "rock-makinalari",
@@ -71,7 +71,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     descDe: "Raupen-Gesteinsbohrgeräte mit hohen Penetrationsraten in hartem Granit, Basalt und schwerem Gestein.",
     descFr: "Foreuses sur chenilles offrant des vitesses de pénétration élevées dans le granit et le basalte.",
     iconName: "Pickaxe",
-    coverImage: "/satismakineleri/Paletli-Rock-Makina.jpg",
+    coverImage: "/stokfoto/yellow-drilling-machine-drills-rock-in-a-quarry-2023-11-27-05-30-25-utc.jpg",
   },
   {
     slug: "kazik-cakma-makinalari",
@@ -97,7 +97,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     descDe: "Drehbohrgeräte mit hohem Drehmoment für Spezialtiefbau und Großbohrpfähle.",
     descFr: "Foreuses rotatives à grand couple pour les travaux de fondations profondes et pieux forés.",
     iconName: "Layers",
-    coverImage: "/satismakineleri/fore-kazik-cakma-makinesi.jpeg",
+    coverImage: "/stokfoto/vertical-shot-of-a-drilling-machine-on-a-construct-2023-11-27-05-37-07-utc.jpg",
   },
   {
     slug: "jet-grout-ankraj-makinalari",
@@ -110,7 +110,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     descDe: "Vielseitige Raupenbohrgeräte für Baugrundverbesserung, Mikropfähle, Verankerung und Düsenstrahlverfahren.",
     descFr: "Foreuses polyvalentes pour l'amélioration des sols, micro-pieux, ancrages et injection jet grouting.",
     iconName: "Cpu",
-    coverImage: "/satismakineleri/sondajmakinesi.jpeg",
+    coverImage: "/stokfoto/well-auger-during-a-job-2023-11-27-05-24-57-utc.jpg",
   },
   {
     slug: "kompresorler",

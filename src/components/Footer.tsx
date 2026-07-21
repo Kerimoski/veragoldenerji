@@ -54,6 +54,12 @@ export const Footer: React.FC = () => {
                 <ArrowUpRight className="w-3 h-3 text-[#C59B27] opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
             </li>
+            <li>
+              <Link href="/operasyonlar" className="text-zinc-300 hover:text-white transition-colors flex items-center gap-1 group">
+                {t("nav.operations")}
+                <ArrowUpRight className="w-3 h-3 text-[#C59B27] opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
+            </li>
           </ul>
         </div>
 

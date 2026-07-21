@@ -103,7 +103,7 @@ export const B2BServices: React.FC = () => {
   return (
     <section
       id="services"
-      className="relative h-screen min-h-screen snap-start snap-always bg-zinc-950 text-white flex flex-col justify-between overflow-hidden pt-28 pb-12 select-none border-t border-zinc-800/80"
+      className="relative min-h-screen bg-zinc-950 text-white flex flex-col justify-between overflow-hidden pt-28 pb-8 select-none border-t border-zinc-800/80"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -206,19 +206,19 @@ export const B2BServices: React.FC = () => {
       </div>
 
       {/* SpaceX Bottom Service Switcher Bar */}
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-6 border-t border-zinc-800/80">
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-30 pt-4 pb-4 border-t border-zinc-800 bg-zinc-950/90 backdrop-blur-xl rounded-t-2xl shadow-2xl mt-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           
           {/* Progress Indicators */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {services.map((s, idx) => (
               <button
                 key={s.id}
                 onClick={() => setCurrentService(idx)}
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                className={`h-2 rounded-full transition-all cursor-pointer ${
                   currentService === idx
-                    ? "w-12 bg-[#C59B27]"
-                    : "w-6 bg-zinc-800 hover:bg-zinc-700"
+                    ? "w-10 bg-[#C59B27]"
+                    : "w-4 bg-zinc-700 hover:bg-zinc-500"
                 }`}
                 title={s.title}
               />
@@ -231,10 +231,10 @@ export const B2BServices: React.FC = () => {
               <button
                 key={s.id}
                 onClick={() => setCurrentService(idx)}
-                className={`px-4 py-2 text-[10px] font-mono uppercase tracking-widest rounded-none border transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-3.5 py-2 text-[10px] font-mono uppercase tracking-widest rounded-lg border transition-all cursor-pointer whitespace-nowrap ${
                   currentService === idx
-                    ? "border-[#C59B27] bg-[#C59B27]/10 text-[#C59B27]"
-                    : "border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-white"
+                    ? "border-[#C59B27] bg-[#C59B27] text-white font-bold shadow-md"
+                    : "border-zinc-800 bg-zinc-900/80 text-zinc-300 hover:border-zinc-600 hover:text-white"
                 }`}
               >
                 0{idx + 1} // {s.id}
@@ -246,15 +246,17 @@ export const B2BServices: React.FC = () => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentService((prev) => (prev - 1 + services.length) % services.length)}
-              className="w-9 h-9 rounded-none border border-zinc-800 bg-zinc-900 flex items-center justify-center text-zinc-400 hover:border-white hover:text-white transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center text-white transition-colors cursor-pointer shadow-md"
+              title="Önceki Hizmet"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5 text-[#C59B27]" />
             </button>
             <button
               onClick={() => setCurrentService((prev) => (prev + 1) % services.length)}
-              className="w-9 h-9 rounded-none border border-zinc-800 bg-zinc-900 flex items-center justify-center text-zinc-400 hover:border-white hover:text-white transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center text-white transition-colors cursor-pointer shadow-md"
+              title="Sonraki Hizmet"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5 text-[#C59B27]" />
             </button>
           </div>
 

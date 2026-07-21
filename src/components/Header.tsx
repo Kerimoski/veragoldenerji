@@ -5,16 +5,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "@/context/LanguageContext";
-import { LanguageSelector } from "./LanguageSelector";
-import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
+import { LanguageSelector } from "@/components/LanguageSelector";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 
 export const Header: React.FC = () => {
   const { t, language } = useTranslation();
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +46,7 @@ export const Header: React.FC = () => {
     { nameTr: "Enerji Santralleri & Derin Sondaj", nameEn: "Energy Plants & Deep Well Drilling", path: "/hizmetler/enerji" },
     { nameTr: "Makine Danışmanlığı & Filo", nameEn: "Machinery Consulting & Fleet", path: "/hizmetler/makine-danismanligi" },
     { nameTr: "Yedek Parça & Mobil Saha Servisi", nameEn: "Spare Parts & Mobile Field Service", path: "/hizmetler/yedek-parca-servis" },
+    { nameTr: "Saha Operasyonları & Canlı Medya", nameEn: "Field Operations & Live Media", path: "/operasyonlar" },
   ];
 
   return (
@@ -158,17 +160,7 @@ export const Header: React.FC = () => {
             )}
           </div>
 
-          {/* 4. Hizmet Bölgemiz */}
-          <Link
-            href="/hizmet-bolgemiz"
-            className={`text-xs font-mono uppercase tracking-widest transition-colors py-1 ${
-              pathname === "/hizmet-bolgemiz" ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
-            }`}
-          >
-            {t("nav.map")}
-          </Link>
-
-          {/* 5. Galeri */}
+          {/* 4. Galeri */}
           <Link
             href="/galeri"
             className={`text-xs font-mono uppercase tracking-widest transition-colors py-1 ${
@@ -178,15 +170,44 @@ export const Header: React.FC = () => {
             {isTr ? "Galeri" : "Gallery"}
           </Link>
 
-          {/* 6. İletişim */}
-          <Link
-            href="/iletisim"
-            className={`text-xs font-mono uppercase tracking-widest transition-colors py-1 ${
-              pathname === "/iletisim" ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
-            }`}
+          {/* 5. İletişim Dropdown (Hizmet Bölgemiz Altında) */}
+          <div
+            className="relative py-2"
+            onMouseEnter={() => setIsContactDropdownOpen(true)}
+            onMouseLeave={() => setIsContactDropdownOpen(false)}
           >
-            {t("nav.contact")}
-          </Link>
+            <Link
+              href="/iletisim"
+              className={`text-xs font-mono uppercase tracking-widest transition-colors flex items-center gap-1.5 cursor-pointer ${
+                pathname.startsWith("/iletisim") || pathname === "/hizmet-bolgemiz" ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
+              }`}
+            >
+              <span>{t("nav.contact")}</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isContactDropdownOpen ? "rotate-180 text-[#C59B27]" : ""}`} />
+            </Link>
+
+            {isContactDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-[240px] bg-zinc-900/95 border border-zinc-800 rounded-2xl shadow-2xl p-3 z-[100] backdrop-blur-xl text-white animate-fadeIn">
+                <div className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest px-3 py-2 border-b border-zinc-800 mb-2">
+                  // {isTr ? "İletişim & Konum" : "Contact & Location"}
+                </div>
+                <div className="space-y-1">
+                  <Link
+                    href="/iletisim"
+                    className="block px-3 py-2.5 rounded-xl text-xs font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors"
+                  >
+                    {isTr ? "Teklif & İletişim Formu" : "Quote & Contact Form"}
+                  </Link>
+                  <Link
+                    href="/hizmet-bolgemiz"
+                    className="block px-3 py-2.5 rounded-xl text-xs font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors"
+                  >
+                    {isTr ? "Hizmet Bölgemiz & Harita" : "Coverage Map & Regions"}
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Right: Language Selector + İletişime Geç Button */}
@@ -205,16 +226,13 @@ export const Header: React.FC = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex lg:hidden items-center gap-3">
-          <LanguageSelector />
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-zinc-300 hover:text-white focus:outline-none"
-            aria-label="Toggle Navigation"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden p-2 text-zinc-400 hover:text-white cursor-pointer"
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
       </div>
 
       {/* Mobile Menu */}
@@ -242,13 +260,6 @@ export const Header: React.FC = () => {
             {t("nav.services")}
           </Link>
           <Link
-            href="/hizmet-bolgemiz"
-            onClick={() => setIsOpen(false)}
-            className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
-          >
-            {t("nav.map")}
-          </Link>
-          <Link
             href="/galeri"
             onClick={() => setIsOpen(false)}
             className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
@@ -256,18 +267,18 @@ export const Header: React.FC = () => {
             {isTr ? "Galeri" : "Gallery"}
           </Link>
           <Link
-            href="/iletisim"
+            href="/hizmet-bolgemiz"
             onClick={() => setIsOpen(false)}
             className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
           >
-            {t("nav.contact")}
+            {t("nav.map")}
           </Link>
           <Link
             href="/iletisim"
             onClick={() => setIsOpen(false)}
-            className="block text-xs font-mono uppercase tracking-widest py-2 text-[#C59B27] font-bold"
+            className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white text-[#C59B27]"
           >
-            {isTr ? "İletişime Geç" : "Get In Touch"}
+            {t("nav.contact")}
           </Link>
         </div>
       )}

@@ -3,10 +3,11 @@
     "home": "Home",
     "products": "Products",
     "services": "Services",
-    "map": "Coverage Area",
+    "operations": "Field Operations",
+    "map": "Coverage Map",
     "gallery": "Gallery",
     "contact": "Contact",
-    "getQuote": "Get Quote"
+    "getQuote": "Get a Quote"
   },
   "hero": {
     "badge": "Vera Gold Enerji - B2B Solution Partner",

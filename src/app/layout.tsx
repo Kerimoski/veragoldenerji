@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: "Vera Gold Enerji | B2B Delgi, Kiralama ve Enerji Santrali Kurulumu",
   description: "Kaya delgi projeleri, ağır makine kiralama filosu ve endüstriyel enerji santrali kurulumunda Avrupa'nın B2B çözüm ortağı.",
   keywords: "sondaj, delgi işleri, kaya delgi, makine kiralama, enerji santrali kurulumu, rüzgar santrali, güneş santrali, B2B tedarikçi",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({

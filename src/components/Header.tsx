@@ -225,13 +225,16 @@ export const Header: React.FC = () => {
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden p-2 text-zinc-400 hover:text-white cursor-pointer"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Controls: Language Selector & Menu Toggle */}
+        <div className="flex lg:hidden items-center gap-2">
+          <LanguageSelector />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 text-zinc-400 hover:text-white cursor-pointer"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
 
       </div>
 
@@ -280,6 +283,12 @@ export const Header: React.FC = () => {
           >
             {t("nav.contact")}
           </Link>
+
+          {/* Mobile Language Selector Drawer Row */}
+          <div className="pt-3 border-t border-zinc-800 flex items-center justify-between">
+            <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">// {isTr ? "DİL SEÇİMİ" : "LANGUAGE"}</span>
+            <LanguageSelector />
+          </div>
         </div>
       )}
     </header>

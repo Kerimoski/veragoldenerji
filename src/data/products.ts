@@ -75,7 +75,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   },
   {
     slug: "kompresorler",
-    nameTr: "Hava Kompresörleri",
+    nameTr: "Hava Kompresör Grubu",
     nameEn: "Air Compressors",
     nameDe: "Kompressoren",
     nameFr: "Compresseurs d'Air",

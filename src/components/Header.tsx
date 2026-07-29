@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
   const productCategories = [
     { key: "rock", nameTr: "Rock Makinaları", nameEn: "Rock Machines", path: "/urunler/rock-makinalari" },
     { key: "sondaj", nameTr: "Sondaj Makinaları", nameEn: "Drilling Rigs", path: "/urunler/sondaj-makinalari" },
-    { key: "kompresor", nameTr: "Hava Kompresörleri", nameEn: "Air Compressors", path: "/urunler/kompresorler" },
+    { key: "kompresor", nameTr: "Hava Kompresör Grubu", nameEn: "Air Compressors", path: "/urunler/kompresorler" },
     { key: "jet", nameTr: "Jet Grout Makinaları", nameEn: "Jet Grout & Anchoring Rigs", path: "/urunler/jet-grout-ankraj-makinalari" },
     { key: "maden", nameTr: "Maden Makinaları", nameEn: "Mining Machines", path: "/urunler/maden-makinalari" },
   ];

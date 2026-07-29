@@ -93,10 +93,10 @@
       "features": ["Flexible Rental Plans", "24/7 Technical Maintenance", "Operator Included Option", "Wide Equipment Range"]
     },
     "energy": {
-      "title": "Power Plant Construction",
-      "short": "Turnkey construction and engineering services for industrial wind, solar, and renewable power plants.",
-      "long": "For factories, industrial sites, and investors, we handle all stages from feasibility study to turnkey commissioning.",
-      "features": ["Turnkey Installation", "Renewable Engineering", "PV & Wind Integration", "Long-term Maintenance"]
+      "title": "Deep Well Drilling",
+      "short": "Turnkey solutions in deep water well drilling, geotechnical coring, and well development.",
+      "long": "Vera Gold Enerji provides high-performance deep drilling services exceeding 300 meters, geotechnical exploration, and geothermal well operations with our heavy rotary rig fleet.",
+      "features": ["Deep Water Drilling", "Geotechnical Coring", "Geothermal Well Boring", "Well Cleaning & Development"]
     },
     "learnMore": "Learn More",
     "close": "Close",

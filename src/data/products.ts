@@ -87,19 +87,6 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     coverImage: "/satismakineleri/csh1120a-hava-kompresoru.png",
   },
   {
-    slug: "kazik-cakma-makinalari",
-    nameTr: "Kazık Çakma Makinaları",
-    nameEn: "Pile Driving Rigs",
-    nameDe: "Rammanlagen",
-    nameFr: "Sonneuses de Pieux",
-    descTr: "Güneş enerjisi (GES) sahaları ve altyapı projeleri için yüksek hassasiyetli hidrolik kazık çakma makinaları.",
-    descEn: "High-precision hydraulic pile drivers engineered for solar farm construction and foundation piling.",
-    descDe: "Präzisions-Hydraulikrammen für den Bau von Solarparks und Fundamentpfählen.",
-    descFr: "Sonneuses hydrauliques de haute précision conçues pour les centrales solaires et fondations.",
-    iconName: "Hammer",
-    coverImage: "/satismakineleri/mz460y.jpg",
-  },
-  {
     slug: "jet-grout-ankraj-makinalari",
     nameTr: "Jet Grout Makinaları",
     nameEn: "Jet Grouting & Anchoring Rigs",
@@ -253,7 +240,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "kazik-1",
     slug: "mz460y-gunes-enerjisi-ges-kazik-cakma-makinesi",
-    categorySlug: "kazik-cakma-makinalari",
+    categorySlug: "rock-makinalari",
     nameTr: "MZ460Y Güneş Enerjisi (GES) Kazık Çakma Makinesi",
     nameEn: "MZ460Y Solar Farm (PV) Pile Driving Rig",
     nameDe: "MZ460Y Solarpark-Rammanlage",

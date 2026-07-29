@@ -162,12 +162,12 @@ export default function EnerjiSantralleriPage() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#C59B27]/10 rounded-full filter blur-[80px]" />
             <Shield className="w-12 h-12 text-[#C59B27] mx-auto mb-6" />
             <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
-              {isTr ? "Enerji Projeniz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot an" : isFr ? "Demandez un devis" : "Request a Quote for Energy Infrastructure"}
+              {isTr ? "Sondaj Projeniz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot für Tiefbohrungen an" : isFr ? "Demandez un devis pour forage profond" : "Request a Quote for Deep Drilling"}
             </h3>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto mb-8 font-medium">
               {isTr
-                ? "GES, RES ve endüstriyel su sondaj altyapısı çözümlerimiz için mühendislik ekibimizle iletişime geçin."
-                : "Contact our engineering team for solar, wind farm, and industrial deep water well drilling infrastructure."}
+                ? "Endüstriyel su sondajı, jeotermal kuyu ve zemin etüdü çözümlerimiz için mühendislik ekibimizle iletişime geçin."
+                : "Contact our engineering team for deep water well drilling, geotechnical coring, and geothermal operations."}
             </p>
             <Link
               href="/iletisim"

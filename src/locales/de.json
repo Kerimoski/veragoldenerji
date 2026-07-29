@@ -93,10 +93,10 @@
       "features": ["Flexible Mietpläne", "24/7 Technischer Service", "Option mit Bediener", "Breites Gerätespektrum"]
     },
     "energy": {
-      "title": "Kraftwerksbau",
-      "short": "Schlüsselfertiger Bau und Engineering von Wind-, Solar- und Erneuerbaren Kraftwerken.",
-      "long": "Wir übernehmen alle Phasen von Machbarkeitsstudien bis zur schlüsselfertigen Übergabe.",
-      "features": ["Schlüsselfertiger Bau", "Renewable Engineering", "PV- & Windintegration", "Langzeitwartung"]
+      "title": "Tiefbrunnenbohrung",
+      "short": "Schlüsselfertige Lösungen für Tiefbrunnenbohrungen, geotechnische Kernbohrungen und Brunnenentwicklung.",
+      "long": "Vera Gold Enerji bietet leistungsstarke Tiefbohrungen über 300 Meter, geotechnische Erkundungen und geothermische Bohrungen mit unserer schweren Drehbohrgeräteflotte an.",
+      "features": ["Tiefbrunnenbohrung", "Geotechnische Kernbohrung", "Geothermische Bohrungen", "Brunnenreinigung & -entwicklung"]
     },
     "learnMore": "Mehr Erfahren",
     "close": "Schließen",

@@ -35,7 +35,6 @@ export const Header: React.FC = () => {
     { key: "rock", nameTr: "Rock Makinaları", nameEn: "Rock Machines", path: "/urunler/rock-makinalari" },
     { key: "sondaj", nameTr: "Sondaj Makinaları", nameEn: "Drilling Rigs", path: "/urunler/sondaj-makinalari" },
     { key: "kompresor", nameTr: "Hava Kompresörleri", nameEn: "Air Compressors", path: "/urunler/kompresorler" },
-    { key: "kazik", nameTr: "Kazık Çakma Makinaları", nameEn: "Pile Driving Rigs", path: "/urunler/kazik-cakma-makinalari" },
     { key: "jet", nameTr: "Jet Grout Makinaları", nameEn: "Jet Grout & Anchoring Rigs", path: "/urunler/jet-grout-ankraj-makinalari" },
     { key: "maden", nameTr: "Maden Makinaları", nameEn: "Mining Machines", path: "/urunler/maden-makinalari" },
   ];
@@ -43,7 +42,7 @@ export const Header: React.FC = () => {
   const servicePages = [
     { nameTr: "Delgi Mühendisliği & Kaya Çakım", nameEn: "Drilling Engineering & Rock Piling", path: "/hizmetler/delgi" },
     { nameTr: "GES & Ağır İş Makinesi Kiralama", nameEn: "Solar & Heavy Rig Rental Fleet", path: "/hizmetler/kiralama" },
-    { nameTr: "Enerji Santralleri & Derin Sondaj", nameEn: "Energy Plants & Deep Well Drilling", path: "/hizmetler/enerji" },
+    { nameTr: "Derin Sondaj", nameEn: "Deep Drilling", path: "/hizmetler/enerji" },
     { nameTr: "Makine Danışmanlığı & Filo", nameEn: "Machinery Consulting & Fleet", path: "/hizmetler/makine-danismanligi" },
     { nameTr: "Yedek Parça & Mobil Saha Servisi", nameEn: "Spare Parts & Mobile Field Service", path: "/hizmetler/yedek-parca-servis" },
     { nameTr: "Sarf Malzeme & Yedek Parça Satış", nameEn: "Consumables & Spare Parts Sales", path: "/hizmetler/yedek-parca-servis" },

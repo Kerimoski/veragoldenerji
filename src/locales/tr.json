@@ -93,10 +93,10 @@
       "features": ["Esnek Kiralama Planları", "7/24 Teknik Destek & Bakım", "Operatörlü Kiralama Seçeneği", "Geniş Ekipman Yelpazesi"]
     },
     "energy": {
-      "title": "Enerji Santrali Kurulumu",
-      "short": "Endüstriyel rüzgar, güneş ve yenilenebilir enerji santrallerinin anahtar teslim kurulumu ve mühendislik hizmetleri.",
-      "long": "Fabrikalar, endüstriyel tesisler ve yatırımcılar için temiz enerji santrallerinin fizibilite çalışmasından başlayarak anahtar teslim kurulumuna kadar tüm aşamaları üstleniyoruz.",
-      "features": ["Anahtar Teslim Kurulum", "Yenilenebilir Enerji Mühendisliği", "GES & RES Entegrasyonu", "Uzun Vadeli Bakım Desteği"]
+      "title": "Derin Sondaj",
+      "short": "Derin su sondajı, jeoteknik sondajlar, kuyu temizliği ve geliştirme işlerinde anahtar teslim çözümler.",
+      "long": "Vera Gold Enerji, 300 metreyi aşan derin su kuyularının açılması, zemin etüdü sondajları, jeotermal kuyu operasyonları ve derin karotlu sondaj işlerinde yüksek torklu ağır sondaj filosuyla hizmet vermektedir.",
+      "features": ["Derin Su Sondajı", "Jeoteknik Karot Sondajı", "Jeotermal Kuyu Delgisi", "Kuyu Geliştirme & Temizlik"]
     },
     "learnMore": "Detayları Gör",
     "close": "Kapat",

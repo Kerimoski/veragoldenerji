@@ -58,8 +58,8 @@ export const B2BServices: React.FC = () => {
       badge: isTr ? "ENDÜSTRİYEL SONDAJ KULELERİ" : "INDUSTRIAL WATER & CORING MASTS",
       title: t("b2bServices.enerji.title"),
       subtitle: isTr
-        ? "300+ metre derin su sondajı, jeoteknik etütler ve santral altyapı projelerinde yüksek torklu hidrolik kuleler."
-        : "High-torque hydraulic mast systems for 300+ meter deep water wells and geotechnical core sampling.",
+        ? "300+ metre derin su sondajı, jeoteknik etütler ve jeotermal projelerde yüksek torklu hidrolik kuleler."
+        : "High-torque hydraulic mast systems for 300+ meter deep water wells, geotechnical core sampling, and geothermal sites.",
       image: "/satismakineleri/sondaj-14.07.2023-19-09-01.jpg",
       specs: [
         { label: isTr ? "DERİNLİK" : "MAX DEPTH", val: "300 - 450 m" },

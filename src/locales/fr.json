@@ -93,10 +93,10 @@
       "features": ["Plans de Location Flexibles", "Support Technique 24/7", "Option avec Opérateur", "Large Gamme d'Équipements"]
     },
     "energy": {
-      "title": "Construction de Centrales Énergétiques",
-      "short": "Services clés en main de construction et d'ingénierie pour centrales éoliennes et solaires.",
-      "long": "De l'étude de faisabilité à la mise en service clés en main pour usines et investisseurs.",
-      "features": ["Installation Clés en Main", "Ingénierie Renouvelable", "Intégration PV & Éolien", "Maintenance Long Terme"]
+      "title": "Forage Profond",
+      "short": "Solutions clés en main pour le forage de puits d'eau profonds, le carottage géotechnique et le développement de puits.",
+      "long": "Vera Gold Enerji propose des services de forage profond de plus de 300 mètres, d'exploration géotechnique et d'opérations géothermiques avec notre flotte de foreuses rotatives lourdes.",
+      "features": ["Forage de Puits Profonds", "Carottage Géotechnique", "Forage Géothermique", "Nettoyage & Développement de Puits"]
     },
     "learnMore": "En Savoir Plus",
     "close": "Fermer",

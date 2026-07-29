@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
       image: "/satismakineleri/Paletli-Rock-Makina.jpg",
       specs: [
         { label: isTr ? "BÖLGE" : "ZONE", val: "Tüm Avrupa & Balkanlar" },
-        { label: isTr ? "FİLO" : "FLEET", val: "100+ Ağır İş Makinesi" },
+        { label: isTr ? "FİLO" : "FLEET", val: "+23 Ağır İş Makinesi" },
         { label: isTr ? "DESTEK" : "SUPPORT", val: "7/24 Saha Servisi" },
       ],
       primaryCtaText: t("hero.exploreFleet"),

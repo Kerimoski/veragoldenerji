@@ -32,12 +32,12 @@ export const Header: React.FC = () => {
   const isTr = language === "tr";
 
   const productCategories = [
-    { key: "sondaj", nameTr: "Sondaj Makinaları", nameEn: "Drilling Rigs", path: "/urunler/sondaj-makinalari" },
     { key: "rock", nameTr: "Rock Makinaları", nameEn: "Rock Machines", path: "/urunler/rock-makinalari" },
+    { key: "sondaj", nameTr: "Sondaj Makinaları", nameEn: "Drilling Rigs", path: "/urunler/sondaj-makinalari" },
+    { key: "kompresor", nameTr: "Hava Kompresörleri", nameEn: "Air Compressors", path: "/urunler/kompresorler" },
     { key: "kazik", nameTr: "Kazık Çakma Makinaları", nameEn: "Pile Driving Rigs", path: "/urunler/kazik-cakma-makinalari" },
-    { key: "fore", nameTr: "Fore Kazık Makinaları", nameEn: "Bored Piling Rigs", path: "/urunler/fore-kazik-makinalari" },
-    { key: "jet", nameTr: "Jet Grout ve Ankraj Makinaları", nameEn: "Jet Grout & Anchoring Rigs", path: "/urunler/jet-grout-ankraj-makinalari" },
-    { key: "kompresor", nameTr: "Kompresörler", nameEn: "Compressors", path: "/urunler/kompresorler" },
+    { key: "jet", nameTr: "Jet Grout Makinaları", nameEn: "Jet Grout & Anchoring Rigs", path: "/urunler/jet-grout-ankraj-makinalari" },
+    { key: "maden", nameTr: "Maden Makinaları", nameEn: "Mining Machines", path: "/urunler/maden-makinalari" },
   ];
 
   const servicePages = [
@@ -46,6 +46,7 @@ export const Header: React.FC = () => {
     { nameTr: "Enerji Santralleri & Derin Sondaj", nameEn: "Energy Plants & Deep Well Drilling", path: "/hizmetler/enerji" },
     { nameTr: "Makine Danışmanlığı & Filo", nameEn: "Machinery Consulting & Fleet", path: "/hizmetler/makine-danismanligi" },
     { nameTr: "Yedek Parça & Mobil Saha Servisi", nameEn: "Spare Parts & Mobile Field Service", path: "/hizmetler/yedek-parca-servis" },
+    { nameTr: "Sarf Malzeme & Yedek Parça Satış", nameEn: "Consumables & Spare Parts Sales", path: "/hizmetler/yedek-parca-servis" },
     { nameTr: "Saha Operasyonları & Canlı Medya", nameEn: "Field Operations & Live Media", path: "/operasyonlar" },
   ];
 

@@ -392,4 +392,160 @@ export const PRODUCTS: Product[] = [
     featuresFr: ["Faible Consommation", "Démarrage Facile", "Châssis Compact"],
     inStock: true,
   },
+  {
+    id: "kompresor-3",
+    slug: "lgzj-31-25-35-18-dizel-vidali-kompresor",
+    categorySlug: "kompresorler",
+    nameTr: "LGZJ-31/25-35/18 Dizel Vidalı Kompresör",
+    nameEn: "LGZJ-31/25-35/18 Diesel Screw Air Compressor",
+    nameDe: "LGZJ-31/25-35/18 Diesel-Schraubenkompressor",
+    nameFr: "Compresseur Diesel à Vis LGZJ-31/25-35/18",
+    model: "LGZJ-31/25-35/18",
+    shortDescTr: "Yuchai 288-400 HP motorlu, 25-18 bar çalışma basınçlı çift kademeli dizel vidalı kompresör.",
+    shortDescEn: "Double-stage diesel screw compressor powered by Yuchai 288-400 HP engine with 25-18 bar working pressure.",
+    shortDescDe: "Zweistufiger Diesel-Schraubenkompressor mit Yuchai 288-400 PS Motor und 25-18 bar Betriebsdruck.",
+    shortDescFr: "Compresseur diesel à vis bi-étagé avec moteur Yuchai 288-400 CV et pression de 25-18 bar.",
+    fullDescTr: "Ağır şantiye, derin sondaj ve zorlu kaya delgi koşullarında yüksek verimlilik sunan Yuchai motorlu, SKY11G220-B kompresör bloklu profesyonel dizel vidalı kompresör ünitesi.",
+    fullDescEn: "Professional diesel screw air compressor unit with Yuchai engine and SKY11G220-B air end, delivering high efficiency in heavy duty drilling, quarrying, and deep boring applications.",
+    fullDescDe: "Professioneller Diesel-Schraubenkompressor mit Yuchai-Motor und SKY11G220-B Verdichterblock, der hohe Effizienz bei schweren Bohrarbeiten bietet.",
+    fullDescFr: "Compresseur diesel professionnel à vis avec moteur Yuchai et bloc vis SKY11G220-B, offrant une grande efficacité dans les travaux de forage lourds.",
+    image: "/yeni/1/WhatsApp Image 2026-07-29 at 10.26.00.jpeg",
+    specs: [
+      { labelTr: "Nominal Debi", labelEn: "Air Delivery", labelDe: "Liefermenge", labelFr: "Débit Nominal", value: "31 - 35 m³/min" },
+      { labelTr: "Çalışma Basıncı", labelEn: "Working Pressure", labelDe: "Betriebsdruck", labelFr: "Pression", value: "25 - 18 bar" },
+      { labelTr: "Motor Gücü", labelEn: "Engine Power", labelDe: "Motorleistung", labelFr: "Puissance Moteur", value: "288 - 400 HP" },
+      { labelTr: "Toplam Ağırlık", labelEn: "Total Weight", labelDe: "Gesamtgewicht", labelFr: "Poids Total", value: "4,500 kg" },
+      { labelTr: "Boyutlar", labelEn: "Dimensions", labelDe: "Abmessungen", labelFr: "Dimensions", value: "3650×2000×2200 mm" },
+      { labelTr: "Kompresör Bloğu", labelEn: "Air End Model", labelDe: "Verdichterblock", labelFr: "Bloc Vis", value: "SKY11G220-B" },
+    ],
+    featuresTr: [
+      "Yuchai Su Soğutmalı Turbo Intercooler Motor",
+      "2 Kademeli SKY11G220-B Vida Bloğu",
+      "460 Litre Yüksek Kapasiteli Yakıt Deposu",
+      "G2x1 ve G3/4x1 Çıkış Vanaları"
+    ],
+    featuresEn: [
+      "Yuchai Water-Cooled Turbo Intercooler Engine",
+      "2-Stage SKY11G220-B Screw Air End",
+      "460 L High Capacity Fuel Tank",
+      "G2x1 and G3/4x1 Outlet Valves"
+    ],
+    featuresDe: [
+      "Wassergekühlter Yuchai Turbo-Intercooler-Motor",
+      "Zweistufiger SKY11G220-B Verdichterblock",
+      "460 l Kraftstofftankkapazität",
+      "G2x1 & G3/4x1 Ausgangsventile"
+    ],
+    featuresFr: [
+      "Moteur Yuchai Turbo Intercooler Refroidi par Eau",
+      "Bloc Vis Bi-Étagé SKY11G220-B",
+      "Réservoir de Carburant 460 L",
+      "Vannes de Sortie G2x1 et G3/4x1"
+    ],
+    inStock: true,
+  },
+  {
+    id: "kompresor-4",
+    slug: "kszj-29-23-32-17-dizel-vidali-kompresor",
+    categorySlug: "kompresorler",
+    nameTr: "KSZJ-29/23-32/17 Dizel Vidalı Kompresör",
+    nameEn: "KSZJ-29/23-32/17 Diesel Screw Air Compressor",
+    nameDe: "KSZJ-29/23-32/17 Diesel-Schraubenkompressor",
+    nameFr: "Compresseur Diesel à Vis KSZJ-29/23-32/17",
+    model: "KSZJ-29/23-32/17",
+    shortDescTr: "Yuchai 400 HP (295 kW) motorlu, 23-17 bar çalışma basınçlı mobil dizel vidalı kompresör.",
+    shortDescEn: "Mobile diesel screw compressor powered by Yuchai 400 HP (295 kW) engine with 23-17 bar working pressure.",
+    shortDescDe: "Fahrbarer Diesel-Schraubenkompressor mit Yuchai 400 PS (295 kW) Motor und 23-17 bar Betriebsdruck.",
+    shortDescFr: "Compresseur diesel à vis mobile équipé d'un moteur Yuchai 400 CV (295 kW) et d'une pression de 23-17 bar.",
+    fullDescTr: "Zorlu şantiye ve madencilik sahalarında yüksek debi performansı sunan Yuchai motorlu, SKY11G194 iki kademeli kompresör bloklu üst segment dizel vidalı ünite.",
+    fullDescEn: "Premium diesel screw compressor equipped with Yuchai engine and SKY11G194 two-stage air end, designed for high-capacity applications in tough quarrying and drilling operations.",
+    fullDescDe: "Premium Diesel-Schraubenkompressor mit Yuchai-Motor und zweistufigem SKY11G194 Verdichterblock für anspruchsvolle Steinbruch- und Bohranwendungen.",
+    fullDescFr: "Compresseur à vis diesel haut de gamme avec moteur Yuchai et bloc vis bi-étagé SKY11G194 pour applications minières et de forage exigeantes.",
+    image: "/yeni/2/1111.jpeg",
+    specs: [
+      { labelTr: "Nominal Debi", labelEn: "Air Delivery", labelDe: "Liefermenge", labelFr: "Débit Nominal", value: "29 - 32 m³/min" },
+      { labelTr: "Çalışma Basıncı", labelEn: "Working Pressure", labelDe: "Betriebsdruck", labelFr: "Pression", value: "23 - 17 bar" },
+      { labelTr: "Motor Gücü", labelEn: "Engine Power", labelDe: "Motorleistung", labelFr: "Puissance Moteur", value: "295 kW (400 HP)" },
+      { labelTr: "Toplam Ağırlık", labelEn: "Total Weight", labelDe: "Gesamtgewicht", labelFr: "Poids Total", value: "4,050 kg" },
+      { labelTr: "Boyutlar", labelEn: "Dimensions", labelDe: "Abmessungen", labelFr: "Dimensions", value: "3500×1950×2030 mm" },
+      { labelTr: "Kompresör Bloğu", labelEn: "Air End Model", labelDe: "Verdichterblock", labelFr: "Bloc Vis", value: "SKY11G194" },
+    ],
+    featuresTr: [
+      "Yuchai 6 Silindir Dikey Sıralı Su Soğutmalı Motor",
+      "2 Kademeli SKY11G194 Yüksek Verimli Vida Bloğu",
+      "350 Litre Yakıt Deposu",
+      "Kolay Bakım & Geniş Servis Kapakları"
+    ],
+    featuresEn: [
+      "Yuchai 6-Cylinder Inline Water-Cooled Engine",
+      "2-Stage SKY11G194 High-Efficiency Screw Air End",
+      "350 L Fuel Tank Capacity",
+      "Easy Maintenance with Large Service Panels"
+    ],
+    featuresDe: [
+      "Yuchai 6-Zylinder wassergekühlter Reihenmotor",
+      "Zweistufiger SKY11G194 Hocheffizienter Verdichterblock",
+      "350 l Kraftstofftank",
+      "Einfache Wartung durch großzügige Seitenklappen"
+    ],
+    featuresFr: [
+      "Moteur Yuchai 6 cylindres en ligne refroidi par eau",
+      "Bloc Vis Bi-Étagé Haute Efficacité SKY11G194",
+      "Réservoir de Carburant 350 L",
+      "Maintenance facile grâce aux larges panneaux d'accès"
+    ],
+    inStock: true,
+  },
+  {
+    id: "kompresor-5",
+    slug: "lgcy-17-18-18-15t-dizel-vidali-kompresor-romorklu",
+    categorySlug: "kompresorler",
+    nameTr: "LGCY-17/18-18/15T Dizel Vidalı Kompresör (Römorklu)",
+    nameEn: "LGCY-17/18-18/15T Towable Diesel Screw Air Compressor",
+    nameDe: "LGCY-17/18-18/15T Fahrbarer Diesel-Schraubenkompressor",
+    nameFr: "Compresseur Diesel à Vis Remorquable LGCY-17/18-18/15T",
+    model: "LGCY-17/18-18/15T",
+    shortDescTr: "Yuchai 220 HP (162 kW) motorlu, 18-15 bar basınçlı 4 tekerlekli römorklu mobil dizel kompresör.",
+    shortDescEn: "4-wheel towable diesel screw compressor powered by Yuchai 220 HP (162 kW) engine with 18-15 bar pressure.",
+    shortDescDe: "Fahrbarer Dieselkompressor (4-Rad-Anhänger) mit Yuchai 220 PS (162 kW) Motor und 18-15 bar Druck.",
+    shortDescFr: "Compresseur diesel à vis remorquable (4 roues) avec moteur Yuchai 220 CV (162 kW) et pression de 18-15 bar.",
+    fullDescTr: "Şantiyelerde kolay taşınabilirlik sağlayan 4 lastikli römorklu şasisi, Yuchai turboşarjlı motoru ve SKY2 iki kademeli vida bloğu ile donatılmış verimli hava ünitesi.",
+    fullDescEn: "Equipped with a 4-wheel heavy towable chassis for easy mobility. Powered by Yuchai turbocharged engine and SKY2 two-stage screw air end.",
+    fullDescDe: "Ausgestattet mit einem 4-Rad-Anhängerfahrwerk für hohe Mobilität. Angetrieben von einem Yuchai-Turbomotor und einer zweistufigen SKY2-Schraubenverdichtereinheit.",
+    fullDescFr: "Équipé d'un châssis remorquable à 4 roues pour une mobilité aisée. Propulsé par un moteur turbocompressé Yuchai et un bloc vis bi-étagé SKY2.",
+    image: "/yeni/3/WhatsApp Image 2026-07-29 at 10.26.02.jpeg",
+    specs: [
+      { labelTr: "Nominal Debi", labelEn: "Air Delivery", labelDe: "Liefermenge", labelFr: "Débit Nominal", value: "17 - 18 m³/min" },
+      { labelTr: "Çalışma Basıncı", labelEn: "Working Pressure", labelDe: "Betriebsdruck", labelFr: "Pression", value: "18 - 15 bar" },
+      { labelTr: "Motor Gücü", labelEn: "Engine Power", labelDe: "Motorleistung", labelFr: "Puissance Moteur", value: "162 kW (220 HP)" },
+      { labelTr: "Toplam Ağırlık", labelEn: "Total Weight", labelDe: "Gesamtgewicht", labelFr: "Poids Total", value: "2,200 kg" },
+      { labelTr: "Boyutlar", labelEn: "Dimensions", labelDe: "Abmessungen", labelFr: "Dimensions", value: "3000×1520×2300 mm" },
+      { labelTr: "Kompresör Bloğu", labelEn: "Air End Model", labelDe: "Verdichterblock", labelFr: "Bloc Vis", value: "SKY2-126NHBG180-17" },
+    ],
+    featuresTr: [
+      "4 Tekerlekli Güçlendirilmiş Römork Şasisi (185/80R14 Lastik)",
+      "Yuchai Turboşarjlı Su Soğutmalı Motor",
+      "2 Kademeli SKY2 Vida Bloğu",
+      "250 Litre Yakıt Deposu"
+    ],
+    featuresEn: [
+      "4-Wheel Reinforced Towing Chassis (185/80R14 Tires)",
+      "Yuchai Turbocharged Water-Cooled Engine",
+      "2-Stage SKY2 Screw Air End",
+      "250 L Fuel Tank Capacity"
+    ],
+    featuresDe: [
+      "Verstärktes 4-Rad-Anhängerfahrwerk (185/80R14 Reifen)",
+      "Wassergekühlter Yuchai Turbomotor",
+      "Zweistufige SKY2 Schraubenverdichtereinheit",
+      "250 l Kraftstofftank"
+    ],
+    featuresFr: [
+      "Châssis remorquable renforcé à 4 roues (pneus 185/80R14)",
+      "Moteur Turbocompressé Yuchai Refroidi par Eau",
+      "Bloc Vis Bi-Étagé SKY2",
+      "Réservoir de Carburant 250 L"
+    ],
+    inStock: true,
+  },
 ];

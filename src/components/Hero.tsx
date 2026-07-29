@@ -139,6 +139,27 @@ export const Hero: React.FC = () => {
       secondaryCtaText: t("hero.ctaQuote"),
       secondaryCtaLink: "/iletisim",
     },
+    // Slide 6: LGZJ-31/25 Yüksek Basınçlı Vidalı Kompresör
+    {
+      id: "compressor-lgzj",
+      tag: "LGZJ-31/25 DIESEL COMPRESSOR // YUCHAI POWER",
+      watermark: "COMPRESSOR",
+      badge: isTr ? "YÜKSEK BASINÇLI VİDALI KOMPRESÖR" : "HIGH-PRESSURE DIESEL SCREW COMPRESSOR",
+      title: isTr ? "LGZJ-31/25-35/18 DİZEL KOMPRESÖR" : "LGZJ-31/25-35/18 DIESEL COMPRESSOR",
+      subtitle: isTr
+        ? "Yuchai 288-400 HP motor ve çift kademeli vida bloğu ile kaya delgi ve derin sondajların kesintisiz hava kaynağı."
+        : "Equipped with Yuchai 288-400 HP engine and two-stage air end for continuous air delivery on tough sites.",
+      image: "/yeni/1/WhatsApp Image 2026-07-29 at 10.26.00.jpeg",
+      specs: [
+        { label: isTr ? "DEBİ" : "CAPACITY", val: "31 - 35 m³/dak" },
+        { label: isTr ? "BASINÇ" : "PRESSURE", val: "25 - 18 bar" },
+        { label: isTr ? "MOTOR" : "ENGINE", val: "Yuchai 288-400 HP" },
+      ],
+      primaryCtaText: isTr ? "Kompresör Detaylarını İncele" : "Explore Compressor Specs",
+      primaryCtaLink: "/urunler/lgzj-31-25-35-18-dizel-vidali-kompresor",
+      secondaryCtaText: t("hero.ctaQuote"),
+      secondaryCtaLink: "/iletisim",
+    },
   ];
 
   // Auto-play timer

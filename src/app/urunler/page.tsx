@@ -220,7 +220,7 @@ export default function ProductsPage() {
               <h2 className="text-2xl font-bold mb-2 text-white">
                 {getProductName(selectedProductModal)}
               </h2>
-              <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
+              <p className="text-zinc-400 text-sm mb-6 leading-relaxed whitespace-pre-line">
                 {getProductFullDesc(selectedProductModal)}
               </p>
 

@@ -37,6 +37,7 @@ export const Header: React.FC = () => {
     { key: "kompresor", nameTr: "Hava Kompresör Grubu", nameEn: "Air Compressors", path: "/urunler/kompresorler" },
     { key: "jet", nameTr: "Jet Grout Makinaları", nameEn: "Jet Grout & Anchoring Rigs", path: "/urunler/jet-grout-ankraj-makinalari" },
     { key: "maden", nameTr: "Maden Makinaları", nameEn: "Mining Machines", path: "/urunler/maden-makinalari" },
+    { key: "dth", nameTr: "DTH Ekipmanları & Sarf", nameEn: "DTH Equipment & Spares", path: "/urunler/dth-ekipmanlari" },
   ];
 
   const servicePages = [

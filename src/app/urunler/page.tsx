@@ -78,7 +78,7 @@ export default function ProductsPage() {
           </div>
 
           {/* Category Cards Showcase */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-3 mb-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 mb-14">
             <button
               onClick={() => setSelectedCategory("all")}
               className={`p-4 rounded-2xl border transition-all text-left flex flex-col justify-between cursor-pointer ${

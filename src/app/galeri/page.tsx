@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface GalleryItem {
   src: string;
-  category: "machinery" | "equipment" | "operations" | "stokfoto";
+  category: "machinery" | "kazik" | "dth" | "kompresor" | "equipment" | "operations" | "stokfoto";
   titleTr: string;
   titleEn: string;
 }
@@ -21,30 +21,36 @@ export default function GalleryPage() {
   const isTr = language === "tr";
 
   const galleryItems: GalleryItem[] = [
-    // Stock Photography Collection (New 20 HD Photos)
-    { src: "/stokfoto/aerial-shot-of-water-well-drilling-rig-boring-dowi-2024-10-18-10-11-35-utc.jpeg", category: "stokfoto", titleTr: "Havadan Su Sondaj Kulesi Görünümü", titleEn: "Aerial View of Water Well Rig" },
-    { src: "/stokfoto/driller-in-an-open-pit-mine-porphyry-rock-materia-2023-11-27-05-03-42-utc.jpg", category: "stokfoto", titleTr: "Açık Ocak Maden Delgi Operasyonu", titleEn: "Open Pit Mining Rock Drilling" },
-    { src: "/stokfoto/yellow-drilling-machine-drills-rock-in-a-quarry-2023-11-27-05-30-25-utc.jpg", category: "stokfoto", titleTr: "Taş Ocağı Yüksek Basınçlı Delgi", titleEn: "Quarry High Pressure Drilling Rig" },
-    { src: "/stokfoto/well-auger-during-a-job-2023-11-27-05-24-57-utc.jpg", category: "stokfoto", titleTr: "Auger Zemin Temel Sondaj Burgusu", titleEn: "Heavy Well Auger Boring Unit" },
-    { src: "/stokfoto/vertical-shot-of-a-drilling-machine-on-a-construct-2023-11-27-05-37-07-utc.jpg", category: "stokfoto", titleTr: "Dikey Kazık & Sondaj Kulesi", titleEn: "Vertical Piling Drilling Mast" },
-    { src: "/stokfoto/driller-in-a-quarry-mine-exploring-rock-material-2023-11-27-05-17-31-utc.jpg", category: "stokfoto", titleTr: "Maden Ocağı Jeolojik Saha Analizi", titleEn: "Quarry Mine Geological Field Audit" },
-    { src: "/stokfoto/building-activity-on-construction-site-close-up-v-2023-11-27-05-04-41-utc.jpg", category: "stokfoto", titleTr: "İnşaat Şantiyesi Ağır Ekipman Parkı", titleEn: "Construction Site Heavy Equipment" },
-    { src: "/stokfoto/greasing-points-inside-heavy-equipment-crawler-2023-11-27-05-18-39-utc.jpeg", category: "stokfoto", titleTr: "Paletli Ekipman Saha Bakımı", titleEn: "Crawler Rig Field Maintenance" },
-    { src: "/stokfoto/driller-in-a-quarry-mine-porphyry-rocks-mining-i-2023-11-27-05-20-13-utc.jpg", category: "stokfoto", titleTr: "Porfir Kayaç Patlatma Delgisi", titleEn: "Porphyry Rock Blast Hole Drill" },
-    { src: "/stokfoto/drilling-wells-in-the-ground-using-a-professional-2023-11-27-05-23-52-utc.jpg", category: "stokfoto", titleTr: "Derin Su Sondaj Borulaması", titleEn: "Deep Groundwater Well Boring" },
-    { src: "/stokfoto/extraction-of-stone-male-worker-next-to-stone-qua-2024-08-09-22-49-33-utc.jpg", category: "stokfoto", titleTr: "Taş Çıkarma Şantiyesi İş Güvenliği", titleEn: "Stone Quarry Safety Operation" },
-    { src: "/stokfoto/rock maikana yellow-excavator-digging-rocks-at-the-quarry-doin-2023-11-27-05-14-44-utc.jpg", category: "stokfoto", titleTr: "Taş Ocağı Kaya Kırma & Yükleme", titleEn: "Quarry Rock Digging & Breaking" },
-
-    // Machinery
+    // Real Field & Machinery Photos
+    { src: "/gorseller/kaishan-kg300gf/WhatsApp_Image_2026-08-11_at_16.22.32_3.jpeg", category: "machinery", titleTr: "Kaishan KG300GF Kaya Delici Kule (Saha Çekimi)", titleEn: "Kaishan KG300GF Rock Drilling Rig (Field Shot)" },
+    { src: "/gorseller/kaishan-kg300gf/WhatsApp_Image_2026-08-11_at_16.22.32_1.jpeg", category: "machinery", titleTr: "KG300GF Hidrolik Silindir & Mast Detayı", titleEn: "KG300GF Hydraulic Feed Mast Detail" },
+    { src: "/gorseller/kaishan-kg300gf/WhatsApp_Image_2026-08-12_at_13.02.14_3.jpeg", category: "machinery", titleTr: "KG300GF Açık Ocak Delgi Testi", titleEn: "KG300GF Open Pit Drilling Test" },
     { src: "/veragaleri/Makine-6610-scaled.jpg", category: "machinery", titleTr: "Hidrolik Delgi Makinesi", titleEn: "Hydraulic Drilling Rig" },
     { src: "/veragaleri/Makine-6615-scaled.jpg", category: "machinery", titleTr: "Ağır Hizmet Paletli Sondaj", titleEn: "Heavy-Duty Crawler Drill" },
     { src: "/veragaleri/Makine-6616-scaled.jpg", category: "machinery", titleTr: "Rock Delici Makine Parkuru", titleEn: "Rock Drilling Fleet Unit" },
     { src: "/veragaleri/Makine-6621-scaled.jpg", category: "machinery", titleTr: "B2B Ağır İş Makinesi", titleEn: "B2B Heavy Construction Machinery" },
-    { src: "/veragaleri/Makine-6632-scaled.jpg", category: "machinery", titleTr: "Şantiye Kaya Kırıcı & Delici", titleEn: "Site Rock Breaker & Driller" },
-    { src: "/veragaleri/Makine-6633-scaled.jpg", category: "machinery", titleTr: "Yüksek Torklu Delme Ünitesi", titleEn: "High-Torque Drilling Unit" },
-    { src: "/veragaleri/Makine-6639-scaled.jpg", category: "machinery", titleTr: "Mobil Kompresör Entegre Delici", titleEn: "Mobile Compressor Integrated Rig" },
     { src: "/veragaleri/MZ460Y-KAZIK-CAKMA-MAKINASI-2.png", category: "machinery", titleTr: "MZ460Y Kazık Çakma Makinesi", titleEn: "MZ460Y Pile Driving Machine" },
     { src: "/veragaleri/Rock-makinasi-fd580.jpeg", category: "machinery", titleTr: "FD580 Ağır Kaya Makinesi", titleEn: "FD580 Heavy Rock Machine" },
+
+    // Kazık Çakma & Orteco Aksesuarları
+    { src: "/gorseller/kazik-cakma-aksesuar/GPS.png", category: "kazik", titleTr: "Orteco Otomatik GPS Konumlandırma Sistemi", titleEn: "Orteco Automated GPS Positioning System" },
+    { src: "/gorseller/kazik-cakma-aksesuar/gps_2.png", category: "kazik", titleTr: "GES Sahası Milimetrik GPS Kontrol Ünitesi", titleEn: "Solar Array GPS Guidance Control Unit" },
+    { src: "/gorseller/kazik-cakma-aksesuar/LASER1.png", category: "kazik", titleTr: "Lazer Dikey Hizalama Kiti", titleEn: "Laser Vertical Alignment Kit" },
+    { src: "/gorseller/kazik-cakma-aksesuar/Laser_2-elab.png", category: "kazik", titleTr: "Otomatik Lazer Seviye Sensörü", titleEn: "Automatic Laser Leveling Sensor" },
+    { src: "/gorseller/kazik-cakma-aksesuar/Down_the_hole_hammer_BASIC.png", category: "kazik", titleTr: "Dalıcı Çekiç (DTH Hammer) Aksesuarı", titleEn: "Down-the-Hole Hammer Attachment" },
+    { src: "/gorseller/kazik-cakma-aksesuar/nuovi_motori.png", category: "kazik", titleTr: "Stage 5 / Tier 4 Final Yanmar Motor Ünitesi", titleEn: "Stage 5 / Tier 4 Final Yanmar Engine Powerpack" },
+
+    // DTH Çekiç & Bits (Hammer Bits)
+    { src: "/gorseller/dth-hammer-bits/WhatsApp_Image_2026-08-17_at_13.09.07_3.jpeg", category: "dth", titleTr: "Tungsten Karbür DTH Matkap Uçları (WT Serisi)", titleEn: "Tungsten Carbide DTH Drill Bits (WT Series)" },
+    { src: "/gorseller/dth-hammer-bits/WhatsApp_Image_2026-08-17_at_13.09.07_1.jpeg", category: "dth", titleTr: "Ağır Hizmet Kaya Delici DTH Buton Bit", titleEn: "Heavy-Duty DTH Button Bit" },
+    { src: "/gorseller/dth-hammer-bits/WhatsApp_Image_2026-08-17_at_13.09.07_2.jpeg", category: "dth", titleTr: "Yüksek Aşınma Dirençli DTH Delgi Ucu", titleEn: "High Wear Resistant DTH Drilling Bit" },
+    { src: "/veragaleri/Parca-6705-scaled.jpg", category: "dth", titleTr: "Orijinal DTH Çekiç Piston Başlığı", titleEn: "OEM DTH Hammer Piston Head" },
+
+    // Kompresör Grubu
+    { src: "/gorseller/lgcy-18bar-kompresor/WhatsApp_Image_2026-08-11_at_14.48.40.jpeg", category: "kompresor", titleTr: "LGCY 18 Bar Römorklu Dizel Kompresör", titleEn: "LGCY 18 Bar Towable Diesel Compressor" },
+    { src: "/gorseller/lgcy-18bar-kompresor/WhatsApp_Image_2026-08-11_at_14.48.40_2.jpeg", category: "kompresor", titleTr: "LGCY 220 HP Yuchai Motor Bölmesi", titleEn: "LGCY 220 HP Yuchai Engine Bay" },
+    { src: "/gorseller/kaishan-23bar/WhatsApp_Image_2026-08-10_at_20.51.19.jpeg", category: "kompresor", titleTr: "Kaishan 23 Bar Yüksek Basınçlı Kompresör", titleEn: "Kaishan 23 Bar High Pressure Air Compressor" },
+    { src: "/gorseller/kaishan-25bar/WhatsApp_Image_2026-08-10_at_20.51.19.jpeg", category: "kompresor", titleTr: "Kaishan 25 Bar İki Kademeli Vida Bloğu", titleEn: "Kaishan 25 Bar Two-Stage Screw Air End" },
 
     // Equipment & Filters
     { src: "/veragaleri/Filtre-6579-scaled.jpg", category: "equipment", titleTr: "Endüstriyel Hava Filtresi Grubu", titleEn: "Industrial Air Filter Group" },
@@ -52,30 +58,29 @@ export default function GalleryPage() {
     { src: "/veragaleri/Filtre-6584-scaled.jpg", category: "equipment", titleTr: "Kompresör Filtre Sarf Malzemeleri", titleEn: "Compressor Filter Consumables" },
     { src: "/veragaleri/Filtre-6597-scaled.jpg", category: "equipment", titleTr: "Yüksek Basınç Dayanımlı Filtre", titleEn: "High-Pressure Resistance Filter" },
     { src: "/veragaleri/Filtre-6600-scaled.jpg", category: "equipment", titleTr: "Hidrolik Sıvı Filtre Grubu", titleEn: "Hydraulic Fluid Filter Element" },
-    { src: "/veragaleri/Filtre-6608-scaled.jpg", category: "equipment", titleTr: "Motor Emme Manifoldu Filtresi", titleEn: "Engine Intake Manifold Filter" },
-    { src: "/veragaleri/Filtre-6643-scaled.jpg", category: "equipment", titleTr: "Yakıt Seperatör Filtre Başlığı", titleEn: "Fuel Separator Filter Cap" },
     { src: "/veragaleri/Filtre-6645-scaled.jpg", category: "equipment", titleTr: "Orijinal Yedek Parça Filtresi", titleEn: "OEM Replacement Filter" },
     { src: "/veragaleri/Bidon-6664-scaled.jpg", category: "equipment", titleTr: "Özel Hidrolik Yağ Katkıları", titleEn: "Special Hydraulic Oil Additives" },
     { src: "/veragaleri/Bidon-6665-scaled.jpg", category: "equipment", titleTr: "Madeni Yağ & Bakım Sıvısı", titleEn: "Lubricating Oil & Maintenance Fluid" },
-    { src: "/veragaleri/Bidon-6669-scaled.jpg", category: "equipment", titleTr: "B2B Endüstriyel Şantiye Sıvıları", titleEn: "B2B Industrial Site Fluids" },
-    { src: "/veragaleri/Parca-6705-scaled.jpg", category: "equipment", titleTr: "Orijinal DTH Çekiç Piston Başlığı", titleEn: "OEM DTH Hammer Piston Head" },
 
-    // Operations
+    // Field Operations
+    { src: "/gorseller/sondaj-makineleri/WhatsApp_Image_2026-08-11_at_14.48.54.jpeg", category: "operations", titleTr: "Derin Su Sondaj Kulesi Saha Kurulumu", titleEn: "Deep Water Boring Derrick Field Setup" },
+    { src: "/gorseller/sondaj-makineleri/WhatsApp_Image_2026-08-11_at_14.48.55_1.jpeg", category: "operations", titleTr: "Su Kuyusu Borulama & Çamur Havuzu", titleEn: "Water Well Casing & Mud Circulation Pit" },
+    { src: "/gorseller/sondaj-makineleri/WhatsApp_Image_2026-08-11_at_14.48.56.jpeg", category: "operations", titleTr: "Ağır Hizmet Paletli Sondaj Kulesi", titleEn: "Heavy-Duty Tracked Drilling Derrick" },
+    { src: "/gorseller/sondaj-makineleri/WhatsApp_Image_2026-08-11_at_14.48.57.jpeg", category: "operations", titleTr: "Balkanlar Şantiyesi Canlı Delgi Testi", titleEn: "Balkans Site Live Drilling Test" },
     { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-15.24.20-2.jpeg", category: "operations", titleTr: "Aktif Kaya Delme Şantiyesi", titleEn: "Active Rock Drilling Site" },
-    { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-15.24.20-4.jpeg", category: "operations", titleTr: "Paletli Delici Çakım Operasyonu", titleEn: "Crawler Drill Piling Operation" },
-    { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-15.24.21-1.jpeg", category: "operations", titleTr: "Balkanlar Şantiye Kurulum Çalışması", titleEn: "Balkans Site Setup Preparation" },
     { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.27.56.jpeg", category: "operations", titleTr: "GES Altyapı Çakım Aşaması", titleEn: "Solar Array Pile Foundation Phase" },
-    { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.32.42-1.jpeg", category: "operations", titleTr: "Karot Numunesi Delgi Testi", titleEn: "Core Geotechnical Sample Drill Test" },
-    { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.32.42-6.jpeg", category: "operations", titleTr: "Yüksek Torklu Auger Delgi Kontrolü", titleEn: "High-Torque Auger Drill Quality Control" },
     { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.34.59-4.jpeg", category: "operations", titleTr: "Zemin Ankraj & Şev Güçlendirme", titleEn: "Soil Anchor & Slope Reinforcement" },
-    { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.56.17-10.jpeg", category: "operations", titleTr: "Endüstriyel Su Sondaj Kulesi", titleEn: "Industrial Water Boring Derrick" },
-    { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.56.17-3.jpeg", category: "operations", titleTr: "Operatörlü Sondaj Çalışmaları", titleEn: "Operator Assisted Well Drilling" },
-    { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.56.17-5.jpeg", category: "operations", titleTr: "Derin Zemin Karot Sondajı", titleEn: "Deep Geotechnical Core Boring" },
-    { src: "/veragaleri/WhatsApp-Image-2024-10-27-at-21.56.17-8.jpeg", category: "operations", titleTr: "Ağır İş Makinesi Nakliyesi", titleEn: "Heavy Machinery Logistics Dispatch" },
-    { src: "/veragaleri/mmexport1726125636859.jpg", category: "operations", titleTr: "Avrupa GES Sahası Altyapı Teslimi", titleEn: "European Solar Farm Substructure Handover" }
+
+    // Stock Photography Collection
+    { src: "/stokfoto/aerial-shot-of-water-well-drilling-rig-boring-dowi-2024-10-18-10-11-35-utc.jpeg", category: "stokfoto", titleTr: "Havadan Su Sondaj Kulesi Görünümü", titleEn: "Aerial View of Water Well Rig" },
+    { src: "/stokfoto/driller-in-an-open-pit-mine-porphyry-rock-materia-2023-11-27-05-03-42-utc.jpg", category: "stokfoto", titleTr: "Açık Ocak Maden Delgi Operasyonu", titleEn: "Open Pit Mining Rock Drilling" },
+    { src: "/stokfoto/yellow-drilling-machine-drills-rock-in-a-quarry-2023-11-27-05-30-25-utc.jpg", category: "stokfoto", titleTr: "Taş Ocağı Yüksek Basınçlı Delgi", titleEn: "Quarry High Pressure Drilling Rig" },
+    { src: "/stokfoto/well-auger-during-a-job-2023-11-27-05-24-57-utc.jpg", category: "stokfoto", titleTr: "Auger Zemin Temel Sondaj Burgusu", titleEn: "Heavy Well Auger Boring Unit" },
+    { src: "/stokfoto/vertical-shot-of-a-drilling-machine-on-a-construct-2023-11-27-05-37-07-utc.jpg", category: "stokfoto", titleTr: "Dikey Kazık & Sondaj Kulesi", titleEn: "Vertical Piling Drilling Mast" },
+    { src: "/stokfoto/driller-in-a-quarry-mine-porphyry-rocks-mining-i-2023-11-27-05-20-13-utc.jpg", category: "stokfoto", titleTr: "Porfir Kayaç Patlatma Delgisi", titleEn: "Porphyry Rock Blast Hole Drill" }
   ];
 
-  const [activeTab, setActiveTab] = useState<"all" | "stokfoto" | "machinery" | "equipment" | "operations">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "machinery" | "kazik" | "dth" | "kompresor" | "equipment" | "operations" | "stokfoto">("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // Filter items
@@ -132,13 +137,16 @@ export default function GalleryPage() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12 border-b border-zinc-800 pb-6 max-w-3xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-12 border-b border-zinc-800 pb-6 max-w-5xl mx-auto">
             {[
               { id: "all", labelTr: "Tümü", labelEn: "All" },
-              { id: "stokfoto", labelTr: "HD Stok Galerisi", labelEn: "HD Stock Photos" },
-              { id: "machinery", labelTr: "Makineler", labelEn: "Machinery" },
+              { id: "machinery", labelTr: "Makineler & Deliciler", labelEn: "Machinery & Drills" },
+              { id: "kazik", labelTr: "Kazık Çakma & Aksesuar", labelEn: "Piling & Accessories" },
+              { id: "dth", labelTr: "DTH Çekiç & Bits", labelEn: "DTH Hammers & Bits" },
+              { id: "kompresor", labelTr: "Kompresör Grubu", labelEn: "Compressors" },
               { id: "equipment", labelTr: "Ekipman & Filtre", labelEn: "Equipment & Filters" },
-              { id: "operations", labelTr: "Saha Operasyonları", labelEn: "Field Operations" }
+              { id: "operations", labelTr: "Saha Operasyonları", labelEn: "Field Operations" },
+              { id: "stokfoto", labelTr: "HD Stok Galerisi", labelEn: "HD Stock Photos" }
             ].map(tab => (
               <button
                 key={tab.id}

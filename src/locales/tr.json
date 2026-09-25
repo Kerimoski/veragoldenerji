@@ -107,8 +107,12 @@
     "spareParts": "Yedek Parça & Servis"
   },
   "productsPage": {
+    "viewDetails": "Detayları İncele",
+    "technicalSpecs": "Teknik Özellikler",
+    "prevPhoto": "Önceki fotoğraf",
+    "nextPhoto": "Sonraki fotoğraf",
     "badge": "Vera Gold Enerji - Ağır Makine Filosu",
-    "subtitle": "Sondaj, rock delgi, kazık çakma, fore kazık, jet grout ve yüksek basınçlı hava kompresörlerinde B2B endüstriyel makine tedarik ve satış parkuru.",
+    "subtitle": "Sondaj, rock delgi, kazık çakma, DTH sarf malzemeleri ve yüksek basınçlı hava kompresörlerinde B2B endüstriyel makine tedarik ve satış parkuru.",
     "all": "Tüm Makinalar",
     "allProducts": "Tüm Ürünler",
     "inStock": "Stokta / Satışta",

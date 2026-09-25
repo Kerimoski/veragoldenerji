@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "services": "Servicios",
+    "operations": "Operaciones de Campo",
+    "map": "Mapa de Cobertura",
+    "gallery": "Galería",
+    "contact": "Contacto",
+    "getQuote": "Solicitar Presupuesto"
+  },
+  "hero": {
+    "badge": "Vera Gold Enerji - Socio de Soluciones B2B",
+    "title": "Infraestructura Sólida en las Rocas más Duras, con Tolerancia Cero.",
+    "subtitle": "Perforación en roca con y sin compresor, soluciones de hincado para plantas solares y equipos de perforación de alto rendimiento.",
+    "ctaProjects": "Ver Nuestros Proyectos",
+    "ctaQuote": "Solicitar Presupuesto Técnico",
+    "exploreFleet": "Explorar la Flota de Maquinaria",
+    "fleetTag": "Flota Operativa & Maquinaria",
+    "rock": "Perforadora de Roca sobre Orugas",
+    "water": "Perforadora de Pozos de Agua Profundos",
+    "solar": "Hincadora Solar MZ460Y",
+    "compressor": "Compresor Diésel Portátil"
+  },
+  "b2bServices": {
+    "badge": "Fuerza Operativa",
+    "title": "En Qué Destacamos",
+    "subtitle": "Operaciones de excavación y perforación pesadas de alto par que llevan al límite la ingeniería de obra.",
+    "viewDetails": "Ver Detalles del Servicio",
+    "delgi": {
+      "title": "Perforación en Roca & Hincado de Alta Resistencia (Con Compresor)",
+      "desc": "Perforación e hincado de pilotes rápidos y milimétricos en plantas solares sobre formaciones rocosas duras, con sistemas de martillo DTH de alta presión.",
+      "tag": "DTH & PERFORACIÓN EN ROCA"
+    },
+    "kiralama": {
+      "title": "Perforación Rotativa & con Barrena (Sin Compresor)",
+      "desc": "Soluciones de perforación ecológicas, silenciosas y eficaces con sistemas rotativos de alto par y barrenas a medida en obras donde el uso de compresores está restringido.",
+      "tag": "HINCADO FV & BARRENA"
+    },
+    "enerji": {
+      "title": "Perforación Industrial & Pozos de Agua",
+      "desc": "Estudios geotécnicos profundos, anclajes, micropilotes y perforación de pozos de agua industriales de alta capacidad.",
+      "tag": "POZOS PROFUNDOS & CIMENTACIÓN"
+    }
+  },
+  "arsenal": {
+    "badge": "Escaparate de Equipos",
+    "title": "El Arsenal Blindado",
+    "subtitle": "Nuestro parque premium de equipos operativos de alta resistencia y los consumibles suministrados en B2B.",
+    "dth": {
+      "title": "Martillos DTH (Down-the-Hole)",
+      "desc": "Alta potencia de impacto, mínimo desgaste. Estructura de acero aleado especial que ofrece una alta velocidad de penetración en formaciones rocosas profundas y duras.",
+      "spec": "Diámetros: 3\" - 12\" | Compatibilidad Mission, QL, DHD",
+      "tag": "DTH DE ALTO IMPACTO"
+    },
+    "bits": {
+      "title": "Brocas para Roca & Accesorios",
+      "desc": "Brocas profesionales de carburo de tungsteno que desafían los terrenos de granito y basalto más duros. Máxima resistencia a la abrasión.",
+      "spec": "Tipo de Broca: Balística, Esférica | Grado de Carburo: A++",
+      "tag": "CARBURO DE TUNGSTENO"
+    },
+    "auger": {
+      "title": "Barrenas & Herramientas de Perforación",
+      "desc": "Barrenas de alta resistencia aptas para todo tipo de suelos, en varios diámetros y tamaños. Hélice con recargue duro y placas antidesgaste.",
+      "spec": "Diámetros: 300mm - 2000mm | Unión: Hexagonal, Cuadrada",
+      "tag": "BARRENA DE ALTA RESISTENCIA"
+    }
+  },
+  "consulting": {
+    "title": "Servicios de Consultoría & Soporte",
+    "subtitle": "Soporte de ingeniería profesional para maquinaria de perforación, equipos de excavación e inversiones corporativas.",
+    "viewDetails": "Ver Detalles",
+    "getOffer": "Solicitar Oferta Técnica",
+    "machineryDesc": "Selección de maquinaria, análisis de par y consultoría de rendimiento mecánico.",
+    "equipmentDesc": "Brocas de perforación, consumibles y análisis de eficiencia operativa.",
+    "investmentDesc": "Informes de presupuesto y viabilidad para la adquisición de maquinaria B2B.",
+    "projectDesc": "Planificación de ingeniería para grandes proyectos de perforación y centrales eléctricas.",
+    "sparePartsDesc": "Suministro de repuestos originales y servicio de mantenimiento técnico periódico."
+  },
+  "services": {
+    "title": "Nuestras Áreas de Especialización",
+    "subtitle": "Servicios corporativos ofrecidos con tecnología moderna y experiencia en ingeniería.",
+    "drill": {
+      "title": "Operaciones de Perforación",
+      "short": "Soluciones de alta precisión en perforación de roca, anclajes, estudios geotécnicos y túneles.",
+      "long": "Vera Gold Enerji realiza perforación en roca, estabilización del terreno, anclaje de taludes y túneles en condiciones de terreno difíciles.",
+      "features": ["Micropilotes & Anclajes", "Mejora del Terreno", "Perforación de Túneles & Galerías", "Perforación de Barrenos"]
+    },
+    "rental": {
+      "title": "Alquiler de Flota de Perforadoras",
+      "short": "Una amplia flota de alquiler, bien mantenida y de alto rendimiento, de equipos pesados de perforación y excavación en roca.",
+      "long": "En lugar de grandes inversiones de capital para sus proyectos, obtenga perforadoras de primer nivel mundial con modelos de alquiler flexibles.",
+      "features": ["Planes de Alquiler Flexibles", "Mantenimiento Técnico 24/7", "Opción con Operador", "Amplia Gama de Equipos"]
+    },
+    "energy": {
+      "title": "Perforación de Pozos Profundos",
+      "short": "Soluciones llave en mano en pozos de agua profundos, testificación geotécnica y desarrollo de pozos.",
+      "long": "Vera Gold Enerji ofrece servicios de perforación profunda de alto rendimiento de más de 300 metros, exploración geotécnica y pozos geotérmicos con su flota de perforadoras rotativas pesadas.",
+      "features": ["Perforación de Pozos de Agua Profundos", "Testificación Geotécnica", "Pozos Geotérmicos", "Limpieza & Desarrollo de Pozos"]
+    },
+    "learnMore": "Más Información",
+    "close": "Cerrar",
+    "machineryConsulting": "Consultoría Técnica de Maquinaria",
+    "equipmentConsulting": "Consultoría de Equipos de Perforación",
+    "investmentConsulting": "Consultoría de Inversiones",
+    "projectConsulting": "Consultoría de Proyectos",
+    "spareParts": "Repuestos & Servicio"
+  },
+  "productsPage": {
+    "viewDetails": "Ver Detalles",
+    "technicalSpecs": "Especificaciones Técnicas",
+    "prevPhoto": "Foto anterior",
+    "nextPhoto": "Foto siguiente",
+    "badge": "Vera Gold Enerji - Flota de Maquinaria Pesada",
+    "subtitle": "Flota industrial de venta B2B de perforadoras, perforadoras de roca, hincadoras solares y compresores diésel pesados.",
+    "all": "Toda la Maquinaria",
+    "allProducts": "Todos los Productos",
+    "inStock": "En Stock / Disponible",
+    "quickView": "Vista Rápida",
+    "details": "Detalles",
+    "getQuote": "Solicitar Presupuesto",
+    "models": "Modelos",
+    "items": "Artículos",
+    "categoryFleet": "Flota de Maquinaria",
+    "categoryShowcase": "Escaparate de la Categoría",
+    "allCategories": "Todas las Categorías",
+    "categoryQuote": "Presupuesto para la Categoría",
+    "warrantyTitle": "Garantía de Servicio & Asistencia B2B",
+    "warrantySub": "Importación de Maquinaria a Medida & Entrega en Obra",
+    "warrantyDesc": "Importamos directamente de los fabricantes maquinaria a medida según el tonelaje y el par que necesite, y la entregamos operativa en su obra.",
+    "contactEngineers": "Contacte con Nuestro Equipo de Ingeniería",
+    "techSpecs": "Especificaciones Técnicas",
+    "requestOffer": "Solicitar Oferta Técnica"
+  },
+  "map": {
+    "title": "Nuestro Alcance Operativo",
+    "subtitle": "Operamos activamente en toda Europa y los Balcanes, excepto Reino Unido, Suecia, Noruega y Finlandia.",
+    "description": "Ofrecemos logística y capacidad de ingeniería técnica en toda Europa y los Balcanes.",
+    "activeRegions": "Regiones Operativas Activas",
+    "inactiveRegions": "Regiones sin Servicio (Reino Unido, Escandinavia)"
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "Solicite una oferta corporativa o información sobre nuestra flota.",
+    "formName": "Nombre Completo / Representante",
+    "formCompany": "Nombre de la Empresa",
+    "formEmail": "Correo Electrónico",
+    "formService": "Servicio de Interés",
+    "formServicePlaceholder": "Seleccione un servicio",
+    "formMessage": "Su Mensaje / Detalles del Proyecto",
+    "formSubmit": "Enviar Solicitud de Oferta",
+    "sending": "Enviando...",
+    "success": "¡Su mensaje se ha enviado correctamente!",
+    "phone": "Teléfono",
+    "email": "Correo Electrónico",
+    "address": "Dirección de la Sede"
+  },
+  "footer": {
+    "desc": "El socio B2B de Europa para la perforación en roca, el alquiler de maquinaria y la construcción de plantas de energía renovable.",
+    "rights": "Todos los Derechos Reservados. Vera Gold Enerji."
+  }
+}

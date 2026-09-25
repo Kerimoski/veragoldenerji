@@ -19,6 +19,8 @@ export const InteractiveMap: React.FC = () => {
   const isTr = language === "tr";
   const isDe = language === "de";
   const isFr = language === "fr";
+  const isIt = language === "it";
+  const isEs = language === "es";
 
   const hubs = [
     {
@@ -27,12 +29,16 @@ export const InteractiveMap: React.FC = () => {
       nameEn: "Western Europe Region",
       nameDe: "Westeuropa-Region",
       nameFr: "Région Europe de l'Ouest",
+      nameIt: "Regione Europa Occidentale",
+      nameEs: "Región de Europa Occidental",
       countries: ["Almanya", "Fransa", "Hollanda", "Belçika", "İsviçre", "Avusturya", "Lüksemburg", "İrlanda"],
       countriesEn: ["Germany", "France", "Netherlands", "Belgium", "Switzerland", "Austria", "Luxembourg", "Ireland"],
       descriptionTr: "Endüstriyel santral kurulumları ve kaya delgi projelerimizin yoğunlukta olduğu Batı Avrupa ağımız.",
       descriptionEn: "Our Western European network where industrial power plant installations and rock drilling projects are concentrated.",
       descriptionDe: "Unser westeuropäisches Netzwerk, in dem sich industrielle Kraftwerksinstallationen und Felsbohrprojekte konzentrieren.",
       descriptionFr: "Notre réseau d'Europe occidentale où se concentrent les installations de centrales industrielles et les projets de forage.",
+      descriptionIt: "La nostra rete in Europa occidentale, dove si concentrano installazioni di centrali industriali e progetti di perforazione in roccia.",
+      descriptionEs: "Nuestra red en Europa occidental, donde se concentran las instalaciones de centrales industriales y los proyectos de perforación en roca.",
     },
     {
       id: "south",
@@ -40,12 +46,16 @@ export const InteractiveMap: React.FC = () => {
       nameEn: "Southern Europe & Med",
       nameDe: "Südeuropa & Mittelmeer",
       nameFr: "Europe du Sud & Méditerranée",
+      nameIt: "Europa Meridionale & Mediterraneo",
+      nameEs: "Europa del Sur & Mediterráneo",
       countries: ["İspanya", "Portekiz", "İtalya", "Malta", "Kıbrıs"],
       countriesEn: ["Spain", "Portugal", "Italy", "Malta", "Cyprus"],
       descriptionTr: "Delgi mühendisliği, liman altyapısı ve yenilenebilir enerji montaj projelerimizi yönettiğimiz Akdeniz ağı.",
       descriptionEn: "Mediterranean network where we manage drilling engineering, port infrastructure, and renewable energy assembly projects.",
       descriptionDe: "Mittelmeer-Netzwerk, in dem wir Bohrarbeiten, Hafeninfrastruktur und Projekte für erneuerbare Energien verwalten.",
       descriptionFr: "Réseau méditerranéen où nous gérons des projets d'ingénierie de forage et d'assemblage d'énergies renouvelables.",
+      descriptionIt: "Rete mediterranea in cui gestiamo progetti di ingegneria di perforazione, infrastrutture portuali e montaggio di impianti a energia rinnovabile.",
+      descriptionEs: "Red mediterránea en la que gestionamos proyectos de ingeniería de perforación, infraestructura portuaria y montaje de energías renovables.",
     },
     {
       id: "balkans",
@@ -53,12 +63,16 @@ export const InteractiveMap: React.FC = () => {
       nameEn: "Balkans & Eastern Europe",
       nameDe: "Balkan & Osteuropa",
       nameFr: "Balkans & Europe de l'Est",
+      nameIt: "Balcani & Europa Orientale",
+      nameEs: "Balcanes & Europa del Este",
       countries: ["Yunanistan", "Bulgaristan", "Romanya", "Sırbistan", "Hırvatistan", "Arnavutluk", "Kuzey Makedonya", "Macaristan", "Slovenya", "Bosna Hersek", "Karadağ", "Kosova", "Türkiye"],
       countriesEn: ["Greece", "Bulgaria", "Romania", "Serbia", "Croatia", "Albania", "North Macedonia", "Hungary", "Slovenia", "Bosnia & Herzegovina", "Montenegro", "Kosovo", "Türkiye"],
       descriptionTr: "Tüm Balkan ülkelerini kapsayan hızlı lojistik, mobil delgi filoları ve enerji santrali altyapı hizmetlerimiz.",
       descriptionEn: "Our fast logistics, mobile drilling fleets, and power plant infrastructure services covering all Balkan countries.",
       descriptionDe: "Unsere schnellen Logistik-, mobilen Bohrflotten- und Kraftwerksinfrastrukturdienste für alle Balkanländer.",
       descriptionFr: "Nos services logistiques rapides, nos flottes de forage mobiles et nos infrastructures de centrales pour tous les pays des Balkans.",
+      descriptionIt: "I nostri servizi di logistica rapida, flotte di perforazione mobili e infrastrutture per centrali in tutti i paesi balcanici.",
+      descriptionEs: "Nuestros servicios de logística rápida, flotas de perforación móviles e infraestructura de centrales en todos los países de los Balcanes.",
     },
     {
       id: "north",
@@ -66,12 +80,16 @@ export const InteractiveMap: React.FC = () => {
       nameEn: "Northern Europe & Scandinavia",
       nameDe: "Nordeuropa & Skandinavien",
       nameFr: "Europe du Nord & Scandinavie",
+      nameIt: "Europa Settentrionale & Scandinavia",
+      nameEs: "Europa del Norte & Escandinavia",
       countries: ["Birleşik Krallık", "İsveç", "Norveç", "Finlandiya", "Danimarka", "İzlanda"],
       countriesEn: ["United Kingdom", "Sweden", "Norway", "Finland", "Denmark", "Iceland"],
       descriptionTr: "Kuzey Avrupa ve İskandinavya'daki enerji altyapısı, rüzgar santrali ve sondaj mühendisliği projelerimiz.",
       descriptionEn: "Our energy infrastructure, wind farm construction, and drilling engineering projects in Northern Europe and Scandinavia.",
       descriptionDe: "Unsere Energieinfrastruktur-, Windpark- und Bohrprojekte in Nordeuropa und Skandinavien.",
       descriptionFr: "Nos projets d'infrastructure énergétique, de construction éolienne et d'ingénierie de forage en Europe du Nord et en Scandinavie.",
+      descriptionIt: "I nostri progetti di infrastrutture energetiche, parchi eolici e ingegneria di perforazione nel Nord Europa e in Scandinavia.",
+      descriptionEs: "Nuestros proyectos de infraestructura energética, parques eólicos e ingeniería de perforación en el norte de Europa y Escandinavia.",
     },
     {
       id: "central",
@@ -79,12 +97,16 @@ export const InteractiveMap: React.FC = () => {
       nameEn: "Central Europe",
       nameDe: "Mitteleuropa",
       nameFr: "Europe Centrale",
+      nameIt: "Europa Centrale",
+      nameEs: "Europa Central",
       countries: ["Polonya", "Çekya", "Slovakya", "Litvanya", "Letonya", "Estonya"],
       countriesEn: ["Poland", "Czechia", "Slovakia", "Lithuania", "Latvia", "Estonia"],
       descriptionTr: "Enerji yatırımları ve delgi mühendisliği projelerimizle B2B üretim tesislerini desteklediğimiz orta Avrupa operasyonlarımız.",
       descriptionEn: "Our Central European operations supporting B2B production facilities with energy investments and drilling engineering projects.",
       descriptionDe: "Unsere mitteleuropäischen Aktivitäten unterstützen B2B-Produktionsanlagen mit Energieinvestitionen und Bohrprojekten.",
       descriptionFr: "Nos opérations en Europe centrale soutiennent les installations B2B avec des investissements énergétiques et des projets de forage.",
+      descriptionIt: "Le nostre attività in Europa centrale supportano gli impianti produttivi B2B con investimenti energetici e progetti di ingegneria di perforazione.",
+      descriptionEs: "Nuestras operaciones en Europa central apoyan instalaciones productivas B2B con inversiones energéticas y proyectos de ingeniería de perforación.",
     }
   ];
 
@@ -113,6 +135,8 @@ export const InteractiveMap: React.FC = () => {
   const getHubName = (hub: typeof hubs[0]) => {
     if (isDe) return hub.nameDe;
     if (isFr) return hub.nameFr;
+    if (isIt) return hub.nameIt;
+    if (isEs) return hub.nameEs;
     if (isTr) return hub.nameTr;
     return hub.nameEn;
   };
@@ -120,6 +144,8 @@ export const InteractiveMap: React.FC = () => {
   const getHubDesc = (hub: typeof hubs[0]) => {
     if (isDe) return hub.descriptionDe;
     if (isFr) return hub.descriptionFr;
+    if (isIt) return hub.descriptionIt;
+    if (isEs) return hub.descriptionEs;
     if (isTr) return hub.descriptionTr;
     return hub.descriptionEn;
   };
@@ -149,6 +175,8 @@ export const InteractiveMap: React.FC = () => {
             {isTr ? "Vera Gold Enerji olarak, İskandinavya ve Birleşik Krallık dahil tüm Avrupa kıtasında aktif operasyonel hizmet sağlıyoruz."
             : isDe ? "Als Vera Gold Enerji bieten wir aktive operative Dienstleistungen auf dem gesamten europäischen Kontinent einschließlich Skandinavien und dem Vereinigten Königreich."
             : isFr ? "En tant que Vera Gold Enerji, nous fournissons des services opérationnels actifs sur l'ensemble du continent européen, y compris la Scandinavie et le Royaume-Uni."
+            : isIt ? "Come Vera Gold Enerji, forniamo servizi operativi attivi in tutto il continente europeo, compresi la Scandinavia e il Regno Unito."
+            : isEs ? "Como Vera Gold Enerji, prestamos servicios operativos activos en todo el continente europeo, incluidos Escandinavia y el Reino Unido."
             : "As Vera Gold Enerji, we provide active operational services across the entire European continent including Scandinavia and the United Kingdom."}
           </p>
         </motion.div>
@@ -158,7 +186,7 @@ export const InteractiveMap: React.FC = () => {
           <div className="relative">
             <input
               type="text"
-              placeholder={isTr ? "Ülke ara (örn: Almanya, İsveç, Norveç)..." : isDe ? "Land suchen (z.B. Deutschland, Schweden)..." : isFr ? "Chercher un pays (ex: Allemagne, Suède)..." : "Search country (e.g. Germany, Sweden, Norway)..."}
+              placeholder={isTr ? "Ülke ara (örn: Almanya, İsveç, Norveç)..." : isDe ? "Land suchen (z.B. Deutschland, Schweden)..." : isFr ? "Chercher un pays (ex: Allemagne, Suède)..." : isIt ? "Cerca un paese (es: Germany, Sweden)..." : isEs ? "Buscar país (ej.: Germany, Sweden)..." : "Search country (e.g. Germany, Sweden, Norway)..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 rounded-xl border border-zinc-800 bg-zinc-900 text-white placeholder-zinc-500 focus:outline-none focus:border-[#C59B27] text-sm transition-all shadow-inner"
@@ -172,11 +200,11 @@ export const InteractiveMap: React.FC = () => {
               {searchResult.found ? (
                 <span className="text-emerald-400 flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  {isTr ? "Aktif Hizmet Bölgesi ✓" : isDe ? "Aktiver Servicebereich ✓" : isFr ? "Zone de service active ✓" : "Active Service Region ✓"}
+                  {isTr ? "Aktif Hizmet Bölgesi ✓" : isDe ? "Aktiver Servicebereich ✓" : isFr ? "Zone de service active ✓" : isIt ? "Zona di servizio attiva ✓" : isEs ? "Zona de servicio activa ✓" : "Active Service Region ✓"}
                 </span>
               ) : (
                 <span className="text-zinc-500">
-                  {isTr ? "Bulunamadı" : isDe ? "Nicht gefunden" : isFr ? "Non trouvé" : "Not found"}
+                  {isTr ? "Bulunamadı" : isDe ? "Nicht gefunden" : isFr ? "Non trouvé" : isIt ? "Non trovato" : isEs ? "No encontrado" : "Not found"}
                 </span>
               )}
             </div>
@@ -194,10 +222,10 @@ export const InteractiveMap: React.FC = () => {
           <div className="lg:col-span-7 bg-zinc-900/80 border border-zinc-800 rounded-3xl p-4 relative min-h-[460px] flex flex-col overflow-hidden shadow-xl">
             {/* Header */}
             <div className="text-[10px] font-mono font-extrabold text-zinc-400 uppercase tracking-widest border-b border-zinc-800 pb-2 mb-3 flex items-center justify-between">
-              <span>// {isTr ? "Avrupa Hizmet Haritamız" : isDe ? "Unsere Europa-Servicekarte" : isFr ? "Notre Carte de Service Europe" : "Our Europe Service Map"}</span>
+              <span>// {isTr ? "Avrupa Hizmet Haritamız" : isDe ? "Unsere Europa-Servicekarte" : isFr ? "Notre Carte de Service Europe" : isIt ? "La Nostra Mappa dei Servizi in Europa" : isEs ? "Nuestro Mapa de Servicio en Europa" : "Our Europe Service Map"}</span>
               <span className="flex items-center gap-1.5 text-emerald-400">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                {isTr ? "Tüm Avrupa Aktif" : isDe ? "Ganz Europa Aktiv" : isFr ? "Toute l'Europe Active" : "All Europe Active"}
+                {isTr ? "Tüm Avrupa Aktif" : isDe ? "Ganz Europa Aktiv" : isFr ? "Toute l'Europe Active" : isIt ? "Tutta l'Europa Attiva" : isEs ? "Toda Europa Activa" : "All Europe Active"}
               </span>
             </div>
 
@@ -218,7 +246,7 @@ export const InteractiveMap: React.FC = () => {
                 </div>
                 <div className="bg-zinc-950/90 backdrop-blur-md border border-zinc-800 rounded-xl px-4 py-2.5 shadow-lg">
                   <span className="text-[11px] font-mono font-bold text-emerald-400">
-                    {totalCountries}+ {isTr ? "Ülkede Aktif Operasyon" : isDe ? "Länder Aktive Operationen" : isFr ? "Pays Opérations Actives" : "Countries Active Operations"}
+                    {totalCountries}+ {isTr ? "Ülkede Aktif Operasyon" : isDe ? "Länder Aktive Operationen" : isFr ? "Pays Opérations Actives" : isIt ? "Paesi con Operazioni Attive" : isEs ? "Países con Operaciones Activas" : "Countries Active Operations"}
                   </span>
                 </div>
               </div>
@@ -307,26 +335,26 @@ export const InteractiveMap: React.FC = () => {
             <div className="bg-zinc-900/90 border border-zinc-800 rounded-3xl p-6 shadow-xl text-white">
               <h4 className="text-[10px] font-mono font-extrabold text-[#C59B27] uppercase tracking-wider mb-4 flex items-center gap-1.5">
                 <Globe className="w-4 h-4" />
-                // {isTr ? "Toplam Kapsam Alanı" : isDe ? "Gesamtabdeckung" : isFr ? "Couverture Totale" : "Total Coverage Area"}
+                // {isTr ? "Toplam Kapsam Alanı" : isDe ? "Gesamtabdeckung" : isFr ? "Couverture Totale" : isIt ? "Copertura Totale" : isEs ? "Cobertura Total" : "Total Coverage Area"}
               </h4>
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-black text-white font-mono">
                     <AnimatedCounter value={totalCountries} suffix="+" />
                   </div>
-                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Aktif Ülke" : isDe ? "Aktive Länder" : isFr ? "Pays Actifs" : "Active Countries"}</div>
+                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Aktif Ülke" : isDe ? "Aktive Länder" : isFr ? "Pays Actifs" : isIt ? "Paesi Attivi" : isEs ? "Países Activos" : "Active Countries"}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-black text-[#C59B27] font-mono">
                     <AnimatedCounter value={hubs.length} />
                   </div>
-                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Operasyon Bölgesi" : isDe ? "Einsatzgebiete" : isFr ? "Zones Opérations" : "Operation Zones"}</div>
+                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Operasyon Bölgesi" : isDe ? "Einsatzgebiete" : isFr ? "Zones Opérations" : isIt ? "Zone Operative" : isEs ? "Zonas Operativas" : "Operation Zones"}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-black text-emerald-400 font-mono">
                     <AnimatedCounter value={7} suffix="/24" prefix="" />
                   </div>
-                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Lojistik Destek" : isDe ? "Logistik-Support" : isFr ? "Support Logistique" : "Logistics Support"}</div>
+                  <div className="text-[10px] font-mono font-semibold text-zinc-400 mt-1 uppercase tracking-wider">{isTr ? "Lojistik Destek" : isDe ? "Logistik-Support" : isFr ? "Support Logistique" : isIt ? "Supporto Logistico" : isEs ? "Soporte Logístico" : "Logistics Support"}</div>
                 </div>
               </div>
             </div>

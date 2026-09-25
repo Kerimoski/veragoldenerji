@@ -14,6 +14,8 @@ export const LanguageSelector: React.FC = () => {
     { code: "en" as const, label: "English" },
     { code: "de" as const, label: "Deutsch" },
     { code: "fr" as const, label: "Français" },
+    { code: "it" as const, label: "Italiano" },
+    { code: "es" as const, label: "Español" },
   ];
 
   useEffect(() => {

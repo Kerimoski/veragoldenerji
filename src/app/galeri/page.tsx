@@ -22,15 +22,15 @@ export default function GalleryPage() {
 
   const galleryItems: GalleryItem[] = [
     // Real Field & Machinery Photos
-    { src: "/gorseller/kaishan-kg300gf/WhatsApp_Image_2026-08-11_at_16.22.32_3.jpeg", category: "machinery", titleTr: "Kaishan KG300GF Kaya Delici Kule (Saha Çekimi)", titleEn: "Kaishan KG300GF Rock Drilling Rig (Field Shot)" },
-    { src: "/gorseller/kaishan-kg300gf/WhatsApp_Image_2026-08-11_at_16.22.32_1.jpeg", category: "machinery", titleTr: "KG300GF Hidrolik Silindir & Mast Detayı", titleEn: "KG300GF Hydraulic Feed Mast Detail" },
-    { src: "/gorseller/kaishan-kg300gf/WhatsApp_Image_2026-08-12_at_13.02.14_3.jpeg", category: "machinery", titleTr: "KG300GF Açık Ocak Delgi Testi", titleEn: "KG300GF Open Pit Drilling Test" },
+    { src: "/gorseller/rock-vera/vera300-genel.jpg", category: "machinery", titleTr: "VERA300 Kaya Delici Kule", titleEn: "VERA300 Rock Drilling Rig" },
+    { src: "/gorseller/rock-vera/vera300-mast.jpg", category: "machinery", titleTr: "VERA300 Delgi Kafası & Mast Detayı", titleEn: "VERA300 Drill Head & Mast Detail" },
+    { src: "/gorseller/rock-vera/vera500-genel.jpg", category: "machinery", titleTr: "VERA500 Kaya Delici Kule", titleEn: "VERA500 Rock Drilling Rig" },
     { src: "/veragaleri/Makine-6610-scaled.jpg", category: "machinery", titleTr: "Hidrolik Delgi Makinesi", titleEn: "Hydraulic Drilling Rig" },
     { src: "/veragaleri/Makine-6615-scaled.jpg", category: "machinery", titleTr: "Ağır Hizmet Paletli Sondaj", titleEn: "Heavy-Duty Crawler Drill" },
     { src: "/veragaleri/Makine-6616-scaled.jpg", category: "machinery", titleTr: "Rock Delici Makine Parkuru", titleEn: "Rock Drilling Fleet Unit" },
     { src: "/veragaleri/Makine-6621-scaled.jpg", category: "machinery", titleTr: "B2B Ağır İş Makinesi", titleEn: "B2B Heavy Construction Machinery" },
     { src: "/veragaleri/MZ460Y-KAZIK-CAKMA-MAKINASI-2.png", category: "machinery", titleTr: "MZ460Y Kazık Çakma Makinesi", titleEn: "MZ460Y Pile Driving Machine" },
-    { src: "/veragaleri/Rock-makinasi-fd580.jpeg", category: "machinery", titleTr: "FD580 Ağır Kaya Makinesi", titleEn: "FD580 Heavy Rock Machine" },
+    { src: "/veragaleri/Rock-makinasi-fd580.jpeg", category: "machinery", titleTr: "Paletli Rock Makinesi Saha Çekimi", titleEn: "Crawler Rock Drill Field Shot" },
 
     // Kazık Çakma & Orteco Aksesuarları
     { src: "/gorseller/kazik-cakma-aksesuar/GPS.png", category: "kazik", titleTr: "Orteco Otomatik GPS Konumlandırma Sistemi", titleEn: "Orteco Automated GPS Positioning System" },
@@ -49,8 +49,8 @@ export default function GalleryPage() {
     // Kompresör Grubu
     { src: "/gorseller/lgcy-18bar-kompresor/WhatsApp_Image_2026-08-11_at_14.48.40.jpeg", category: "kompresor", titleTr: "LGCY 18 Bar Römorklu Dizel Kompresör", titleEn: "LGCY 18 Bar Towable Diesel Compressor" },
     { src: "/gorseller/lgcy-18bar-kompresor/WhatsApp_Image_2026-08-11_at_14.48.40_2.jpeg", category: "kompresor", titleTr: "LGCY 220 HP Yuchai Motor Bölmesi", titleEn: "LGCY 220 HP Yuchai Engine Bay" },
-    { src: "/gorseller/kaishan-23bar/WhatsApp_Image_2026-08-10_at_20.51.19.jpeg", category: "kompresor", titleTr: "Kaishan 23 Bar Yüksek Basınçlı Kompresör", titleEn: "Kaishan 23 Bar High Pressure Air Compressor" },
-    { src: "/gorseller/kaishan-25bar/WhatsApp_Image_2026-08-10_at_20.51.19.jpeg", category: "kompresor", titleTr: "Kaishan 25 Bar İki Kademeli Vida Bloğu", titleEn: "Kaishan 25 Bar Two-Stage Screw Air End" },
+    { src: "/gorseller/kompresor-kszj-23bar/kszj-1.jpg", category: "kompresor", titleTr: "KSZJ-29/23 23 Bar Yüksek Basınçlı Kompresör", titleEn: "KSZJ-29/23 23 Bar High Pressure Air Compressor" },
+    { src: "/gorseller/kompresor-lgzj-25bar/lgzj-1.jpg", category: "kompresor", titleTr: "LGZJ-31/25 25 Bar İki Kademeli Dizel Kompresör", titleEn: "LGZJ-31/25 25 Bar Two-Stage Diesel Compressor" },
 
     // Equipment & Filters
     { src: "/veragaleri/Filtre-6579-scaled.jpg", category: "equipment", titleTr: "Endüstriyel Hava Filtresi Grubu", titleEn: "Industrial Air Filter Group" },

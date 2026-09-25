@@ -13,6 +13,8 @@ export default function EnerjiSantralleriPage() {
   const isTr = language === "tr";
   const isDe = language === "de";
   const isFr = language === "fr";
+  const isIt = language === "it";
+  const isEs = language === "es";
 
   const detailsTr = {
     features: [
@@ -70,7 +72,35 @@ export default function EnerjiSantralleriPage() {
     ]
   };
 
-  const currentDetails = isTr ? detailsTr : isDe ? detailsDe : isFr ? detailsFr : detailsEn;
+  const detailsIt = {
+    features: [
+      { title: "Pali di Fondazione per Parchi Eolici", desc: "Ingegneria di fondazioni profonde per sostenere gli elevati carichi di coppia delle turbine eoliche." },
+      { title: "Sottostrutture per Impianti Fotovoltaici (FV)", desc: "Infissione di precisione di migliaia di pali in acciaio nei terreni degli impianti fotovoltaici." },
+      { title: "Pozzi d'Acqua Profondi & Geotermia", desc: "Perforatrici per la ricerca di acqua e risorse geotermiche fino a oltre 300 metri." },
+      { title: "Carotaggi & Indagini Geotecniche", desc: "Carotaggi per la meccanica dei terreni e la valutazione della sicurezza strutturale." }
+    ],
+    stats: [
+      { val: "+120", label: "Siti Solari & Eolici" },
+      { val: "450m", label: "Profondità Max di Perforazione" },
+      { val: "24/7", label: "Assistenza in Cantiere" }
+    ]
+  };
+
+  const detailsEs = {
+    features: [
+      { title: "Pilotes de Cimentación para Parques Eólicos", desc: "Ingeniería de cimentaciones profundas para soportar las altas cargas de par de los aerogeneradores." },
+      { title: "Subestructuras para Plantas Solares (FV)", desc: "Hincado de precisión de miles de postes de acero en terrenos de plantas solares." },
+      { title: "Pozos de Agua Profundos & Geotermia", desc: "Perforadoras para la exploración de agua y recursos geotérmicos de más de 300 metros." },
+      { title: "Testificación & Estudios Geotécnicos", desc: "Perforación con recuperación de testigo para la mecánica de suelos y la evaluación de la seguridad estructural." }
+    ],
+    stats: [
+      { val: "+120", label: "Plantas Solares & Eólicas" },
+      { val: "450m", label: "Profundidad Máx. de Perforación" },
+      { val: "24/7", label: "Soporte en Obra" }
+    ]
+  };
+
+  const currentDetails = isTr ? detailsTr : isDe ? detailsDe : isFr ? detailsFr : isIt ? detailsIt : isEs ? detailsEs : detailsEn;
 
   return (
     <>
@@ -85,7 +115,7 @@ export default function EnerjiSantralleriPage() {
             className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white mb-8 transition-colors uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 text-[#C59B27]" />
-            <span>{isTr ? "Hizmetlere Dön" : isDe ? "Zurück zu Dienstleistungen" : isFr ? "Retour aux services" : "Back to Services"}</span>
+            <span>{isTr ? "Hizmetlere Dön" : isDe ? "Zurück zu Dienstleistungen" : isFr ? "Retour aux services" : isIt ? "Torna ai Servizi" : isEs ? "Volver a Servicios" : "Back to Services"}</span>
           </Link>
 
           {/* Badge */}
@@ -117,9 +147,9 @@ export default function EnerjiSantralleriPage() {
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white z-10">
               <div>
                 <span className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest bg-zinc-950/80 px-3 py-1 rounded-md border border-zinc-800">
-                  // ENDÜSTRİYEL SONDAJ & ENERJİ ALTYAPISI
+                  // {isTr ? "ENDÜSTRİYEL SONDAJ & ENERJİ ALTYAPISI" : isDe ? "INDUSTRIEBOHRUNGEN & ENERGIEINFRASTRUKTUR" : isFr ? "FORAGE INDUSTRIEL & INFRASTRUCTURE ÉNERGÉTIQUE" : isIt ? "PERFORAZIONE INDUSTRIALE & INFRASTRUTTURE ENERGETICHE" : isEs ? "PERFORACIÓN INDUSTRIAL & INFRAESTRUCTURA ENERGÉTICA" : "INDUSTRIAL DRILLING & ENERGY INFRASTRUCTURE"}
                 </span>
-                <h3 className="text-lg md:text-2xl font-black uppercase mt-2 font-sans">Derin Zemin Etüdü & Endüstriyel Sondaj Operasyonu</h3>
+                <h3 className="text-lg md:text-2xl font-black uppercase mt-2 font-sans">{isTr ? "Derin Zemin Etüdü & Endüstriyel Sondaj Operasyonu" : isDe ? "Tiefe Baugrunderkundung & Industriebohrung" : isFr ? "Étude de Sol Profonde & Forage Industriel" : isIt ? "Indagine Geotecnica Profonda & Perforazione Industriale" : isEs ? "Estudio Geotécnico Profundo & Perforación Industrial" : "Deep Ground Survey & Industrial Drilling Operation"}</h3>
               </div>
             </div>
           </div>
@@ -138,7 +168,7 @@ export default function EnerjiSantralleriPage() {
           <div className="space-y-8 mb-16">
             <h3 className="text-xl md:text-3xl font-black uppercase tracking-tight text-white mb-6 flex items-center gap-3">
               <Target className="w-5 h-5 text-emerald-400" />
-              // {isTr ? "Hizmet Kapsamımız" : isDe ? "Unser Leistungsumfang" : isFr ? "Notre Champ d'Action" : "Scope of Services"}
+              // {isTr ? "Hizmet Kapsamımız" : isDe ? "Unser Leistungsumfang" : isFr ? "Notre Champ d'Action" : isIt ? "Ambito dei Servizi" : isEs ? "Alcance de los Servicios" : "Scope of Services"}
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -162,11 +192,15 @@ export default function EnerjiSantralleriPage() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#C59B27]/10 rounded-full filter blur-[80px]" />
             <Shield className="w-12 h-12 text-[#C59B27] mx-auto mb-6" />
             <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
-              {isTr ? "Sondaj Projeniz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot für Tiefbohrungen an" : isFr ? "Demandez un devis pour forage profond" : "Request a Quote for Deep Drilling"}
+              {isTr ? "Sondaj Projeniz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot für Tiefbohrungen an" : isFr ? "Demandez un devis pour forage profond" : isIt ? "Richiedi un Preventivo per la Perforazione Profonda" : isEs ? "Solicite un Presupuesto para Perforación Profunda" : "Request a Quote for Deep Drilling"}
             </h3>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto mb-8 font-medium">
               {isTr
                 ? "Endüstriyel su sondajı, jeotermal kuyu ve zemin etüdü çözümlerimiz için mühendislik ekibimizle iletişime geçin."
+                : isIt
+                ? "Contattate il nostro team di ingegneri per pozzi d'acqua profondi, carotaggi geotecnici e operazioni geotermiche."
+                : isEs
+                ? "Contacte con nuestro equipo de ingeniería para pozos de agua profundos, testificación geotécnica y operaciones geotérmicas."
                 : "Contact our engineering team for deep water well drilling, geotechnical coring, and geothermal operations."}
             </p>
             <Link

@@ -20,6 +20,8 @@ export default function ProductsPage() {
     if (language === "en") return c.nameEn;
     if (language === "de") return c.nameDe;
     if (language === "fr") return c.nameFr;
+    if (language === "it") return c.nameIt;
+    if (language === "es") return c.nameEs;
     return c.nameTr;
   };
 
@@ -27,6 +29,8 @@ export default function ProductsPage() {
     if (language === "en") return p.nameEn;
     if (language === "de") return p.nameDe;
     if (language === "fr") return p.nameFr;
+    if (language === "it") return p.nameIt;
+    if (language === "es") return p.nameEs;
     return p.nameTr;
   };
 
@@ -34,6 +38,8 @@ export default function ProductsPage() {
     if (language === "en") return p.shortDescEn;
     if (language === "de") return p.shortDescDe;
     if (language === "fr") return p.shortDescFr;
+    if (language === "it") return p.shortDescIt;
+    if (language === "es") return p.shortDescEs;
     return p.shortDescTr;
   };
 
@@ -41,6 +47,8 @@ export default function ProductsPage() {
     if (language === "en") return p.fullDescEn;
     if (language === "de") return p.fullDescDe;
     if (language === "fr") return p.fullDescFr;
+    if (language === "it") return p.fullDescIt;
+    if (language === "es") return p.fullDescEs;
     return p.fullDescTr;
   };
 
@@ -48,6 +56,8 @@ export default function ProductsPage() {
     if (language === "en") return spec.labelEn;
     if (language === "de") return spec.labelDe;
     if (language === "fr") return spec.labelFr;
+    if (language === "it") return spec.labelIt;
+    if (language === "es") return spec.labelEs;
     return spec.labelTr;
   };
 

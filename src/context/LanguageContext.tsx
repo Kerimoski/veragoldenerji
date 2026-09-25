@@ -5,10 +5,14 @@ import tr from "@/locales/tr.json";
 import en from "@/locales/en.json";
 import de from "@/locales/de.json";
 import fr from "@/locales/fr.json";
+import it from "@/locales/it.json";
+import es from "@/locales/es.json";
 
-type Language = "tr" | "en" | "de" | "fr";
+export type Language = "tr" | "en" | "de" | "fr" | "it" | "es";
 
-const translations = { tr, en, de, fr };
+const LANGUAGES: Language[] = ["tr", "en", "de", "fr", "it", "es"];
+
+const translations = { tr, en, de, fr, it, es };
 
 interface LanguageContextType {
   language: Language;
@@ -24,11 +28,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   useEffect(() => {
     const saved = localStorage.getItem("vera_gold_lang") as Language;
-    if (saved && (saved === "tr" || saved === "en" || saved === "de" || saved === "fr")) {
+    if (saved && LANGUAGES.includes(saved)) {
       setLanguageState(saved);
     }
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);

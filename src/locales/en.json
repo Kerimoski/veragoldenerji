@@ -107,8 +107,12 @@
     "spareParts": "Spare Parts & Service"
   },
   "productsPage": {
+    "viewDetails": "View Details",
+    "technicalSpecs": "Technical Specifications",
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
     "badge": "Vera Gold Enerji - Heavy Machinery Fleet",
-    "subtitle": "Industrial B2B sales fleet for drilling rigs, rock drills, solar piling rigs, bored piling, jet grouting, and heavy diesel compressors.",
+    "subtitle": "Industrial B2B sales fleet for drilling rigs, rock drills, solar piling rigs, DTH consumables, and heavy diesel compressors.",
     "all": "All Machinery",
     "allProducts": "All Products",
     "inStock": "In Stock / Available",

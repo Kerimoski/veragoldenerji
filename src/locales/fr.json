@@ -107,8 +107,12 @@
     "spareParts": "Pièces Détachées & Service"
   },
   "productsPage": {
+    "viewDetails": "Voir les détails",
+    "technicalSpecs": "Caractéristiques techniques",
+    "prevPhoto": "Photo précédente",
+    "nextPhoto": "Photo suivante",
     "badge": "Vera Gold Enerji - Flotte de Machines Lourdes",
-    "subtitle": "Parc industriel de vente B2B pour foreuses, sonneuses solaires, foreuses de pieux forés et compresseurs.",
+    "subtitle": "Parc industriel de vente B2B pour foreuses, foreuses de roche, sonneuses solaires et compresseurs.",
     "all": "Toutes les Machines",
     "allProducts": "Tous les Produits",
     "inStock": "En Stock / Disponible",

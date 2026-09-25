@@ -29,26 +29,24 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isTr = language === "tr";
+  const tx = (m: Record<string, string>) => m[language] ?? m.en;
 
   const productCategories = [
-    { key: "rock", nameTr: "Rock Makinaları", nameEn: "Rock Machines", path: "/urunler/rock-makinalari" },
-    { key: "sondaj", nameTr: "Sondaj Makinaları", nameEn: "Drilling Rigs", path: "/urunler/sondaj-makinalari" },
-    { key: "kompresor", nameTr: "Hava Kompresör Grubu", nameEn: "Air Compressors", path: "/urunler/kompresorler" },
-    { key: "kazik", nameTr: "Kazık Çakma Makinaları", nameEn: "Pile Driving Rigs", path: "/urunler/kazik-cakma-makinalari" },
-    { key: "jet", nameTr: "Jet Grout Makinaları", nameEn: "Jet Grout & Anchoring Rigs", path: "/urunler/jet-grout-ankraj-makinalari" },
-    { key: "maden", nameTr: "Maden Makinaları", nameEn: "Mining Machines", path: "/urunler/maden-makinalari" },
-    { key: "dth", nameTr: "DTH Ekipmanları & Sarf", nameEn: "DTH Equipment & Spares", path: "/urunler/dth-ekipmanlari" },
+    { key: "rock", names: { tr: "Rock Makinaları", en: "Rock Machines", de: "Gesteinsbohrgeräte", fr: "Foreuses de Roche", it: "Perforatrici da Roccia", es: "Perforadoras de Roca" }, path: "/urunler/rock-makinalari" },
+    { key: "sondaj", names: { tr: "Sondaj Makinaları", en: "Drilling Rigs", de: "Bohranlagen", fr: "Foreuses", it: "Perforatrici per Sondaggi", es: "Perforadoras de Sondeo" }, path: "/urunler/sondaj-makinalari" },
+    { key: "kompresor", names: { tr: "Hava Kompresör Grubu", en: "Air Compressors", de: "Kompressoren", fr: "Compresseurs d'Air", it: "Compressori d'Aria", es: "Compresores de Aire" }, path: "/urunler/kompresorler" },
+    { key: "kazik", names: { tr: "Kazık Çakma Makinaları", en: "Pile Driving Rigs", de: "Rammanlagen", fr: "Sonneuses", it: "Battipalo", es: "Hincadoras de Pilotes" }, path: "/urunler/kazik-cakma-makinalari" },
+    { key: "dth", names: { tr: "DTH Ekipmanları & Sarf", en: "DTH Equipment & Spares", de: "DTH-Ausrüstung & Verbrauchsmaterial", fr: "Équipements DTH & Consommables", it: "Attrezzature DTH & Consumo", es: "Equipos DTH & Consumibles" }, path: "/urunler/dth-ekipmanlari" },
   ];
 
   const servicePages = [
-    { nameTr: "Delgi Mühendisliği & Kaya Çakım", nameEn: "Drilling Engineering & Rock Piling", path: "/hizmetler/delgi" },
-    { nameTr: "GES & Ağır İş Makinesi Kiralama", nameEn: "Solar & Heavy Rig Rental Fleet", path: "/hizmetler/kiralama" },
-    { nameTr: "Derin Sondaj", nameEn: "Deep Drilling", path: "/hizmetler/enerji" },
-    { nameTr: "Makine Danışmanlığı & Filo", nameEn: "Machinery Consulting & Fleet", path: "/hizmetler/makine-danismanligi" },
-    { nameTr: "Yedek Parça & Mobil Saha Servisi", nameEn: "Spare Parts & Mobile Field Service", path: "/hizmetler/yedek-parca-servis" },
-    { nameTr: "Sarf Malzeme & Yedek Parça Satış", nameEn: "Consumables & Spare Parts Sales", path: "/hizmetler/yedek-parca-servis" },
-    { nameTr: "Saha Operasyonları & Canlı Medya", nameEn: "Field Operations & Live Media", path: "/operasyonlar" },
+    { names: { tr: "Delgi Mühendisliği & Kaya Çakım", en: "Drilling Engineering & Rock Piling", de: "Bohrtechnik & Felsrammung", fr: "Ingénierie de Forage & Battage en Roche", it: "Ingegneria di Perforazione & Infissione in Roccia", es: "Ingeniería de Perforación & Hincado en Roca" }, path: "/hizmetler/delgi" },
+    { names: { tr: "GES & Ağır İş Makinesi Kiralama", en: "Solar & Heavy Rig Rental Fleet", de: "Solar- & Schwermaschinenvermietung", fr: "Location Solaire & Engins Lourds", it: "Noleggio Fotovoltaico & Macchine Pesanti", es: "Alquiler Solar & Maquinaria Pesada" }, path: "/hizmetler/kiralama" },
+    { names: { tr: "Derin Sondaj", en: "Deep Drilling", de: "Tiefbohrungen", fr: "Forage Profond", it: "Perforazione Profonda", es: "Perforación Profunda" }, path: "/hizmetler/enerji" },
+    { names: { tr: "Makine Danışmanlığı & Filo", en: "Machinery Consulting & Fleet", de: "Maschinenberatung & Flotte", fr: "Conseil Machines & Flotte", it: "Consulenza Macchine & Flotta", es: "Consultoría de Maquinaria & Flota" }, path: "/hizmetler/makine-danismanligi" },
+    { names: { tr: "Yedek Parça & Mobil Saha Servisi", en: "Spare Parts & Mobile Field Service", de: "Ersatzteile & Mobiler Außendienst", fr: "Pièces Détachées & Service Mobile", it: "Ricambi & Assistenza Mobile in Cantiere", es: "Repuestos & Servicio Móvil en Obra" }, path: "/hizmetler/yedek-parca-servis" },
+    { names: { tr: "Sarf Malzeme & Yedek Parça Satış", en: "Consumables & Spare Parts Sales", de: "Verkauf von Verbrauchsmaterial & Ersatzteilen", fr: "Vente de Consommables & Pièces", it: "Vendita Consumabili & Ricambi", es: "Venta de Consumibles & Repuestos" }, path: "/hizmetler/yedek-parca-servis" },
+    { names: { tr: "Saha Operasyonları & Canlı Medya", en: "Field Operations & Live Media", de: "Feldeinsätze & Live-Medien", fr: "Opérations Terrain & Médias en Direct", it: "Operazioni sul Campo & Media Live", es: "Operaciones de Campo & Medios en Directo" }, path: "/operasyonlar" },
   ];
 
   return (
@@ -106,9 +104,9 @@ export const Header: React.FC = () => {
             {isProductsDropdownOpen && (
               <div className="absolute left-0 mt-2 w-[290px] bg-zinc-900/95 border border-zinc-800 rounded-2xl shadow-2xl p-3 z-[100] backdrop-blur-xl text-white animate-fadeIn">
                 <div className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest px-3 py-2 border-b border-zinc-800 mb-2 flex items-center justify-between">
-                  <span>// {isTr ? "Ürün Kategorileri" : "Product Categories"}</span>
+                  <span>// {tx({ tr: "Ürün Kategorileri", en: "Product Categories", de: "Produktkategorien", fr: "Catégories de Produits", it: "Categorie di Prodotti", es: "Categorías de Productos" })}</span>
                   <Link href="/urunler" className="text-zinc-400 hover:text-white text-[9px] uppercase">
-                    {isTr ? "Tümü >" : "All >"}
+                    {tx({ tr: "Tümü >", en: "All >", de: "Alle >", fr: "Tout >", it: "Tutti >", es: "Todos >" })}
                   </Link>
                 </div>
                 <div className="space-y-1">
@@ -118,7 +116,7 @@ export const Header: React.FC = () => {
                       href={cat.path}
                       className="block px-3 py-2 rounded-xl text-xs font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors"
                     >
-                      {isTr ? cat.nameTr : cat.nameEn}
+                      {tx(cat.names)}
                     </Link>
                   ))}
                 </div>
@@ -145,7 +143,7 @@ export const Header: React.FC = () => {
             {isServicesDropdownOpen && (
               <div className="absolute left-0 mt-2 w-[310px] bg-zinc-900/95 border border-zinc-800 rounded-2xl shadow-2xl p-3 z-[100] backdrop-blur-xl text-white animate-fadeIn">
                 <div className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest px-3 py-2 border-b border-zinc-800 mb-2">
-                  // {isTr ? "Hizmetlerimiz" : "Our Services"}
+                  // {tx({ tr: "Hizmetlerimiz", en: "Our Services", de: "Unsere Leistungen", fr: "Nos Services", it: "I Nostri Servizi", es: "Nuestros Servicios" })}
                 </div>
                 <div className="space-y-1">
                   {servicePages.map((srv, idx) => (
@@ -154,7 +152,7 @@ export const Header: React.FC = () => {
                       href={srv.path}
                       className="block px-3 py-2.5 rounded-xl text-xs font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors"
                     >
-                      {isTr ? srv.nameTr : srv.nameEn}
+                      {tx(srv.names)}
                     </Link>
                   ))}
                 </div>
@@ -169,7 +167,7 @@ export const Header: React.FC = () => {
               pathname === "/galeri" ? "text-[#C59B27] font-bold" : "text-zinc-300 hover:text-white"
             }`}
           >
-            {isTr ? "Galeri" : "Gallery"}
+            {tx({ tr: "Galeri", en: "Gallery", de: "Galerie", fr: "Galerie", it: "Galleria", es: "Galería" })}
           </Link>
 
           {/* 5. İletişim Dropdown (Hizmet Bölgemiz Altında) */}
@@ -191,20 +189,20 @@ export const Header: React.FC = () => {
             {isContactDropdownOpen && (
               <div className="absolute right-0 mt-2 w-[240px] bg-zinc-900/95 border border-zinc-800 rounded-2xl shadow-2xl p-3 z-[100] backdrop-blur-xl text-white animate-fadeIn">
                 <div className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest px-3 py-2 border-b border-zinc-800 mb-2">
-                  // {isTr ? "İletişim & Konum" : "Contact & Location"}
+                  // {tx({ tr: "İletişim & Konum", en: "Contact & Location", de: "Kontakt & Standort", fr: "Contact & Localisation", it: "Contatti & Sede", es: "Contacto & Ubicación" })}
                 </div>
                 <div className="space-y-1">
                   <Link
                     href="/iletisim"
                     className="block px-3 py-2.5 rounded-xl text-xs font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors"
                   >
-                    {isTr ? "Teklif & İletişim Formu" : "Quote & Contact Form"}
+                    {tx({ tr: "Teklif & İletişim Formu", en: "Quote & Contact Form", de: "Angebots- & Kontaktformular", fr: "Formulaire de Devis & Contact", it: "Modulo Preventivo & Contatti", es: "Formulario de Presupuesto & Contacto" })}
                   </Link>
                   <Link
                     href="/hizmet-bolgemiz"
                     className="block px-3 py-2.5 rounded-xl text-xs font-medium text-zinc-300 hover:text-white hover:bg-zinc-800/80 transition-colors"
                   >
-                    {isTr ? "Hizmet Bölgemiz & Harita" : "Coverage Map & Regions"}
+                    {tx({ tr: "Hizmet Bölgemiz & Harita", en: "Coverage Map & Regions", de: "Einsatzgebiete & Karte", fr: "Zones d'Intervention & Carte", it: "Aree Servite & Mappa", es: "Zonas de Servicio & Mapa" })}
                   </Link>
                 </div>
               </div>
@@ -222,7 +220,7 @@ export const Header: React.FC = () => {
             href="/iletisim"
             className="px-5 py-2.5 rounded-none border border-[#C59B27] bg-[#C59B27]/10 text-[#C59B27] font-mono text-xs uppercase tracking-widest font-bold hover:bg-[#C59B27] hover:text-white transition-all shadow-md cursor-pointer flex items-center gap-2"
           >
-            <span>{isTr ? "İletişime Geç" : "Get In Touch"}</span>
+            <span>{tx({ tr: "İletişime Geç", en: "Get In Touch", de: "Kontakt aufnehmen", fr: "Nous Contacter", it: "Contattaci", es: "Contáctenos" })}</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -269,7 +267,7 @@ export const Header: React.FC = () => {
             onClick={() => setIsOpen(false)}
             className="block text-xs font-mono uppercase tracking-widest py-2 border-b border-zinc-800 text-white"
           >
-            {isTr ? "Galeri" : "Gallery"}
+            {tx({ tr: "Galeri", en: "Gallery", de: "Galerie", fr: "Galerie", it: "Galleria", es: "Galería" })}
           </Link>
           <Link
             href="/hizmet-bolgemiz"
@@ -288,7 +286,7 @@ export const Header: React.FC = () => {
 
           {/* Mobile Language Selector Drawer Row */}
           <div className="pt-3 border-t border-zinc-800 flex items-center justify-between">
-            <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">// {isTr ? "DİL SEÇİMİ" : "LANGUAGE"}</span>
+            <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">// {tx({ tr: "DİL SEÇİMİ", en: "LANGUAGE", de: "SPRACHE", fr: "LANGUE", it: "LINGUA", es: "IDIOMA" })}</span>
             <LanguageSelector />
           </div>
         </div>

@@ -78,7 +78,7 @@ export const B2BServices: React.FC = () => {
       subtitle: isTr
         ? "Şantiye duruşlarını sıfıra indiren 7/24 mobil saha servis mühendisliği, orijinal DTH çekiç ve bit tedariki."
         : "24/7 mobile field engineering support, OEM DTH hammer, button bit, and compressor filter supply pipeline.",
-      image: "/satismakineleri/csh1120a-hava-kompresoru.png",
+      image: "/gorseller/kompresor-lgzj-25bar/lgzj-1.jpg",
       specs: [
         { label: isTr ? "MÜDAHALE" : "RESPONSE", val: "< 24 Saat" },
         { label: isTr ? "STOK" : "INVENTORY", val: "%100 Orijinal" },

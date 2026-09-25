@@ -13,6 +13,8 @@ export default function DelgiIsleriPage() {
   const isTr = language === "tr";
   const isDe = language === "de";
   const isFr = language === "fr";
+  const isIt = language === "it";
+  const isEs = language === "es";
 
   const detailsTr = {
     features: [
@@ -70,7 +72,75 @@ export default function DelgiIsleriPage() {
     ]
   };
 
-  const currentDetails = isTr ? detailsTr : isDe ? detailsDe : isFr ? detailsFr : detailsEn;
+  const detailsIt = {
+    features: [
+      { title: "Perforazione in Roccia & Brillamento", desc: "Perforazioni ad alta velocità in miniere, costruzioni stradali e cave." },
+      { title: "Ancoraggi & Stabilizzazione di Scarpate", desc: "Opere di sostegno e ancoraggio per prevenire frane e garantire la sicurezza degli scavi su terreni difficili." },
+      { title: "Micropali & Rinforzo delle Fondazioni", desc: "Pali di fondazione profonda per aumentare la stabilità del terreno delle strutture." },
+      { title: "Scavo di Gallerie & Cunicoli", desc: "Soluzioni professionali per scavi e perforazioni sotterranee che richiedono ingegneria di precisione." }
+    ],
+    stats: [
+      { val: "+150", label: "Progetti Completati" },
+      { val: "25m+", label: "Metri Perforati" },
+      { val: "100%", label: "Tasso di Sicurezza" }
+    ]
+  };
+
+  const detailsEs = {
+    features: [
+      { title: "Perforación en Roca & Voladura", desc: "Perforaciones de alta velocidad en minas, construcción de carreteras y canteras." },
+      { title: "Anclajes & Estabilización de Taludes", desc: "Trabajos de sostenimiento y anclaje para prevenir deslizamientos y garantizar la seguridad de las excavaciones en terrenos difíciles." },
+      { title: "Micropilotes & Refuerzo de Cimentaciones", desc: "Pilotes de cimentación profunda para aumentar la estabilidad del terreno de las estructuras." },
+      { title: "Excavación de Túneles & Galerías", desc: "Soluciones profesionales para excavaciones y perforaciones subterráneas que requieren ingeniería de precisión." }
+    ],
+    stats: [
+      { val: "+150", label: "Proyectos Completados" },
+      { val: "25m+", label: "Metros Perforados" },
+      { val: "100%", label: "Índice de Seguridad" }
+    ]
+  };
+
+  const currentDetails = isTr ? detailsTr : isDe ? detailsDe : isFr ? detailsFr : isIt ? detailsIt : isEs ? detailsEs : detailsEn;
+
+  const drillingInfo = {
+    tr: {
+      methodsTitle: "Delgi Yöntemleri",
+      methods: "Havalı (DTH - Down-The-Hole) tabancalı sistemler, hidrolik üstten vurmalı (top-hammer) Delik Delme Makineleri (DDM) ve rotatif delgi sistemleri.",
+      rangeTitle: "Değerlendirme Alanı",
+      range: "Standart çelik profil yuvaları ve zemin çivileri için Ø89 mm - Ø140 mm, derin ankraj ve temel delgileri için Ø150 mm - Ø250 mm aralığında, ±2 mm sapma toleransıyla delgi yapılmaktadır.",
+    },
+    en: {
+      methodsTitle: "Drilling Methods",
+      methods: "Pneumatic DTH (Down-The-Hole) hammer systems, hydraulic top-hammer drilling rigs and rotary drilling systems.",
+      rangeTitle: "Application Range",
+      range: "Drilling is performed at Ø89 mm - Ø140 mm for standard steel profile sockets and soil nails, and Ø150 mm - Ø250 mm for deep anchor and foundation holes, with a ±2 mm deviation tolerance.",
+    },
+    de: {
+      methodsTitle: "Bohrverfahren",
+      methods: "Pneumatische DTH-Imlochhammersysteme (Down-The-Hole), hydraulische Top-Hammer-Bohrgeräte und Rotationsbohrsysteme.",
+      rangeTitle: "Anwendungsbereich",
+      range: "Gebohrt wird mit Ø89 mm - Ø140 mm für Standard-Stahlprofilaufnahmen und Bodennägel sowie mit Ø150 mm - Ø250 mm für tiefe Anker- und Fundamentbohrungen, bei einer Abweichungstoleranz von ±2 mm.",
+    },
+    fr: {
+      methodsTitle: "Méthodes de Forage",
+      methods: "Systèmes pneumatiques fond de trou (DTH - Down-The-Hole), foreuses hydrauliques à marteau hors trou (top-hammer) et systèmes de forage rotatif.",
+      rangeTitle: "Domaine d'Application",
+      range: "Les forages sont réalisés en Ø89 mm - Ø140 mm pour les logements de profilés acier standard et les clous de sol, et en Ø150 mm - Ø250 mm pour les ancrages profonds et les fondations, avec une tolérance d'écart de ±2 mm.",
+    },
+    it: {
+      methodsTitle: "Metodi di Perforazione",
+      methods: "Sistemi pneumatici DTH (Down-The-Hole), perforatrici idrauliche a martello in testa (top-hammer) e sistemi di perforazione rotativa.",
+      rangeTitle: "Campo di Applicazione",
+      range: "Le perforazioni vengono eseguite con diametri da Ø89 mm a Ø140 mm per alloggiamenti di profili in acciaio standard e chiodature, e da Ø150 mm a Ø250 mm per ancoraggi profondi e fondazioni, con una tolleranza di deviazione di ±2 mm.",
+    },
+    es: {
+      methodsTitle: "Métodos de Perforación",
+      methods: "Sistemas neumáticos DTH (Down-The-Hole), perforadoras hidráulicas de martillo en cabeza (top-hammer) y sistemas de perforación rotativa.",
+      rangeTitle: "Campo de Aplicación",
+      range: "Las perforaciones se realizan con diámetros de Ø89 mm a Ø140 mm para alojamientos de perfiles de acero estándar y bulones de suelo, y de Ø150 mm a Ø250 mm para anclajes profundos y cimentaciones, con una tolerancia de desviación de ±2 mm.",
+    },
+  };
+  const currentInfo = isTr ? drillingInfo.tr : isDe ? drillingInfo.de : isFr ? drillingInfo.fr : isIt ? drillingInfo.it : isEs ? drillingInfo.es : drillingInfo.en;
 
   return (
     <>
@@ -85,7 +155,7 @@ export default function DelgiIsleriPage() {
             className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white mb-8 transition-colors uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 text-[#C59B27]" />
-            <span>{isTr ? "Hizmetlere Dön" : isDe ? "Zurück zu Dienstleistungen" : isFr ? "Retour aux services" : "Back to Services"}</span>
+            <span>{isTr ? "Hizmetlere Dön" : isDe ? "Zurück zu Dienstleistungen" : isFr ? "Retour aux services" : isIt ? "Torna ai Servizi" : isEs ? "Volver a Servicios" : "Back to Services"}</span>
           </Link>
 
           {/* Badge */}
@@ -117,9 +187,9 @@ export default function DelgiIsleriPage() {
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white z-10">
               <div>
                 <span className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest bg-zinc-950/80 px-3 py-1 rounded-md border border-zinc-800">
-                  // SAHA KAYA DELGİ OPERASYONU
+                  // {isTr ? "SAHA KAYA DELGİ OPERASYONU" : isDe ? "FELSBOHRUNG IM EINSATZ" : isFr ? "OPÉRATION DE FORAGE EN ROCHE" : isIt ? "OPERAZIONE DI PERFORAZIONE IN ROCCIA" : isEs ? "OPERACIÓN DE PERFORACIÓN EN ROCA" : "FIELD ROCK DRILLING OPERATION"}
                 </span>
-                <h3 className="text-lg md:text-2xl font-black uppercase mt-2 font-sans">DTH Yüksek Basınçlı Kaya Delme Parkuru</h3>
+                <h3 className="text-lg md:text-2xl font-black uppercase mt-2 font-sans">{isTr ? "DTH Yüksek Basınçlı Kaya Delme Parkuru" : isDe ? "DTH-Hochdruck-Felsbohrflotte" : isFr ? "Parc de Forage en Roche DTH Haute Pression" : isIt ? "Flotta di Perforazione in Roccia DTH ad Alta Pressione" : isEs ? "Flota de Perforación en Roca DTH de Alta Presión" : "DTH High-Pressure Rock Drilling Fleet"}</h3>
               </div>
             </div>
           </div>
@@ -134,11 +204,29 @@ export default function DelgiIsleriPage() {
             ))}
           </div>
 
+          {/* Drilling Methods & Application Range */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            <div className="p-6 md:p-8 rounded-3xl border border-zinc-800 bg-zinc-900/90 shadow-xl">
+              <h3 className="text-sm font-mono font-bold uppercase tracking-widest text-[#C59B27] mb-3 flex items-center gap-2.5">
+                <Zap className="w-4 h-4" />
+                // {currentInfo.methodsTitle}
+              </h3>
+              <p className="text-zinc-300 text-sm leading-relaxed">{currentInfo.methods}</p>
+            </div>
+            <div className="p-6 md:p-8 rounded-3xl border border-zinc-800 bg-zinc-900/90 shadow-xl">
+              <h3 className="text-sm font-mono font-bold uppercase tracking-widest text-[#C59B27] mb-3 flex items-center gap-2.5">
+                <Target className="w-4 h-4" />
+                // {currentInfo.rangeTitle}
+              </h3>
+              <p className="text-zinc-300 text-sm leading-relaxed">{currentInfo.range}</p>
+            </div>
+          </div>
+
           {/* Detailed Features Section */}
           <div className="space-y-8 mb-16">
             <h3 className="text-xl md:text-3xl font-black uppercase tracking-tight text-white mb-6 flex items-center gap-3">
               <Target className="w-5 h-5 text-emerald-400" />
-              // {isTr ? "Hizmet Kapsamımız" : isDe ? "Unser Leistungsumfang" : isFr ? "Notre Champ d'Action" : "Scope of Services"}
+              // {isTr ? "Hizmet Kapsamımız" : isDe ? "Unser Leistungsumfang" : isFr ? "Notre Champ d'Action" : isIt ? "Ambito dei Servizi" : isEs ? "Alcance de los Servicios" : "Scope of Services"}
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -162,7 +250,7 @@ export default function DelgiIsleriPage() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#C59B27]/10 rounded-full filter blur-[80px]" />
             <Shield className="w-12 h-12 text-[#C59B27] mx-auto mb-6" />
             <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
-              {isTr ? "Projeniz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot an" : isFr ? "Demandez un devis" : "Request a Quote for Your Project"}
+              {isTr ? "Projeniz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot an" : isFr ? "Demandez un devis" : isIt ? "Richiedi un Preventivo per il Tuo Progetto" : isEs ? "Solicite un Presupuesto para su Proyecto" : "Request a Quote for Your Project"}
             </h3>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto mb-8 font-medium">
               {isTr
@@ -171,6 +259,10 @@ export default function DelgiIsleriPage() {
                 ? "Schließen Sie Ihre Projekte pünktlich und sicher ab mit unseren B2B-Felsbohrlösungen."
                 : isFr
                 ? "Réalisez vos chantiers en toute sécurité et dans les délais grâce à nos solutions de forage B2B."
+                : isIt
+                ? "Completate i vostri progetti in tempo e in sicurezza con le nostre soluzioni B2B di perforazione in roccia."
+                : isEs
+                ? "Complete sus proyectos a tiempo y con seguridad con nuestras soluciones B2B de perforación en roca."
                 : "Complete your projects on time and safely with our B2B rock drilling solutions."}
             </p>
             <Link

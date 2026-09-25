@@ -107,6 +107,10 @@
     "spareParts": "Ersatzteile & Service"
   },
   "productsPage": {
+    "viewDetails": "Details ansehen",
+    "technicalSpecs": "Technische Daten",
+    "prevPhoto": "Vorheriges Foto",
+    "nextPhoto": "Nächstes Foto",
     "badge": "Vera Gold Enerji - Schwerlast-Maschinenpark",
     "subtitle": "B2B-Industrieflotte für Bohranlagen, Gesteinsbohrer, Solarpark-Rammen, Drehbohrgeräte und Kompressoren.",
     "all": "Alle Maschinen",

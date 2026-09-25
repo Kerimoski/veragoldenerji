@@ -9,6 +9,7 @@ import { useTranslation } from "@/context/LanguageContext";
 import { PRODUCT_CATEGORIES, PRODUCTS, Product, ProductCategory } from "@/data/products";
 import { ArrowUpRight, Check, Sparkles, ChevronLeft, Eye, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ProductImageSlider } from "@/components/ProductImageSlider";
 
 export default function ProductCategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
@@ -23,6 +24,8 @@ export default function ProductCategoryPage({ params }: { params: Promise<{ slug
     if (language === "en") return c.nameEn;
     if (language === "de") return c.nameDe;
     if (language === "fr") return c.nameFr;
+    if (language === "it") return c.nameIt;
+    if (language === "es") return c.nameEs;
     return c.nameTr;
   };
 
@@ -30,6 +33,8 @@ export default function ProductCategoryPage({ params }: { params: Promise<{ slug
     if (language === "en") return c.descEn;
     if (language === "de") return c.descDe;
     if (language === "fr") return c.descFr;
+    if (language === "it") return c.descIt;
+    if (language === "es") return c.descEs;
     return c.descTr;
   };
 
@@ -37,6 +42,8 @@ export default function ProductCategoryPage({ params }: { params: Promise<{ slug
     if (language === "en") return p.nameEn;
     if (language === "de") return p.nameDe;
     if (language === "fr") return p.nameFr;
+    if (language === "it") return p.nameIt;
+    if (language === "es") return p.nameEs;
     return p.nameTr;
   };
 
@@ -44,6 +51,8 @@ export default function ProductCategoryPage({ params }: { params: Promise<{ slug
     if (language === "en") return p.shortDescEn;
     if (language === "de") return p.shortDescDe;
     if (language === "fr") return p.shortDescFr;
+    if (language === "it") return p.shortDescIt;
+    if (language === "es") return p.shortDescEs;
     return p.shortDescTr;
   };
 
@@ -51,6 +60,8 @@ export default function ProductCategoryPage({ params }: { params: Promise<{ slug
     if (language === "en") return p.fullDescEn;
     if (language === "de") return p.fullDescDe;
     if (language === "fr") return p.fullDescFr;
+    if (language === "it") return p.fullDescIt;
+    if (language === "es") return p.fullDescEs;
     return p.fullDescTr;
   };
 
@@ -58,6 +69,8 @@ export default function ProductCategoryPage({ params }: { params: Promise<{ slug
     if (language === "en") return spec.labelEn;
     if (language === "de") return spec.labelDe;
     if (language === "fr") return spec.labelFr;
+    if (language === "it") return spec.labelIt;
+    if (language === "es") return spec.labelEs;
     return spec.labelTr;
   };
 
@@ -138,18 +151,13 @@ export default function ProductCategoryPage({ params }: { params: Promise<{ slug
                 className="bg-zinc-900/90 border border-zinc-800 rounded-3xl overflow-hidden flex flex-col justify-between shadow-xl hover:border-[#C59B27]/50 hover:bg-zinc-900 transition-all group"
               >
                 {/* Image */}
-                <div
-                  className="relative h-64 w-full bg-zinc-950 overflow-hidden cursor-pointer"
-                  onClick={() => setSelectedProductModal(product)}
-                >
-                  <Image
-                    src={product.image}
+                <div className="relative h-64 w-full bg-zinc-950 overflow-hidden">
+                  <ProductImageSlider
+                    images={product.images ?? [product.image]}
                     alt={getProductName(product)}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                    onImageClick={() => setSelectedProductModal(product)}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-zinc-950/80 to-transparent pointer-events-none" />
                   {product.inStock && (
                     <div className="absolute top-4 right-4 z-10">
                       <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/90 text-white backdrop-blur-xs shadow-xs flex items-center gap-1">
@@ -210,17 +218,17 @@ export default function ProductCategoryPage({ params }: { params: Promise<{ slug
             <div className="bg-zinc-900 border border-zinc-800 rounded-3xl max-w-2xl w-full p-6 md:p-8 relative text-white shadow-2xl max-h-[90vh] overflow-y-auto">
               <button
                 onClick={() => setSelectedProductModal(null)}
-                className="absolute top-6 right-6 p-2 rounded-full bg-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                className="absolute top-6 right-6 z-20 p-2 rounded-full bg-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="relative h-64 w-full rounded-2xl overflow-hidden mb-6 border border-zinc-800 bg-zinc-950">
-                <Image
-                  src={selectedProductModal.image}
+              <div className="relative h-72 md:h-96 w-full rounded-2xl overflow-hidden mb-6 border border-zinc-800 bg-zinc-950">
+                <ProductImageSlider
+                  key={selectedProductModal.id}
+                  images={selectedProductModal.images ?? [selectedProductModal.image]}
                   alt={getProductName(selectedProductModal)}
-                  fill
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 672px"
                 />
               </div>
 

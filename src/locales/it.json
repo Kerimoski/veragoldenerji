@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Prodotti",
+    "services": "Servizi",
+    "operations": "Operazioni sul Campo",
+    "map": "Mappa di Copertura",
+    "gallery": "Galleria",
+    "contact": "Contatti",
+    "getQuote": "Richiedi un Preventivo"
+  },
+  "hero": {
+    "badge": "Vera Gold Enerji - Partner di Soluzioni B2B",
+    "title": "Infrastrutture Solide nelle Rocce più Dure, a Tolleranza Zero.",
+    "subtitle": "Perforazione in roccia con e senza compressore, soluzioni di infissione per impianti fotovoltaici e attrezzature di perforazione ad alte prestazioni.",
+    "ctaProjects": "Scopri i Nostri Progetti",
+    "ctaQuote": "Richiedi un Preventivo Tecnico",
+    "exploreFleet": "Scopri la Flotta di Macchine",
+    "fleetTag": "Flotta Operativa & Macchinari",
+    "rock": "Perforatrice Cingolata da Roccia",
+    "water": "Perforatrice per Pozzi d'Acqua Profondi",
+    "solar": "Battipalo Fotovoltaico MZ460Y",
+    "compressor": "Compressore Diesel Portatile"
+  },
+  "b2bServices": {
+    "badge": "Forza Operativa",
+    "title": "In Cosa Eccelliamo",
+    "subtitle": "Operazioni di scavo e perforazione pesanti ad alta coppia che spingono oltre i limiti l'ingegneria di cantiere.",
+    "viewDetails": "Dettagli del Servizio",
+    "delgi": {
+      "title": "Perforazione in Roccia & Infissione per Impieghi Gravosi (Con Compressore)",
+      "desc": "Perforazioni e infissioni di pali rapide e millimetriche nei cantieri fotovoltaici su formazioni rocciose dure, con sistemi a martello DTH ad alta pressione.",
+      "tag": "DTH & PERFORAZIONE IN ROCCIA"
+    },
+    "kiralama": {
+      "title": "Perforazione Rotativa & a Coclea (Senza Compressore)",
+      "desc": "Soluzioni di perforazione ecologiche, silenziose ed efficaci con sistemi rotativi ad alta coppia e coclee su misura nei cantieri in cui l'uso del compressore è limitato.",
+      "tag": "INFISSIONE FV & COCLEA"
+    },
+    "enerji": {
+      "title": "Perforazioni Industriali & Pozzi d'Acqua",
+      "desc": "Indagini geotecniche profonde, ancoraggi, micropali e perforazione di pozzi d'acqua industriali ad alta capacità.",
+      "tag": "POZZI PROFONDI & FONDAZIONI"
+    }
+  },
+  "arsenal": {
+    "badge": "Vetrina delle Attrezzature",
+    "title": "L'Arsenale Corazzato",
+    "subtitle": "Il nostro parco premium di attrezzature operative per impieghi gravosi e i materiali di consumo forniti in B2B.",
+    "dth": {
+      "title": "Martelli DTH (Down-the-Hole)",
+      "desc": "Elevata potenza d'impatto, usura minima. Struttura in acciaio legato speciale per un'alta velocità di penetrazione in formazioni rocciose profonde e dure.",
+      "spec": "Diametri: 3\" - 12\" | Compatibilità Mission, QL, DHD",
+      "tag": "DTH AD ALTO IMPATTO"
+    },
+    "bits": {
+      "title": "Punte da Roccia & Accessori",
+      "desc": "Punte professionali in carburo di tungsteno che sfidano i terreni di granito e basalto più duri. Massima resistenza all'abrasione.",
+      "spec": "Tipo di Punta: Balistica, Sferica | Grado Carburo: A++",
+      "tag": "CARBURO DI TUNGSTENO"
+    },
+    "auger": {
+      "title": "Coclee & Utensili di Perforazione",
+      "desc": "Coclee per impieghi gravosi adatte a tutte le formazioni di terreno, in vari diametri e dimensioni. Spirale con riporto duro e piastre antiusura.",
+      "spec": "Diametri: 300mm - 2000mm | Attacco: Esagonale, Quadro",
+      "tag": "COCLEA PER IMPIEGHI GRAVOSI"
+    }
+  },
+  "consulting": {
+    "title": "Servizi di Consulenza & Supporto",
+    "subtitle": "Supporto ingegneristico professionale per macchine di perforazione, attrezzature di scavo e investimenti aziendali.",
+    "viewDetails": "Vedi Dettagli",
+    "getOffer": "Richiedi un'Offerta Tecnica",
+    "machineryDesc": "Selezione delle macchine, analisi della coppia e consulenza sulle prestazioni meccaniche.",
+    "equipmentDesc": "Punte di perforazione, materiali di consumo e analisi dell'efficienza operativa.",
+    "investmentDesc": "Report di budget e fattibilità per l'acquisto di macchinari B2B.",
+    "projectDesc": "Pianificazione ingegneristica per grandi progetti di perforazione e centrali elettriche.",
+    "sparePartsDesc": "Fornitura di ricambi originali e servizio di manutenzione tecnica periodica."
+  },
+  "services": {
+    "title": "Le Nostre Aree di Competenza",
+    "subtitle": "Servizi aziendali offerti con tecnologia moderna e competenza ingegneristica.",
+    "drill": {
+      "title": "Operazioni di Perforazione",
+      "short": "Soluzioni di alta precisione per perforazione in roccia, ancoraggi, indagini geotecniche e gallerie.",
+      "long": "Vera Gold Enerji realizza perforazioni in roccia, consolidamento del terreno, ancoraggi di scarpate e gallerie in condizioni di terreno difficili.",
+      "features": ["Micropali & Ancoraggi", "Miglioramento del Terreno", "Perforazione di Gallerie", "Fori da Mina"]
+    },
+    "rental": {
+      "title": "Noleggio Flotta di Perforatrici",
+      "short": "Un'ampia flotta a noleggio, ben manutenuta e ad alte prestazioni, di attrezzature pesanti per perforazione e scavo in roccia.",
+      "long": "Invece di pesanti investimenti di capitale per i vostri progetti, ottenete perforatrici di livello mondiale con formule di noleggio flessibili.",
+      "features": ["Piani di Noleggio Flessibili", "Manutenzione Tecnica 24/7", "Opzione con Operatore", "Ampia Gamma di Attrezzature"]
+    },
+    "energy": {
+      "title": "Perforazione di Pozzi Profondi",
+      "short": "Soluzioni chiavi in mano per pozzi d'acqua profondi, carotaggi geotecnici e sviluppo dei pozzi.",
+      "long": "Vera Gold Enerji offre servizi di perforazione profonda ad alte prestazioni oltre i 300 metri, indagini geotecniche e pozzi geotermici con la sua flotta di perforatrici rotative pesanti.",
+      "features": ["Perforazione di Pozzi d'Acqua Profondi", "Carotaggio Geotecnico", "Pozzi Geotermici", "Pulizia & Sviluppo dei Pozzi"]
+    },
+    "learnMore": "Scopri di Più",
+    "close": "Chiudi",
+    "machineryConsulting": "Consulenza Tecnica sui Macchinari",
+    "equipmentConsulting": "Consulenza sulle Attrezzature di Perforazione",
+    "investmentConsulting": "Consulenza sugli Investimenti",
+    "projectConsulting": "Consulenza di Progetto",
+    "spareParts": "Ricambi & Assistenza"
+  },
+  "productsPage": {
+    "viewDetails": "Vedi Dettagli",
+    "technicalSpecs": "Specifiche Tecniche",
+    "prevPhoto": "Foto precedente",
+    "nextPhoto": "Foto successiva",
+    "badge": "Vera Gold Enerji - Flotta di Macchine Pesanti",
+    "subtitle": "Flotta di vendita B2B industriale di perforatrici, perforatrici da roccia, battipalo fotovoltaici e compressori diesel pesanti.",
+    "all": "Tutte le Macchine",
+    "allProducts": "Tutti i Prodotti",
+    "inStock": "Disponibile / In Vendita",
+    "quickView": "Anteprima",
+    "details": "Dettagli",
+    "getQuote": "Richiedi un Preventivo",
+    "models": "Modelli",
+    "items": "Articoli",
+    "categoryFleet": "Flotta di Macchine",
+    "categoryShowcase": "Vetrina della Categoria",
+    "allCategories": "Tutte le Categorie",
+    "categoryQuote": "Preventivo per la Categoria",
+    "warrantyTitle": "Garanzia di Servizio & Assistenza B2B",
+    "warrantySub": "Importazione di Macchine su Misura & Consegna in Cantiere",
+    "warrantyDesc": "Importiamo direttamente dai produttori macchine su misura in base al tonnellaggio e alla coppia richiesti, consegnandole operative nel vostro cantiere.",
+    "contactEngineers": "Contatta il Nostro Team di Ingegneri",
+    "techSpecs": "Specifiche Tecniche",
+    "requestOffer": "Richiedi un'Offerta Tecnica"
+  },
+  "map": {
+    "title": "Il Nostro Raggio Operativo",
+    "subtitle": "Operiamo attivamente in tutta Europa e nei Balcani, ad eccezione di Regno Unito, Svezia, Norvegia e Finlandia.",
+    "description": "Forniamo logistica e competenza ingegneristica in tutta Europa e nei Balcani.",
+    "activeRegions": "Regioni Operative Attive",
+    "inactiveRegions": "Regioni Non Servite (Regno Unito, Scandinavia)"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Richiedi un'offerta aziendale o informazioni sulla nostra flotta.",
+    "formName": "Nome e Cognome / Referente",
+    "formCompany": "Nome dell'Azienda",
+    "formEmail": "Indirizzo Email",
+    "formService": "Servizio di Interesse",
+    "formServicePlaceholder": "Seleziona un servizio",
+    "formMessage": "Il Tuo Messaggio / Dettagli del Progetto",
+    "formSubmit": "Invia la Richiesta di Offerta",
+    "sending": "Invio in corso...",
+    "success": "Il tuo messaggio è stato inviato con successo!",
+    "phone": "Telefono",
+    "email": "Email",
+    "address": "Indirizzo della Sede"
+  },
+  "footer": {
+    "desc": "Il partner B2B europeo per la perforazione in roccia, il noleggio di macchinari e la realizzazione di impianti di energia rinnovabile.",
+    "rights": "Tutti i Diritti Riservati. Vera Gold Enerji."
+  }
+}

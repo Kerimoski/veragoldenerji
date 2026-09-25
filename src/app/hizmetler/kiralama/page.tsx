@@ -13,6 +13,8 @@ export default function KiralamaPage() {
   const isTr = language === "tr";
   const isDe = language === "de";
   const isFr = language === "fr";
+  const isIt = language === "it";
+  const isEs = language === "es";
 
   const detailsTr = {
     features: [
@@ -70,7 +72,93 @@ export default function KiralamaPage() {
     ]
   };
 
-  const currentDetails = isTr ? detailsTr : isDe ? detailsDe : isFr ? detailsFr : detailsEn;
+  const detailsIt = {
+    features: [
+      { title: "Perforatrici da Roccia e da Sondaggio", desc: "Perforatrici per impieghi gravosi ad alta coppia e attrezzature cingolate per la perforazione in roccia." },
+      { title: "Unità di Perforazione Leggere e Mobili", desc: "Attrezzature di perforazione mobili e manovrabili per spazi ristretti o terreni accidentati." },
+      { title: "Compressori & Unità di Supporto Aria", desc: "Flotta premium di compressori per le operazioni di perforazione ad alta pressione." },
+      { title: "Con Operatore & Supporto Tecnico", desc: "Su richiesta, operatori certificati ed esperti e supporto tecnico completo in cantiere." }
+    ],
+    stats: [
+      { val: "+45", label: "Unità di Flotta Attive" },
+      { val: "24/7", label: "Assistenza Tecnica" },
+      { val: "98%", label: "Efficienza Operativa" }
+    ]
+  };
+
+  const detailsEs = {
+    features: [
+      { title: "Perforadoras de Roca y de Sondeo", desc: "Perforadoras de alta resistencia y alto par y equipos de perforación en roca sobre orugas." },
+      { title: "Unidades de Perforación Ligeras y Móviles", desc: "Equipos de perforación móviles y maniobrables para espacios reducidos o terrenos accidentados." },
+      { title: "Compresores & Unidades de Apoyo de Aire", desc: "Flota premium de compresores para operaciones de perforación de alta presión." },
+      { title: "Con Operador & Soporte Técnico", desc: "Bajo demanda, operadores certificados y expertos y soporte técnico completo en obra." }
+    ],
+    stats: [
+      { val: "+45", label: "Unidades de Flota Activas" },
+      { val: "24/7", label: "Soporte Técnico" },
+      { val: "98%", label: "Eficiencia Operativa" }
+    ]
+  };
+
+  const currentDetails = isTr ? detailsTr : isDe ? detailsDe : isFr ? detailsFr : isIt ? detailsIt : isEs ? detailsEs : detailsEn;
+
+  const gesRental = {
+    tr: {
+      title: "GES Sahaları İçin Delgi Ekipmanı Kiralama",
+      intro: "Engebeli ve kayalık arazilerde GES konstrüksiyon ayaklarının sabitlenmesi, zemin çivisi çakılması veya ön delgi (pre-boring) yapılması için özel delgi ekipmanlarına ihtiyaç duyulur. Sahadaki operasyonel hızınızı artırmak için en son teknolojiye sahip sistemleri kiralıyoruz:",
+      items: [
+        { title: "Seyyar ve Vidalı Kompresörler", desc: "Yüksek hava debisi ve basınç kapasitesiyle, şantiyenin en uzak noktalarında dahi kesintisiz pnömatik güç sağlar." },
+        { title: "Pnömatik ve Hidrolik Rock Deliciler (DTH / Top-Hammer)", desc: "Sert kayalarda istenilen çap ve derinlikte kusursuz delgi yapılmasına olanak tanır." },
+        { title: "Delici Uç, Tij ve Sarf Malzemeleri", desc: "Delgi operasyonlarınızın aksamaması için tam uyumlu yedek parça ve sarf malzeme desteği." },
+      ],
+    },
+    en: {
+      title: "Drilling Equipment Rental for Solar (PV) Sites",
+      intro: "On rough and rocky terrain, fixing solar mounting structure posts, installing soil nails or pre-boring requires specialised drilling equipment. We rent out state-of-the-art systems to increase your operational speed on site:",
+      items: [
+        { title: "Portable & Screw Compressors", desc: "High air flow and pressure capacity deliver uninterrupted pneumatic power even at the most remote points of the site." },
+        { title: "Pneumatic & Hydraulic Rock Drills (DTH / Top-Hammer)", desc: "Enable flawless drilling at the required diameter and depth in hard rock." },
+        { title: "Drill Bits, Rods & Consumables", desc: "Fully compatible spare parts and consumables support to keep your drilling operations running." },
+      ],
+    },
+    de: {
+      title: "Bohrgerätevermietung für PV-Solarparks",
+      intro: "In unebenem und felsigem Gelände erfordern die Verankerung von PV-Unterkonstruktionen, das Setzen von Bodennägeln oder Vorbohrungen (Pre-Boring) spezielle Bohrgeräte. Wir vermieten modernste Systeme, um Ihre Arbeitsgeschwindigkeit auf der Baustelle zu steigern:",
+      items: [
+        { title: "Mobile & Schraubenkompressoren", desc: "Hohe Liefermenge und Druckkapazität sorgen selbst an den entferntesten Stellen der Baustelle für unterbrechungsfreie pneumatische Leistung." },
+        { title: "Pneumatische & Hydraulische Gesteinsbohrgeräte (DTH / Top-Hammer)", desc: "Ermöglichen einwandfreie Bohrungen mit dem gewünschten Durchmesser und der gewünschten Tiefe in hartem Gestein." },
+        { title: "Bohrkronen, Bohrstangen & Verbrauchsmaterial", desc: "Vollständig kompatible Ersatzteile und Verbrauchsmaterialien, damit Ihre Bohrarbeiten nicht ins Stocken geraten." },
+      ],
+    },
+    fr: {
+      title: "Location d'Équipements de Forage pour Centrales Solaires",
+      intro: "Sur les terrains accidentés et rocheux, la fixation des pieds de structures photovoltaïques, la pose de clous de sol ou le pré-forage (pre-boring) nécessitent des équipements de forage spécifiques. Nous louons des systèmes de dernière génération pour accélérer vos opérations sur site :",
+      items: [
+        { title: "Compresseurs Mobiles & à Vis", desc: "Un débit d'air et une capacité de pression élevés fournissent une puissance pneumatique continue, même aux points les plus éloignés du chantier." },
+        { title: "Foreuses de Roche Pneumatiques & Hydrauliques (DTH / Top-Hammer)", desc: "Permettent un forage impeccable au diamètre et à la profondeur souhaités dans la roche dure." },
+        { title: "Taillants, Tiges & Consommables", desc: "Un soutien complet en pièces détachées et consommables compatibles pour que vos opérations de forage ne s'arrêtent pas." },
+      ],
+    },
+    it: {
+      title: "Noleggio di Attrezzature di Perforazione per Impianti Fotovoltaici",
+      intro: "Su terreni accidentati e rocciosi, il fissaggio dei montanti delle strutture fotovoltaiche, l'infissione di chiodi nel terreno o la preforatura (pre-boring) richiedono attrezzature di perforazione specifiche. Noleggiamo sistemi di ultima generazione per aumentare la vostra velocità operativa in cantiere:",
+      items: [
+        { title: "Compressori Mobili e a Vite", desc: "Grazie all'elevata portata d'aria e capacità di pressione, forniscono energia pneumatica continua anche nei punti più remoti del cantiere." },
+        { title: "Perforatrici da Roccia Pneumatiche e Idrauliche (DTH / Top-Hammer)", desc: "Consentono perforazioni impeccabili nel diametro e nella profondità richiesti anche nella roccia dura." },
+        { title: "Punte, Aste e Materiali di Consumo", desc: "Supporto completo di ricambi e materiali di consumo compatibili per non interrompere le vostre operazioni di perforazione." },
+      ],
+    },
+    es: {
+      title: "Alquiler de Equipos de Perforación para Plantas Solares",
+      intro: "En terrenos accidentados y rocosos, la fijación de los postes de las estructuras fotovoltaicas, la colocación de bulones de suelo o la preperforación (pre-boring) requieren equipos de perforación específicos. Alquilamos sistemas de última tecnología para aumentar su velocidad operativa en obra:",
+      items: [
+        { title: "Compresores Móviles y de Tornillo", desc: "Con un alto caudal de aire y capacidad de presión, proporcionan energía neumática ininterrumpida incluso en los puntos más alejados de la obra." },
+        { title: "Perforadoras de Roca Neumáticas e Hidráulicas (DTH / Top-Hammer)", desc: "Permiten perforaciones impecables con el diámetro y la profundidad requeridos en roca dura." },
+        { title: "Brocas, Varillas y Consumibles", desc: "Soporte completo de repuestos y consumibles compatibles para que sus operaciones de perforación no se detengan." },
+      ],
+    },
+  };
+  const currentGes = isTr ? gesRental.tr : isDe ? gesRental.de : isFr ? gesRental.fr : isIt ? gesRental.it : isEs ? gesRental.es : gesRental.en;
 
   return (
     <>
@@ -85,7 +173,7 @@ export default function KiralamaPage() {
             className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white mb-8 transition-colors uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 text-[#C59B27]" />
-            <span>{isTr ? "Hizmetlere Dön" : isDe ? "Zurück zu Dienstleistungen" : isFr ? "Retour aux services" : "Back to Services"}</span>
+            <span>{isTr ? "Hizmetlere Dön" : isDe ? "Zurück zu Dienstleistungen" : isFr ? "Retour aux services" : isIt ? "Torna ai Servizi" : isEs ? "Volver a Servicios" : "Back to Services"}</span>
           </Link>
 
           {/* Badge */}
@@ -117,9 +205,9 @@ export default function KiralamaPage() {
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white z-10">
               <div>
                 <span className="text-[10px] font-mono font-bold text-[#C59B27] uppercase tracking-widest bg-zinc-950/80 px-3 py-1 rounded-md border border-zinc-800">
-                  // KİRALIK MAKİNE FİLOSU & SAHA OPERASYONU
+                  // {isTr ? "KİRALIK MAKİNE FİLOSU & SAHA OPERASYONU" : isDe ? "MIETFLOTTE & FELDEINSATZ" : isFr ? "FLOTTE DE LOCATION & OPÉRATION TERRAIN" : isIt ? "FLOTTA A NOLEGGIO & OPERAZIONI IN CANTIERE" : isEs ? "FLOTA DE ALQUILER & OPERACIÓN EN OBRA" : "RENTAL FLEET & FIELD OPERATION"}
                 </span>
-                <h3 className="text-lg md:text-2xl font-black uppercase mt-2 font-sans">MZ460Y Hidrolik GES Kazık Çakma & Delgi Parkı</h3>
+                <h3 className="text-lg md:text-2xl font-black uppercase mt-2 font-sans">{isTr ? "MZ460Y Hidrolik GES Kazık Çakma & Delgi Parkı" : isDe ? "MZ460Y Hydraulische Solar-Ramm- & Bohrflotte" : isFr ? "Parc de Battage Solaire & Forage Hydraulique MZ460Y" : isIt ? "Flotta Idraulica MZ460Y per Infissione FV & Perforazione" : isEs ? "Flota Hidráulica MZ460Y de Hincado Solar & Perforación" : "MZ460Y Hydraulic Solar Piling & Drilling Fleet"}</h3>
               </div>
             </div>
           </div>
@@ -134,11 +222,30 @@ export default function KiralamaPage() {
             ))}
           </div>
 
+          {/* GES Drilling Equipment Rental */}
+          <div className="p-6 md:p-10 rounded-3xl border border-zinc-800 bg-zinc-900/90 shadow-xl mb-16">
+            <h3 className="text-xl md:text-3xl font-black uppercase tracking-tight text-white mb-4">
+              // {currentGes.title}
+            </h3>
+            <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-8">{currentGes.intro}</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {currentGes.items.map((item, idx) => (
+                <div key={idx} className="p-5 rounded-2xl border border-zinc-800 bg-zinc-950">
+                  <h4 className="text-sm font-bold text-white mb-2 flex items-start gap-2">
+                    <Check className="w-4 h-4 text-[#C59B27] shrink-0 mt-0.5" />
+                    {item.title}
+                  </h4>
+                  <p className="text-zinc-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Detailed Features Section */}
           <div className="space-y-8 mb-16">
             <h3 className="text-xl md:text-3xl font-black uppercase tracking-tight text-white mb-6 flex items-center gap-3">
               <Target className="w-5 h-5 text-emerald-400" />
-              // {isTr ? "Hizmet Kapsamımız" : isDe ? "Unser Leistungsumfang" : isFr ? "Notre Champ d'Action" : "Scope of Services"}
+              // {isTr ? "Hizmet Kapsamımız" : isDe ? "Unser Leistungsumfang" : isFr ? "Notre Champ d'Action" : isIt ? "Ambito dei Servizi" : isEs ? "Alcance de los Servicios" : "Scope of Services"}
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -162,11 +269,15 @@ export default function KiralamaPage() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#C59B27]/10 rounded-full filter blur-[80px]" />
             <Shield className="w-12 h-12 text-[#C59B27] mx-auto mb-6" />
             <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
-              {isTr ? "Filomuz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot an" : isFr ? "Demandez un devis" : "Request a Quote for Our Fleet"}
+              {isTr ? "Filomuz İçin Teklif Alın" : isDe ? "Fordern Sie ein Angebot an" : isFr ? "Demandez un devis" : isIt ? "Richiedi un Preventivo per la Nostra Flotta" : isEs ? "Solicite un Presupuesto para Nuestra Flota" : "Request a Quote for Our Fleet"}
             </h3>
             <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto mb-8 font-medium">
               {isTr
                 ? "Güneş santralleri ve kaya delgi projeleriniz için kiralık makine parkurumuzu hemen keşfedin."
+                : isIt
+                ? "Scoprite subito la nostra flotta di macchine a noleggio per impianti fotovoltaici e progetti di perforazione in roccia."
+                : isEs
+                ? "Descubra ahora nuestra flota de maquinaria de alquiler para plantas solares y proyectos de perforación en roca."
                 : "Explore our rental rig fleet for solar farms and heavy rock drilling operations."}
             </p>
             <Link

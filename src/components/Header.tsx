@@ -9,7 +9,7 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 
 export const Header: React.FC = () => {
-  const { t, language } = useTranslation();
+  const { t, tx } = useTranslation();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,6 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const tx = (m: Record<string, string>) => m[language] ?? m.en;
 
   const productCategories = [
     { key: "rock", names: { tr: "Rock Makinaları", en: "Rock Machines", de: "Gesteinsbohrgeräte", fr: "Foreuses de Roche", it: "Perforatrici da Roccia", es: "Perforadoras de Roca" }, path: "/urunler/rock-makinalari" },

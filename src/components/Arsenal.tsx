@@ -7,8 +7,7 @@ import { Shield, Settings, Cpu, Zap, Filter, Droplet, Wrench } from "lucide-reac
 import { motion } from "framer-motion";
 
 export const Arsenal: React.FC = () => {
-  const { t, language } = useTranslation();
-  const isTr = language === "tr";
+  const { t, tx } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
 
   const items = [
@@ -45,9 +44,9 @@ export const Arsenal: React.FC = () => {
     {
       id: "filter",
       icon: <Filter className="w-5 h-5 text-[#C59B27]" />,
-      title: isTr ? "Ağır Hizmet Filtre Grubu" : "Heavy Duty Filter Assembly",
-      desc: isTr ? "Yüksek basınçlı hava ve hidrolik hatları için orijinal emiş & seperatör filtreleri." : "OEM intake & separator filters engineered for high-pressure air and hydraulic circuits.",
-      spec: "99.9% Partikül Tutma",
+      title: tx({ tr: "Ağır Hizmet Filtre Grubu", en: "Heavy Duty Filter Assembly", de: "Schwerlast-Filtereinheit", fr: "Ensemble de Filtres Haute Résistance", it: "Gruppo Filtri per Impieghi Gravosi", es: "Conjunto de Filtros de Alta Resistencia" }),
+      desc: tx({ tr: "Yüksek basınçlı hava ve hidrolik hatları için orijinal emiş & seperatör filtreleri.", en: "OEM intake & separator filters engineered for high-pressure air and hydraulic circuits.", de: "OEM-Ansaug- und Abscheiderfilter für Hochdruckluft- und Hydraulikkreisläufe.", fr: "Filtres d'admission et séparateurs OEM conçus pour les circuits d'air haute pression et hydrauliques.", it: "Filtri di aspirazione e separatori OEM progettati per circuiti ad aria ad alta pressione e idraulici.", es: "Filtros de admisión y separadores OEM diseñados para circuitos de aire de alta presión e hidráulicos." }),
+      spec: tx({ tr: "%99.9 Partikül Tutma", en: "99.9% Particle Retention", de: "99,9 % Partikelrückhaltung", fr: "Rétention des Particules 99,9 %", it: "Ritenzione Particelle 99,9%", es: "Retención de Partículas 99,9 %" }),
       tag: "AIR & HYDRAULIC FILTERS",
       image: "/veragaleri/Filtre-6579-scaled.jpg",
       code: "EQUIP-04",
@@ -55,8 +54,8 @@ export const Arsenal: React.FC = () => {
     {
       id: "fluids",
       icon: <Droplet className="w-5 h-5 text-[#C59B27]" />,
-      title: isTr ? "Hidrolik & Madeni Sıvılar" : "Hydraulic & Lubricating Fluids",
-      desc: isTr ? "Zorlu şantiye sıcaklıklarına dayanıklı özel hidrolik kırıcı ve kompresör yağları." : "Extreme temperature hydraulic fluids and DTH hammer lubricant additives.",
+      title: tx({ tr: "Hidrolik & Madeni Sıvılar", en: "Hydraulic & Lubricating Fluids", de: "Hydraulik- & Schmierflüssigkeiten", fr: "Fluides Hydrauliques & Lubrifiants", it: "Fluidi Idraulici & Lubrificanti", es: "Fluidos Hidráulicos & Lubricantes" }),
+      desc: tx({ tr: "Zorlu şantiye sıcaklıklarına dayanıklı özel hidrolik kırıcı ve kompresör yağları.", en: "Extreme temperature hydraulic fluids and DTH hammer lubricant additives.", de: "Hydraulikflüssigkeiten für extreme Temperaturen und Schmierzusätze für DTH-Hämmer.", fr: "Fluides hydrauliques pour températures extrêmes et additifs lubrifiants pour marteaux DTH.", it: "Fluidi idraulici per temperature estreme e additivi lubrificanti per martelli DTH.", es: "Fluidos hidráulicos para temperaturas extremas y aditivos lubricantes para martillos DTH." }),
       spec: "ISO VG 46/68 Grade",
       tag: "SITE CHEMICALS & OILS",
       image: "/veragaleri/Bidon-6664-scaled.jpg",
@@ -65,9 +64,9 @@ export const Arsenal: React.FC = () => {
     {
       id: "consumables",
       icon: <Wrench className="w-5 h-5 text-[#C59B27]" />,
-      title: isTr ? "Kompresör Sarf Ekipmanları" : "Compressor Consumables & Rig Parts",
-      desc: isTr ? "24 Bar yüksek basınçlı mobil kompresörlerin kesintisiz çalışması için orijinal yedekler." : "Original replacement kits and valves for 24 Bar mobile diesel air compressor ends.",
-      spec: "OEM Guaranteed",
+      title: tx({ tr: "Kompresör Sarf Ekipmanları", en: "Compressor Consumables & Rig Parts", de: "Kompressor-Verbrauchsmaterial & Geräteteile", fr: "Consommables Compresseur & Pièces de Foreuse", it: "Consumabili per Compressori & Ricambi Macchina", es: "Consumibles de Compresor & Piezas de Máquina" }),
+      desc: tx({ tr: "24 Bar yüksek basınçlı mobil kompresörlerin kesintisiz çalışması için orijinal yedekler.", en: "Original replacement kits and valves for 24 Bar mobile diesel air compressor ends.", de: "Original-Ersatzsätze und Ventile für mobile 24-bar-Diesel-Luftkompressoren.", fr: "Kits de rechange et vannes d'origine pour blocs de compresseurs diesel mobiles 24 bar.", it: "Kit di ricambio e valvole originali per gruppi di compressori diesel mobili da 24 bar.", es: "Kits de repuesto y válvulas originales para bloques de compresores diésel móviles de 24 bar." }),
+      spec: tx({ tr: "OEM Garantili", en: "OEM Guaranteed", de: "OEM-Garantie", fr: "Garantie OEM", it: "Garanzia OEM", es: "Garantía OEM" }),
       tag: "AIR COMPRESSOR SPARES",
       image: "/veragaleri/Filtre-6645-scaled.jpg",
       code: "EQUIP-06",
@@ -170,7 +169,7 @@ export const Arsenal: React.FC = () => {
                   <div className="pt-4 border-t border-zinc-800/80">
                     <div className="bg-zinc-950 border border-zinc-800 rounded-xl px-3.5 py-2.5 flex items-center justify-between text-xs font-mono">
                       <span className="text-zinc-500 font-bold uppercase tracking-wider">
-                        {isTr ? "TEKNİK ÖZELLİK:" : "SPEC:"}
+                        {tx({ tr: "TEKNİK ÖZELLİK:", en: "SPEC:", de: "SPEZ.:", fr: "SPÉC. :", it: "SPEC.:", es: "ESPEC.:" })}
                       </span>
                       <span className="text-[#C59B27] font-extrabold text-right">
                         {item.spec}

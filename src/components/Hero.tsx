@@ -8,8 +8,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, Zap, Activity } from "lucide-rea
 import { motion, AnimatePresence } from "framer-motion";
 
 export const Hero: React.FC = () => {
-  const { t, language } = useTranslation();
-  const isTr = language === "tr";
+  const { t, tx } = useTranslation();
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -20,14 +19,14 @@ export const Hero: React.FC = () => {
       id: "main",
       tag: "VERA GOLD ENERJİ // B2B HEAVY DRILLING & PILING",
       watermark: "VERA GOLD",
-      badge: isTr ? "AĞIR HİZMET DELGİ & SONDAJ FİLOSU" : "HEAVY DUTY DRILLING & PILING FLEET",
+      badge: tx({ tr: "AĞIR HİZMET DELGİ & SONDAJ FİLOSU", en: "HEAVY DUTY DRILLING & PILING FLEET", de: "SCHWERLAST-BOHR- & RAMMFLOTTE", fr: "FLOTTE DE FORAGE & BATTAGE LOURD", it: "FLOTTA DI PERFORAZIONE & INFISSIONE PESANTE", es: "FLOTA DE PERFORACIÓN & HINCADO PESADO" }),
       title: t("hero.title"),
       subtitle: t("hero.subtitle"),
       image: "/satismakineleri/Paletli-Rock-Makina.jpg",
       specs: [
-        { label: isTr ? "BÖLGE" : "ZONE", val: "Tüm Avrupa & Balkanlar" },
-        { label: isTr ? "FİLO" : "FLEET", val: "+23 Ağır İş Makinesi" },
-        { label: isTr ? "DESTEK" : "SUPPORT", val: "7/24 Saha Servisi" },
+        { label: tx({ tr: "BÖLGE", en: "ZONE", de: "REGION", fr: "ZONE", it: "ZONA", es: "ZONA" }), val: tx({ tr: "Tüm Avrupa & Balkanlar", en: "All Europe & Balkans", de: "Ganz Europa & Balkan", fr: "Toute l'Europe & Balkans", it: "Tutta Europa & Balcani", es: "Toda Europa & Balcanes" }) },
+        { label: tx({ tr: "FİLO", en: "FLEET", de: "FLOTTE", fr: "FLOTTE", it: "FLOTTA", es: "FLOTA" }), val: tx({ tr: "+23 Ağır İş Makinesi", en: "+23 Heavy Machines", de: "+23 Schwermaschinen", fr: "+23 Engins Lourds", it: "+23 Macchine Pesanti", es: "+23 Máquinas Pesadas" }) },
+        { label: tx({ tr: "DESTEK", en: "SUPPORT", de: "SUPPORT", fr: "SUPPORT", it: "SUPPORTO", es: "SOPORTE" }), val: tx({ tr: "7/24 Saha Servisi", en: "24/7 Field Service", de: "24/7 Außendienst", fr: "Service Terrain 24/7", it: "Assistenza 24/7", es: "Servicio en Campo 24/7" }) },
       ],
       primaryCtaText: t("hero.exploreFleet"),
       primaryCtaLink: "/urunler",
@@ -39,18 +38,16 @@ export const Hero: React.FC = () => {
       id: "rock",
       tag: "VERA500 ROCK DRILL // DTH RIG",
       watermark: "ROCK DRILL",
-      badge: isTr ? "GÜÇLÜ KAYA DELGİ TEKNOLOJİSİ" : "HIGH-PRESSURE DTH ROCK DRILLING",
+      badge: tx({ tr: "GÜÇLÜ KAYA DELGİ TEKNOLOJİSİ", en: "HIGH-PRESSURE DTH ROCK DRILLING", de: "HOCHDRUCK-DTH-FELSBOHRUNG", fr: "FORAGE EN ROCHE DTH HAUTE PRESSION", it: "PERFORAZIONE IN ROCCIA DTH AD ALTA PRESSIONE", es: "PERFORACIÓN EN ROCA DTH DE ALTA PRESIÓN" }),
       title: t("hero.rock"),
-      subtitle: isTr
-        ? "Maden ocakları, şev stabilizasyonu ve granit zeminlerde 24 Bar yüksek basınçlı DTH delgi performansı."
-        : "24 Bar high-pressure DTH drilling performance engineered for tough granite terrains and quarry operations.",
+      subtitle: tx({ tr: "Maden ocakları, şev stabilizasyonu ve granit zeminlerde 24 Bar yüksek basınçlı DTH delgi performansı.", en: "24 Bar high-pressure DTH drilling performance engineered for tough granite terrains and quarry operations.", de: "24-bar-Hochdruck-DTH-Bohrleistung für harte Granitböden und Steinbrucheinsätze.", fr: "Performance de forage DTH haute pression 24 bar pour terrains granitiques et carrières.", it: "Prestazioni di perforazione DTH ad alta pressione da 24 bar per terreni granitici e cave.", es: "Rendimiento de perforación DTH de alta presión de 24 bar para terrenos graníticos y canteras." }),
       image: "/satismakineleri/Paletli-Rock-Makina.jpg",
       specs: [
-        { label: isTr ? "ÇAP" : "DIAMETER", val: "185 - 500 mm" },
-        { label: isTr ? "TORK" : "TORQUE", val: "12,000 Nm" },
-        { label: isTr ? "MOTOR" : "ENGINE", val: "Yuchai 86 kW" },
+        { label: tx({ tr: "ÇAP", en: "DIAMETER", de: "DURCHMESSER", fr: "DIAMÈTRE", it: "DIAMETRO", es: "DIÁMETRO" }), val: "185 - 500 mm" },
+        { label: tx({ tr: "TORK", en: "TORQUE", de: "DREHMOMENT", fr: "COUPLE", it: "COPPIA", es: "PAR" }), val: "12,000 Nm" },
+        { label: tx({ tr: "MOTOR", en: "ENGINE", de: "MOTOR", fr: "MOTEUR", it: "MOTORE", es: "MOTOR" }), val: "Yuchai 86 kW" },
       ],
-      primaryCtaText: isTr ? "Makine Detaylarını İncele" : "Explore Machine Specs",
+      primaryCtaText: tx({ tr: "Makine Detaylarını İncele", en: "Explore Machine Specs", de: "Maschinendaten ansehen", fr: "Voir les Caractéristiques", it: "Scopri le Specifiche della Macchina", es: "Ver Especificaciones de la Máquina" }),
       primaryCtaLink: "/urunler/rock-makinalari",
       secondaryCtaText: t("hero.ctaQuote"),
       secondaryCtaLink: "/iletisim",
@@ -60,18 +57,16 @@ export const Hero: React.FC = () => {
       id: "solar",
       tag: "MZ460Y HYDRAULIC PILER // GES PILING",
       watermark: "SOLAR PILER",
-      badge: isTr ? "GÜNEŞ ENERJİ SANTRALİ (GES) SİSTEMLERİ" : "PV SOLAR FARM SUBSTRUCTURE RIG",
+      badge: tx({ tr: "GÜNEŞ ENERJİ SANTRALİ (GES) SİSTEMLERİ", en: "PV SOLAR FARM SUBSTRUCTURE RIG", de: "UNTERKONSTRUKTIONSGERÄT FÜR PV-SOLARPARKS", fr: "SONNEUSE POUR STRUCTURES DE CENTRALES PV", it: "MACCHINA PER SOTTOSTRUTTURE DI IMPIANTI FV", es: "MÁQUINA PARA SUBESTRUCTURAS DE PLANTAS FV" }),
       title: t("hero.solar"),
-      subtitle: isTr
-        ? "GES sahalarında C ve U çelik profilleri milimetrik hassasiyetle çakan yüksek hızlı hidrolik çakım gücü."
-        : "High-frequency hydraulic piler driving C & U steel posts with millimetric precision on solar farm terrains.",
+      subtitle: tx({ tr: "GES sahalarında C ve U çelik profilleri milimetrik hassasiyetle çakan yüksek hızlı hidrolik çakım gücü.", en: "High-frequency hydraulic piler driving C & U steel posts with millimetric precision on solar farm terrains.", de: "Hochfrequente hydraulische Ramme, die C- und U-Stahlprofile millimetergenau in Solarparkflächen rammt.", fr: "Sonneuse hydraulique haute fréquence enfonçant les profilés acier C et U avec une précision millimétrique sur les terrains solaires.", it: "Battipalo idraulico ad alta frequenza che infigge profili in acciaio C e U con precisione millimetrica nei terreni fotovoltaici.", es: "Hincadora hidráulica de alta frecuencia que hinca perfiles de acero C y U con precisión milimétrica en terrenos solares." }),
       image: "/satismakineleri/mz460y.jpg",
       specs: [
-        { label: isTr ? "ÇAKIM Uzunluk" : "MAX LENGTH", val: "4,600 mm" },
-        { label: isTr ? "DARBE Gücü" : "IMPACT", val: "1,200 J" },
-        { label: isTr ? "KAPASİTE" : "CAPACITY", val: "400+ Kazık/Gün" },
+        { label: tx({ tr: "ÇAKIM Uzunluk", en: "MAX LENGTH", de: "MAX. LÄNGE", fr: "LONGUEUR MAX", it: "LUNGHEZZA MAX", es: "LONGITUD MÁX." }), val: "4,600 mm" },
+        { label: tx({ tr: "DARBE Gücü", en: "IMPACT", de: "SCHLAGKRAFT", fr: "IMPACT", it: "IMPATTO", es: "IMPACTO" }), val: "1,200 J" },
+        { label: tx({ tr: "KAPASİTE", en: "CAPACITY", de: "KAPAZITÄT", fr: "CAPACITÉ", it: "CAPACITÀ", es: "CAPACIDAD" }), val: tx({ tr: "400+ Kazık/Gün", en: "400+ Piles/Day", de: "400+ Pfähle/Tag", fr: "400+ Pieux/Jour", it: "400+ Pali/Giorno", es: "400+ Pilotes/Día" }) },
       ],
-      primaryCtaText: isTr ? "Makine Detaylarını İncele" : "Explore Machine Specs",
+      primaryCtaText: tx({ tr: "Makine Detaylarını İncele", en: "Explore Machine Specs", de: "Maschinendaten ansehen", fr: "Voir les Caractéristiques", it: "Scopri le Specifiche della Macchina", es: "Ver Especificaciones de la Máquina" }),
       primaryCtaLink: "/urunler/kazik-cakma-makinalari",
       secondaryCtaText: t("hero.ctaQuote"),
       secondaryCtaLink: "/iletisim",
@@ -81,18 +76,16 @@ export const Hero: React.FC = () => {
       id: "water",
       tag: "FY SERIES DEEP WELL RIG // DRILLING MAST",
       watermark: "DEEP WELL",
-      badge: isTr ? "ENDÜSTRİYEL SONDAJ & JEOTEKNİK" : "INDUSTRIAL WATER & GEOTECHNICAL DRILLING",
+      badge: tx({ tr: "ENDÜSTRİYEL SONDAJ & JEOTEKNİK", en: "INDUSTRIAL WATER & GEOTECHNICAL DRILLING", de: "INDUSTRIELLE BRUNNEN- & GEOTECHNIKBOHRUNG", fr: "FORAGE D'EAU INDUSTRIEL & GÉOTECHNIQUE", it: "PERFORAZIONE INDUSTRIALE DI POZZI & GEOTECNICA", es: "PERFORACIÓN INDUSTRIAL DE POZOS & GEOTÉCNICA" }),
       title: t("hero.water"),
-      subtitle: isTr
-        ? "300+ metre derin su sondajı, jeoteknik etütler ve karot alım operasyonlarında yüksek torklu hidrolik kule."
-        : "High-torque hydraulic mast for 300+ meter deep water wells and geotechnical core sampling.",
+      subtitle: tx({ tr: "300+ metre derin su sondajı, jeoteknik etütler ve karot alım operasyonlarında yüksek torklu hidrolik kule.", en: "High-torque hydraulic mast for 300+ meter deep water wells and geotechnical core sampling.", de: "Hydraulikmast mit hohem Drehmoment für Brunnen über 300 m und geotechnische Kernproben.", fr: "Mât hydraulique à couple élevé pour puits de plus de 300 m et carottage géotechnique.", it: "Albero idraulico ad alta coppia per pozzi oltre 300 m e carotaggi geotecnici.", es: "Mástil hidráulico de alto par para pozos de más de 300 m y testificación geotécnica." }),
       image: "/stokfoto/aerial-shot-of-water-well-drilling-rig-boring-dowi-2024-10-18-10-11-35-utc.jpeg",
       specs: [
-        { label: isTr ? "DERİNLİK" : "DEPTH", val: "180 - 800 m" },
-        { label: isTr ? "TORK" : "TORQUE", val: "14,000 N·m" },
-        { label: isTr ? "KALDIRMA" : "LIFTING", val: "36 T" },
+        { label: tx({ tr: "DERİNLİK", en: "DEPTH", de: "TIEFE", fr: "PROFONDEUR", it: "PROFONDITÀ", es: "PROFUNDIDAD" }), val: "180 - 800 m" },
+        { label: tx({ tr: "TORK", en: "TORQUE", de: "DREHMOMENT", fr: "COUPLE", it: "COPPIA", es: "PAR" }), val: "14,000 N·m" },
+        { label: tx({ tr: "KALDIRMA", en: "LIFTING", de: "HUBKRAFT", fr: "LEVAGE", it: "SOLLEVAMENTO", es: "ELEVACIÓN" }), val: "36 T" },
       ],
-      primaryCtaText: isTr ? "Makine Detaylarını İncele" : "Explore Machine Specs",
+      primaryCtaText: tx({ tr: "Makine Detaylarını İncele", en: "Explore Machine Specs", de: "Maschinendaten ansehen", fr: "Voir les Caractéristiques", it: "Scopri le Specifiche della Macchina", es: "Ver Especificaciones de la Máquina" }),
       primaryCtaLink: "/urunler/sondaj-makinalari",
       secondaryCtaText: t("hero.ctaQuote"),
       secondaryCtaLink: "/iletisim",
@@ -102,18 +95,16 @@ export const Hero: React.FC = () => {
       id: "aerial",
       tag: "AERIAL OPERATIONS // SITE SURVEY & BORING",
       watermark: "AERIAL RIG",
-      badge: isTr ? "HAVADAN ŞANTİYE & SONDAJ GÖRÜNTÜLEME" : "AERIAL SITE SURVEY & WELL BORING",
-      title: isTr ? "HAVADAN JEOTEKNİK & DERİN SONDAJ OPERASYONLARI" : "AERIAL GEOTECHNICAL & WELL DRILLING FLEET",
-      subtitle: isTr
-        ? "Zorlu coğrafyalarda dron destekli haritalama ve 400 metreye varan derin su sondaj kuleleri."
-        : "Drone-assisted mapping and deep water well drilling rigs operating in challenging terrains.",
+      badge: tx({ tr: "HAVADAN ŞANTİYE & SONDAJ GÖRÜNTÜLEME", en: "AERIAL SITE SURVEY & WELL BORING", de: "LUFTBILD-ERKUNDUNG & BRUNNENBOHRUNG", fr: "RELEVÉ AÉRIEN & FORAGE DE PUITS", it: "RILIEVO AEREO & PERFORAZIONE DI POZZI", es: "RECONOCIMIENTO AÉREO & PERFORACIÓN DE POZOS" }),
+      title: tx({ tr: "HAVADAN JEOTEKNİK & DERİN SONDAJ OPERASYONLARI", en: "AERIAL GEOTECHNICAL & WELL DRILLING FLEET", de: "LUFTGESTÜTZTE GEOTECHNIK- & BRUNNENBOHRFLOTTE", fr: "FLOTTE AÉRIENNE DE GÉOTECHNIQUE & FORAGE", it: "FLOTTA GEOTECNICA & DI PERFORAZIONE CON RILIEVO AEREO", es: "FLOTA GEOTÉCNICA & DE PERFORACIÓN CON RECONOCIMIENTO AÉREO" }),
+      subtitle: tx({ tr: "Zorlu coğrafyalarda dron destekli haritalama ve 400 metreye varan derin su sondaj kuleleri.", en: "Drone-assisted mapping and deep water well drilling rigs operating in challenging terrains.", de: "Drohnengestützte Kartierung und Tiefbrunnen-Bohranlagen in schwierigem Gelände.", fr: "Cartographie assistée par drone et foreuses de puits profonds en terrains difficiles.", it: "Mappatura con drone e perforatrici per pozzi profondi in terreni difficili.", es: "Cartografía asistida por dron y perforadoras de pozos profundos en terrenos difíciles." }),
       image: "/stokfoto/aerial-shot-of-water-well-drilling-rig-boring-dowi-2024-10-18-10-11-35-utc.jpeg",
       specs: [
-        { label: isTr ? "HARİTALAMA" : "MAPPING", val: "3D Dron Etüt" },
-        { label: isTr ? "DERİNLİK" : "MAX DEPTH", val: "400 Metre" },
-        { label: isTr ? "KAPASİTE" : "CAPACITY", val: "7/24 Kesintisiz" },
+        { label: tx({ tr: "HARİTALAMA", en: "MAPPING", de: "KARTIERUNG", fr: "CARTOGRAPHIE", it: "MAPPATURA", es: "CARTOGRAFÍA" }), val: tx({ tr: "3D Dron Etüt", en: "3D Drone Survey", de: "3D-Drohnenvermessung", fr: "Relevé 3D par Drone", it: "Rilievo 3D con Drone", es: "Levantamiento 3D con Dron" }) },
+        { label: tx({ tr: "DERİNLİK", en: "MAX DEPTH", de: "MAX. TIEFE", fr: "PROFONDEUR MAX", it: "PROFONDITÀ MAX", es: "PROFUNDIDAD MÁX." }), val: tx({ tr: "400 Metre", en: "400 Meters", de: "400 Meter", fr: "400 Mètres", it: "400 Metri", es: "400 Metros" }) },
+        { label: tx({ tr: "KAPASİTE", en: "CAPACITY", de: "KAPAZITÄT", fr: "CAPACITÉ", it: "CAPACITÀ", es: "CAPACIDAD" }), val: tx({ tr: "7/24 Kesintisiz", en: "24/7 Non-Stop", de: "24/7 Durchgehend", fr: "24/7 Sans Interruption", it: "24/7 Senza Sosta", es: "24/7 Sin Interrupción" }) },
       ],
-      primaryCtaText: isTr ? "Saha Operasyonlarını İncele" : "View Field Operations",
+      primaryCtaText: tx({ tr: "Saha Operasyonlarını İncele", en: "View Field Operations", de: "Feldeinsätze ansehen", fr: "Voir les Opérations Terrain", it: "Scopri le Operazioni sul Campo", es: "Ver Operaciones de Campo" }),
       primaryCtaLink: "/operasyonlar",
       secondaryCtaText: t("hero.ctaQuote"),
       secondaryCtaLink: "/iletisim",
@@ -123,18 +114,16 @@ export const Hero: React.FC = () => {
       id: "quarry",
       tag: "OPEN PIT MINING // PORPHYRY DRILLING",
       watermark: "OPEN PIT",
-      badge: isTr ? "MADEN OCAĞI & KAYA PATLATMA DELGİLERİ" : "OPEN PIT QUARRY & BLAST HOLE DRILLING",
-      title: isTr ? "AÇIK OCAK KAYA DELİM & ŞEV STABİLİZASYONU" : "OPEN PIT BLAST HOLE & SLOPE STABILIZATION",
-      subtitle: isTr
-        ? "Maden sahaları ve taş ocaklarında granit ve porfir kayaçlar için yüksek darbe enerjili ağır kaya delici kuleler."
-        : "High-impact rock drilling masts engineered for porphyry and granite rock extraction in open pit quarries.",
+      badge: tx({ tr: "MADEN OCAĞI & KAYA PATLATMA DELGİLERİ", en: "OPEN PIT QUARRY & BLAST HOLE DRILLING", de: "TAGEBAU- & SPRENGLOCHBOHRUNG", fr: "CARRIÈRE À CIEL OUVERT & FORAGE DE MINES", it: "CAVA A CIELO APERTO & FORI DA MINA", es: "CANTERA A CIELO ABIERTO & BARRENOS" }),
+      title: tx({ tr: "AÇIK OCAK KAYA DELİM & ŞEV STABİLİZASYONU", en: "OPEN PIT BLAST HOLE & SLOPE STABILIZATION", de: "SPRENGLOCHBOHRUNG IM TAGEBAU & HANGSICHERUNG", fr: "FORAGE DE MINES & STABILISATION DE TALUS", it: "FORI DA MINA A CIELO APERTO & STABILIZZAZIONE DEI PENDII", es: "BARRENOS A CIELO ABIERTO & ESTABILIZACIÓN DE TALUDES" }),
+      subtitle: tx({ tr: "Maden sahaları ve taş ocaklarında granit ve porfir kayaçlar için yüksek darbe enerjili ağır kaya delici kuleler.", en: "High-impact rock drilling masts engineered for porphyry and granite rock extraction in open pit quarries.", de: "Schlagkräftige Bohrmasten für den Abbau von Porphyr und Granit im Tagebau.", fr: "Mâts de forage à fort impact pour l'extraction de porphyre et de granit en carrière à ciel ouvert.", it: "Alberi di perforazione ad alto impatto per l'estrazione di porfido e granito in cave a cielo aperto.", es: "Mástiles de perforación de alto impacto para la extracción de pórfido y granito en canteras a cielo abierto." }),
       image: "/stokfoto/driller-in-an-open-pit-mine-porphyry-rock-materia-2023-11-27-05-03-42-utc.jpg",
       specs: [
-        { label: isTr ? "DARBE" : "IMPACT", val: "24 Bar Basınç" },
-        { label: isTr ? "FORMASYON" : "ROCK TYPE", val: "Granit & Porfir" },
-        { label: isTr ? "GÜVENLİK" : "SAFETY", val: "%100 Uyumlu" },
+        { label: tx({ tr: "DARBE", en: "IMPACT", de: "SCHLAGKRAFT", fr: "IMPACT", it: "IMPATTO", es: "IMPACTO" }), val: tx({ tr: "24 Bar Basınç", en: "24 Bar Pressure", de: "24 bar Druck", fr: "Pression 24 bar", it: "Pressione 24 bar", es: "Presión 24 bar" }) },
+        { label: tx({ tr: "FORMASYON", en: "ROCK TYPE", de: "GESTEINSART", fr: "TYPE DE ROCHE", it: "TIPO DI ROCCIA", es: "TIPO DE ROCA" }), val: tx({ tr: "Granit & Porfir", en: "Granite & Porphyry", de: "Granit & Porphyr", fr: "Granit & Porphyre", it: "Granito & Porfido", es: "Granito & Pórfido" }) },
+        { label: tx({ tr: "GÜVENLİK", en: "SAFETY", de: "SICHERHEIT", fr: "SÉCURITÉ", it: "SICUREZZA", es: "SEGURIDAD" }), val: tx({ tr: "%100 Uyumlu", en: "100% Compliant", de: "100 % Konform", fr: "100 % Conforme", it: "100% Conforme", es: "100 % Conforme" }) },
       ],
-      primaryCtaText: isTr ? "Operasyon Detaylarını İncele" : "Explore Operation Specs",
+      primaryCtaText: tx({ tr: "Operasyon Detaylarını İncele", en: "Explore Operation Specs", de: "Einsatzdaten ansehen", fr: "Voir les Détails de l'Opération", it: "Scopri i Dettagli dell'Operazione", es: "Ver Detalles de la Operación" }),
       primaryCtaLink: "/operasyonlar",
       secondaryCtaText: t("hero.ctaQuote"),
       secondaryCtaLink: "/iletisim",
@@ -144,18 +133,16 @@ export const Hero: React.FC = () => {
       id: "compressor-lgzj",
       tag: "LGZJ-31/25 DIESEL COMPRESSOR // YUCHAI POWER",
       watermark: "COMPRESSOR",
-      badge: isTr ? "YÜKSEK BASINÇLI VİDALI KOMPRESÖR" : "HIGH-PRESSURE DIESEL SCREW COMPRESSOR",
-      title: isTr ? "LGZJ-31/25-35/18 DİZEL KOMPRESÖR" : "LGZJ-31/25-35/18 DIESEL COMPRESSOR",
-      subtitle: isTr
-        ? "Yuchai 288-400 HP motor ve çift kademeli vida bloğu ile kaya delgi ve derin sondajların kesintisiz hava kaynağı."
-        : "Equipped with Yuchai 288-400 HP engine and two-stage air end for continuous air delivery on tough sites.",
+      badge: tx({ tr: "YÜKSEK BASINÇLI VİDALI KOMPRESÖR", en: "HIGH-PRESSURE DIESEL SCREW COMPRESSOR", de: "HOCHDRUCK-DIESEL-SCHRAUBENKOMPRESSOR", fr: "COMPRESSEUR DIESEL À VIS HAUTE PRESSION", it: "COMPRESSORE DIESEL A VITE AD ALTA PRESSIONE", es: "COMPRESOR DIÉSEL DE TORNILLO DE ALTA PRESIÓN" }),
+      title: tx({ tr: "LGZJ-31/25-35/18 DİZEL KOMPRESÖR", en: "LGZJ-31/25-35/18 DIESEL COMPRESSOR", de: "LGZJ-31/25-35/18 DIESELKOMPRESSOR", fr: "COMPRESSEUR DIESEL LGZJ-31/25-35/18", it: "COMPRESSORE DIESEL LGZJ-31/25-35/18", es: "COMPRESOR DIÉSEL LGZJ-31/25-35/18" }),
+      subtitle: tx({ tr: "Yuchai 288-400 HP motor ve çift kademeli vida bloğu ile kaya delgi ve derin sondajların kesintisiz hava kaynağı.", en: "Equipped with Yuchai 288-400 HP engine and two-stage air end for continuous air delivery on tough sites.", de: "Ausgestattet mit Yuchai-Motor (288-400 PS) und zweistufigem Verdichterblock für unterbrechungsfreie Luftversorgung auf harten Baustellen.", fr: "Équipé d'un moteur Yuchai de 288-400 CV et d'un bloc vis bi-étagé pour une alimentation en air continue sur les chantiers difficiles.", it: "Dotato di motore Yuchai da 288-400 CV e gruppo vite bistadio per un'erogazione d'aria continua nei cantieri più duri.", es: "Equipado con motor Yuchai de 288-400 CV y bloque de tornillo de dos etapas para un suministro de aire continuo en obras exigentes." }),
       image: "/yeni/1/WhatsApp Image 2026-07-29 at 10.26.00.jpeg",
       specs: [
-        { label: isTr ? "DEBİ" : "CAPACITY", val: "31 - 35 m³/dak" },
-        { label: isTr ? "BASINÇ" : "PRESSURE", val: "25 - 18 bar" },
-        { label: isTr ? "MOTOR" : "ENGINE", val: "Yuchai 288-400 HP" },
+        { label: tx({ tr: "DEBİ", en: "CAPACITY", de: "KAPAZITÄT", fr: "CAPACITÉ", it: "CAPACITÀ", es: "CAPACIDAD" }), val: tx({ tr: "31 - 35 m³/dak", en: "31 - 35 m³/min", de: "31 - 35 m³/min", fr: "31 - 35 m³/min", it: "31 - 35 m³/min", es: "31 - 35 m³/min" }) },
+        { label: tx({ tr: "BASINÇ", en: "PRESSURE", de: "DRUCK", fr: "PRESSION", it: "PRESSIONE", es: "PRESIÓN" }), val: "25 - 18 bar" },
+        { label: tx({ tr: "MOTOR", en: "ENGINE", de: "MOTOR", fr: "MOTEUR", it: "MOTORE", es: "MOTOR" }), val: "Yuchai 288-400 HP" },
       ],
-      primaryCtaText: isTr ? "Kompresör Detaylarını İncele" : "Explore Compressor Specs",
+      primaryCtaText: tx({ tr: "Kompresör Detaylarını İncele", en: "Explore Compressor Specs", de: "Kompressordaten ansehen", fr: "Voir le Compresseur", it: "Scopri il Compressore", es: "Ver Especificaciones del Compresor" }),
       primaryCtaLink: "/urunler/lgzj-31-25-35-18-dizel-vidali-kompresor",
       secondaryCtaText: t("hero.ctaQuote"),
       secondaryCtaLink: "/iletisim",
@@ -317,14 +304,14 @@ export const Hero: React.FC = () => {
             <button
               onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
               className="w-9 h-9 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center text-white transition-colors cursor-pointer shadow-md"
-              title="Önceki Slayt"
+              title={tx({ tr: "Önceki Slayt", en: "Previous Slide", de: "Vorherige Folie", fr: "Diapositive Précédente", it: "Slide Precedente", es: "Diapositiva Anterior" })}
             >
               <ChevronLeft className="w-5 h-5 text-[#C59B27]" />
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
               className="w-9 h-9 rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center text-white transition-colors cursor-pointer shadow-md"
-              title="Sonraki Slayt"
+              title={tx({ tr: "Sonraki Slayt", en: "Next Slide", de: "Nächste Folie", fr: "Diapositive Suivante", it: "Slide Successiva", es: "Diapositiva Siguiente" })}
             >
               <ChevronRight className="w-5 h-5 text-[#C59B27]" />
             </button>

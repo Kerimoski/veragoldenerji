@@ -9,8 +9,7 @@ import { useTranslation } from "@/context/LanguageContext";
 import { ArrowLeft, Check, Sparkles, Target, Zap, Shield } from "lucide-react";
 
 export default function EkipmanDanismanligiPage() {
-  const { t: translate, language } = useTranslation();
-  const isTr = language === "tr";
+  const { t: translate, language, tx } = useTranslation();
 
   const contentTr = {
     title: "Delme Ekipmanları Danışmanlığı",
@@ -50,7 +49,83 @@ export default function EkipmanDanismanligiPage() {
     cta: "Request Equipment Consulting"
   };
 
-  const current = isTr ? contentTr : contentEn;
+  const contentDe = {
+    title: "Beratung für Bohrausrüstung",
+    badge: "B2B-Ausrüstungsoptimierung",
+    desc: "Wir erstellen Ingenieurberichte zur Auswahl der am besten geeigneten Bohrkronen, DTH-Hämmer und Verbrauchsmaterialien je nach Gesteinshärte und Bodenprofil.",
+    longDesc: "Bei Vera Gold Enerji beraten wir B2B-Bergbau- und Geotechnikunternehmen bei der Wahl der richtigen Bohrverbrauchsmaterialien, um die Betriebskosten zu senken. Eine falsche Bohrkronenoberfläche oder ein falsches DTH-Hammermodell kann die Standzeit des Werkzeugs um bis zum Vierfachen verkürzen. Anhand von Gesteinskernproben und geotechnischen Berichten ermitteln wir die wirtschaftlichsten QL-, Mission- oder DHD-Konfigurationen.",
+    features: [
+      { title: "Gesteinshärteprüfungen", desc: "Bestimmung geeigneter Schneidformen nach Abrasivität des Bodens und Mohs-Skala." },
+      { title: "DTH-Hammer-Abstimmung", desc: "Abstimmung von QL-, DHD- und Mission-Hämmern auf die Bohrkronendurchmesser für maximale kinetische Energie." },
+      { title: "Verschleiß- & Standzeitanalysen", desc: "Überwachung von Verschleiß und Ermüdung der eingesetzten Bohrkronen bei unterschiedlichen Drehzahlen." },
+      { title: "Bestandsprüfung der Verbrauchsmaterialien", desc: "Planung der Lagerzyklen für DTH-Hämmer und Bohrkronen zur Vermeidung von Stillstandszeiten." }
+    ],
+    stats: [
+      { val: "+300", label: "Ausrüstungsaudits" },
+      { val: "15+ Marken", label: "Kompatibler Support" },
+      { val: "4x", label: "Längere Werkzeugstandzeit" }
+    ],
+    cta: "Ausrüstungsberatung anfordern"
+  };
+
+  const contentFr = {
+    title: "Conseil en Équipements de Forage",
+    badge: "Optimisation des Équipements B2B",
+    desc: "Nous préparons des rapports d'ingénierie pour choisir les taillants, marteaux DTH et consommables les plus adaptés selon la dureté de la roche et le profil du sol.",
+    longDesc: "Chez Vera Gold Enerji, nous conseillons les entreprises minières et géotechniques B2B dans le choix des bons consommables de forage afin de réduire leurs coûts d'exploitation. Un mauvais choix de surface de taillant ou de modèle de marteau DTH peut réduire la durée de vie de l'outil jusqu'à 4 fois. Nous analysons les carottes de roche et les rapports géotechniques pour déterminer les configurations QL, Mission ou DHD les plus rentables.",
+    features: [
+      { title: "Essais de Dureté de la Roche", desc: "Choix des formes de coupe adaptées selon l'abrasivité du sol et l'échelle de Mohs." },
+      { title: "Calibrage des Marteaux DTH", desc: "Association des marteaux QL, DHD et Mission aux diamètres de taillant pour une énergie cinétique maximale." },
+      { title: "Analyses d'Usure & de Durée de Vie", desc: "Suivi des taux d'usure et de fatigue des taillants en service à différentes vitesses de rotation." },
+      { title: "Audit des Stocks de Consommables", desc: "Planification des cycles de stock de marteaux et taillants DTH pour éviter les arrêts d'exploitation." }
+    ],
+    stats: [
+      { val: "+300", label: "Audits d'Équipements" },
+      { val: "15+ Marques", label: "Support Compatible" },
+      { val: "4x", label: "Durée de Vie des Outils Prolongée" }
+    ],
+    cta: "Demander un Conseil Équipement"
+  };
+
+  const contentIt = {
+    title: "Consulenza sulle Attrezzature di Perforazione",
+    badge: "Ottimizzazione delle Attrezzature B2B",
+    desc: "Prepariamo report ingegneristici per scegliere le punte, i martelli DTH e i materiali di consumo più adatti in base alla durezza della roccia e al profilo del terreno.",
+    longDesc: "In Vera Gold Enerji assistiamo le aziende minerarie e geotecniche B2B nella scelta dei giusti materiali di consumo per ridurre i costi operativi. Una superficie della punta o un modello di martello DTH sbagliati possono ridurre la durata dell'utensile fino a 4 volte. Analizziamo carote di roccia e relazioni geotecniche per individuare le configurazioni QL, Mission o DHD più convenienti.",
+    features: [
+      { title: "Prove di Durezza della Roccia", desc: "Scelta delle forme di taglio adatte in base all'abrasività del terreno e alla scala di Mohs." },
+      { title: "Calibrazione dei Martelli DTH", desc: "Abbinamento dei martelli QL, DHD e Mission ai diametri delle punte per la massima energia cinetica." },
+      { title: "Analisi di Usura & Durata", desc: "Monitoraggio dei tassi di usura e fatica delle punte in esercizio a diverse velocità di rotazione." },
+      { title: "Verifica delle Scorte di Consumabili", desc: "Pianificazione dei cicli di scorta di martelli e punte DTH per evitare fermi operativi." }
+    ],
+    stats: [
+      { val: "+300", label: "Audit delle Attrezzature" },
+      { val: "15+ Marchi", label: "Supporto Compatibile" },
+      { val: "4x", label: "Durata Utensili Maggiore" }
+    ],
+    cta: "Richiedi una Consulenza sulle Attrezzature"
+  };
+
+  const contentEs = {
+    title: "Consultoría de Equipos de Perforación",
+    badge: "Optimización de Equipos B2B",
+    desc: "Elaboramos informes de ingeniería para seleccionar las brocas, martillos DTH y consumibles más adecuados según la dureza de la roca y el perfil del suelo.",
+    longDesc: "En Vera Gold Enerji asesoramos a empresas mineras y geotécnicas B2B en la elección de los consumibles de perforación adecuados para reducir los costes operativos. Una superficie de broca o un modelo de martillo DTH equivocados pueden reducir la vida útil de la herramienta hasta 4 veces. Analizamos testigos de roca e informes geotécnicos para determinar las configuraciones QL, Mission o DHD más rentables.",
+    features: [
+      { title: "Ensayos de Dureza de la Roca", desc: "Selección de las formas de corte adecuadas según la abrasividad del suelo y la escala de Mohs." },
+      { title: "Calibración de Martillos DTH", desc: "Combinación de martillos QL, DHD y Mission con los diámetros de broca para obtener la máxima energía cinética." },
+      { title: "Análisis de Desgaste & Vida Útil", desc: "Seguimiento de las tasas de desgaste y fatiga de las brocas en servicio a distintas velocidades de rotación." },
+      { title: "Auditoría de Inventario de Consumibles", desc: "Planificación de los ciclos de stock de martillos y brocas DTH para evitar paradas operativas." }
+    ],
+    stats: [
+      { val: "+300", label: "Auditorías de Equipos" },
+      { val: "15+ Marcas", label: "Soporte Compatible" },
+      { val: "4x", label: "Mayor Vida Útil de las Herramientas" }
+    ],
+    cta: "Solicitar Consultoría de Equipos"
+  };
+
+  const current = { tr: contentTr, en: contentEn, de: contentDe, fr: contentFr, it: contentIt, es: contentEs }[language];
 
   return (
     <>
@@ -64,7 +139,7 @@ export default function EkipmanDanismanligiPage() {
             className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white mb-8 transition-colors uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 text-[#C59B27]" />
-            <span>{isTr ? "Hizmetlere Dön" : "Back to Services"}</span>
+            <span>{tx({ tr: "Hizmetlere Dön", en: "Back to Services", de: "Zurück zu Dienstleistungen", fr: "Retour aux services", it: "Torna ai Servizi", es: "Volver a Servicios" })}</span>
           </Link>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/40 bg-[#C59B27]/10 text-xs text-[#C59B27] font-mono tracking-widest uppercase mb-4">
@@ -103,7 +178,7 @@ export default function EkipmanDanismanligiPage() {
           <div className="space-y-8 mb-16">
             <h3 className="text-xl md:text-3xl font-black uppercase tracking-tight text-white mb-6 flex items-center gap-3">
               <Target className="w-5 h-5 text-emerald-400" />
-              // {isTr ? "Danışmanlık Kapsamımız" : "Scope of Consulting"}
+              // {tx({ tr: "Danışmanlık Kapsamımız", en: "Scope of Consulting", de: "Beratungsumfang", fr: "Champ du Conseil", it: "Ambito della Consulenza", es: "Alcance de la Consultoría" })}
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -134,7 +209,7 @@ export default function EkipmanDanismanligiPage() {
               href="/iletisim?service=equipment"
               className="inline-flex items-center gap-3 py-4 px-8 rounded-none bg-[#C59B27] hover:bg-[#b08920] text-white font-mono font-bold text-xs uppercase tracking-widest shadow-lg transition-colors cursor-pointer"
             >
-              <span>{isTr ? "İletişime Geç" : "Get In Touch"}</span>
+              <span>{tx({ tr: "İletişime Geç", en: "Get In Touch", de: "Kontakt aufnehmen", fr: "Nous Contacter", it: "Contattaci", es: "Contáctenos" })}</span>
               <Zap className="w-4 h-4" />
             </Link>
           </div>

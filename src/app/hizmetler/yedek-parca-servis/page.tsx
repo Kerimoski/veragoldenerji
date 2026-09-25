@@ -9,8 +9,7 @@ import { useTranslation } from "@/context/LanguageContext";
 import { ArrowLeft, Check, Sparkles, Target, Zap, Shield, Wrench } from "lucide-react";
 
 export default function YedekParcaServisPage() {
-  const { t: translate, language } = useTranslation();
-  const isTr = language === "tr";
+  const { t: translate, tx } = useTranslation();
 
   return (
     <>
@@ -24,22 +23,20 @@ export default function YedekParcaServisPage() {
             className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white mb-8 transition-colors uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 text-[#C59B27]" />
-            <span>{isTr ? "Hizmetlere Dön" : "Back to Services"}</span>
+            <span>{tx({ tr: "Hizmetlere Dön", en: "Back to Services", de: "Zurück zu Dienstleistungen", fr: "Retour aux services", it: "Torna ai Servizi", es: "Volver a Servicios" })}</span>
           </Link>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/40 bg-[#C59B27]/10 text-xs text-[#C59B27] font-mono tracking-widest uppercase mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>// {isTr ? "7/24 Saha Destek & Sarf Tedariki" : "24/7 Field Support & Parts"}</span>
+            <span>// {tx({ tr: "7/24 Saha Destek & Sarf Tedariki", en: "24/7 Field Support & Parts", de: "24/7 Außendienst & Ersatzteile", fr: "Assistance Terrain & Pièces 24/7", it: "Assistenza sul Campo & Ricambi 24/7", es: "Soporte en Campo & Repuestos 24/7" })}</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6 font-sans">
-            {isTr ? "Yedek Parça & Mobil Saha Servisi" : "Spare Parts & Field Service"}
+            {tx({ tr: "Yedek Parça & Mobil Saha Servisi", en: "Spare Parts & Field Service", de: "Ersatzteile & Außendienst", fr: "Pièces Détachées & Service Terrain", it: "Ricambi & Assistenza sul Campo", es: "Repuestos & Servicio en Campo" })}
           </h1>
 
           <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-4xl font-medium">
-            {isTr
-              ? "Ağır hizmet kaya delgi ve kompresör grupları için orijinal yedek parça temini ve 7/24 mobil saha mühendisliği desteği sunuyoruz."
-              : "We provide OEM spare parts supply and 24/7 mobile field engineering support for heavy drilling rigs and air compressors."}
+            {tx({ tr: "Ağır hizmet kaya delgi ve kompresör grupları için orijinal yedek parça temini ve 7/24 mobil saha mühendisliği desteği sunuyoruz.", en: "We provide OEM spare parts supply and 24/7 mobile field engineering support for heavy drilling rigs and air compressors.", de: "Wir liefern OEM-Ersatzteile und bieten 24/7 mobilen technischen Außendienst für schwere Bohranlagen und Luftkompressoren.", fr: "Nous fournissons des pièces détachées OEM et une assistance technique mobile 24/7 pour les foreuses lourdes et les compresseurs d'air.", it: "Forniamo ricambi OEM e assistenza tecnica mobile sul campo 24/7 per perforatrici pesanti e compressori d'aria.", es: "Suministramos repuestos OEM y soporte técnico móvil en campo 24/7 para perforadoras pesadas y compresores de aire." })}
           </p>
 
           <div className="relative h-72 md:h-96 w-full rounded-3xl overflow-hidden mb-12 border border-zinc-800 shadow-2xl">
@@ -56,13 +53,13 @@ export default function YedekParcaServisPage() {
           <div className="p-8 md:p-12 rounded-3xl bg-zinc-900/90 border border-zinc-800 text-center relative overflow-hidden shadow-2xl">
             <Shield className="w-12 h-12 text-[#C59B27] mx-auto mb-6" />
             <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
-              {isTr ? "Saha Servisi & Parça İste" : "Request Parts & Service"}
+              {tx({ tr: "Saha Servisi & Parça İste", en: "Request Parts & Service", de: "Teile & Service anfordern", fr: "Demander Pièces & Service", it: "Richiedi Ricambi & Assistenza", es: "Solicitar Repuestos & Servicio" })}
             </h3>
             <Link
               href="/iletisim?service=spareparts"
               className="inline-flex items-center gap-3 py-4 px-8 rounded-none bg-[#C59B27] hover:bg-[#b08920] text-white font-mono font-bold text-xs uppercase tracking-widest shadow-lg transition-colors cursor-pointer"
             >
-              <span>{isTr ? "İletişime Geç" : "Get In Touch"}</span>
+              <span>{tx({ tr: "İletişime Geç", en: "Get In Touch", de: "Kontakt aufnehmen", fr: "Nous Contacter", it: "Contattaci", es: "Contáctenos" })}</span>
               <Zap className="w-4 h-4" />
             </Link>
           </div>

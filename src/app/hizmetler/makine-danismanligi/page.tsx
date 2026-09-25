@@ -9,8 +9,7 @@ import { useTranslation } from "@/context/LanguageContext";
 import { ArrowLeft, Check, Sparkles, Target, Zap, Shield } from "lucide-react";
 
 export default function MakineDanismanligiPage() {
-  const { t: translate, language } = useTranslation();
-  const isTr = language === "tr";
+  const { t: translate, tx } = useTranslation();
 
   return (
     <>
@@ -24,22 +23,20 @@ export default function MakineDanismanligiPage() {
             className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white mb-8 transition-colors uppercase tracking-widest"
           >
             <ArrowLeft className="w-4 h-4 text-[#C59B27]" />
-            <span>{isTr ? "Hizmetlere Dön" : "Back to Services"}</span>
+            <span>{tx({ tr: "Hizmetlere Dön", en: "Back to Services", de: "Zurück zu Dienstleistungen", fr: "Retour aux services", it: "Torna ai Servizi", es: "Volver a Servicios" })}</span>
           </Link>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#C59B27]/40 bg-[#C59B27]/10 text-xs text-[#C59B27] font-mono tracking-widest uppercase mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>// {isTr ? "B2B Ağır İş Makinesi Danışmanlığı" : "B2B Machinery Consulting"}</span>
+            <span>// {tx({ tr: "B2B Ağır İş Makinesi Danışmanlığı", en: "B2B Machinery Consulting", de: "B2B-Maschinenberatung", fr: "Conseil Machines B2B", it: "Consulenza Macchine B2B", es: "Consultoría de Maquinaria B2B" })}</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white mb-6 font-sans">
-            {isTr ? "Makine Danışmanlığı & Filo Seçimi" : "Machinery Consulting & Fleet Selection"}
+            {tx({ tr: "Makine Danışmanlığı & Filo Seçimi", en: "Machinery Consulting & Fleet Selection", de: "Maschinenberatung & Flottenauswahl", fr: "Conseil Machines & Choix de Flotte", it: "Consulenza Macchine & Scelta della Flotta", es: "Consultoría de Maquinaria & Selección de Flota" })}
           </h1>
 
           <p className="text-zinc-400 text-base md:text-lg leading-relaxed mb-10 max-w-4xl font-medium">
-            {isTr
-              ? "Saha jeolojisi, delgi deriliği ve arazi eğimlerine göre en uygun sondaj, rock delici veya GES kazık çakma makinelerinin seçiminde teknik danışmanlık sağlıyoruz."
-              : "We provide technical consulting for selecting the optimal drilling rigs, rock drills, or solar piling machines tailored to site geology and terrain slopes."}
+            {tx({ tr: "Saha jeolojisi, delgi deriliği ve arazi eğimlerine göre en uygun sondaj, rock delici veya GES kazık çakma makinelerinin seçiminde teknik danışmanlık sağlıyoruz.", en: "We provide technical consulting for selecting the optimal drilling rigs, rock drills, or solar piling machines tailored to site geology and terrain slopes.", de: "Wir beraten Sie technisch bei der Auswahl der optimalen Bohranlagen, Gesteinsbohrgeräte oder Solar-Rammmaschinen passend zur Geologie und Hangneigung Ihrer Baustelle.", fr: "Nous vous conseillons techniquement dans le choix des foreuses, foreuses de roche ou sonneuses solaires les mieux adaptées à la géologie et aux pentes de votre site.", it: "Offriamo consulenza tecnica per la scelta delle perforatrici, perforatrici da roccia o battipalo fotovoltaici più adatti alla geologia e alle pendenze del cantiere.", es: "Ofrecemos asesoramiento técnico para seleccionar las perforadoras, perforadoras de roca o hincadoras solares óptimas según la geología y las pendientes de la obra." })}
           </p>
 
           <div className="relative h-72 md:h-96 w-full rounded-3xl overflow-hidden mb-12 border border-zinc-800 shadow-2xl">
@@ -56,13 +53,13 @@ export default function MakineDanismanligiPage() {
           <div className="p-8 md:p-12 rounded-3xl bg-zinc-900/90 border border-zinc-800 text-center relative overflow-hidden shadow-2xl">
             <Shield className="w-12 h-12 text-[#C59B27] mx-auto mb-6" />
             <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white mb-4">
-              {isTr ? "Filo Danışmanlığı İletişimi" : "Consulting Inquiry"}
+              {tx({ tr: "Filo Danışmanlığı İletişimi", en: "Consulting Inquiry", de: "Beratungsanfrage", fr: "Demande de Conseil", it: "Richiesta di Consulenza", es: "Solicitud de Consultoría" })}
             </h3>
             <Link
               href="/iletisim?service=machinery"
               className="inline-flex items-center gap-3 py-4 px-8 rounded-none bg-[#C59B27] hover:bg-[#b08920] text-white font-mono font-bold text-xs uppercase tracking-widest shadow-lg transition-colors cursor-pointer"
             >
-              <span>{isTr ? "Teklif İste" : "Request Quote"}</span>
+              <span>{tx({ tr: "Teklif İste", en: "Request Quote", de: "Angebot anfordern", fr: "Demander un Devis", it: "Richiedi un Preventivo", es: "Solicitar Presupuesto" })}</span>
               <Zap className="w-4 h-4" />
             </Link>
           </div>

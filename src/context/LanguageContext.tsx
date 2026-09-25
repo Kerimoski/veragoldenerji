@@ -14,10 +14,14 @@ const LANGUAGES: Language[] = ["tr", "en", "de", "fr", "it", "es"];
 
 const translations = { tr, en, de, fr, it, es };
 
+/** Inline copy for every language; languages without an entry fall back to English. */
+export type LocalizedText = { tr: string; en: string } & Partial<Record<Language, string>>;
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (path: string) => any;
+  tx: (text: LocalizedText) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -66,17 +70,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return current;
   };
 
+  const tx = (text: LocalizedText): string => text[language] ?? text.en;
+
   // Prevent hydration mismatch
   if (!mounted) {
     return (
-      <LanguageContext.Provider value={{ language: "tr", setLanguage: () => {}, t: (k) => k }}>
+      <LanguageContext.Provider value={{ language: "tr", setLanguage: () => {}, t: (k) => k, tx: (m) => m.tr }}>
         <div style={{ visibility: "hidden" }}>{children}</div>
       </LanguageContext.Provider>
     );
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, tx }}>
       {children}
     </LanguageContext.Provider>
   );

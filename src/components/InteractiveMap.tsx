@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedCounter } from "./AnimatedCounter";
 
 export const InteractiveMap: React.FC = () => {
-  const { t, language } = useTranslation();
+  const { t, language, tx } = useTranslation();
   const [selectedHub, setSelectedHub] = useState<string | null>("west");
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState<{
@@ -33,6 +33,10 @@ export const InteractiveMap: React.FC = () => {
       nameEs: "Región de Europa Occidental",
       countries: ["Almanya", "Fransa", "Hollanda", "Belçika", "İsviçre", "Avusturya", "Lüksemburg", "İrlanda"],
       countriesEn: ["Germany", "France", "Netherlands", "Belgium", "Switzerland", "Austria", "Luxembourg", "Ireland"],
+      countriesDe: ["Deutschland", "Frankreich", "Niederlande", "Belgien", "Schweiz", "Österreich", "Luxemburg", "Irland"],
+      countriesFr: ["Allemagne", "France", "Pays-Bas", "Belgique", "Suisse", "Autriche", "Luxembourg", "Irlande"],
+      countriesIt: ["Germania", "Francia", "Paesi Bassi", "Belgio", "Svizzera", "Austria", "Lussemburgo", "Irlanda"],
+      countriesEs: ["Alemania", "Francia", "Países Bajos", "Bélgica", "Suiza", "Austria", "Luxemburgo", "Irlanda"],
       descriptionTr: "Endüstriyel santral kurulumları ve kaya delgi projelerimizin yoğunlukta olduğu Batı Avrupa ağımız.",
       descriptionEn: "Our Western European network where industrial power plant installations and rock drilling projects are concentrated.",
       descriptionDe: "Unser westeuropäisches Netzwerk, in dem sich industrielle Kraftwerksinstallationen und Felsbohrprojekte konzentrieren.",
@@ -50,6 +54,10 @@ export const InteractiveMap: React.FC = () => {
       nameEs: "Europa del Sur & Mediterráneo",
       countries: ["İspanya", "Portekiz", "İtalya", "Malta", "Kıbrıs"],
       countriesEn: ["Spain", "Portugal", "Italy", "Malta", "Cyprus"],
+      countriesDe: ["Spanien", "Portugal", "Italien", "Malta", "Zypern"],
+      countriesFr: ["Espagne", "Portugal", "Italie", "Malte", "Chypre"],
+      countriesIt: ["Spagna", "Portogallo", "Italia", "Malta", "Cipro"],
+      countriesEs: ["España", "Portugal", "Italia", "Malta", "Chipre"],
       descriptionTr: "Delgi mühendisliği, liman altyapısı ve yenilenebilir enerji montaj projelerimizi yönettiğimiz Akdeniz ağı.",
       descriptionEn: "Mediterranean network where we manage drilling engineering, port infrastructure, and renewable energy assembly projects.",
       descriptionDe: "Mittelmeer-Netzwerk, in dem wir Bohrarbeiten, Hafeninfrastruktur und Projekte für erneuerbare Energien verwalten.",
@@ -67,6 +75,10 @@ export const InteractiveMap: React.FC = () => {
       nameEs: "Balcanes & Europa del Este",
       countries: ["Yunanistan", "Bulgaristan", "Romanya", "Sırbistan", "Hırvatistan", "Arnavutluk", "Kuzey Makedonya", "Macaristan", "Slovenya", "Bosna Hersek", "Karadağ", "Kosova", "Türkiye"],
       countriesEn: ["Greece", "Bulgaria", "Romania", "Serbia", "Croatia", "Albania", "North Macedonia", "Hungary", "Slovenia", "Bosnia & Herzegovina", "Montenegro", "Kosovo", "Türkiye"],
+      countriesDe: ["Griechenland", "Bulgarien", "Rumänien", "Serbien", "Kroatien", "Albanien", "Nordmazedonien", "Ungarn", "Slowenien", "Bosnien & Herzegowina", "Montenegro", "Kosovo", "Türkei"],
+      countriesFr: ["Grèce", "Bulgarie", "Roumanie", "Serbie", "Croatie", "Albanie", "Macédoine du Nord", "Hongrie", "Slovénie", "Bosnie-Herzégovine", "Monténégro", "Kosovo", "Turquie"],
+      countriesIt: ["Grecia", "Bulgaria", "Romania", "Serbia", "Croazia", "Albania", "Macedonia del Nord", "Ungheria", "Slovenia", "Bosnia ed Erzegovina", "Montenegro", "Kosovo", "Turchia"],
+      countriesEs: ["Grecia", "Bulgaria", "Rumanía", "Serbia", "Croacia", "Albania", "Macedonia del Norte", "Hungría", "Eslovenia", "Bosnia y Herzegovina", "Montenegro", "Kosovo", "Turquía"],
       descriptionTr: "Tüm Balkan ülkelerini kapsayan hızlı lojistik, mobil delgi filoları ve enerji santrali altyapı hizmetlerimiz.",
       descriptionEn: "Our fast logistics, mobile drilling fleets, and power plant infrastructure services covering all Balkan countries.",
       descriptionDe: "Unsere schnellen Logistik-, mobilen Bohrflotten- und Kraftwerksinfrastrukturdienste für alle Balkanländer.",
@@ -84,6 +96,10 @@ export const InteractiveMap: React.FC = () => {
       nameEs: "Europa del Norte & Escandinavia",
       countries: ["Birleşik Krallık", "İsveç", "Norveç", "Finlandiya", "Danimarka", "İzlanda"],
       countriesEn: ["United Kingdom", "Sweden", "Norway", "Finland", "Denmark", "Iceland"],
+      countriesDe: ["Vereinigtes Königreich", "Schweden", "Norwegen", "Finnland", "Dänemark", "Island"],
+      countriesFr: ["Royaume-Uni", "Suède", "Norvège", "Finlande", "Danemark", "Islande"],
+      countriesIt: ["Regno Unito", "Svezia", "Norvegia", "Finlandia", "Danimarca", "Islanda"],
+      countriesEs: ["Reino Unido", "Suecia", "Noruega", "Finlandia", "Dinamarca", "Islandia"],
       descriptionTr: "Kuzey Avrupa ve İskandinavya'daki enerji altyapısı, rüzgar santrali ve sondaj mühendisliği projelerimiz.",
       descriptionEn: "Our energy infrastructure, wind farm construction, and drilling engineering projects in Northern Europe and Scandinavia.",
       descriptionDe: "Unsere Energieinfrastruktur-, Windpark- und Bohrprojekte in Nordeuropa und Skandinavien.",
@@ -101,6 +117,10 @@ export const InteractiveMap: React.FC = () => {
       nameEs: "Europa Central",
       countries: ["Polonya", "Çekya", "Slovakya", "Litvanya", "Letonya", "Estonya"],
       countriesEn: ["Poland", "Czechia", "Slovakia", "Lithuania", "Latvia", "Estonia"],
+      countriesDe: ["Polen", "Tschechien", "Slowakei", "Litauen", "Lettland", "Estland"],
+      countriesFr: ["Pologne", "Tchéquie", "Slovaquie", "Lituanie", "Lettonie", "Estonie"],
+      countriesIt: ["Polonia", "Cechia", "Slovacchia", "Lituania", "Lettonia", "Estonia"],
+      countriesEs: ["Polonia", "Chequia", "Eslovaquia", "Lituania", "Letonia", "Estonia"],
       descriptionTr: "Enerji yatırımları ve delgi mühendisliği projelerimizle B2B üretim tesislerini desteklediğimiz orta Avrupa operasyonlarımız.",
       descriptionEn: "Our Central European operations supporting B2B production facilities with energy investments and drilling engineering projects.",
       descriptionDe: "Unsere mitteleuropäischen Aktivitäten unterstützen B2B-Produktionsanlagen mit Energieinvestitionen und Bohrprojekten.",
@@ -110,8 +130,17 @@ export const InteractiveMap: React.FC = () => {
     }
   ];
 
-  // All countries flat list for search
-  const allCountries = hubs.flatMap(h => h.countries.map((c, i) => ({ tr: c, en: h.countriesEn[i], hubId: h.id })));
+  const countriesOf = (hub: typeof hubs[0]) =>
+    ({ tr: hub.countries, en: hub.countriesEn, de: hub.countriesDe, fr: hub.countriesFr, it: hub.countriesIt, es: hub.countriesEs })[language];
+
+  // All countries flat list for search, with every language's name so any of them matches
+  const allCountries = hubs.flatMap((h) =>
+    h.countries.map((c, i) => ({
+      names: [c, h.countriesEn[i], h.countriesDe[i], h.countriesFr[i], h.countriesIt[i], h.countriesEs[i]],
+      localName: countriesOf(h)[i],
+      hubId: h.id,
+    }))
+  );
 
   useEffect(() => {
     if (!searchQuery.trim()) {
@@ -120,15 +149,15 @@ export const InteractiveMap: React.FC = () => {
     }
     const query = searchQuery.toLowerCase().trim();
     const match = allCountries.find(
-      (c) => c.tr.toLowerCase().includes(query) || c.en.toLowerCase().includes(query)
+      (c) => c.names.some((n) => n.toLowerCase().includes(query))
     );
     if (match) {
-      setSearchResult({ found: true, name: isTr ? match.tr : match.en, region: match.hubId });
+      setSearchResult({ found: true, name: match.localName, region: match.hubId });
       setSelectedHub(match.hubId);
     } else {
       setSearchResult({ found: false, name: searchQuery });
     }
-  }, [searchQuery]);
+  }, [searchQuery, language]);
 
   const activeHub = hubs.find((h) => h.id === selectedHub) || hubs[0];
 
@@ -186,7 +215,7 @@ export const InteractiveMap: React.FC = () => {
           <div className="relative">
             <input
               type="text"
-              placeholder={isTr ? "Ülke ara (örn: Almanya, İsveç, Norveç)..." : isDe ? "Land suchen (z.B. Deutschland, Schweden)..." : isFr ? "Chercher un pays (ex: Allemagne, Suède)..." : isIt ? "Cerca un paese (es: Germany, Sweden)..." : isEs ? "Buscar país (ej.: Germany, Sweden)..." : "Search country (e.g. Germany, Sweden, Norway)..."}
+              placeholder={isTr ? "Ülke ara (örn: Almanya, İsveç, Norveç)..." : isDe ? "Land suchen (z.B. Deutschland, Schweden)..." : isFr ? "Chercher un pays (ex: Allemagne, Suède)..." : isIt ? "Cerca un paese (es: Germania, Svezia)..." : isEs ? "Buscar país (ej.: Alemania, Suecia)..." : "Search country (e.g. Germany, Sweden, Norway)..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 rounded-xl border border-zinc-800 bg-zinc-900 text-white placeholder-zinc-500 focus:outline-none focus:border-[#C59B27] text-sm transition-all shadow-inner"
@@ -298,7 +327,7 @@ export const InteractiveMap: React.FC = () => {
                   {/* Dynamic Country Checklist */}
                   <div>
                     <h4 className="text-[10px] font-mono font-extrabold uppercase text-[#C59B27] tracking-wider mb-3 border-b border-zinc-800 pb-1">
-                      // {isTr ? "Aktif Ülkeler" : "Active Countries"} ({activeHub.countries.length})
+                      // {tx({ tr: "Aktif Ülkeler", en: "Active Countries", de: "Aktive Länder", fr: "Pays Actifs", it: "Paesi Attivi", es: "Países Activos" })} ({activeHub.countries.length})
                     </h4>
                     <motion.div
                       initial="hidden"
@@ -312,7 +341,7 @@ export const InteractiveMap: React.FC = () => {
                       }}
                       className="grid grid-cols-2 gap-2"
                     >
-                      {(isTr ? activeHub.countries : activeHub.countriesEn).map((country) => (
+                      {countriesOf(activeHub).map((country) => (
                         <motion.div
                           key={country}
                           variants={{

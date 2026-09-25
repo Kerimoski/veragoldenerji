@@ -7,38 +7,33 @@ import { AnimatedCounter } from "./AnimatedCounter";
 import { motion } from "framer-motion";
 
 export const StatsCounter: React.FC = () => {
-  const { t, language } = useTranslation();
-  const isTr = language === "tr";
+  const { t, tx } = useTranslation();
 
   const stats = [
     {
       icon: <Activity className="w-5 h-5 text-[#C59B27]" />,
       target: 500000,
       suffix: "m+",
-      labelTr: "Toplam Delgi / Çakım Uzunluğu",
-      labelEn: "Total Meters Drilled / Piled",
+      label: { tr: "Toplam Delgi / Çakım Uzunluğu", en: "Total Meters Drilled / Piled", de: "Gebohrte / Gerammte Meter Gesamt", fr: "Mètres Forés / Battus au Total", it: "Metri Totali Perforati / Infissi", es: "Metros Totales Perforados / Hincados" },
     },
     {
       icon: <Zap className="w-5 h-5 text-emerald-400" />,
       target: 120,
       suffix: "+",
-      labelTr: "GES Santrali Altyapısı Projesi",
-      labelEn: "Completed Solar Power Sites",
+      label: { tr: "GES Santrali Altyapısı Projesi", en: "Completed Solar Power Sites", de: "Abgeschlossene Solarkraftwerke", fr: "Centrales Solaires Réalisées", it: "Impianti Fotovoltaici Completati", es: "Plantas Solares Completadas" },
     },
     {
       icon: <Drill className="w-5 h-5 text-[#C59B27]" />,
       target: 40,
       suffix: "+",
-      labelTr: "Aktif Makine & Ekipman Parkı",
-      labelEn: "Active Machinery & Fleet Rigs",
+      label: { tr: "Aktif Makine & Ekipman Parkı", en: "Active Machinery & Fleet Rigs", de: "Aktive Maschinen & Flottengeräte", fr: "Machines & Foreuses Actives", it: "Macchine & Mezzi della Flotta Attivi", es: "Máquinas & Equipos de Flota Activos" },
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
       target: 100,
       prefix: "%",
       suffix: "",
-      labelTr: "Saha İş Güvenliği & Uyum",
-      labelEn: "On-Site Safety & Compliance",
+      label: { tr: "Saha İş Güvenliği & Uyum", en: "On-Site Safety & Compliance", de: "Arbeitssicherheit & Compliance vor Ort", fr: "Sécurité & Conformité sur Site", it: "Sicurezza & Conformità in Cantiere", es: "Seguridad & Cumplimiento en Obra" },
     }
   ];
 
@@ -81,7 +76,7 @@ export const StatsCounter: React.FC = () => {
 
               {/* Label */}
               <div className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest leading-relaxed mt-1">
-                {isTr ? stat.labelTr : stat.labelEn}
+                {tx(stat.label)}
               </div>
             </motion.div>
           ))}
